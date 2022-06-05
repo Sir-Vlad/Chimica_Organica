@@ -1,0 +1,100 @@
+\section{Conformazione di alcani e cicloalcani}
+Le formule di struttura sono utili per mostrare l'ordine con cui gli atomi sono legati tra di loro. Tuttavia, esse non ci mostrano le forme tridimensionali che sono molto importanti per capire le relazioni tra la struttura e le proprietà.
+
+Analizzando le strutture tridimensionali riusciamo a visualizzare non solo gli angoli di legame e le distanze tra gli atomi ma anche tutte le tensioni che si creano nella molecola.
+
+\subsection{Alcani}
+Gli alcani con due o più atomi di carbonio possono assumere differenti disposizioni spaziali, ruotando intorno a uno dei legami carbonio-carbonio. Ciascuna di queste disposizioni è chiamata \textbf{conformazione}. La \autoref{tab:conf_etano} mostra le due conformazioni dell'etano, a destra c'è la \textbf{conformazione sfalsata} dove gli atomi di \elementsymbol{1} si dispongono alla massima distanza l'uno dall'altro mentre a sinistra c'è la \textbf{conformazione eclissata} dove gli \elementsymbol{1} si dispongono alla minima distanza possibile.
+
+\begingroup
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{5em} % for the horizontal padding
+	\renewcommand{\arraystretch}{1.2}
+	% \setchemfig{atom sep=2em}
+	\caption{Conformazione dell'etano}\label{tab:conf_etano}
+	\begin{tabular}{cc}
+		\chemfig{C(-[:110]H)(<:[:200]H)(<[:-110]H)(-[0]C(-[:-70]H)(<:[:20]H)(<[:70]H))} & \chemfig{C(-[:-110]H)(<:[:160]H)(<[:110]H)(-[0]C(-[:-70]H)(<:[:20]H)(<[:70]H))} \\
+		Conformazione sfalsata                                                          & Conformazione eclissata                                                         \\
+	\end{tabular}
+\end{figure}
+\endgroup
+
+Per rappresentare questa queste conformazioni in maniera più comoda si utilizzano le \textbf{proiezioni di Newman}. In una proiezione di Newman, la molecola è vista lungo l'asse del legame \ch{C-C}.
+
+\begingroup
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{5em} % for the horizontal padding
+	\renewcommand{\arraystretch}{1.2}
+	% \setchemfig{atom sep=2em}
+	\caption{Conformazione dell'etano con le proiezioni di Newman}
+	\begin{tabular}{cc}
+		\newman{H,H,H,H,H,H}   & \newman(160){H,H,H,H,H,H} \\
+		Conformazione sfalsata & Conformazione eclissata   \\
+	\end{tabular}
+\end{figure}
+\endgroup
+
+Per quanto si può pensare, la rotazione lungo un atomo di carbonio non è del tutto libera. Ad esempio, nell'etano c'è una differenza di energia potenziale tra le due conformazioni e questo provoca che è più probabile avere una conformazione rispetto l'altra, in questo caso quella più probabile è quella sfalsata.
+
+La tensione indotta nella conformazione eclissata è detta \textbf{tensione torsionale}. Questa è una forma di tensione che si origina quando atomi non legati tra loro, separati da tre legami sono forzati a passare da una conformazione sfalsata a una eclissata.
+
+\subsection{Cicloalcani}
+\paragraph{Ciclopentano}\mbox{}\\
+Il ciclopentano può essere disegnato in una conformazione planare con angoli di legame di \ang{108}, questo differisce dall'angolo di legame di \ang{109.5} e questo crea una leggera \textbf{tensione angolare} nella conformazione planare. Si crea anche una \textbf{tensione torsionale} dovuta ai legami \ch{C-H}. Per ridurre queste torsioni, il ciclopentano si torce nella \textit{conformazione a busta}. In questa conformazione 4 atomi sono sul piano mentre il 5 è spostato fuori dal piano.
+
+\begingroup
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{4em} % for the horizontal padding
+	\renewcommand{\arraystretch}{1.2}
+	% \setchemfig{atom sep=2em}
+	\caption{Conformazione del ciclopentano}
+	\begin{tabular}{cc}
+		\chemfig{*5(-----)}  & \chemfig[cram width=2pt]{?<[:-45,0.5]-[:0,,,,line width=2pt]>[:60]-[:210]?} \\
+		Ciclopentano planare & Ciclopentano ripiegato a busta                                              \\
+	\end{tabular}
+\end{figure}
+\endgroup
+
+\paragraph{Cicloesano}\mbox{}\\
+Il cicloesano può adottare diverse conformazioni ma solo due sono quelle principali: quella a sedia e quella a barca.
+
+La \textbf{conformazione a sedia} ha tutti gli angoli di legami \ch{C-C} di \ang{109.5}, minimizzando la tensione angolare, e gli \elementsymbol{1} su carboni adiacenti sono sfalsati, minimizzando la tensione torsionale; in questo modo nella conformazione a sedia c'è pochissima tensione.
+
+I legami \ch{C-H} si dividono in: \textbf{legami assiali}, sono quelli paralleli all'asse della molecola mentre \textbf{legami equatoriali}, sono quelli perpendicolari all'asse della molecola.
+
+\begingroup
+\begin{figure}[btp]
+	\centering
+	\setlength{\tabcolsep}{5em} % for the horizontal padding
+	\renewcommand{\arraystretch}{1.2}
+	\setchemfig{atom sep=2.5em}
+	\caption{Conformazione del cicloesano}
+	\begin{tabular}{cc}
+		\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:10,,,,line width=2pt]>[:-20]-[:130]-[:190]?} & \chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:0,,,,line width=2pt]>[:50]-[:215,0.9]-[:180,0.8,,,]?} \\
+		Cicloesano a sedia                                                                              & Cicloesano ripiegato a barca                                                                             \\
+	\end{tabular}
+\end{figure}
+\endgroup
+
+La \textbf{conformazione a barca} è meno stabile di quella a sedia, perché si crea una tensione torsionale a causa di quattro set di interazioni tra idrogeni eclissati e tensione sterica a causa dell'interazione tra atomi di idrogeno. La \textbf{tensione sterica} si genera quando atomi non legati tra loro sono costretti a stare ad una distanza inferiore rispetto a quando permesso dai loro raggi atomici.
+
+Per il cicloesano, le due conformazioni a sedia possono interconvertirsi tra trasformando prima in una barca e quindi nell'altra sedia, come possiamo vedere~\autoref{rct:cicloesano_conf}.
+
+\begingroup
+\setchemfig{atom sep=2.5em}
+\begin{reaction}
+	\AddRxnDesc{Interconversione tra le due conformazioni a sedia}
+	\arrow{0}[,0]
+	\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:10,,,,line width=2pt]>[:-20]-[:130]-[:190]?}
+	\arrow{<->}
+	\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:0,,,,line width=2pt]>[:50]-[:215,0.9]-[:180,0.8,,,]?}
+	\arrow{<->}
+	\chemfig[cram width=2pt,bond join=true]{?-[:-10]-[:20]<[:-130]-[:-190,,,,line width=2pt]>[:200]?}
+\end{reaction}
+\label{rct:cicloesano_conf}
+\endgroup
+
+Se un atomo di \elementsymbol{1} del cicloesano è sostituito con un sostituente, non avremo più che le due conformazioni a sedia sono equivalenti. Per descrivere la stabilità della molecola utilizzeremo l'\textbf{interazione assiale-assiale (diassiale)}, che rappresenta la tensione sterica che un sostituente assiale e un gruppo su una posizione assiale parallela dello stesso lato dell'anello. Generalmente, nei composti dove c'è una tensione sterica molto alta, i sostituenti si posizionano in conformazione equatoriale.

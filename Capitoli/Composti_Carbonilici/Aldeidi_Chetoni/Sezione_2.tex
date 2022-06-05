@@ -1,0 +1,42 @@
+\section{Addizione nucleofila ai carbonili}
+I nucleofili attaccano l'atomo di carbonio carbonilico, avendo un parziale carica positiva. Dopo l'attacco gli elettroni del legame \(\pi\) si spostano sull'ossigeno, che ospita volentieri una carica negativa. Generalmente queste reazioni vengono condotte in un solvente ossidrilico che completa la reazioni protonando l'ossigeno negativo.
+La reazione può essere sintetizzata dalla seguente equazioni chimica:
+% \setchemfig{debug, scheme debug}
+\begin{reaction}
+	\AddRxnDesc{Addizione nucleofila sui composti carbonilici}
+	\chemfig{@{Nu}\charge{0:2pt=\:,40:3pt=\chargeColor{-}}{Nu}} \+ \chemfig{@{C}C(=[@{Ol}0]@{O}O)(>:[:120])(<[:240])}
+	\arrow{<=>}
+	\chemfig{C(-[0]\charge{0:1pt=\:,90:1pt=\:,270:1pt=\:,35:5pt=\chargeColor{-}}{O})(-[:120]Nu)(>:[:200])(<[:240])}
+	\arrow{<=>[\scriptsize \ch{H2O}]}
+	\chemfig{C(-[0]OH)(-[:120]Nu)(>:[:200])(<[:240])}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=1pt, shorten >= 1pt] ([xshift=3pt]Nu.north east).. controls +(90:1cm) and +(90:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(90:.5cm) and +(90:.5cm) .. (O);
+	}
+\end{reaction}
+
+Il carbonio carbonile \(sp^2\) durante la reazioni diventa ibridato \(sp^3\) nel prodotto di reazione.
+
+Gli acidi catalizzano l'addizione di nucleofili deboli ai composti carbonilici per protonazione dell'ossigeno carbonilico.
+\begin{reaction}
+	\AddRxnDesc{Addizione di nucleofi deboli ai composti carbonilici}
+	\chemfig{@{C}C(=[@{Ol}0]@{O}O)(>:[:120])(<[:240])} \+ \chemfig{\charge{40:3pt=\chargeColor{+}}{H}}
+	\arrow{<=>}[,0.8]
+	\chemleft[
+	\subscheme{
+	\chemfig{C(=[@{Ol}0]@{O}\charge{80:3pt=\chargeColor{+}}{O}H)(>:[:120])(<[:240])}
+	\arrow{<->}[,0.8]
+	\chemfig{@{C}\charge{40:3pt=\chargeColor{+}}{C}(-[0]OH)(>:[:120])(<[:240])}
+	}
+	\chemright]
+	\arrow{->[\small\chemfig{@{Nu}\charge{0:2pt=\:,40:3pt=\chargeColor{-}}{Nu}}]}
+	\chemfig{C(-[0]OH)(-[:120]Nu)(>:[:200])(<[:240])}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(110:.5cm) and +(135:.5cm) .. (O);
+		\draw[shorten <=3pt, shorten >= 1pt] (Nu).. controls +(90:1cm) and +(90:1cm) .. (C);
+	}
+\end{reaction}
+
+Bisogna distinguere i due attacchi dei nucleofili, il primo si attacca reversibilmente mentre l'altro si attacca irreversibilmente, questo avviene perché il primo è un ottimo gruppo uscente mentre il secondo è un cattivo gruppo uscente. Tale distinzione va fatta per capire meglio i meccanismi di reazione dei composti carbonili.
+
+In genere, i chetoni sono meno reattivi delle aldeidi, nei confronti dei nucleofili. La differenza di reattività è dovuta dall'ingombro sterico sul carbonio carbonilico e alla leggera stabilizzazione dei gruppi \ch{R}. Quindi avendo i chetoni due gruppi \ch{R}, i quali stabilizzato e ingombrano il carbonio carbonilico, possiamo dire che i chetoni sono più stabili delle aldeidi.

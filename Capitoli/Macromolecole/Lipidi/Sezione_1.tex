@@ -1,0 +1,121 @@
+\section{Acidi grassi e trigliceridi}\label{sec:trigliceridi}
+I \textbf{grassi} e gli \textbf{oli}, anche se hanno stato di aggregazione differente, sono sostanze che hanno la stessa struttura organica di base, ovvero sono triesteri del glicerolo e si chiamati \textbf{trigliceridi}.
+
+Se idrolizziamo i trigliceridi, in ambiente basico, seguita da acidificazione si ottiene il glicerolo e tre acidi grassi.
+\begin{reaction}
+	\AddRxnDesc{Idrolizzazione di un acido grasso}
+	\arrow{0}[,0]
+	\chemfig{CH_2(-O-C(=[2]O)-R)(-[6,1.5]CH(-O-C(=[2]O)-R')-[6,1.5]CH_2(-O-C(=[2]O)-R''))}
+	\arrow(.-10--.190){->[1. \ch{NaOH},\ch{H_2O}][2. \ch{HCl}, \ch{H2O}]}[,2]
+	\chemfig{CH_2OH-[6]CHOH-[6]CH_2OH}
+	\arrow(.0--.190){0}[,0]\+
+	3 \chemfig{R-C(=[2]O)-OH}
+\end{reaction}
+
+Gli acidi grassi naturali, elencati nella~\autoref{tab:acidigrassi}, sono molecole lineari da 12 a 20 atomi di carbonio con un numero pari di atomi. Se sono presenti doppi legami hanno tutti configurazione \cis\;e tra loro non sono coniugati.
+
+\begin{table}[htb]
+	\centering
+	\rowcolors{2}{gray!15}{}
+	% \setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{NiceTabular}{lclc}
+		\CodeBefore
+		\rowcolors{1}{gray!10}{}[respect-blocks]
+		\rectanglecolor{blue!15}{2-1}{2-4}
+		\rectanglecolor{blue!15}{8-1}{8-4}
+		\Body
+		\toprule
+		\Block[l]{1-2}{Struttura (Atomi di C/Doppi legami)} &        & Nome comune        & Punto di fusione \\
+		\midrule
+		\Block{1-*}{ACIDI GRASSI SATURI}                                                                     \\
+		\hline
+		\ch{CH3(CH2)10COOH}                                 & (12:0) & acido laurico      & 44               \\
+		\ch{CH3(CH2)12COOH}                                 & (14:0) & acido miristico    & 58               \\
+		\ch{CH3(CH2)14COOH}                                 & (16:0) & acido palmitico    & 63               \\
+		\ch{CH3(CH2)16COOH}                                 & (18:0) & acido stearico     & 70               \\
+		\ch{CH3(CH2)18COOH}                                 & (20:0) & acido arachidico   & 77               \\
+		\hline
+		\Block{1-*}{ACIDI GRASSI INSATURI}                                                                   \\
+		\hline
+		\ch{CH_3(CH2)5CH=CH(CH2)5COOH}                      & (16:1) & acido palmitoleico & 1                \\
+		\ch{CH_3(CH2)7CH=CH(CH2)7COOH}                      & (18:1) & acido oleico       & 16               \\
+		\ch{CH_3(CH2)4(CH=CHCH_2)2(CH2)7COOH}               & (18:2) & acido linoleico    & -5               \\
+		\ch{CH_3CH2(CH=CHCH_2)3(CH2)7COOH}                  & (18:3) & acido linilenico   & -11              \\
+		\ch{CH_3CH2(CH=CHCH_2)4(CH2)7COOH}                  & (20:4) & acido arachidonico & -49              \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Acidi grassi comunemente ottenibili dai grassi/oli}\label{tab:acidigrassi}
+\end{table}
+
+I trigliceridi possono essere semplici o misti. I trigliceridi semplici hanno lo stesso acido grasso mentre i trigliceridi misti hanno acidi grassi differenti.
+
+In genere, un grasso o un olio sono miscele di trigliceridi differenti. Generalmente, i grassi coso composti prevalentemente da trigliceridi saturi e provengono da fonti animali mentre gli oli sono composti prevalentemente da trigliceridi insaturi e provengono da fonti vegetali.
+
+La differenza di trigliceridi influenza il punto di fusione della miscela. Miscele di trigliceridi saturi hanno punti di fusione molto alti perché i singoli trigliceridi si possono compattare in maniera regolare e quindi aumentare le interazione tra le molecole. Mentre miscele di trigliceridi insaturi non potranno compattarsi in maniera regolare e quindi la temperatura sarà molto più bassa dei trigliceridi saturi. Di conseguenza, tanto maggiore sarà il numero di doppi legami tanto maggiore sarà il disordine della struttura e tanto minore è il punto di fusione.
+
+\subsection{Idrogenazione degli oli}
+È possibile trasformare i trigliceridi insaturi in saturi tramite idrogenazione catalitica di alcuni o tutti doppi legami. Questo procedimento è chiamato \textbf{indurimento}. La margarina viene prodotta per idrogenazione dei alcuni oli vegetali.
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Idogenazione della trioleina}
+	\arrow{0}[,0]
+	\chemname{\chemfig{
+	[2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op1}:-30,.6]-[:+30,.6]-[@{cl1}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op2}:+30,.6]-[:-30,.6]-[@{cl2}:+30,.6]-[:-30,.6])%
+	-[,1.5]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op3}:-30,.6]-[:+30,.6]-[@{cl3}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op4}:+30,.6]-[:-30,.6]-[@{cl4}:+30,.6]-[:-30,.6])%
+	-[,1.5]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op5}:-30,.6]-[:+30,.6]-[@{cl5}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op6}:+30,.6]-[:-30,.6]-[@{cl6}:+30,.6]-[:-30,.6])}}{\iupac{trioleato di glicerile}\\(\iupac{trioleina})}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op1}{cl1}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op2}{cl2}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op3}{cl3}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op4}{cl4}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op5}{cl5}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op6}{cl6}
+	\arrow{->[3 \ch{H2}][cat. \ch{Ni}]}[,1.5]
+	\chemname{
+	\chemfig{
+	[2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op7}:-30,.6]-[:+30,.6]-[@{cl7}:-30,.6])%
+	-[,1.5]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op8}:-30,.6]-[:+30,.6]-[@{cl8}:-30,.6])%
+	-[,1.5]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op9}:-30,.6]-[:+30,.6]-[@{cl9}:-30,.6])}
+	}{\iupac{tristerato di glicerile}\\(\iupac{tristearina})}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op7}{cl7}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op8}{cl8}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op9}{cl9}
+\end{reaction}
+\chemnameinit{}
+
+\subsection{Saponificazione dei trigliceridi}
+I trigliceridi quando vengono riscaldati in presenza di sostanze alcaline (come \ch{NaOH}), l'estere si trasforma in glicerolo e nei sali degli acidi grassi. I sali degli acidi grassi a lunga catena sono i \textbf{saponi}.
+\chemnameinit{}
+{\small
+\begin{reaction}
+	\AddRxnDesc{Saponificazione del tripalmina}
+	\arrow(--.170){0}[,0]
+	\chemname{
+	\chemfig{
+	[2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op1}:-30,.6]-[:+30,.6]-[@{cl1}:-30,.6])%
+	-[,1.5]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op2}:-30,.6]-[:+30,.6]-[@{cl2}:-30,.6])%
+	-[,1.5]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op3}:-30,.6]-[:+30,.6]-[@{cl3}:-30,.6])}
+	}{\iupac{tristerato di glicerile}\\(\iupac{tristearina})}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op1}{cl1}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op2}{cl2}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!8$]{2pt}[8pt]{op3}{cl3}
+	\arrow(.10--){0}[,0]\+ \ch[circled=all,circletype=math]{Na^{\color{red}+}OH^{\color{blue}-}}
+	\arrow{->[calore (\(\Delta\))]}[,1.5]
+	\chemfig{CH_2OH-[2]CHOH-[2]CH_2OH} \arrow(.10--){0}[,0]\+
+	3 \ch[circled=all,circletype=math]{CH3(CH2)14COO^{\color{blue}-}Na^{\color{red}+}}
+\end{reaction}}
+
+\paragraph{Come funzionano i saponi}\mbox{}\\
+I saponi sono costruiti da una lunga catena carboniosa che porta all'estremità un gruppo altamente polare o ionico. La catena carboniosa è \textbf{lipofila}\footnote{Affine ai grassi e agli oli} mentre l'estremità polare è \textbf{idrofila}\footnote{Affine all'acqua}.
+
+I saponi per rimuovere lo sporco circondano ed emulsionano le goccioline di olio e grasso. Le code lipofile si sciolgono del'olio mentre le teste si protendono verso l'esterno in direzione dell'acqua, questa formazione delle molecole di sapone formando le \textbf{micelle}.
+
+Un'altra proprietà delle soluzioni saponose è abbassare la tensione superficiale dell'acqua, questo facilità il distacco dello sporco. I saponi con questa proprietà appartengono alla classe dei \textbf{tensioattivi}.
+
+Oggi i detersivi che utilizziamo quotidianamente sono gli alchilbenzensolfonati a catena lineare. La catena alchilica non deve contenere ramificazioni per essere completamente biodegradabile.
+
+\begin{figure}[H]
+	\centering
+	\chemfig{[:-30]*6((-R)-=-(-S(=[2]O)(=[6]O)(-[0]\charge{45:3pt=\chargeColor{-}}{O}-[,0.8,,,opacity=0]\charge{45:3pt=\chargeColor{+}}{Na}))=-=)}
+	\caption[Detersivo sintetico]{Detersivo sintetico\\(R = miscela di catene idrocarburiche alifatiche \ch{C12})}
+\end{figure}

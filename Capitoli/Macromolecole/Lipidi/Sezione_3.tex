@@ -1,0 +1,82 @@
+\section{Terpeni}\label{sec:terpeni}
+Gli \textbf{oli essenziali} delle piante e dei fiori sono composti che fanno parte della famiglia dei \textbf{terpeni}. I \textit{terpeni} sono composti contenenti \textbf{unità isopreniche} ripetute da 2 volte in su e possono essere sia acicliche che cicliche.
+
+I terpeni si dividono a seconda del numero di unità isopreniche contenute:
+\begin{itemize}
+	\item monoterpeni, 2 unità
+	\item sesquiterpeni, 3 unità
+	\item diterpeni, 4 unità
+	\item triterpeni, 6 unità
+	\item tetraterpeni, 8 unità
+\end{itemize}
+I terpeni più famosi abbiamo il citronellale, il mentolo, lo squalene e il \iupac{\b-carotene}.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	% \renewcommand{\arraystretch}{2}
+	\chemnameinit{}
+	\begin{tabular}{cc}
+		\chemfig{(-[:150])(-[6])=[:30]-[:-30]-[:30]-[:-30](-[6])-[:30]-[:-30]CHO}
+		                    &
+		\chemfig{*6(-(>:[:230](-[::45])(-[::-45]))(<[:-50]H)-(>:[:-50]H)(<[:0]OH)--(>:[:30]H)(<[:150]CH_3)--)} \\
+		citronellale        & mentolo                                                                          \\
+		(essenza di limone) & (essenza di menta)                                                               \\
+	\end{tabular}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Steroidi}\label{sec:steroidi}
+Gli \textbf{steroidi} formano un'altra importante classe di lipidi. Vengono sintetizzati dallo squalene, un terpene, che tramite una serie reazioni diventa lanosterolo, dal quale vengono sintetizzati gli altri.
+
+\begin{reaction}
+	\definesubmol{x}{-[:30](-[2])=[:-30]-[:30]-[:-30]}
+	\definesubmol{y}{-[:30]=[:-30](-[6])-[:30]-[:-30]}
+	\AddRxnDesc{Sintetizzazione del lanosterolo}
+	\chemname{\chemfig{!x!x!x!y!y-[:30]=[:-30](-[6])-[:30]}}{\iupac{squalene} (\ch{C30})}
+	\arrow(.south west--){0}[-90,2]
+	\phantom{O}
+	\arrow(--.west){->[1. \ch{O2}, enzima][2.\!\!\!\Hpiu{1}\!\!\!, enzima]}[,2]
+	\chemname{\chemfig{*6((>:[6]H)(<[4]HO)-(>:[:-70,1.3]CH_3)(<[:250,1.3]H_3C)-(>:[6]H)(*6(---(*6(-(*5(---(>:[0]H)(-(>:[2]CH_3)(<[:160]H)(-[:20]-[:-30]-[:30]=_[:-30](-[6])-[:30]))--))(>:[6]CH_3)-(<[2]CH_3)----))=--))-(<[2,,,2]H_3C)---)}}{\iupac{lanosterolo} (\ch{C30})}
+\end{reaction}
+
+La caratteristica principale degli steroidi è quella di avere 4 anelli condensati, di cui 3 a 6 termini e uno da cinque. Tutti gli anelli tra di loro hanno configurazione \trans.
+
+\begin{figure}[H]
+	\centering
+	\setcharge{circle}
+	\definesubmol\X1{-[,0.2,,,draw=none]{\color{blue}\scriptstyle#1}}
+	\definesubmol\Xsp1{-[2,0.2,,,draw=none]{\color{blue}\scriptstyle#1}}
+	\definesubmol\Xst1{-[6,0.2,,,draw=none]{\color{blue}\scriptstyle#1}}
+	\definesubmol\Xsd1{-[3,0.2,,,draw=none]{\color{blue}\scriptstyle#1}}
+	\definesubmol\Xss1{-[7,0.2,,,draw=none]{\color{blue}\scriptstyle#1}}
+
+	\chemfig{
+		*6((!\X 3)-(!\X 4)-(!\Xst 5)
+		*6(-(!\X 6)-(!\X 7)-(!\Xss 8)
+		*6(-(!\Xst{14})
+		*5(-(!\X{15})-(!\X{16})-(!\X{17})--)
+		-(!\Xsp{13})-(!\X{12})-(!\X{11})--)
+		-(!\Xsd 9)--)
+		-(!\Xsp{10})-(!\X 1)-(!\X 2)-)
+	}
+	\caption*{\color{blue}Il sistema policiclico degli steroidi,\\con la numerazione convenzionale}
+\end{figure}
+Nella maggior parte degli steroidi, gli anelli a 6 termini non sono aromatici e di solito al C-10 e al C-13 è presente un gruppo metilico e una catena laterale al C-17.
+
+Lo steroide più conosciuto è il colesterolo. Il quale è il componente principale dei calcoli biliari ed esiste una correlazione tra la sua concentrazione nel sangue e le malattie cardiovascolari.
+
+\begin{figure}[H]
+	\centering
+	\chemfig{
+	*6((>:[6]H)(<[4]HO)--(
+	*6(=--(<[2]H)(
+	*6(-(
+	*5(---(>:[0]H)(-(>:[2]CH_3)(<[:160]H)(-[:20]-[:-30]-[:30]-[:-30](-[6])
+	-[:30]))--))(>:[6]H)-(<[2]CH_3)----))
+	-(>:[6]H)--))
+	-(<[2,,,2]H_3C)---)}
+\caption*{Colesterolo}
+\end{figure}
+
+Altri steroidi importanti sono gli ormoni sessuali maschili e femminili, che determinano i caratteri sessuali secondari. Gli ormoni sessuali femminili si dividono in due gruppi: gli estrogeni e i progestinici. Gli ormoni sessuali maschili sono detti androgeni.

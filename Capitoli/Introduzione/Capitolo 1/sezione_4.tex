@@ -1,0 +1,59 @@
+\section{Ibridazione degli orbitali}
+Un legame covalente, tra due atomi, si forma sovrapponendo una porzione di un orbitale di un atomo con una porzione di orbitale dell'altro atomo.
+
+Se la sovrapposizione degli orbitali è frontale si parla di \textbf{legame sigma} (\(\upsigma\)) mentre se è laterale si parla di \textbf{legame pi} (\(\uppi\)).
+
+La formazione di legami covalenti di carbonio, azoto e ossigeno presentano il problema che i legami dovrebbero formare angoli di \ang{90} ma questo non accade, per spiegare questo fenomeno si utilizzano gli \textbf{orbitali ibridi}.
+
+\begin{figure}[H]
+	\centering
+	\begin{modiagram}[style=round]
+		\AO{s}[label={\(2s\)}]{0}
+		\AO{p}[label[x]={\(2p_x\)},label[y]={\(2p_y\)},label[z]={\(2p_z\)}]{1.5;up,up}
+	\end{modiagram}\quad
+	\tikz{\draw[->](0,1)--(2,1);\draw[white](0,0)--(0,1)}\quad
+	\begin{modiagram}[style=round]
+		\AO{s}[label={\(2s\)}]{0;up}
+		\AO{p}[label[x]={\(2p_x\)},label[y]={\(2p_y\)},label[z]={\(2p_z\)}]{1.5;up,up,up}
+	\end{modiagram}
+\end{figure}
+
+\begingroup
+\setchemfig{
+	atom sep = 3em,
+	double bond sep=3pt
+}
+\subsection{Ibridazione \texorpdfstring{\(sp^3\)}{sp3}}
+La combinazione di un orbitale \(2s\) e tre orbitali \(2p\) porta alla formazione di \textbf{quattro orbitali ibridi} \(\mathbf{sp^3}\) equivalenti. I quattro orbitali ibridi si dispongono ai vertici di un tetraedro con un angolo di legame di \ang{109.5}.
+
+\begin{center}
+	\chemfig{@{2}C(-[@{h1}2]H)(-[@{h2}5]H)(<[@{h3}7]H)(<:[8]H)}
+	\namebond{h1}{2}{\scriptsize\color{red}1,1\angstrom}{-7}
+	\arclabel{0.75cm}{h2}{2}{h3}{\footnotesize\color{red}109.5\textdegree}{0}{0}
+\end{center}
+
+\subsection{Ibridazione \texorpdfstring{\(sp^2\)}{sp2}}
+La combinazione di un orbitale \(2s\) e due orbitali \(2p\) porta alla formazione di \textbf{tre orbitali ibridi} \(\mathbf{sp^2}\) equivalenti. I tre orbitali ibridi si dispongono sul piano diretti verso i vertici di triangolo equilatero con un angolo di legame di \ang{120}.
+
+\begin{center}
+	\chemfig{@{2}C(-[@{h1}3]H)(-[@{h2}5]H)=@{1}C(-[1]H)(-[7]H)}
+	\namebond[-7pt]{2}{1}{\scriptsize\color{red}1,33\angstrom}{0}
+	\namebond[-7pt]{h2}{2}{\scriptsize\color{red}1,07\angstrom}{-5}
+
+	\arclabel{0.75cm}{h1}{2}{1}{\footnotesize\rotatebox{202}{\color{red}121.7\textdegree}}{-16}{-16}
+	\arclabel{0.75cm}{h1}{2}{h2}{\footnotesize\rotatebox{90}{\color{red}116.6\textdegree}}{-12}{0}
+\end{center}
+
+\subsection{Ibridazione \texorpdfstring{\(sp\)}{sp}}
+La combinazione di un orbitale \(2s\) e un orbitali \(2p\) porta alla formazione di \textbf{tre orbitali ibridi} \(\mathbf{sp}\) equivalenti. I due orbitali sono orientati in modo da formare un angolo di legame di \ang{180}.
+
+\begin{center}
+	\chemfig{@{1}C(-[@{h1}4]H)~@{2}C(-[@{h2}0]H)}
+	\namebond[-8pt]{2}{1}{\scriptsize\color{red}1,2\angstrom}{0}
+	\namebond{h2}{2}{\scriptsize\color{red}1,06\angstrom}{6}
+	\arclabel{0.5cm}{h1}{1}{2}{\footnotesize\rotatebox{180}{\color{red}180\textdegree}}{-10}{0}
+\end{center}
+
+\endgroup
+
+

@@ -1,0 +1,35 @@
+\section{Acidi e Basi di Arrhenius}
+\noindent Secondo la definizione di Arrhenius:
+\begin{itemize}
+	\item[] \textbf{Acido} \(\rightarrow\) sostanza che si scioglie in acqua producendo ioni \ch{H+}
+	\item[] \textbf{Base} \(\rightarrow\) sostanza che si scioglie in acqua producendo ioni \ch{OH-}
+\end{itemize}
+Questa definizione è valida solo se lavoriamo in ambiente acquoso.
+
+Quando un acido si scioglie in acqua, esso reagisce con l'acqua per produrre \ch{H+}/\ch{H3O+}. Per esempio, quando \ch{HCl} si scioglie in acqua reagisce con l'acqua per dare ione idronio e ione cloruro:
+
+
+\begin{center}
+	\ch[circled=all,circletype=math]{
+	H2O_{(l)} + HCl_{(l)} -> !(idronio)( H3O^{\color{red}+}_{(aq)} ) + Cl^{\color{blue}-}_{(aq)}
+	}
+\end{center}
+
+Per mostrare il trasferimento di un protone dall'acido all'acqua si utilizza una \textbf{freccia curva}. Innanzitutto, si scrivono i reagenti e i prodotti come strutture di Lewis. Poi si utilizzano le frecce per far vedere lo spostamento degli elettroni.
+
+\begin{reactions}
+	\AddRxnDesc{Autoprotolisi dell'acqua}
+	\chemfig{@{O}\charge{45=\:,135=\:}{O}(-[6]H)(-[4]H)} 
+	\+ 
+	\chemfig{@{H}H-[@{ClL}]@{Cl}\charge{0:1pt=\:,90:1pt=\:,270:1pt=\:}{Cl}} 
+	\arrow 
+	\chemfig{\charge{90:1pt=\:,90:7pt=\chargeColor{+}}{O}(-[6]H)(-[4]H)(-[0]H)} 
+	\+ 
+	\charge{0:1pt=\:,90:1pt=\:,180:1pt=\:,270:1pt=\:,45:3pt=\chargeColor{-}}{Cl}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(45:1cm) and +(90:.6cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (ClL).. controls +(-90:.5cm) and +(240:.5cm) .. (Cl);
+	}
+\end{reactions}
+
+Il concetto di acidi e basi di Arrhenius è legato a reazioni in ambiente acquoso e non è per niente adatto a trattare reazioni non in ambiente acquoso. Per questo motivo per le reazioni acido-base di composti organici utilizzeremo la definizione di acido e basi di Br{\o}nsted-Lowry.

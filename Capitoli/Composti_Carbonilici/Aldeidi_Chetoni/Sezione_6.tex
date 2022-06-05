@@ -1,0 +1,222 @@
+\section[\texorpdfstring{\(\alpha\)}{α}-alogenazione]{\texorpdfstring{\(\bm{\mathrm{\alpha}}\)}{α}-alogenazione}
+
+Le aldeidi trattate con un alogeno vengono ossidate ad acidi carbossilici mentre i chetoni vengono alogenati in posizione \(\alpha\).
+
+La reazione di alogenazione in \(\alpha\) dei chetoni procede in modo diverso a seconda che sia condotta in catalisi acida o basica.
+
+Con la \textbf{catalisi acida}, si ha la monoalogenazione del chetone dalla parte più sostituita, se si usa una sola mole di alogeno.
+	{\small
+		\begin{reaction}
+			\AddRxnDesc{Reazione di \(\alpha\)-alogenazione in catalisi acida}
+			% ! 1 reazione - protonazione dell'ossigeno
+			\chemname{\chemfig{C(=[2]@{O1}\charge{45=\:,135=\:}{O})(-[:210]H_3C)(-[:330]CH_2-R')}}{Chetone}
+			\arrow(.mid east--.mid west){->[\Hpiu[m]{1}]} % * ARROW 1
+			% ! 2 reazione - 
+			\chemfig{C(=[@{Ol1}2]@{O2}\charge{90:1pt=\:,160:1pt=\chargeColor{+}}{O}H)(-[:210]H_3C)(-[@{C1}:330]CH(-[0]R')(-[@{Hl1}6]@{H2}H))}
+			\arrow{->[Tautomeria][\chemfig{@{OH1}\charge{180:1pt=\:}{O}H_2}]}[,1.3] % * ARROW 2
+			% ! 3 reazione
+			\chemname{\chemfig{C(-[@{Ol2}2]@{O3}\charge{90:1pt=\:,180:1pt=\:}{O}H)(-[:210]H_3C)(=[@{Cd1}:330]CH(-[0]R'))}}{Enolo}
+			\arrow{->[][*{0}\chemfig{@{X1}X-[@{Xl1}]@{X2}X}]}[-90] % * ARROW 3
+			% ! 4 reazione
+			\chemfig{C(=[2]\charge{35:2pt=\chargeColor{+}}{O}-[:160]@{H3}H)(-[:210]H_3C)(-[:330]CH(-[0]R')(-[6]X))}
+			\arrow{->[\chemfig{@{X3}\charge{35:3pt=\chargeColor{-}}{X}}]}[-180] % * ARROW 4
+			% ! 5 reazione
+			\chemname{\chemfig{C(=[2]O)(-[:210]H_3C)(-[:330]CH(-[0]R')(-[6]X))}}{\(\alpha\)-alogenochetone}
+			% - MOVE ARROW
+			\chemmove[green!60!black!70]{
+				% ! 1 reazione
+				\draw[shorten <=3pt, shorten >= 1pt] (O1).. controls +(70:1cm) and +(120:1cm) .. (H1); % - ATTACCO OSSIGENO ALL'IDROGENO
+				% ! 2 reazione
+				\draw[shorten <=3pt, shorten >= 1pt] (OH1).. controls +(200:1cm) and +(0:1cm) .. (H2); % - ATTACCO AL PROTONE
+				\draw[shorten <=3pt, shorten >= 1pt] (Hl1).. controls +(180:.5cm) and +(-135:.5cm) .. (C1); % - SPOSTAMENTO ELETTTRONI E FORMAZIONE DOPPIO LEGAME
+				\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(180:.5cm) and +(210:.5cm) .. (O2); % - ROTTURA DOPPIO LEGAME E SPOSTAMENTO ELETTRONI SULL'OSSIGENO
+				% ! 3 reazione
+				\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(180:.5cm) and +(180:.5cm) .. (Ol2); % - RIFORMAZIONE DEL DOPPIO LEGAME C=O
+				\draw[shorten <=3pt, shorten >= 1pt] (Cd1).. controls +(-135:1cm) and +(90:1cm) .. (X1); % - ATTACCO ALL'ALOGENO
+				\draw[shorten <=3pt, shorten >= 1pt] (Xl1).. controls +(90:.5cm) and +(100:.5cm) .. (X2); % - ROTTURA ETEROLITICA DEL LEGAME X_2
+				% ! 4 reazione
+				\draw[shorten <=3pt, shorten >= 1pt] (X3).. controls +(90:.5cm) and +(180:.5cm) .. (H3); % - L'ALOGENO STRAPPA IL PROTONE ALL'OSSIGENO
+			}
+		\end{reaction}
+		\chemnameinit{}
+	}
+Nel primo stadio abbiamo la protonazione dell'ossigeno carbonilico, nel secondo stadio c'è l'estrazione dell'idrogeno \(\alpha\) da parte di una base, nel terzo c'è la formazione dell'anione enolato, l'attacco all'alogeno da parte del doppio legame carbonio-carbonio e la riformazione del gruppo carbonilico, nel quarto c'è l'eliminazione del protone sull'ossigeno carbonilico e nel quinto abbiamo il prodotto di reazione.
+
+
+Con la \textbf{catalisi basica}, si ha la polisostituzione del chetone dalla parte meno sostituita.
+\begingroup
+\setchemfig{arrow label sep=5pt}
+{\footnotesize
+	\begin{reaction}
+		\AddRxnDesc{Reazione dell'aloformio}
+		% ! 1 reazione - strappo H+ 
+		\chemname{\chemfig{C(=[2]\charge{45=\:,135=\:}{O})(-[:210]H_2@{C1}C(-[@{Hl1}6,,2]@{H1}H))(-[:330]CH_2-R')}}{Chetone}
+		\arrow(.mid east--){->[tautomeria][\chemfig{@{OH1}\charge{180=\:,150:3pt=\chargeColor{-}}{O}H}]}[,1.3] % * arrow 1
+		% ! 2 reazione - risonanza anione enolato
+		\chemleft[\subscheme{
+		\chemfig{C(=[@{Ol1}2]@{O1}\charge{45=\:,135=\:}{O})(-[@{Cl1}:210]@{C2}\charge{270=\:,270:6pt=\chargeColor{-}}{C}-[4,0.45,,,opacity=0]H_2)(-[:330]CH_2-R')}
+		\arrow{<->}[,0.7]
+		\chemfig{C(-[@{Ol2}2]@{O2}\charge{0=\:,90=\:,180=\:,45:3pt=\chargeColor{-}}{O})(=[@{Cl2}:210]H_2C)(-[:330]CH_2-R')}
+		}\chemright]
+		\arrow(@c4--){->[][*{0}\chemfig{@{X1}X-[@{Xl1}]@{X2}X}]}[-90]
+		% ! 3 reazione
+		\chemfig{C(=[2]O)(-[:210]H_2C(-[6,,2]X))(-[:330]CH_2-R')}
+		\arrow{->[tautomeria][\chemfig{\charge{180=\:,150:3pt=\chargeColor{-}}{O}H}]}[-180,1.3]
+		% ! 4 reazione
+		\chemfig{C(-[@{Ol3}2]@{O3}\charge{0=\:,90=\:,180=\:,45:3pt=\chargeColor{-}}{O})(=[@{Cl3}:210]HC(-[6,,2]X))(-[:330]CH_2-R')}
+		\arrow{->[\chemfig{@{X3}X-[@{Xl2}]@{X4}X}]}[-180]
+		% ! 5 reazione
+		\chemfig{C(=[2]O)(-[:210]HC(-[6,,2]X)(-[2,,2]X))(-[:330]CH_2-R')}
+		\arrow{->[*{0}tautomeria][*{0}\chemfig{\charge{180=\:,150:3pt=\chargeColor{-}}{O}H}]}[-90]
+		% ! 6 reazione
+		\chemfig{C(-[@{Ol4}2]@{O4}\charge{0=\:,90=\:,180=\:,45:3pt=\chargeColor{-}}{O})(=[@{Cl4}:210]C(-[5]X)(-[3]X))(-[:330]CH_2-R')}
+		\arrow{->[][\chemfig{@{X5}X-[@{Xl3}]@{X6}X}]}
+		% ! 7 reazione
+		\chemfig{@{C3}C(=[@{Ol5}2]@{O5}O)(-[:210]C(-[:-150]X)(-[3]X)(-[:-120]X))(-[:330]CH_2-R')}
+		\arrow{->[\chemfig{@{OH}\charge{180=\:,150:3pt=\chargeColor{-}}{O}H}]}
+		% ! 8 reazione
+		\chemfig{C(-[@{Ol6}:120]@{O6}\charge{150:3pt=\chargeColor{-}}{O})(-[:60]OH)(-[@{Cl5}:210]@{C4}C(-[:-150]X)(-[3]X)(-[:-120]X))(-[:330]CH_2-R')}
+		\arrow(--.60){->}[-90]
+		% ! 9 reazione
+		\chemfig{\charge{180:4pt=\chargeColor{-},180=\:}{C}(-[0]X)(-[2]X)(-[6]X)}
+		\+
+		\chemfig{R'-CH_2-C(=[1]O)(-[7]OH)}
+		\arrow(--.mid east){->[\chemfig{\charge{180=\:,150:3pt=\chargeColor{-}}{O}H}][\ch{H2O}]}[-180]
+		% ! 10 reazione
+		\chemname{\chemfig{C(-[0]X)(-[2]X)(-[4]H)(-[6]X)}}{Aloformio}
+		\+
+		\chemname{\chemfig{R'-CH_2-C(=[1]O)(-[7]\charge{45:4pt=\chargeColor{-}}{O})}}{Acido carbossilico}
+		% - MOVE ARROW
+		\chemmove[green!60!black!70]{
+			% ! 1 reazione
+			\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-2pt]OH1.south west).. controls +(270:1cm) and +(0:1cm) .. (H1);
+			\draw[shorten <=3pt, shorten >= 1pt] (Hl1).. controls +(0:.5cm) and +(-45:.5cm) .. (C1);
+			% ! 2 reazione - risonanza
+			\draw[shorten <=0pt, shorten >= 1pt] ([yshift=-1pt]C2.south east).. controls +(0:.2cm) and +(-45:.5cm) .. (Cl1);
+			\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(180:.5cm) and +(200:.5cm) .. (O1);
+			\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(180:.5cm) and +(180:.5cm) .. (Ol2);
+			\draw[shorten <=3pt, shorten >= 1pt] (Cl2).. controls +(-45:1cm) and +(90:1cm) .. (X1);
+			\draw[shorten <=3pt, shorten >= 1pt] (Xl1).. controls +(90:.5cm) and +(90:.5cm) .. (X2);
+			% ! 4 reazione
+			\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(180:.5cm) and +(180:.5cm) .. (Ol3);
+			\draw[shorten <=3pt, shorten >= 1pt] (Cl3).. controls +(135:1cm) and +(90:1cm) .. (X4);
+			\draw[shorten <=3pt, shorten >= 1pt] (Xl2).. controls +(90:.5cm) and +(90:.5cm) .. (X3);
+			% ! 6 reazione
+			\draw[shorten <=3pt, shorten >= 1pt] (O4).. controls +(180:.5cm) and +(180:.5cm) .. (Ol4);
+			\draw[shorten <=3pt, shorten >= 1pt] (Cl4).. controls +(-45:1cm) and +(-135:1cm) .. (X5);
+			\draw[shorten <=3pt, shorten >= 1pt] (Xl3).. controls +(-90:.5cm) and +(-90:.5cm) .. (X6);
+			% ! 7 reazione
+			\draw[shorten <=3pt, shorten >= 1pt] (OH).. controls +(180:1cm) and +(45:1cm) .. (C3);
+			\draw[shorten <=3pt, shorten >= 1pt] (Ol5).. controls +(180:.5cm) and +(180:.5cm) .. (O5);
+			% ! 8 reazione
+			\draw[shorten <=3pt, shorten >= 1pt] (O6).. controls +(210:.5cm) and +(210:.5cm) .. (Ol6);
+			\draw[shorten <=3pt, shorten >= 1pt] (Cl5).. controls +(-45:.5cm) and +(-45:.5cm) .. (C4);
+		}
+	\end{reaction}}
+\endgroup
+Il chetone trialogenato che si forma può perdere un carbonio per idrolisi basica. Infatti il \ch{CCl3} è diventato un buon gruppo uscente dato che la carica negativa è stabilizzata per effetto induttivo dei tre atomi di alogeno.
+
+Nell'ultimo stadio, il \ch{CCl3-} si protona e diventa aloformio mentre l'acido carbossilico, in ambiente basico, diventa ione carbossilato. Questa reazione è tipica dei metilchetoni ed è nota come \textbf{reazione dell'aloformio}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Condensazione aldolica}
+Le aldeidi, se trattate in ambiente basico, danno \textbf{addizione aldolica}, cioè due aldeidi reagiscono tra di loro per dare una \textbf{\iupac{\b-idrossialdeide}}, chiamata comunemente \textbf{aldolo}.
+
+Il carbonio in alpha di un'enolo, comportandosi come nucleofilo, si lega al carbonile di una seconda aldeide per formare una molecola con una catena più lunga che è chiamata aldolo, ovvero aldeide e alcol.
+
+La reazione di condensazione aldolica avviene in 3 passaggi:
+\begin{enumerate}
+	\item Formazione dell'anione enolato
+	\item Addizione del carbonio \(\alpha\) al carbonio carbonile
+	\item Protonazione del gruppo dello ione alcossido e rigenerazione del catalizzatore
+\end{enumerate}
+
+\begin{reaction}
+	\AddRxnDesc{Condensazione aldolica}
+	% ! 1 reazione
+	\chemfig{C(=[1]O)(-[7]H)(-[4]@{C1}C(-[@{Hl1}2]@{H1}H)(-[4]R)(-[6]R))}
+	\arrow{->[\chemfig{@{O1}\charge{180=\:,35:3pt=\chargeColor{-}}{OH}}]}
+	% ! 2 reazione
+	\chemleft[\subscheme{
+	\chemfig{C(=[@{Ol1}1]@{O2}O)(-[7]H)(-[@{Cl1}4]@{C2}\charge{90=\:,135:4pt=\chargeColor{-}}{C}(-[4]R)(-[6]R))}
+	\arrow{<->}[,0.7]
+	\chemfig{C(-[1]\charge{35:2pt=\chargeColor{-}}{O})(-[7]H)(=[4]C(-[4]R)(-[6]R))}
+	}\chemright]
+	\arrow(.mid east--.mid west){0}[,0]\+
+	\chemfig{@{C3}C(=[@{Ol2}1]@{O3}O)(-[7]H)(-[4]R)}
+	\arrow(@c5--){->}[-90]
+	% ! 3 reazione
+	\chemfig{C(-[2]\charge{35:2pt=\chargeColor{-}}{O})(-[6]H)(-[4]R)(-[0]CR_2-C(=[1]O)(-[7]H))}
+	\arrow(--.mid east){->[\ch{H2O}]}[-180]
+	% ! 4 reazione
+	\chemname{\chemfig{C(-[2]OH)(-[6]H)(-[4]R)(-[0]CR_2-C(=[1]O)(-[7]H))}}{\iupac{\b-idrossialdeide}\\o aldolo}
+	\chemmove[green!60!black!70]{
+		% ! 1 reazione
+		\draw[shorten <=-1pt, shorten >= 1pt] (O1.north west).. controls +(90:1cm) and +(30:1cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (Hl1).. controls +(10:.5cm) and +(30:.5cm) .. (C1);
+		% ! 2 reazione - risonanza
+		\draw[shorten <=3pt, shorten >= 1pt] (C2).. controls +(90:.5cm) and +(90:.5cm) .. (Cl1);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(-45:.5cm) and +(-45:.5cm) .. (O2);
+		% ! 2 reazione
+		\draw[shorten <=3pt, shorten >= 1pt] (C2).. controls +(90:2cm) and +(120:2cm) .. (C3);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol2).. controls +(-45:.5cm) and +(-45:.5cm) .. (O3);
+	}
+\end{reaction}
+
+Invece, per far avvenire la condensazione aldolica per i chetoni dobbiamo stare in ambiente acido o basico ad alta temperatura, per far aumentare la reattività dei chetoni. Nel meccanismo di reazione, l'unica differenza sta che il \iupac{\b-idrossichetone} espelle una molecola d'acqua in maniera estremamente facile perché si produce un \iupac{chetone \a-\b-insaturo}, stabilizzato per risonanza.
+
+
+\begin{reaction}
+	\AddRxnDesc{Condensazione aldolica per i chetoni}
+	2 \chemfig{C(=[1]O)(-[7]R)(-[4]C(-[2]H)(-[4]R)(-[6]R))}
+	\arrow(--.mid west){<=>[\Hpiu{1}][\ch{H2O}]}
+	\chemname{\chemfig{R_2C(-[2,,2]OH)-CR_2-C(=[1]O)(-[7]R)}}{\iupac{\b-idrossichetone}}
+	\arrow(.mid east--.mid west){->[\Hpiu{1}][\ch{H2O}]}
+	\chemname{\chemfig{R_2C=CR_2-C(=[1]O)(-[7]R)}}{\iupac{chetone \a-\b-insaturo}}
+\end{reaction}
+
+Le aldeidi e i chetoni che possiedono idrogeni in \(\alpha\) non sono enolizzabili e quindi non possono dare addizione aldolica.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Condensazione aldolica mista}
+L'addizione aldolica tra due aldeidi diverse è chiamata \textbf{condensazione aldolica mista o incrociata}. Questa reazione porta a miscele di prodotti a causa del fatto che ogni aldeide può reagire con se stessa o con l'altra aldeide.
+
+Se tuttavia la reazione avviene tra un'aldeide non enolizzabile, ovvero che può solo essere attaccata e un chetone enolizzabile, che può solo attaccare, allora la reazione procede con successo.
+
+\begin{reaction}
+	\AddRxnDesc{Reazione di condensazione aldolica mista}
+	\chemname{\chemfig{[:-30]*6(-=-(-[0]CH(=[2]O))=-=)}}{\iupac{Benzaldeide}}
+	\+
+	\chemname{\chemfig{CH(=[2]O)(-[4]H_3C)}}{\iupac{Acetaldeide}}
+	\arrow(.mid east--.mid west){<=>[\ch{HO-}]}
+	\chemname{\chemfig{[:-30]*6(-=-(-[0]CH(-[2]OH)(-[0]CH_2CH(=[2,,3]O)))=-=)}}{\iupac{3-idrossi-3-fenilpropanale}}
+	\arrow{->[*{0}calore][*{0}$-$ \ch{H2O}]}[-90]
+	\chemname{\chemfig{*6(-=-(-[:30]CH=[0]CH_2CH(=[2,,3]O))=-=)}}{\iupac{Aldeide cinnamica} o\\ \iupac{\cip{2E}-3-fenilprop-2-enale}}
+\end{reaction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Condensazione aldolica intramolecolare}
+Le reazioni aldoliche possono avvenire anche all'interno della stessa molecola basta che quest'ultima abbia due gruppi carbonilici. Il meccanismo di reazione è simile a quello delle reazioni intermolecolari. L'unica differenza sta che l'anione enolato nucleofilo e il carbonile elettrofilo, appartengono alla stessa molecola. Anche se in teoria la reazione dovrebbe portare a una miscela di prodotti, in realtà la reazione preferisce i composti con anelli con minor tensioni d'anello.
+
+\begin{reaction}
+	\AddRxnDesc{Reazione di condensazione intramolecolare}
+	\chemname{\chemfig{[:163]*5(@{C1}CH_3-(=[2]O)--(-[:190]H)(-[:250]H)-@{C2}(-[:-30]CH_3)(=[:-120]O))}}{\iupac{2,5-esandione}}
+	\arrow{<=>[\ch{NaOH}, \ch{H2O}]}[,1.7]
+	\subscheme{
+	\chemfig{[:18]*5(-(-[@{Ol1}6]@{O1}OH)(-[:-30]CH_3)-[@{Cl1}](-[@{Hl1}:30]@{H1}H)(-[:70]H)-(=[2]O)--)}
+	\arrow{0}[30,0.3]
+	\chemfig{@{O2}\charge{90=\:,180=\:,270=\:,135:3pt=\chargeColor{-}}{O}H}
+	}
+	\arrow(--.170){<=>}
+	\chemname[-15pt]{\chemfig{[:18]*5(-(-[:-30]CH_3)=-(=[2]O)--)}}{\iupac{3-metil-2-ciclopentenone}}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=1pt, shorten >= 1pt] (C1).. controls +(290:.5cm) and +(45:.1cm) .. (C2);
+		\draw[shorten <=1pt, shorten >= 1pt] (Hl1).. controls +(-60:.5cm) and +(-15:.5cm) .. (Cl1);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(180:.5cm) and +(180:.5cm) .. (O1);
+		\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(180:.7cm) and +(90:.7cm) .. (H1);
+	}
+\end{reaction}

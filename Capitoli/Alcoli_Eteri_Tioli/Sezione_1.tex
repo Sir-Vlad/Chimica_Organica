@@ -1,0 +1,62 @@
+\section{Struttura}
+Gli alcoli sono composti di formula chimica \ch{R-OH}, strutturalmente sono simili all'acqua tranne che al posto di uno dei due atomi di idrogeno c'è un gruppo alchilico. Il gruppo funzionale degli alcoli è il \textbf{gruppo ossidrilico}, \ch{-OH}. I fenoli hanno lo stesso gruppo funzionale ma è legato a un anello aromatico.
+
+Possiamo trovare anche alcoli contenenti più gruppi ossidrilici e sono indicati come \textbf{glicoli}. I glicoli più comuni sono: il glicole etilenico, glicole propilenico e il glicerolo (o glicerina).
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{2}
+	\newcolumntype{Y}{>{\centering\arraybackslash}X}
+	\begin{tabularx}{\textwidth}{Y Y Y}
+		\chemfig{CH_2(-[6]OH)(-[0]CH_2(-[6]OH))} & \chemfig{CH_2(-[0]CH_2(-[6]OH)(-[0]CH_2(-[6]OH)))} & \chemfig{CH_2(-[6]OH)(-[0]CH_2(-[6]OH)(-[0]CH_2(-[6]OH)))} \\
+		glicole etilenico                        & glicole propilenico                                & glicerolo (glicerina)                                      \\
+	\end{tabularx}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Proprietà fisiche}
+La proprietà più importante degli alcoli è la loro polarità. Questo è dovuto della grande differenza di elettronegatività tra ossigeno e carbonio e tra ossigeno e idrogeno che rende entrambi i legami covalenti polari.
+
+Tale polarizzazione fa si sull'atomo di idrogeno c'è una parziale carica negativa (\(\delta^-\)) e sull'atomo di ossigeno una parziale carica positiva (\(\delta^+\)). Grazie a queste parziali cariche sull'ossigeno e sull'idrogeno si possono creare legami a idrogeno tra molecole di alcoli.
+
+Questo spiega anche perché gli alcoli sono miscibili in acqua e hanno punti di ebollizione pari all'acqua. Come si può vedere dalla~\autoref{tab:alcoliPointEbolizzione} la solubilità degli alcoli in acqua diminuisce all'aumentare della catena carboniosa perché gli alcoli diventano sempre più simili agli alcani.
+
+\begin{table}[H]
+	\centering
+	\rowcolors{2}{gray!15}{}
+	\renewcommand{\arraystretch}{1.2}
+	\newcolumntype{Y}[1]{>{\centering\arraybackslash}p{#1}}
+	\sisetup{
+		text-series-to-math,
+		input-digits = 0123456789-,
+		table-format = -1,
+		table-alignment-mode = format,
+	}
+
+	\begin{tabularx}{\textwidth}{p{4.7cm} | p{2.8cm} | Y{1.5cm} | S | X}
+		\toprule
+		\rowcolor{white} \multirow{2}{*}{Formula} & \multirow{2}{*}{Nome}  & \multirow{2}{*}{PM} & {Temperatura} & \mbox{Solubilità in acqua}                           \\
+		                                         &                        &                     & {ebollizione} & \mbox{(\unit{\g}/\qty{100}{\g} a \unit{20\celsius})} \\
+		\midrule
+		\ch{CH3OH}                               & metanolo               & \num{32}            & 65            & Infinita                                             \\
+		\ch{CH3CH3}                              & metano                 & \num{30}            & -89           & Insolubile                                           \\
+		\hline
+		\ch{CH3CH2OH}                            & etanolo                & \num{46}            & 78            & Infinita                                             \\
+		\ch{CH3CH2CH3}                           & etano                  & \num{44}            & -42           & Insolubile                                           \\
+		\hline
+		\ch{CH3CH2CH2OH}                         & \iupac{1-propanolo}    & \num{60}            & 97            & Infinita                                             \\
+		\ch{CH3CH2CH2CH3}                        & butano                 & \num{58}            & 0             & Insolubile                                           \\
+		\hline
+		\ch{CH3CH2CH2CH2OH}                      & \iupac{1-butanolo}     & \num{74}            & 117           & \num{7.9}                                            \\
+		\ch{CH3CH2CH2CH2CH3}                     & pentano                & \num{72}            & 36            & Insolubile                                           \\
+		\hline
+		\ch{CH3CH2CH2CH2CH2OH}                   & \iupac{1-pentanolo}    & \num{88}            & 138           & \num{2.7}                                            \\
+		\ch{HOCH2CH2CH2CH2OH}                    & \iupac{1,4-butandiolo} & \num{90}            & 230           & Infinita                                             \\
+		\ch{CH3CH2CH2CH2CH2CH3}                  & esano                  & \num{86}            & 69            & Insolubile                                           \\
+		\bottomrule
+	\end{tabularx}
+	\caption[Punti di ebollizione e solubilità di alcoli e alcani a confronto]{Punti di ebollizione e solubilità in acqua di cinque gruppi di alcani e alcoli con pesi molecolari simili}\label{tab:alcoliPointEbolizzione}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

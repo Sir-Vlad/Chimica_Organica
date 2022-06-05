@@ -1,0 +1,63 @@
+\begin{landscape}
+	\begin{figure}[htb]
+		\centering
+		\setchemfig{
+			atom sep = 1.5em,
+		}
+		\tikzset{
+		>={Latex[width=2mm,length=2mm]}
+		}
+		\begin{tikzpicture}[node distance=5cm,every node/.style={fill=white, align=center},scale=0.5]
+			\node (gliceraldeide) {\chemname{\gliceraldeide}{\iupac{\D-gliceraldeide}}};
+
+			% - tetrosi
+			\node (eritrosio) [below of=gliceraldeide,xshift=-6cm,yshift=1cm] {\chemname{\eritrosio}{\iupac{\D-eritrosio}}};
+			\node (treosio) [below of=gliceraldeide,xshift=6cm,yshift=1cm] {\chemname{\treosio}{\iupac{\D-treosio}}};
+
+			% - pentosi
+			\node (ribosio) [below of=eritrosio,xshift=-3cm,yshift=.5cm] {\chemname{\ribosio}{\iupac{\D-ribosio}}};
+			\node (arabinosio) [below of=eritrosio,xshift=3cm,yshift=.5cm] {\chemname{\arabinosio}{\iupac{\D-arabinosio}}};
+
+			\node (xilosio) [below of=treosio,xshift=-3cm,yshift=.5cm] {\chemname{\xilosio}{\iupac{\D-xilosio}}};
+			\node (lixosio) [below of=treosio,xshift=3cm,yshift=.5cm] {\chemname{\lixosio}{\iupac{\D-lixosio}}};
+
+			% - esosi
+			\node (allosio) [below of=ribosio,xshift=-1.5cm] {\chemname{\allosio}{\iupac{\D-allosio}}};
+			\node (altrosio) [below of=ribosio,xshift=1.5cm] {\chemname{\altrosio}{\iupac{\D-altrosio}}};
+
+			\node (glucosio) [below of=arabinosio,xshift=-1.5cm] {\chemname{\glucosio}{\iupac{\D-glucosio}}};
+			\node (mannosio) [below of=arabinosio,xshift=1.5cm] {\chemname{\mannosio}{\iupac{\D-mannosio}}};
+
+			\node (gulosio) [below of=xilosio,xshift=-1.5cm] {\chemname{\gulosio}{\iupac{\D-gulosio}}};
+			\node (idosio) [below of=xilosio,xshift=1.5cm] {\chemname{\idosio}{\iupac{\D-idosio}}};
+
+			\node (galattosio) [below of=lixosio,xshift=-1.5cm] {\chemname{\galattosio}{\iupac{\D-galattosio}}};
+			\node (talosio) [below of=lixosio,xshift=1.5cm] {\chemname{\talosio}{\iupac{\D-talosio}}};
+
+			% - ARROW
+			\draw[->,blue] (gliceraldeide.south) -- +(0,-1)  -| (eritrosio);
+			\draw[->,blue] (gliceraldeide.south) -- +(0,-1)  -| (treosio);
+
+			\draw[->,blue] (eritrosio.south) -- +(0,-1)  -| (ribosio);
+			\draw[->,blue] (eritrosio.south) -- +(0,-1)  -| (arabinosio);
+
+			\draw[->,blue] (treosio.south) -- +(0,-1)  -| (xilosio);
+			\draw[->,blue] (treosio.south) -- +(0,-1)  -| (lixosio);
+
+			\draw[->,blue] (ribosio.south) -- +(0,-1)  -| (allosio);
+			\draw[->,blue] (ribosio.south) -- +(0,-1)  -| (altrosio);
+
+			\draw[->,blue] (arabinosio.south) -- +(0,-1)  -| (glucosio);
+			\draw[->,blue] (arabinosio.south) -- +(0,-1)  -| (mannosio);
+
+			\draw[->,blue] (xilosio.south) -- +(0,-1)  -| (gulosio);
+			\draw[->,blue] (xilosio.south) -- +(0,-1)  -| (idosio);
+
+			\draw[->,blue] (lixosio.south) -- +(0,-1)  -| (galattosio);
+			\draw[->,blue] (lixosio.south) -- +(0,-1)  -| (talosio);
+
+		\end{tikzpicture}
+		\caption{Albero genealogico dei \iupac{\D-aldosi}}
+	\end{figure}
+\end{landscape}
+\chemnameinit{}

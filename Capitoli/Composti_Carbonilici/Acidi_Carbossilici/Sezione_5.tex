@@ -1,0 +1,127 @@
+\section{Esteri}\label{sec:esteri}
+
+Gli \textbf{esteri} derivano per sostituzione del gruppo \ch{-OH} con il gruppo \ch{-OR} o \ch{-OAr}. Esistono anche gli esteri ciclici e vengono chiamati \textbf{lattoni}.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ccc}
+		\chemfig{H_3C-[:30]C(=[2]O)-[:-30]O-[:30]CH_3}
+		                  &
+		\chemfig{C(-[:210]*6(-=-=-=))(=[2]O)-[:-30]O-[:30]CH_3}
+		                  & \chemfig{[:288]*5(--O-(=O)--)}                            \\
+		Acetato di metile & Benzoato di metile             & \iupac{\g-Butanolattone} \\
+	\end{tabular}
+\end{figure}
+
+\subsection{Idrolisi degli estri}
+L'idrolisi degli esteri è molto lenta a \pH neutro anche se riscaldata. Per questo motivo viene eseguita a \pH acido o basico e riscaldata.
+
+	% \newcommand{\circleNum}[1]{} comando numeri sulle freccie
+	{\small\begin{reaction}
+			\AddRxnDesc{Idrolisi acida degli esteri}
+			\arrow{0}[,0]
+			% - 1 reazione
+			\chemfig{!\DerAc O-[:30]R}
+			\arrow{<=>[\Hpiu[m]{1}][\circleNum{1}]}
+			% - 2 reazione
+			\chemfig{R-[:30]@{C2}C(=[@{Ol2}2]@{O2}\charge{135:3pt=\chargeColor{+}}{O}H)-[:-30]O-[:30]R}
+			\+
+			\chemfig{H-[:30]@{O3}\charge{90=\:,270=\:}{O}-[:-30]H}
+			\arrow{<=>[][\circleNum{2}]}
+			% - 3 reazione
+			\chemfig{R-C(-[2]OH)(-[6]@{O4}\charge{135:3pt=\chargeColor{+}}{O}(-[@{Hl2}:210]H)-[:-30]H)-[0]O-[:30]R}
+			\arrow{<=>[*{0}\chemfig{@{H2}\charge{45:3pt=\chargeColor{+}}{H}}][*{0}\circleNum{3}]}[-90]
+			% - 4 reazione
+			\chemfig{R-C(-[2]OH)(-[6]O-[:-30]H)-[0]@{O5}\charge{90=\:,270=\:}{O}-[:30]R}
+			\arrow{<=>[][\circleNum{4}]}[-180]
+			% - 5 reazione
+			\chemfig{R-C(-[@{Ol6}2]@{O6}\charge{90=\:,180=\:}{O}H)(-[6]O-[:-30]H)-[@{Ol7}0]@{O7}\charge{90:3pt=\chargeColor{+}}{O}(-[:-30]H)-[:30]R}
+			\arrow{<=>[][\circleNum{5}]}[-180]
+			% - 6 reazione
+			\chemfig{R-[:30]C(=[2]@{O8}\charge{90=\:,180=\:,135:3pt=\chargeColor{+}}{O}-[@{Hl3}:30]H)-[:-30]O-[:30]H}
+			\arrow{<=>[][\circleNum{6}]}[-180]
+			\chemfig{R-[:30]C(=[2]O)-[:-30]O-[:30]H}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(45:1cm) and +(135:1cm) .. (H1);
+				\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(270:1.3cm) and +(270:1.3cm) .. (C2);
+				\draw[shorten <=3pt, shorten >= 1pt] (Ol2).. controls +(180:.5cm) and +(180:.5cm) .. (O2);
+				\draw[shorten <=3pt, shorten >= 1pt] (Hl2).. controls +(-50:.5cm) and +(270:.5cm) .. (O4);
+				\draw[shorten <=3pt, shorten >= 1pt] (O5).. controls +(70:1cm) and +(-20:1cm) .. (H2);
+				\draw[shorten <=3pt, shorten >= 1pt] (O6).. controls +(180:.5cm) and +(180:.5cm) .. (Ol6);
+				\draw[shorten <=3pt, shorten >= 1pt] (Ol7).. controls +(270:.5cm) and +(270:.5cm) .. (O7);
+				\draw[shorten <=3pt, shorten >= 1pt] (Hl3).. controls +(-45:.5cm) and +(-15:.5cm) .. (O8);
+			}
+		\end{reaction}}
+
+\begin{description}
+	\item[Stadio 1:] Protonazione dell'ossigeno carbonilico con aumento dell'elettrofilicità del carbonio carbonilico
+	\item[Stadio 2:] Attacco dell'acqua al carbonio carbonilico con successivo ribaltamento del doppio legame sull'ossigeno carbonilico e formazione dell'intermedio tetraedrico
+	\item[Stadio 3:] Deprotonazione dell'ossigeno
+	\item[Stadio 4:] Protonazione dell'ossigeno estereo
+	\item[Stadio 5:] Riformazione del doppio legame carbonilico carbonio-ossigeno e uscita del gruppo alcolico
+	\item[Stadio 6:] Deprotonazione dell'ossigeno carbonilico
+\end{description}
+
+\subsection{Saponificazione degli esteri}
+L'idrolisi può essere effettuata anche usando una base acquosa a caldo come \ch{NaOH}, questa reazione viene spesso chiamata \textbf{saponificazione}. Il meccanismo di reazione è molto simile a quello dell'idrolisi in ambiente acido. L'unica differenza sta nello stadio 3 dove la reazione diventa irreversibile.
+	{\small\begin{reaction}
+			\AddRxnDesc{Saponificazione degli esteri}
+			\arrow{0}[,0]
+			% - 1 reazione
+			\chemfig{R-[:30]@{C1}C(=[@{Ol1}2]@{O1}O)-[:-30]O-[:30]R}
+			\arrow{0}[,0]\+
+			\chemfig{@{O2}\charge{90=\:,180=\:,270=\:,135:3pt=\chargeColor{-}}{O}-H}
+			\arrow{<=>[][\circleNum{1}]}
+			% - 2 reazione
+			\chemfig{R-C(-[@{Ol3}2]@{O3}\charge{0=\:,90=\:,180=\:,45:3pt=\chargeColor{-}}{O})(-[6]OH)-[@{Ol4}0]@{O4}O-[:30]R}
+			\arrow{<=>[][\circleNum{2}]}
+			% - 3 reazione
+			\subscheme{
+				\chemfig{!\DerAc OH} \arrow{0}[,0]\+ \chemfig{\charge{90=\:,180=\:,270=\:,135:3pt=\chargeColor{-}}{O}-R}
+			}
+			\arrow{->[*{0}\circleNum{3}]}[-90]
+			\subscheme{
+				\chemfig{!\DerAc \ChargeOop} \arrow{0}[,0]\+ \chemfig{R-OH}
+			}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(270:1.3cm) and +(270:1.3cm) .. (C1);
+				\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(180:.5cm) and +(180:.5cm) .. (O1);
+				\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(0:.5cm) and +(0:.5cm) .. (Ol3);
+				\draw[shorten <=3pt, shorten >= 1pt] (Ol4).. controls +(-90:.5cm) and +(-90:.5cm) .. (O4);
+			}
+		\end{reaction}}
+
+\subsection{Amminolisi degli esteri}
+L'\textbf{amminolisi} degli esteri trasforma l'estere in un'ammide. La reazione può avvenire con ammoniaca o con ammine primarie e secondarie ma non terziarie.
+\begin{reaction}
+	\arrow{0}[,0]
+	\AddRxnDesc{Amminolisi degli esteri}
+	\chemfig{!\DerAc O-[:30]R} \arrow{0}[,0]\+ \chemfig{R-NH_2}
+	\arrow
+	\chemfig{!\DerAc NHR} \arrow{0}[,0]\+ \chemfig{R-OH}
+\end{reaction}
+
+Il meccanismo è molto simile a quello della saponificazione. Il doppietto non condiviso dell'azoto è responsabile dell'attacco iniziale al carbonio estereo.
+
+\subsection{Transesterificazione degli esteri}
+La \textbf{transesterificazione} è la trasformazione di un estere in un altro estere per reazione con un alcol. Il meccanismo è uguale all'idrolisi degli esteri in ambiente acido.
+
+\begin{reaction}
+\AddRxnDesc{Transesterificazione degli esteri}
+\arrow{0}[,0]
+\chemfig{!\DerAc O-[:30]R'} \arrow{0}[,0]\+ \chemfig{R''-OH}
+\arrow
+\chemfig{!\DerAc O-[:30]R''} \arrow{0}[,0]\+ \chemfig{R'-OH}
+\end{reaction}
+
+
+\subsection{Riduzione degli esteri}
+Gli esteri possono essere ridotti ad alcoli primari tramite idruro di alluminio e litio (\ch{LiAlH4}) e da come prodotti un alcol primario e un secondo alcol.
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Riduzione degli esteri}
+	\arrow{0}[,0]
+	\chemfig{!\DerAc O-[:30]R} \arrow(--.mid west){->[\ch{LiAlH4}][etere]}[,1.3] \chemname{\chemfig{R-[:30]CH_2-[:-30]OH}}{Alcol primario} \+ \chemfig{R-OH}
+\end{reaction}
+\chemnameinit{}

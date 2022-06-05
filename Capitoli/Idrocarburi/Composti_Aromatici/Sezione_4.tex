@@ -1,0 +1,270 @@
+\section{Sostituzione elettrofila aromatica (\texorpdfstring{\acs{SEA}}{SEA})}
+La reazione caratteristica dei composti aromatici è la sostituzione ad un carbonio dell'anello. I sostituenti che possono essere aggiunti direttamente all'anello sono gli alogeni, il gruppo nitro, il gruppo solfonico, i gruppi alchilici e acilici.
+
+\subsection{Meccanismo della \texorpdfstring{\acs{SEA}}{SEA}}
+Nella \textbf{sostituzione elettrofila aromatica}, un atomo di idrogeno dell'anello viene rimpiazzato da un elettrofilo. Tutti i meccanismi di queste reazioni sono molto simili, e possono essere suddivisi in tre stadi:
+\begin{description}
+	\item[Stadio 0:] Generazione dell'elettrofilo facendo reagire il sostituente con il catalizzatore:
+		\begin{reaction*}
+			Reagente \arrow{->[catalizzatore]}[,2] \charge{45:3pt=\chargeColor{+}}{E}
+		\end{reaction*}
+	\item[Stadio 1:] Attacco dell'elettrofilo all'anello aromatico per dare l'intermedio di reazione:
+		{\scriptsize
+		\begin{reaction*}
+			\chemfig{*6(=-=[@{d1}]-=-)} \arrow{0}[,0]\+ \chemfig{@{el}\charge{45:3pt=\chargeColor{+}}{E}}
+			\arrow{->[lento]}
+			\chemleft[
+			\subscheme{
+			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]E)(-[0]H)-=-)}
+			\arrow{<->}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]E)(-[0]H)-@{d3}=-)}
+			\arrow{<->}
+			\chemfig{*6(-=-(-[1]E)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
+			}\chemright]
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+			}
+		\end{reaction*}}
+	\item[Stadio 2:] Trasferimento di un protone ad una base per rigenerare l'anello aromatico:
+		{\scriptsize
+		\begin{reaction*}
+			\chemfig{*6(=-\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-[@{dlc}](-[1]E)(-[@{hl}0]@{h}H)-=-)} \arrow{0}[,0]\+ \chemfig{@{B}\charge{180[circle]=\:}{Base}}
+			\arrow{->[veloce]}
+			\chemfig{*6(-=-(-E)=-=)} \arrow{0}[,0]\+ \chemfig[atom sep=3em]{Base(-H)}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=3pt, shorten >= 3pt] ([xshift=-2pt]B.west) .. controls +(90:.5cm) and +(45:.5cm) .. (h);
+				\draw[shorten <=3pt, shorten >= 3pt] (hl) .. controls +(110:.5cm) and +(135:.5cm) .. (dlc);
+			}
+		\end{reaction*}}
+\end{description}
+
+Le reazioni differiscono solamente nel modo in cui l'elettrofilo viene generato e per la base che rimuove il protone per riformare l'anello aromatico.
+
+Generalmente, il primo stadio è quello più lento, che determina la velocità del processo, perché per distruggere l'aromaticità dell'anello c'è bisogno di una quantità di energia considerevole. Mentre il secondo stadio è molto veloce perché ripristina l'aromaticità dell'anello.
+\begin{center}
+	\begin{endiagram}[scale=1.5]
+		\ENcurve{0,5,2.5[-.5],4[-1],-2[-.5]}
+		\draw[below,font=\ttfamily] (N1-1) node {\tiny \ch{"\chemfig{*6(=-=-=-)}" + "\chemfig{\charge{45:3pt=\chargeColor{+}}{E}}"}};
+		\draw[below,font=\scriptsize\ttfamily,align=left] (N1-3) node {\tiny \ch{"\chemfig{**[0,360,dash pattern=on 2pt off 2pt]6(-\charge{83:11pt=\chargeColor{+}}{}--(-E)---)}"}};
+		\draw[above right,font=\scriptsize\ttfamily,align=left] (N1-5) node {\tiny \ch{"\chemfig{*6(-=-(-E)=-=)}"}};
+	\end{endiagram}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Alogenazione}
+Gli alogeni che vengono usati, generalmente, sono il cloro e il bromo. Pendiamo il cloro come riferimento. Il cloro, nella sua forma stabile, non reagisce con il benzene. Per far in modo che il cloro reagisca, si utilizza un acido di Lewis come catalizzatore come il cloruro ferrico (\ch{FeCl3}) o il cloruro di alluminio (\ch{AlCl3}). Una volta che il cloro reagisce con il catalizzatore la reazione può avvenire come descritto nel meccanismo SEA, ovvero in tre stadi.
+
+\begin{description}
+	\item[Stadio 1:] \textit{Formazione dell'elettrofilo}. La reazione tra il cloro e \ch{FeCl3}, il catalizzatore, forma un complesso molecolare. Quest'ultimo genera uno \textbf{ione cloronio} \ch{Cl+}, un elettrofilo molto forte:
+		{\footnotesize
+		\begin{reaction}
+			\AddRxnDesc{Alogenazione dei composti aromatici (stadio 1)}
+			\chemfig{\charge{90=\:,180=\:,270=\:}{Cl}-@{cl1}\charge{0=\:,90=\:,270=\:}{Cl}} \+{1em,1em} \chemfig{@{fe}Fe(-[0]Cl)(-[2]Cl)(-[6]Cl)}
+			\arrow{<=>}
+			\chemfig{\charge{90=\:,180=\:,270=\:}{Cl}-[@{clL}]@{cl2}\charge{90:5pt=\chargeColor{+},90=\:,270=\:}{Cl}(-[0]\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[6]Cl))}
+			\arrow{<=>}
+			\chemfig{\charge{45:4pt=\chargeColor{+}}{Cl}}\hspace{.5em}
+			\charge{30:6pt=\chargeColor{-}}{\chemleft[
+			\subscheme{
+			\chemfig{Cl(-[0]Fe(-[0]Cl)(-[2]Cl)(-[6]Cl))}
+			}
+			\chemright]}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=3pt]cl1.east) .. controls +(45:.7cm) and +(135:.7cm) .. (fe);
+				\draw[shorten <=1pt, shorten >= 3pt] (clL) .. controls +(270:.7cm) and +(270:.7cm) .. (cl2);
+			}
+		\end{reaction}}
+	\item[Stadio 2:] \textit{Attacco dell'elettrofilo all'anello}. Lo ione cloronio attacca l'anello formando un carbocatione stabilizzato per risonanza:
+		{\footnotesize
+		\begin{reaction}
+			\AddRxnDesc{Alogenazione dei composti aromatici (stadio 2)}
+			\chemfig{*6(=-=[@{d1}]-=-)} \arrow{0}[,0]\+ \chemfig{@{el}\charge{45:3pt=\chargeColor{+}}{Cl}}
+			\arrow{->[lento]}
+			\chemleft[
+			\subscheme{
+			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]Cl)(-[0]H)-=-)}
+			\arrow{<->}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]Cl)(-[0]H)-@{d3}=-)}
+			\arrow{<->}
+			\chemfig{*6(-=-(-[1]Cl)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
+			}\chemright]
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+			}
+		\end{reaction}}
+	\item[Stadio 3:] \textit{Rimozione di un protone}. Il protone viene strappato dal catione intermedio \ch{FeCl4^{-}} e forma \ch{HCl}, rigenerando il catalizzatore e producendo \iupac{clorobenzene}:
+		{\footnotesize\setchemfig{+ sep left=1em,+ sep right=1em}
+		\begin{reaction}
+			\AddRxnDesc{Alogenazione dei composti aromatici (stadio 3)}
+			\chemfig{*6(=-\charge{140:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]Cl)(-[@{hl}0]@{h}H)-=-)}
+			\arrow{0}[,0]\+
+			\chemfig{\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[@{B}4]\charge{180=\:,90=\:,270=\:}{Cl})(-[6]Cl)}
+			\arrow{->[veloce]}
+			\chemfig{*6(-=-(-Cl)=-=)} \arrow{0}[,0]\+ \chemfig{H-Cl} \+ \chemfig{Fe(-[0]Cl)(-[2]Cl)(-[6]Cl)}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=3pt, shorten >= 3pt] (B.west) .. controls +(90:.5cm) and +(45:.5cm) .. (h);
+				\draw[shorten <=3pt, shorten >= 3pt] (hl) .. controls +(-70:.3cm) and +(0:.3cm) .. (dlc);
+			}
+		\end{reaction}}
+\end{description}
+
+A seconda dell'alogeno utilizzato, otterremo quel determinato \iupac{alogenobenzene} e il suo acido alogenidrico.
+
+\subsection{Nitrazione e solfonazione}
+La reazione di nitrazione e di solfonazione sono molto simili a quella della alogenazione. Per \textbf{la nitrazione}, l'elettrofilo è lo \textbf{\iupac{ione nitronio}}, \ch{NO2^+}, generato per reazione dell'acido nitrico con l'acido solforico.
+
+\paragraph{Meccanismo della formazione dello \iupac{ione nitronio}}
+\begin{reaction}
+	\AddRxnDesc{Formazione ione nitronio}
+	\chemfig{HO_3S@{O2}O-[@{Hl}]@{H}H}
+	\+
+	\chemfig{H-@{O}\charge{90=\:,270=\:}{O}-\charge{0:3pt=\chargeColor{+}}{N}(=[1]O)(-[7]\charge{0:3pt=\chargeColor{-}}{O})}
+	\arrow[,0.6]
+	\chemfig{HS\charge{45:2pt=\chargeColor{-}}{O_4}}
+	\+
+	\chemfig{@{O3}\charge{90:3pt=\chargeColor{+}}{O}(-[3]H)(-[5]H)-[@{N}]\charge{0:3pt=\chargeColor{+}}{N}(=[1]O)(-[@{Ol}7]@{O4}\charge{0:3pt=\chargeColor{-},45=\:,-45=\:,-135=\:}{O})}
+	\arrow[,0.6]
+	\chemfig{H_2O} \+ \chemfig{\charge{0:3pt=\chargeColor{+}}{N}(=[2]O)(=[6]O)}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(90:1cm) and +(45:1cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (Hl).. controls +(-90:.5cm) and +(-45:.5cm) .. (O2);
+		\draw[shorten <=3pt, shorten >= 1pt] (N).. controls +(90:.5cm) and +(45:.5cm) .. (O3);
+		\draw[shorten <=3pt, shorten >= 1pt] (O4).. controls +(180:.5cm) and +(-135:.5cm) .. (Ol);
+	}
+\end{reaction}
+Nel primo passaggio c'è il trasferimento di un protone dall'acido solforico all'acido nitrico e la formazione dell'acido coniugato dell'acido nitrico. Nel secondo passaggio c'è la perdita di una molecola d'acqua e la formazione dello \iupac{ione nitronio}.
+
+La nitrazione è molto importante, in quanto il gruppo nitro può essere risotto a gruppo amminico primario tramite idrogenazione in presenza di catalizzazione come \ch{Ni}, \ch{Pd} o \ch{Pt}.
+{\small
+\begin{reaction}
+	\AddRxnDesc{Riduzione del gruppo nitro}
+	\arrow{0}[,0]
+	\chemfig{[:30]*6(-=(-COOH)-=-(-O_2N)=)}
+	\arrow{0}[,0]\+
+	3\chemfig{H_2}
+	\arrow{->[Ni][(\unit{3\;\atm })]}[,1.4]
+	\chemfig{[:30]*6(-=(-COOH)-=-(-H_2N)=)} \arrow{0}[,0]\+ \chemfig{H_2O}
+\end{reaction}}
+
+\textbf{La solfonazione} del benzene viene condotta usando acido solforico concentrato disciolto in anidride solforica.
+\begin{reaction}
+	\AddRxnDesc{Reazione di solfonazione}
+	\arrow{0}[,0]
+	\chemfig{[:30]*6(-=-=-=)} \arrow{0}[,0]\+ \chemfig{SO_3}
+	\arrow{->[\chemfig{H_2SO_4}]}[,1.4]
+	\chemfig{[:30]*6(-=(-SO_3)-=-=)}
+\end{reaction}
+
+\subsection{Alchilazione e acilazione di Friedel-Crafts}
+L'\textbf{alchilazione e acilazione di Friedel-Crafts} è uno dei metodi per formare un nuovo legame carbonio-carbonio sugli anelli aromatici. Il nucleofilo può essere sia un gruppo alchilico sia un gruppo acilico.
+
+La reazione di alchilazione procede come le altre reazioni di sostituzione elettrofila.
+\begin{description}
+	\item[Stadio 1:] \textit{Formazione dell'elettrofilo}.
+		{\footnotesize
+		\begin{reaction}
+			\AddRxnDesc{Alchilazione dei composti aromatici (stadio 1)}
+			\chemfig{R-@{cl1}\charge{0=\:,90=\:,270=\:}{Cl}} \+{1em,1em} \chemfig{@{fe}Fe(-[0]Cl)(-[2]Cl)(-[6]Cl)}
+			\arrow{<=>}
+			\chemfig{R-[@{clL}]@{cl2}\charge{90:5pt=\chargeColor{+},90=\:,270=\:}{Cl}(-[0]\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[6]Cl))}
+			\arrow{<=>}
+			\chemfig{\charge{45:4pt=\chargeColor{+}}{R}}\hspace{.5em}
+			\charge{30:6pt=\chargeColor{-}}{\chemleft[
+			\subscheme{
+			\chemfig{Cl(-[0]Fe(-[0]Cl)(-[2]Cl)(-[6]Cl))}
+			}
+			\chemright]}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=3pt]cl1.east) .. controls +(45:.7cm) and +(135:.7cm) .. (fe);
+				\draw[shorten <=1pt, shorten >= 3pt] (clL) .. controls +(270:.7cm) and +(270:.7cm) .. (cl2);
+			}
+		\end{reaction}}
+	\item[Stadio 2:]  \textit{Attacco dell'elettrofilo all'anello}.
+		{\footnotesize
+		\begin{reaction}
+			\AddRxnDesc{Alchilazione dei composti aromatici (stadio 2)}
+			\chemfig{*6(=-=[@{d1}]-=-)} \arrow{0}[,0]\+ \chemfig{@{el}\charge{45:3pt=\chargeColor{+}}{R}}
+			\arrow{->[lento]}
+			\chemleft[
+			\subscheme{
+			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]R)(-[0]H)-=-)}
+			\arrow{<->}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]R)(-[0]H)-@{d3}=-)}
+			\arrow{<->}
+			\chemfig{*6(-=-(-[1]R)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
+			}\chemright]
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+			}
+		\end{reaction}}
+	\item[Stadio 3:]  \textit{Rimozione di un protone}.
+		{\footnotesize\setchemfig{+ sep left=1em,+ sep right=1em}
+		\begin{reaction}
+			\AddRxnDesc{Alchilazione dei composti aromatici (stadio 3)}
+			\chemfig{*6(=-\charge{140:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]R)(-[@{hl}0]@{h}H)-=-)}
+			\arrow{0}[,0]\+
+			\chemfig{\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[@{B}4]\charge{180=\:,90=\:,270=\:}{Cl})(-[6]Cl)}
+			\arrow{->[veloce]}
+			\chemfig{*6(-=-(-R)=-=)} \arrow{0}[,0]\+ \chemfig{H-Cl} \+ \chemfig{Fe(-[0]Cl)(-[2]Cl)(-[6]Cl)}
+			\chemmove[green!60!black!70]{
+				\draw[shorten <=3pt, shorten >= 3pt] (B.west) .. controls +(90:.5cm) and +(45:.5cm) .. (h);
+				\draw[shorten <=3pt, shorten >= 3pt] (hl) .. controls +(-70:.3cm) and +(0:.3cm) .. (dlc);
+			}
+		\end{reaction}}
+\end{description}
+
+L'alchilazione di Friedel-Crafts presenta numerose limitazioni. La prima è dovuta alle trasposizioni del gruppo alchilico, questo si verifica perché non sempre il carbocatione che si ottiene è quello più stabile per questo il carbocatione si arrangia in modo da diventare stabile questo processo viene chiamato \textbf{trasposizione}. In pratica, i carbocationi primari si trasporranno sempre in secondari e terziari.
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Reazione di alchilazione dove il gruppo alchilcio si traspone}
+	\arrow{0}[,0]
+	\chemfig{*6(-=-=-=)} \arrow{0}[,0]\+ \chemfig{CH_3CH_2CH_2Cl}
+	\arrow{->[\chemfig{AlCl_3}]}
+	\chemfig{*6(-=-=-=)} \arrow{0}[,0]\+ \chemfig{CH_3CH_2\chemabove{C}{\color{red}\scriptstyle\oplus}H_2}
+	\arrow{->[*{0}trasposizione]}[-90]
+	\subscheme{
+		\chemfig{*6(-=-=-=)} \arrow{0}[,0]\+
+		\chemfig{CH_3\chemabove{C}{\color{red}\scriptstyle\oplus}HCH_3}
+	}
+	\arrow(--.-20){->}[-180]
+	\chemname{\chemfig{*6(-=-=(-(-[:30])(-[:150]))-=)}}{Cumene}
+\end{reaction}
+\chemnameinit{}
+La seconda limitazione è che fallisce sempre quando sull'anello ci sono gruppi elettron-attrattori, infine, la terza limitazione è che la reazioni non si ferma con la prima sostituzione ma continua.
+
+
+L'\textbf{acilazione} è la reazione tra un idrocarburo aromatico con un alogeno acilico in presenza di cloruro di alluminio, che da come prodotto un chetone. Questo tipo di reazione non soffre del terzo inconveniente dell'alchilazione perché alchilbenzene, molto spesso, è meno reattivo del reagente iniziale.
+
+\paragraph{Formazione dello \iupac{ione acilio}}
+\begin{reaction}
+	\AddRxnDesc{Formazione dello ione acilio}
+	\chemfig{R-C(=[2]O)-Cl} \+ \chemfig{Al(-[2]Cl)(-[6]Cl)-Cl}
+	\arrow{<=>}
+	\chemfig{R-C(=[2]O)-[@{cll}]@{cl}\chemabove{Cl}{\color{red}\scriptstyle\oplus}-\charge{45:3pt=\chargeColor{-}}{Al}(-[2]Cl)(-[6]Cl)-Cl}
+	\arrow[-90]
+	\chemfig{R-\charge{45:4pt=\chargeColor{+}}{C}(=[2]O)}\hspace{.5em}
+	\charge{30:6pt=\chargeColor{-}}{\chemleft[
+	\subscheme{
+	\chemfig{Cl(-[0]Fe(-[0]Cl)(-[2]Cl)(-[6]Cl))}
+	}
+	\chemright]}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (cll).. controls +(-90:.5cm) and +(-90:.5cm) .. (cl);
+	}
+\end{reaction}
+
+\paragraph{Esempio di acilazione}
+\begin{reaction}
+	\AddRxnDesc{Reazione di aciliazione}
+	\arrow{0}[,0]
+	\chemfig{[:30]*6(-=(-\charge{45:4pt=\chargeColor{+}}{C}(=[2]O))-=-=)} \+{,,1.7em} \chemfig{[:30]*6(-=-=-=)}
+	\arrow
+	\chemfig{[:30]*6(-=(-C(=[2]O)-*6(-=-=-=))-=-=)}
+\end{reaction}

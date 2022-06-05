@@ -1,0 +1,109 @@
+\chapter*{Idrocarburi}
+% Introduzione idrocarburi
+
+Gli idrocarburi sono una famiglia di composti che contengono soltanto \elementsymbol{Carbon} e \elementsymbol{Hydrogen}. Questi si dividono in classi, a seconda del tipo di legame carbonio-carbonio presente nella molecola.
+
+Gli \textbf{idrocarburi saturi} contengono soltanto legami singoli carbonio-carbonio. Gli \textbf{idrocarburi insaturi} contengono legami multipli carbonio-carbonio (doppi o tripli). Gli \textbf{idrocarburi aromatici} sono una classe di composti ciclici, che hanno come base simile il benzene.
+Tutti gli idrocarburi li possiamo trovare forma lineare o ciclica.
+
+% Grafico degli idrocarburi
+\begin{figure}[hb]
+	\centering
+	\tikzset{%
+	>={Latex[width=2mm,length=2mm]},
+	% Specifications for style of nodes:
+	base/.style = {rectangle, rounded corners, draw=black,
+			minimum width=3cm, minimum height=1cm,node distance=2cm,
+			text centered, font=\sffamily},
+	process/.style = {base, minimum width=2cm, fill=orange!15,
+			font=\ttfamily},
+	}
+	\begin{tikzpicture}[node distance=1.5cm,
+			every node/.style={fill=white, font=\sffamily}, align=center]
+
+		% Idrocarburi
+		\node (start)[process]{Idrocarburi};
+
+		% Alifatici
+		\node (alifatici)[process,below of=start, xshift=4cm]{Alifatici\\ \ch{R-R}};
+		\node (aciclici)[process,below of=alifatici,xshift=-2.5cm]{Aciclici};
+		\node (ciclici)[process,below of=alifatici,xshift=1.5cm]{Ciclici};
+
+		\node (saturiA)[process,below of=aciclici]{Saturi};
+		\node (insaturiA)[process,below of=aciclici,xshift=-3cm]{Insaturi};
+
+		\node (saturiC)[process,below of=ciclici,xshift=-1.5cm]{Saturi};
+		\node (insaturiC)[process,below of=ciclici,xshift=1.5cm]{Insaturi};
+
+		\node (alcheni)[process,below of=insaturiA,xshift=-3cm]{Alcheni\\ (\autoref{chp:alcheni})};
+		\node (alcheniForm)[process,below of=alcheni]{\ch{R1-C=C-R2}};
+
+		\node (alchini)[process,below of=insaturiA]{Alchini\\ (\autoref{chp:Alchini})};
+		\node (alchiniForm)[process,below of=alchini]{\ch{R1-C+C-R2}};
+
+		\node (alcani)[process,below of=saturiA]{Alcani\\ (\autoref{chp:alcani})};
+		\node (alcaniForm)[process,below of=alcani]{\ch{R1-C-C-R2}};
+
+		\node (cicloalcani)[process,below of=saturiC,xshift=.6cm]{Cicloalchani\\ (\autoref{sec:cicloalcani})};
+		\node (cicloalcaniForm)[process,below of=cicloalcani]{\chemfig[atom sep=0.7em]{*6(------)}};
+
+		\node (cicloalcheni)[process,below of=insaturiC,xshift=.8cm]{Cicloalcheni};
+		\node (cicloalcheniForm)[process,below of=cicloalcheni]{\chemfig[atom sep=0.7em]{*6(-=----)}};
+
+
+		% Aromatici
+		\node (aromatici)[process,below of=start, xshift=-4cm]{Aromatici\\ \chemfig[atom sep=0.7em]{*6(-=-=-=-)}};
+		\node (monociclici)[process,below of=aromatici,xshift=2cm]{Monociclici \\ (\autoref{chp:aromatici})};
+		\node (monocicliciForm)[process,below of=monociclici,xshift=-2cm]{\chemfig[atom sep=0.7em]{*6(-=-=-=-)}};
+
+		\node (policiclici)[process,below of=aromatici,xshift=-2cm]{Policiclici};
+		\node (policicliciForm)[process,below of=policiclici,xshift=-.5cm]{\chemfig[atom sep=0.7em]{*6(-=*6(-=-=-=-)-=-=-)}};
+
+
+		% Collegamenti tra nodi
+		\draw[->] (start) -- +(0.0,-1) -| (alifatici);
+		\draw[->] (start) -- +(0.0,-1) -| (aromatici);
+
+		\draw[->] (alifatici) -- +(0.0,-1) -| (ciclici);
+		\draw[->] (alifatici) -- +(0.0,-1) -| (aciclici);
+
+		\draw[->] (aromatici) -- +(0.0,-1) -| (monociclici);
+		\draw[->] (monociclici) -- +(0.0,-1) -| (monocicliciForm);
+		
+		\draw[->] (aromatici) -- +(0.0,-1) -| (policiclici);
+		\draw[->] (policiclici) -- +(0.0,-1) -| (policicliciForm);
+
+		\draw[->] (ciclici) -- +(0.0,-1) -| (saturiC);
+		\draw[->] (ciclici) -- +(0.0,-1) -| (insaturiC);
+
+		\draw[->] (aciclici) -- +(0.0,-1) -| (saturiA);
+		\draw[->] (aciclici) -- +(0.0,-1) -| (insaturiA);
+
+		\draw[->] (insaturiA) -- +(0.0,-1) -| (alcheni);
+		\draw[->] (alcheni) --  (alcheniForm);
+
+		\draw[->] (insaturiA) -- +(0.0,-1) -| (alchini);
+		\draw[->] (alchini) --  (alchiniForm);
+
+		\draw[->] (saturiA) -- (alcani);
+		\draw[->] (alcani) -- (alcaniForm);
+
+		\draw[->] (saturiC) -- +(0.0,-1) -| (cicloalcani);
+		\draw[->] (cicloalcani) -- (cicloalcaniForm);
+
+		\draw[->] (insaturiC) -- +(0.0,-1) -| (cicloalcheni);
+		\draw[->] (cicloalcheni) -- (cicloalcheniForm);
+
+	\end{tikzpicture}
+\end{figure}
+
+\chapter{Alcani}\label{chp:alcani}
+\subimport*{./}{Sezione_1.tex} % Struttura degli alcani
+\subimport*{./}{Sezione_2.tex} % Isomeria costituzionale
+\subimport*{./}{Sezione_3.tex} % Cicloalcani
+\subimport*{./}{Sezione_4.tex} % Conformazione di alcani e cicloalcani
+\subimport*{./}{Sezione_5.tex} % Isomeria cis-trans
+\subimport*{./}{Sezione_6.tex} % Proprietà fisiche di alcani e cicloalcani
+\subimport*{./}{Sezione_7.tex} % Reazioni chimiche
+
+

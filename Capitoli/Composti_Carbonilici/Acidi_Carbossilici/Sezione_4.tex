@@ -1,0 +1,64 @@
+\section{Cloruri acilici}\label{sec:cloruriAcilici}
+
+% Alcolisi
+% Amminolisi
+
+Gli \textbf{alogenuri acilici} sono gli alogenuri di un acido carbossilico, ovvero il l'ossidrile dell'acido è sostituito da un alogeno. Gli alogenuri più comuni sono i cloruri acilici.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		\chemfig{H_3C-[:30]C(=[2]O)-[:-30]Cl} & \chemfig{*6(-=-(-(=[2]O)-[:-30]Cl)=-=)} \\
+		Cloruro di acetile                    & Cloruro di benzoile                     \\
+	\end{tabular}
+\end{figure}
+
+\subsection{Idrolisi dei cloruri acilici}\label{sec:idrolisiAC-Cl}
+I cloruri acilici a basso peso molecolare reagiscono rapidamente con l'acqua per dare acidi carbossilici e \ch{HCl} mentre quelli di maggiore peso molecolare reagiscono meno rapidamente perché sono meno solubili in acqua. Non hanno bisogno di catalisi per reagire.
+
+
+\begin{reaction}
+	\AddRxnDesc{Idrolisi alogenuri acilici}
+	\arrow{0}[,0]
+	% - 1 reazione
+	\chemfig{!\DerAc Cl} \arrow{0}[,0]\+ \chemfig{H-[:30]@{Oh}\charge{90=\:,270=\:}{O}-[:-30]H}
+	\arrow{<=>}
+	% - 2 reazione
+	\chemfig{R-C(-[2]\ChargeO)(-[6]@{O2}\charge{45:3pt=\chargeColor{+},270=\:}{O}(-[@{hl}:-30]@{h}H)(-[:210]H))-Cl}
+	\arrow{->[\chemfig{H-[:30]@{Oh2}\charge{90=\:,270=\:}{O}-[:-30]H}]}[,1.4]
+	% - 3 reazione
+	\chemfig{R-C(-[@{Ol2}2]@{O3}\ChargeO)(-[6]\charge{180=\:,270=\:}{O}(-[:-30]H))-[@{Cll}]@{Cl}Cl}
+	\arrow{->}[-90]
+	\chemfig{R-[:30]C(=[2]O)-[:-30]OH} \arrow{0}[,0]\+ \chemfig{\charge{45:3pt=\chargeColor{-}}{Cl}}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (Oh).. controls +(270:1.2cm) and +(270:1.2cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(180:.5cm) and +(180:.5cm) .. (O);
+		\draw[shorten <=3pt, shorten >= 1pt] (Oh2).. controls +(270:1cm) and +(0:1cm) .. (h);
+		\draw[shorten <=3pt, shorten >= 1pt] (hl).. controls +(45:.5cm) and +(0:.3cm) .. (O2);
+		\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(0:.5cm) and +(0:.5cm) .. (Ol2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Cll).. controls +(90:.5cm) and +(135:.5cm) .. (Cl);
+	}
+\end{reaction}
+Nel primo passaggio si ha l'attacco dell'acqua al cloruro acilico con formazione dell'intermedio tetraedrico. Successivamente abbiamo la deprotonazione dell'acqua e infine abbiamo la riformazione del doppio legame carbonilico e l'uscita del cloro che in soluzione acida si trasformerà in acido cloridrico.
+
+\subsection{Alcolisi}
+I cloruri acilici reagiscono con gli alcoli/fenoli per dare un estere e \ch{HCl}. Il meccanismo è uguale alla idrolisi (\autoref{sec:idrolisiAC-Cl}).
+\begin{reaction}
+\AddRxnDesc{Alcolisi dei cloruri acilici}
+\arrow{0}[,0]
+\chemfig{!\DerAc Cl} \arrow{0}[,0]\+ \chemfig{R-OH}
+\arrow
+\chemfig{!\DerAc OR} \arrow{0}[,0]\+ \ch{HCl}
+\end{reaction}
+
+\subsection{Amminolisi}
+I cloruri acilici reagiscono con l'ammoniaca e con ammine primarie e secondarie per formare ammidi. Per la completa conversione del cloruro acilico, vengono due moli di ammoniaca/ammina: una per formare l'ammide e l'altra per neutralizzare il cloruro.
+\begin{reaction}
+	\AddRxnDesc{Alcolisi dei cloruri acilici}
+	\arrow{0}[,0]
+	\chemfig{!\DerAc Cl} \arrow{0}[,0]\+ 2 \chemfig{R-NH_2}
+	\arrow
+	\chemfig{!\DerAc NH_2} \arrow{0}[,0]\+ \chemfig{\charge{45:3pt=\chargeColor{+}}{NH_4}-[,.8,,,draw=none]\charge{45:3pt=\chargeColor{-}}{Cl}}
+\end{reaction}

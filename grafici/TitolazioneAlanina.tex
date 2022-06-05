@@ -1,0 +1,47 @@
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw[-latex] (0,0) -- (8,0) node[midway, yshift=-1cm] {Equilaventi di base (\ch{OH-})} ; % - asse x
+    \draw[-latex] (0,0) -- (0,8) node[midway,rotate=90,yshift=1cm] {\pH}; % - asse y
+
+    % - label asse y
+    \foreach \x\y in  {0/0,1.4/0.25,2.8/0.5,4.2/1,5.8/1.5,7/2}
+      {
+        \begin{scope}[on background layer]
+          \draw[shift={(\x,0)},color=gray!40] (0,0) -- (0,7.8cm);
+        \end{scope}
+        \draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below]{$\y$};
+      }
+    % - label asse y
+    \foreach \x\y in  {0/0,1.16/2,2.35/4,3.48/6,4.64/8,5.8/10,7/12}
+      {
+
+        \draw[shift={(0,\x)},color=black] (3pt,0pt) -- (-3pt,0pt);
+        \draw[shift={(0,\x)},color=black] (0pt,0pt) -- (-3pt,0pt) node[left]{$\y$};
+        \begin{scope}[on background layer]
+          \draw[shift={(0,\x)},color=gray!40] (0,0) -- (7.8cm,0);
+        \end{scope}
+      }
+    % - curva titolazione
+    \draw[purple] (0,0) .. controls +(60:1.2cm) .. (2.8,1.337) coordinate (a1) .. controls +(10:1cm) .. (4,3.44) coordinate (a2).. controls +(80:1.8cm) .. (6,5.53) coordinate (a3) .. controls +(10:1.3cm) .. (7.5,7.5);
+
+    % - puntini 
+    \foreach \x in {1,2,3}
+    \fill[purple] (a\x) circle (2pt);
+
+    \node (a) at (2.5,2.5) {\scriptsize \chemfig{CH_3CHCOOH(-[6,,3]\charge{180:3pt=\chargeColor{+}}{N}H_3)}};
+    \draw[-latex,shorten <=-2pt, shorten >= 20pt,blue] (a.west) .. controls +(210:1cm) and +(80:1cm) .. (0,0);
+
+    \node (a) at (2,6) {\scriptsize \chemfig{CH_3CHCO\charge{45:3pt=\chargeColor{-}}{O}(-[6,,3]\charge{180:3pt=\chargeColor{+}}{N}H_3)}};
+    \draw[-latex,shorten <=-2pt, shorten >= 3pt,blue] (a) .. controls +(270:1cm) and +(135:1cm) .. (a2);
+
+    \node (a) at (7,3) {\scriptsize \chemfig{CH_3CHCO\charge{45:3pt=\chargeColor{-}}{O}(-[6,,3]NH_2)}};
+    \draw[-latex,shorten <=-2pt, shorten >= 20pt,blue] (a) .. controls +(90:1cm) and +(-45:1.5cm) .. (7,7);
+
+    \draw[latex-,shorten <=4pt, shorten >= 0pt,blue] (a1) .. controls +(-45:0.6cm) .. +(1cm,-0.4cm) node[right,black] {\scriptsize \pKa[1]\ = 2,34};
+    \draw[latex-,shorten <=4pt, shorten >= 0pt,blue] (a2) .. controls +(45:0.6cm) .. +(1cm,0.4cm) node[right,black] {\scriptsize p\textit{I} = 6,02};
+    \draw[latex-,shorten <=4pt, shorten >= 0pt,blue] (a3) .. controls +(135:0.6cm) .. +(-1cm,0.4cm) node[left,black] {\scriptsize \pKa[2]\ = 9.69};
+  \end{tikzpicture}
+  \caption{Curva di titolazione dell'alanina}
+\end{figure}

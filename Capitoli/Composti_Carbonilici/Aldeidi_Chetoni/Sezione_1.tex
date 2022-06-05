@@ -1,0 +1,60 @@
+\section{Struttura}
+
+Gli aldeidi e i chetoni sono composti caratterizzati dalla presenza del \textbf{gruppo carbonile}. Le aldeide hanno il carbonile in posizione terminale, mentre nei i chetoni si trova all'interno della catena. Il gruppo \ch{-CHO} delle aldeidi si chiama \textbf{gruppo formilico}.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\tikzset{wv/.style={decorate,decoration=complete sines}}
+	\begin{tabular}{cccc}
+		\chemfig{C(=[2]O)(-[:210])(-[:-30])} & \chemfig{C(=[2]O)(-[:210]R)(-[:-30]H)} & \chemfig{C(=[2]O)(-[:210]R)(-[:-30]R)} & \chemfig{C(=[2]O)(-[:210,0.7]((-[:120,0.5,,,wv])-[:-60,0.5,,,wv]))(-[:-30]H)} \\
+		carbonile                            & aldeide                                & chetone                                & formile                                                                       \\
+	\end{tabular}
+\end{figure}
+
+Il carbonile ha struttura planare perché il carbonio è ibridato \(sp^2\). Il carbonio del carbonile ha una parziale carica positiva sia per effetto induttivo, dovuto all'elettronegatività dell'ossigeno, sia per risonanza.
+
+\begin{center}
+	\setlength{\tabcolsep}{1cm}
+
+	\begin{tabular}{cc}
+		\schemestart
+		\chemleft[\subscheme{
+		\chemfig{@{C}C(=[@{O}2]O)(-[:210])(-[:-30])} \arrow{<->}
+		\chemfig{\charge{30:3pt=\chargeColor{+}}{C}(-[2]\charge{30:3pt=\chargeColor{-}}{O})(-[:210])(-[:-30])}
+		}\chemright]
+		\schemestop
+		\chemmove[green!60!black!70]{
+			\draw[shorten <=2pt, shorten >= 2pt] (C).. controls +(150:.5cm) and +(180:.5cm) .. (O);
+		} &
+		\chemfig{\charge{30:4pt=\color{red}\(\scriptstyle\delta^+\)}{C}(=[2]\charge{30:4pt=\color{blue}\(\scriptstyle\delta^-\)}{O})(-[:210])(-[:-30])} \\
+	\end{tabular}
+\end{center}
+
+\noindent Le molecole di aldeidi e chetoni hanno tre punti reattivi: ossigeno, carbonio e \(\alpha\)-idrogeno.
+\begin{enumerate}
+	\item L'ossigeno del carbonio può protonarsi in ambiente acido
+	\item Il carbonio del carbonile può subire addizione nucleofila
+	\item L'idrogeno in posizione \(\alpha\) è parzialmente acido è può essere strappato nelle reazioni cheto-enoliche.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\schemestart
+	\chemfig{@{C}C(=[2]@{O}O)(-[:210]C(-[6]@{Ha}H)(-[4]))(-[:-30])}
+	\arrow(@c1--){0}[45,0.5] \chemfig{@{Hc}\charge{35:3pt=\chargeColor{+}}{H}}
+	\arrow(@c1--){0}[,0.5] \chemfig{@{nu}\charge{90:2pt=\:}{Nu}}
+	\arrow(@c1--){0}[-45,0.5] \chemfig{@{B}\charge{180:2pt=\:}{B}}
+	\schemestop
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(90:1cm) and +(180:1cm) .. (Hc);
+		\draw[shorten <=5pt, shorten >= 1pt] (nu).. controls +(90:1cm) and +(45:1cm) .. (C);
+		\draw[shorten <=5pt, shorten >= 1pt] (B).. controls +(180:1cm) and +(0:1cm) .. (Ha);
+	}
+\end{figure}
+
+A seguito della polarizzazione del legame \ch{C=O}, la maggior parte delle reazioni dei composti carbonilici comporta l'attacco di un nucleofilo sull'atomo di carbonio carbonilico.
+In aggiunta, la polarizzazione del legame \ch{C=O} influenza le proprietà fisiche dei composti carbonilici come il punto di ebollizione o la solubilità.
+
+Il punto di ebollizione di aldeidi e chetoni è più alto degli idrocarburi ma più basso degli alcoli. Questo è dovuto dalla polarità del legame \ch{C=O} che polarizza la molecola. Questa polarizzazione tende ad associarsi la parte positiva di una molecola con la parte negativa di un'altra. I p.e. sono più bassi degli alcoli perché non avendo gruppi \ch{-OH} non possono creare legami idrogeno tra le molecole ma li possono accettare, questo fa si che composti carbonilici a basso peso molecolare sono solubili in acqua.

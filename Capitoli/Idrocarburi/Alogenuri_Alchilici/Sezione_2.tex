@@ -1,0 +1,141 @@
+\section{Reazione di \texorpdfstring{\(\beta\)}{β}-eliminazione (\texorpdfstring{\mech[e]}{E})}
+Quando il substrato ha almeno un atomo d'idrogeno adiacente al carbonio che lega con il gruppo uscente reagisce con un nucleofilo, sono possibili due percorsi in competizione: la sostituzione o l'eliminazione.
+
+\begin{reaction}
+	\setchemfig{+ sep left=1em, + sep right=1em,double bond sep=2pt}
+	\AddRxnDesc{Reazione generale \mech[e]}
+	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]L))} \+
+	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{Nu}}
+	\arrow(@c1.15--.180){->[*{0}\mech]}[45]
+	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]Nu))} \+
+	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
+	\arrow(@c1.-15--.180){->[*{0}E]}[-45]
+	\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \+
+	\chemfig{Nu(-[0]H)} \+ \chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
+\end{reaction}
+
+Nella reazione di sostituzione, il nucleofilo si comporta come una base e strappa un protone al substrato sul carbonio \(\beta\), quello adiacente al carbonio che porta il gruppo uscente, e provoca l'eliminazione di \ch{NuH} formando un doppio legame al posto dei legami con i due frammenti espulsi. Per questo motivo è chiamata \(\beta\)-eliminazione. I meccanismi di eliminazione sono due e si indicano con \mech[e1] e \mech[e2].
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Meccanismo \texorpdfstring{\mech[e1]}{E1}}
+Le \mech[e1] sono \textit{reazioni di eliminazione monomolecolare}. È classificata \textit{monomolecolare} perché nello stadio lento della reazione è presente una sola molecola e quindi la reazione è del primo ordine.
+\begin{equation*}
+	\text{Velocità} = k\left[\text{Alogenoalcano}\right]
+\end{equation*}
+La reazione avviene in due stadi, uno lento che determina la velocità della reazione e uno veloce nel quale interviene una base che deve essere debole o diluita per non interferire nel primo stadio.
+
+\begin{reaction}
+	\setchemfig{+ sep left=1em, + sep right=1em,double bond sep=1pt}
+	\AddRxnDesc{Reazione generale \mech[e1]}
+	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[@{lL}0]@{L}L))}
+	\arrow{<=>[lento]}
+	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]\charge{0:4pt=\chargeColor{+}}{C}(-[2])(-[6]))} \+
+	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
+	\arrow(@c2.15--.180){->[*{0}\chemfig{\charge{180:2pt=\:}{Nu}}]}[45]
+	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]Nu))} \qquad\quad \color{blue}\mech[1]
+	\arrow(@c2.-15--.180){->[*{0}\chemfig{-[,0.5]\charge{30:4pt=\chargeColor{+}}{H}}]}[-45]
+	\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \+ \chemfig{\charge{30:4pt=\chargeColor{+}}{H}}	\qquad \color{blue}\mech[e1]
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 3pt] (lL) .. controls +(90:.5cm) and +(115:.5cm) .. (L);
+	}
+\end{reaction}
+
+Nel primo stadio c'è la formazione del carbocatione, per questo motivo sono tipiche si alogenuri o alcoli terziari, benzilici, allilici che possono produrre carbocationi stabili. Dato che il carbocatione può dare sia reazione \mech[1] che \mech[e1], a seconda delle condizioni del sistema si avrà un prodotto rispetto all'altro. Se si possono formare alcheni diversi, sono favoriti quelli più sostituti perché sono più stabili, questa è nota come \textbf{regola di Saytzev}.
+
+\begin{center}
+	\setchemfig{
+		double bond sep=2pt,
+		cram width=2pt,
+		cram dash width=0.2pt,
+		cram dash sep=.5pt
+	}
+	\begin{endiagram}[scale=1.5,debug=false,l-offset=-1,r-offset=1]
+		\ENcurve{0,5[1],3[1],4[1],-2[2]}
+		\ShowEa[label,label-side=left,max=all,label-pos =0.4]
+
+		\draw[below,font=\ttfamily] (N1-1) node[xshift=.8cm] {\tiny \ch{"\chemfig{@{nu}\charge{0=\:,50:2pt=\chargeColor{-}}{Nu}}" + "\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[@{lL}0]@{L}L))}"}};
+		\draw[below,font=\ttfamily] (N1-3) node {\tiny \ch{"\chemfig{C(-[2]H)(-[4])(-[6])(-[0]\charge{30:4pt=\chargeColor{+}}{C}(-[2])(-[6]))}"
+		+ "\chemfig{@{nu}\charge{180=\:}{Nu}}"
+		+ "\chemfig{\charge{180=\:,30:3pt=\chargeColor{-}}{L}}"}};
+		\draw[above right,font=\ttfamily] (N1-5) node {\tiny \ch{"\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))}"}};
+	\end{endiagram}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Meccanismo \texorpdfstring{\mech[e2]}{E2}}
+Le \textbf{\mech[e2]} sono \textit{reazioni di eliminazione bimolecolare}. È classificata \textit{bimolecolare} perché nello stadio lento della reazione sono coinvolte due molecole e quindi la reazione ha una cinetica del secondo ordine.
+\begin{equation*}
+	\text{Velocità} = k\left[\text{Alogenoalcano}\right]\left[\text{Base}\right]
+\end{equation*}
+La velocità della reazione dipende sia dalla concentrazione del nucleofilo sia dalla concentrazione della base e della sua natura.
+
+Le \mech[e2] avvengono con alogenuri primari, secondari, terziari, allilici e benzilici purché in presenza di una base forte e concentrata. Anche qui vale la \textit{regola di Saytzev}, ovvero l'alchene più sostituito è quello più favorito. Inoltre si possono formare anche gli isomeri \cis-\trans, ed è favorito quello \trans\;perché quello più stabile. Anche in questo caso, accanto all'eliminazione, può avvenire la sostituzione \mech[2], però se la base è ingombrata la sostituzione non avviene.
+
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Reazione generale \mech[e2]}
+	\chemfig{C(-[@{hl}3]@{h}H)(>:[:200]R)(<[:230]R')(-[@{clc}0]C(-[@{Ll}7]@{L}L)(>:[:20]R')(<[:50]R))}
+	\+
+	\chemfig{@{nu}\charge{180:2pt=\:,50:2pt=\chargeColor{-}}{B}}
+	\arrow(.mid east--.mid west){->}
+	\chemname{\chemfig{C(-[3]R)(-[5]R')(=[0]C(-[1]R)(-[7]R'))}}{\cis}
+	\+
+	\chemname{\chemfig{C(-[3]R')(-[5]R)(=[0]C(-[1]R')(-[7]R))}}{\trans}
+	\+
+	\chemfig{\charge{180:2pt=\:,50:2pt=\chargeColor{-}}{L}}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=1pt, shorten >= 3pt] ([xshift=-4pt]nu.north west) .. controls +(90:1cm) and +(45:1cm) .. (h);
+		\draw[shorten <=3pt, shorten >= 3pt] (hl) .. controls +(45:.5cm) and +(115:.5cm) .. (clc);
+		\draw[shorten <=3pt, shorten >= 3pt] (Ll) .. controls +(-135:.5cm) and +(180:.5cm) .. (L);
+	}
+\end{reaction}
+\chemnameinit{}
+
+La reazione procede in unico stadio nel quale il nucleofilo\textbackslash base strappa il protone dal carbonio \(\beta\) mentre gli elettroni del legame \ch{C-H} vanno a formare il doppio legame e il gruppo uscente viene espulso.
+
+\begin{center}
+	\setchemfig{
+		atom sep=2em,
+		double bond sep=2pt,
+		cram width=2pt,
+		cram dash width=0.2pt,
+		cram dash sep=.5pt
+	}
+	\begin{endiagram}[scale=1.5,debug=false,l-offset=-1,r-offset=1]
+		\ENcurve{0,4[1],-2[2]}
+		\ShowEa[label]
+
+		\draw[below,font=\ttfamily] (N1-1) node[xshift=.3cm] {\tiny \ch{"\chemfig{C(-[3]@{h}H)(>:[:200])(<[:230])(-[0]C(-[7]L)(>:[:20])(<[:50]))}"}};
+		\draw[above right,font=\ttfamily] (N1-3) node {\tiny \ch{"\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))}"}};
+	\end{endiagram}
+\end{center}
+
+Le \mech[e2] per essere veloci devono avere gli atomi di idrogeno e del gruppo uscente in posizione anticoplanare (ovvero in direzione opposta).
+
+Quando le \mech[e2] si effettuano sui cicli, la reazione è molto rallentata, perché per far si che la reazione avvenga i due atomi si devono trovare in posizione \trans\;ed essere assiali. Visto che la posizione più stabile è quella di avere i sostituenti in posizione  equatoriale, il ciclo deve cambiare conformazione in quella meno stabile.
+\begingroup
+\chemnameinit{\chemfig[cram width=2pt,bond join=true,atom sep=3em]{?<[:-70]-[:10,,,,line width=2pt](-[@{Hl}2,.5]@{H}H)(-[:-70,.5]H)>[@{l}:-20](-[@{Ll}6,.5]@{L}L)(-[:10,.5]H)-[:110]-[:190]?}}
+\begin{reaction}
+	\AddRxnDesc{Reazione generale \mech[e2] sugli anelli}
+	\arrow{0}[,0]
+	\chemname{\chemfig[cram width=2pt,bond join=true,atom sep=3em]%
+	{?-[:-10]-[:20](-[2,.5]H)(-[:-20,.5]L)<[:-110]-[:-190,,,,line width=2pt]>[:200]?}}{ciclo equatoriale}
+	\arrow{<<->}
+	\subscheme{
+	\chemname{\chemfig[cram width=2pt,bond join=true,atom sep=3em]%
+	{?<[:-70]-[:10,,,,line width=2pt](-[@{Hl}2,.5]@{H}H)(-[:-70,.5]H)>[@{l}:-20](-[@{Ll}6,.5]@{L}L)(-[:10,.5]H)-[:110]-[:190]?}}{ciclo assiale}
+	\arrow{0}[135,0.4]
+	\chemfig{H@{O}\charge{0:2pt=\:,35:4pt=\chargeColor{-}}{O}}
+	}
+	\arrow
+	\chemfig{*6(-=----)}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=4pt, shorten >= 3pt] (O) .. controls +(0:1cm) and +(90:1cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 3pt] (Hl) .. controls +(0:.5cm) and +(90:.5cm) .. (l);
+		\draw[shorten <=3pt, shorten >= 3pt] (Ll) .. controls +(180:.5cm) and +(160:.5cm) .. (L);
+	}
+\end{reaction}
+\chemnameinit{}
+\endgroup

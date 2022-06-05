@@ -1,0 +1,346 @@
+% !TeX root = main.tex
+\documentclass[
+    a4paper,
+    12pt,
+    oneside,
+    % draft
+    ]{book} % draft per revisione
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI IF-THEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifthen}
+\usepackage{xstring}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI MATEMATICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools,amsthm}
+\usepackage{mathabx}
+\usepackage{nicefrac}
+\usepackage{siunitx} % UNITA' DI MISURA SISTEMA INTERNAZIONALE
+\sisetup{
+    per-mode=symbol,
+    exponent-product=\cdot,
+    output-decimal-marker={,},
+    group-four-digits=true
+}
+\DeclareSIUnit{\atm}{atm}
+\usepackage{stackengine}
+\usepackage{bm} % GRASSETTO SIMBOLI MATEMATICI
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACRONIMI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{acronym}
+\acrodef{VSEPR}{Valence Shell Electron Pair Repulsion}    
+\acrodef{SEA}{Sostituzione Elettrofile Aromatica}
+\acrodef{DMSO}{Dimetilsolfossido}
+\acrodef{DMF}{Dimetilformammide}
+\acrodef{PCC}{clorocromato di piridinio}
+\acrodef{THF}{tetraidrofurano}
+
+\acrodef{DNA}{acido deossiribonucleico}
+\acrodef{RNA}{acido ribonucleico}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI PUNTI ELENCO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STILE PAGINA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top=1in,bottom=1in,right=.75in,left=.75in]{geometry} % GEOMETRIA DELLA PAGINA
+\usepackage{fancyhdr} % PIE' DI PAGINA E INTESTAZIONE
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\setlength{\headheight}{15pt}
+\fancyhead[LO]{\thechapter\ \textsc{\leftmark}}
+\fancyhead[RO]{\textsc{Mattia Frigiola}}
+\renewcommand{\chaptermark}[1]{\markboth{{#1}}{}}
+\fancyfoot{}
+\fancyfoot[C,CO]{\thepage} % clear all footer fields
+
+\usepackage{titlesec}
+\makeatletter
+\titleformat{\part}[display]{\centering\Huge\bfseries\scshape}{\partname~\thepart}{1\baselineskip}{}
+\titleformat{\chapter}[display]{\huge\bfseries\scshape}{\@chapapp~\thechapter}{1\baselineskip}{}
+% \titleformat{\section}{\large\bfseries\scshape}{\thesection}{1em}{}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage{makeidx} % INDICE ANALITICO
+% \makeindex
+\usepackage{setspace}
+\usepackage[titles]{tocloft} % INDICE
+% \setlength{\cftsubsecnumwidth}{2.7em}
+% \renewcommand{\cftpartfont}{\scshape\bfseries\Large}
+\renewcommand{\cftchapfont}{\scshape\bfseries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[autostyle,italian=guillemets,]{csquotes}
+\usepackage[style=authortitle-comp,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRAFICA E IMMAGINI  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+\usepackage{float} % INSERIRE IL COMANDO H NELLE FIGURE
+\usepackage[table]{xcolor} % COLORARE PARTE DEL DOCUMENTO
+\usepackage{colortbl} % COLORARE CELLE DI UNA TABELLA
+\usepackage{framed} % CORNICI INTORNO TESTO
+\usepackage{graphicx} % INSERIRE E MODIFICARE IMMAGINI
+\graphicspath{{immagini/},{grafici/}} % CARTELLA DOVE CONTENGO TUTTE LE IMMAGINI
+\usepackage{tikz} % GRAFICA E MOLTO ALTRO
+\usetikzlibrary{
+    angles,
+    arrows,
+    arrows.meta,
+    backgrounds,
+    bending,
+    calc,    
+    decorations.markings,
+    decorations.pathmorphing,
+    decorations.pathreplacing,
+    fadings,
+    matrix,
+    positioning,
+    quotes,
+    shapes.arrows,
+    shapes.geometric,
+    through,
+    shapes,
+    shapes.symbols
+}
+% \usepackage{pgfplots}
+\usepackage{tcolorbox} % INSERIRE RIQUADRI COLORATI INTORNO A COSE
+\usepackage{pdfpages} % INSERIRE PDF INLINE NEL DOCUMENTO
+\usepackage{subcaption}
+\usepackage[nolabel, final]{showlabels} % rimuove la visualizzazione delle label dal testo 
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHIMICA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{upgreek} % STANDARDIZZA TUTTE LE LETTERE GRECHE NEL DOCUMENTO
+\usepackage{chemgreek} % DEFAULT LE LETTERE GRECHE NEL DOCUMENTO
+\selectchemgreekmapping{upgreek}
+\usepackage{chemmacros} % MACRO PER LA CHIMICA - LIBRERIE AGGIUNTE TUTTE DI DEFAULT
+\chemsetup{
+    language=italian,
+    formula = {chemfig},
+    reactions/before-tag= \begingroup R \bfseries ,
+    reactions/tag-open = [ ,
+    reactions/tag-close = \endgroup],
+    redox/parse = false,
+    redox/pos = top,
+    nomenclature/iupac=strict,
+    }
+\newcommand{\Z}{\zusammen}
+\newcommand{\E}{\entgegen}
+\NewChemIUPAC\meso{\textit{meso}}
+
+\usepackage{chemfig} % STRUTTURA MOLECOLARE E REAZIONI CON MOLECOLE ORGANICHE 
+\setchemfig{
+    % double bond sep=4pt,
+    atom sep=2em, % LUNGHEZZA LEGAME TRA ATOMI
+	cram width=4pt, 
+	cram dash width=0.4pt,
+	cram dash sep=1pt
+}
+% \setcharge{debug}
+\usepackage{chemformula} % STRUTTURA LINEARE
+\setchemformula{
+    charge-hshift=0pt, 
+    charge-style = math
+}
+
+\usepackage[dvips]{xymtexpdf} % STRUTTURA MOLECOLARE E REAZIONI CON MOLECOLE ORGANICHE
+\wedgehashedwedge
+
+\usepackage{chemnum} % NUMERARE LE FORMULE TRAMITE LABEL
+\usepackage{elements} % DATABASE DI TUTTE LE PROPRIETÀ DEGLI ELEMENTI CHIMICI
+\usepackage{modiagram} % GRAFICI PER LA CONFIGURAZIONE ELETTRONICA
+\usepackage{carbohydrates} % MACRO CHEMFIG PER I CARBOIDRATI %!(SOLO ALDOSI)
+\usepackage{endiagram} % GRAFICI DI REAZIONE
+% se sul grafico si vedono tanti numeri e perché c'è l'opzione draft su documentclass
+\ENsetup{
+    x-label-text=\ttfamily Coordinate di reazione,
+    y-label-text=\ttfamily Energia potenziale,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABELLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow} % MULTIRIGA
+\usepackage{array} % TABELLE CON NUMERI
+\usepackage{longtable} % TABELLE SU PIU' PAGINE
+\usepackage{nicematrix} % TABELLE PIU' BELLE E CON TANTE FUNZIONI IN PIU'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ALTRI PACCHETTI  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    showlines=true
+}
+\lstset{style=mystyle}
+\usepackage{pdflscape}
+\usepackage{import} % IMPORTAZIONE FILE MIGLIORATA
+\usepackage{indentfirst} % INDENTAZIONE ITALIANA
+\usepackage[toc, page]{appendix} % APPENDICI
+\usepackage[hypcap=false]{caption}
+\usepackage{adjustbox}
+\input{command.sty} % MIEI COMANDI
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI RIFERIMENTI IPERTESTUALI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{varioref}
+\usepackage{prettyref}
+ 
+\newrefformat{tab}{Tabella \vref{#1}}
+\usepackage{hyperref} % COLLEGAMENTI IPERTESTUALI
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+\hypersetup{
+    pdftitle={Chimica Organica},
+    pdfauthor={Mattia Frigiola},
+    % pdfpagemode=FullScreen,
+    final=true,
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=darkpastelgreen,
+}
+\usepackage[numbered]{bookmark}
+\usepackage{attachfile2} % ! Allega file in locale nel documento
+
+% \usepackage{todonotes} % Inserisce nel testo dei TODO
+
+\usepackage{lipsum}
+\hbadness=50000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIZIO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITOLO DEL DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\includepdf[pages=1]{Frontespizio/frontespizio.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SOMMARIO/ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Sommario}
+Questo documento è stato creato sulla base del programma svolto nel corso di chimica organica di bioinformatica dell'anno 2021/2022. I contenuti sono stati redatti facendo riferimento al libro di testo: \cite{brown2014introduzione}, \cite{hart2008chimica}, \cite{pianetaChimica}  e agli appunti del docente, pertanto l'esaustività degli argomenti trattati sono conformi allo specifico corso di laurea.
+
+Ringrazio i miei compagni di corso Irene Greco e Vincenzo Sammartino per avermi aiutato a revisionare tale documento.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begingroup
+\pagenumbering{Roman}
+\hypersetup{hidelinks} % toglie il colore dei collegamenti ipertestuali
+\fancyhead[LO]{ }
+\tableofcontents % indice capitoli
+
+\listofreactions % lista reazioni chimiche (chemmacros)
+
+\listoffigures % lista figure
+\fancyhead[LO]{\textsc{\leftmark}}
+\listoftables % lista tabelle
+\thispagestyle{empty}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - CAPITOLI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - PRIMA PARTE - INTRODUZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Introduzione}
+% Capitolo uno (Ripasso)
+\subimport*{Capitoli/Introduzione/Capitolo 1/}{Capitolo_1.tex} % COMPLETATO : capitolo 1
+% Capitolo due (Acidi e Basi)
+\subimport*{Capitoli/Introduzione/Capitolo 2/}{Capitolo_2.tex} % COMPLETATO: capitolo 2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - SECONDA PARTE - IDROCARBURI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Idrocarburi}
+% Capitolo tre (Alcani)
+\subimport*{Capitoli/Idrocarburi/Alcani/}{Alcani.tex} % COMPLETATO: alcani
+% Capitolo quattro (Alcheni)
+\subimport*{Capitoli/Idrocarburi/Alcheni/}{Alcheni.tex} % COMPLETATO: alcheni 
+% Capitolo cinque (Alchini)
+\subimport*{Capitoli/Idrocarburi/Alchini/}{Alchini.tex} % COMPLETATO: alchini
+% Capitolo sei (Composti Aromatici)
+\subimport*{Capitoli/Idrocarburi/Composti_Aromatici/}{composti_aromatici.tex} % COMPLETATO: reazioni sea
+% Capitolo sette (alogenuri alchilici)
+\subimport*{Capitoli/Idrocarburi/Alogenuri_Alchilici/}{alogenuri_alchilici.tex} % COMPLETATO: alogenuri alchilici
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - TERZA PARTE - STEREOCHIMICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Capitolo otto (Stereochimica)
+\part{Stereochimica}
+\subimport*{Capitoli/Stereoisomeria/}{stereoisomeria.tex} % COMPLETATO: stereoisomeria
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - QUARTA PARTE - ALCOLI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Alcoli, eteri e tioli}
+% Capitolo nove (Alcoli)
+\subimport*{Capitoli/Alcoli_Eteri_Tioli/}{alcoli.tex} % COMPLETATO: alcoli
+% Capitolo dieci (Eteri)
+\subimport*{Capitoli/Alcoli_Eteri_Tioli/}{eteri.tex} % COMPLETATO: eteri
+% Capitolo undici (Tioli)
+\subimport*{Capitoli/Alcoli_Eteri_Tioli/}{tioli.tex} % COMPLETATO: tioli
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - QUINTA PARTE - COMPOSTI CARBONILICI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Composti Carbonilici}
+% Capitolo dodici (Aldeidi, Chetoni e ione enolato)
+\subimport*{Capitoli/Composti_Carbonilici/Aldeidi_Chetoni/}{aldeidi_chetoni.tex} % COMPLETATO aldeidi e chetoni
+% Capitolo tredici (Acidi Carbossilici e Derivati)
+\subimport*{Capitoli/Composti_Carbonilici/Acidi_Carbossilici/}{acidi_carbossilici.tex} % COMPLETATO reazioni derivati ac-carbossilici
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - SESTA PARTE - AMMINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Ammine} % COMPLETATO: :  - scrivere ammine
+\subimport*{Capitoli/Ammine/}{ammine.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - SESTA PARTE - MACROMOLECOLE ORGANICHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Macromolecole organiche}
+% ! scrivere un'introduzione per le macromolecole 
+\subimport*{Capitoli/Macromolecole/Carboidrati/}{carboidrati.tex} % COMPLETATO CARBOIDRATI
+\subimport*{Capitoli/Macromolecole/Lipidi/}{lipidi.tex} % COMPLETATO LIPIDI
+\subimport*{Capitoli/Macromolecole/Acidi_Nucleici/}{acidi_nucleici.tex} % COMPLETATO ACIDI NULEICI
+\subimport*{Capitoli/Macromolecole/Amminoacidi_Proteine/}{proteine.tex} % COMPLETATO: PROTEINE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - SETTIMA PARTE - DATABASE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Database molecolari e notazioni strutture}
+\subimport*{Capitoli/Database/}{database.tex} % COMPLETATO: DATABASE
+
+\backmatter
+% Appendici
+\pagenumbering{Roman} % Pagine numerate con i numeri romani maiuscoli
+\subimport*{Capitoli/Appendici/}{main_appendix.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+\includepdf[landscape=true]{Tavola_Periodica/Tavola_Periodica.pdf}
+
+\includepdf[pages=2]{Frontespizio/frontespizio.pdf}
+
+\end{document}

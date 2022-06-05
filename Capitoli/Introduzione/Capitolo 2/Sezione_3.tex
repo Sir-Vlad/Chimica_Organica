@@ -1,0 +1,37 @@
+\section{Misurare la forza degli acidi e basi}
+Un \textbf{acido forte} o una \textbf{base forte} sono specie chimiche che si idrolizzano completamente in soluzione acquose. Questo significa che la reazione va solo verso i prodotti e quella inversa non tende ad avvenire.
+
+Un \textbf{acido debole} o una \textbf{base debole}, invece, sono specie chimiche che si idrolizzano in parte in soluzione acquosa. La maggior parte degli acidi e delle basi organici sono deboli. Tra i più comuni acidi organici traviamo acido acetico, che si dissocia in acqua come segue:
+
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Reazione acido acetico in acqua}
+	\chemfig{CH_3-C(=[1]O)(-[7]OH)} \+ \ch[circled=all,circletype=math]{H2O} 
+	\arrow(c1.east--c2.west){<<->}
+	\chemfig{CH_3-C(=[1]O)(-[7]\charge{45:3pt=\chargeColor{-}}{O})} \+ 
+	\ch[circled=all,circletype=math]{H3O^{\color{red}+}} 
+\end{reaction}
+\label{rct:EqAcidoAcetico}
+\endgroup
+
+Per calcolare la forza di un acido si utilizza la costante di acidità \Ka. Per la~\autoref{rct:EqAcidoAcetico} si ha il seguente equilibrio:
+
+\begin{center}
+	\ch{
+		HA + H2O <<=> A- + H3O+
+	}
+\end{center}
+e per calcolare la sua forza si utilizza la \Ka in questo modo:
+\begin{equation*}
+	\Ka = K_{\text{eq}}[\ch{H2O}] = \frac{[\ch{H3O+}][\ch{A-}]}{[\ch{HA}]}
+\end{equation*}
+
+Poiché le costanti di ionizzazione sono numeri molto piccoli e molto più semplice lavorare con le \pKa, dove \(\pKa=-\log_{10} \Ka\). In~\hyperref[ap:acidi.basi]{Appendice II} sono riportati nomi, formule molecolari e valori di \pKa. \textbf{NOTA:} Più è alto il valore \pKa, più è debole è l'acido.
+
+Per determinare in che direzione va l'equilibrio chimico di una reazione acido-base, si seguono i seguenti passi:
+\begin{enumerate}
+	\item Identificare i due acidi che prendono parte all'equilibrio
+	\item Utilizzando i dati dell'\hyperref[ap:acidi.basi]{appendice II} per determinare l'acido più forte e quello più debole guardando le \Ka
+	\item Identificare la base più forte e quella più debole nell'equilibrio.
+	\item L'acido più forte e la base più forte reagiscono per dare l'acido e la base più debole e l'equilibrio è spostato dalla parte dell'acido e della base più deboli
+\end{enumerate}

@@ -1,0 +1,120 @@
+\section{Struttura generale degli acidi nucleici}
+Gli \textbf{acidi nucleici} sono biopolimeri a catena lineare formata da tre unità monomeriche: basi costituite da ammine aromatiche eterocicliche derivate dalla purina e della pirimidina, monosaccaridi e acido fosforico.
+
+\begingroup
+\begin{figure}[H]
+	\centering
+	\chemfig{
+	-[@{l1},1.7]zucchero(-[0,2.5]fosfato
+	-[@{l2},2.5]zucchero(-[0,2.5]fosfato
+	-[@{l3},2.5]zucchero(-[0,2.5]fosfato)(-[6]base)-
+	)(-[6]base)-)(-[6]base)
+	}
+	\chemmove[-]{
+		\foreach \x in {1,2,3}{
+				\foreach \y\z in {1/2,3/4,5,6}{
+						\draw[draw=none] (l\x) -- +(0,.5) coordinate (n\y);
+						\draw[draw=none] (l\x) -- +(0,-1) coordinate (n\z);
+						\draw[dashed] (n\y) -- (n\z);
+					}
+			}
+	}
+	\caption{Struttura schematica di un acido nucleico}
+\end{figure}
+\endgroup
+
+Per idrolisi ripetuta si ottengono prima i nucleotidi, poi i nucleosidi e infine i singoli elementi.
+\begin{reaction*}
+	Acido nucleico \arrow{->[\ch{H2O}][enzima]}
+	nucleotide \arrow(--.170){->[*{0}\ch{H2O}][*{0}\ch{OH-}]}[-90]
+	nucleoside \+ \ch{H3PO4} \arrow{->[\ch{H2O}][\Hpiu{1}]}[-180]
+	\chembelow{base}{eterociclica} \+{2em} zucchero
+\end{reaction*}
+
+\section{Componenti dell'\texorpdfstring{\ac{DNA}}{DNA}}
+\subsection{Zucchero e basi azotate}
+L'idrolisi completa del \ac{DNA} fornisce: acido fosforico (\ch{H3PO4}), il \iupac{2-deossi-\D-ribosio} e quattro basi eterocicliche.
+\begin{figure}[H]
+	\centering
+	\chemname{\chemfig{O?-[:-30,1.8](-[2]OH)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)}}{\iupac{2-deossi-\D-ribosio}}
+\end{figure}
+
+Le basi eterocicliche appartengono a due classi: le \textbf{pirimidine} e le \textbf{purine}. Generalmente quando ci si riferisce a loro si utilizza la loro iniziale del nome.
+\begin{table}[H]
+	\centering
+	\setlength{\tabcolsep}{.5cm}
+	\renewcommand{\arraystretch}{3}
+	\begin{NiceTabular}{cccc}
+		\Block{1-2}{Pirimidine} &                     & \Block{1-2}{Purine}  &                      \\
+		\chemfig{!{citosina}}   & \chemfig{!{timina}} & \chemfig{!{adenina}} & \chemfig{!{guanina}} \\
+		citosina (C)            & timina (T)          & adenina (A)          & guanina (G)          \\
+	\end{NiceTabular}
+	\caption{Basi azotate del \ac{DNA}}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Nucleosidi}
+Un \textbf{nucleoside} è un \iupac{\N-glicoside}, ovvero lo zucchero è legato tramite il C-1 anomerico a una base azotata. Nelle pirimidine è legato l'N-9 mentre nelle purine l'N-1.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[node distance=3cm,align=center,scale=0.6, every node/.style={scale=0.8}]
+		\node (zucchero) {\chemfig{!{deossiribosio}}};
+		\node (deossicitosina) [right of=zucchero,yshift=4cm,xshift=7cm] {\chemname{\chemfig{!{deossicitosina}}}{\iupac{2-deossicitosina}}};
+		\node (deossiadenina) [right of=zucchero,yshift=-4cm,xshift=7cm] {\chemname{\chemfig{!{deossiadenina}}}{\iupac{2-deossiadenina}}};
+
+		\draw[-latex] (zucchero.east) -- +(1,0) |-  (deossicitosina.200) node[above,near end,yshift=.9cm] {\chemfig[bond style={-}]{!{citosina}}} node[above,near end,yshift=.1] {citosina} node[below,near end,yshift=-.2cm] {$-$ \ch{H2O}} ;
+		\draw[-latex] (zucchero.east) -- +(1,0) |-  (deossiadenina.200) node[above,near end,yshift=.9cm] {\chemfig[bond style={-}]{!{adenina}}} node[above,near end,yshift=.1] {citosina} node[below,near end,yshift=-.2cm] {$-$ \ch{H2O}} ;
+	\end{tikzpicture}
+	\caption{Schema di formazione dei nucleosidi}
+\end{figure}
+
+Come gli altri glicosidi, essi possono essere idrolizzati in soluzioni acquose degli acidi o per via enzimatica.
+\begin{reaction}
+	\AddRxnDesc{Idrolisi dei \D-glicosidi}
+	\chemfig{!{deossiadenina}} \arrow(--.160){->[\ch{H2O}][\Hpiu{1}]} \chemfig{!{deossiribosio}} \arrow(.30--){0}[,0]\+{,,10pt} \chemfig{!{adenina}}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Nucleotidi}
+I \textbf{nucleotidi} sono gli esteri fosfato dei nucleosidi. Nei nucleotidi del \ac{DNA} possono essere esterificati solo gli ossidrile 5' o 3' del \iupac{2-deossi-\D-ribosio}.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{NiceTabular}{cc}
+		\chemfig{!{3CMP}}                        & \chemfig{!{5CMP}}                        \\
+		\iupac{2'-deossicitosina-3'-monofosfato} & \iupac{2'-deossicitosina-5'-monofosfato} \\
+	\end{NiceTabular}
+\end{figure}
+
+I nomi dei nucleotidi vengono di solito abbreviati come indicato nella~\autoref{tab:nomiNucleotidi}. La lettera minuscola indica il \iupac{2-deossi-\D-ribosio}, la lettera successiva indica la base mentre MP sta per monofosfato.
+
+\begin{table}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{NiceTabular}{lll}
+		\CodeBefore
+		\rowcolors{2}{gray!15}{}
+		\Body
+		\toprule
+		\RowStyle{\bfseries}
+		Base         & Nome del monofosfato                     & Abbreviazione \\
+		\midrule
+		citosina (C) & \iupac{2'-deossicitosina-5'-monofosfato} & dCMP          \\
+		timina (T)   & \iupac{2'-deossitimina-5'-monofosfato}   & dTMP          \\
+		adenina (A)  & \iupac{2'-deossiadenina-5'-monofosfato}  & dAMP          \\
+		guanina (G)  & \iupac{2'-deossiguanina-5'-monofosfato}  & dGMP          \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{I \iupac{2-deossiribonucleotidi comuni}}\label{tab:nomiNucleotidi}
+\end{table}
+
+I nucleotidi monofosfati possono essere ulteriormente fosforilati per dare nucleotidi di e trifosfati. La molecola più famosa trifosfata è l'ATP (\iupac{adonosina 5'-trifosfato}).
+
+\begin{figure}[H]
+\centering
+\chemname{\chemfig{!{ATP}}}{\iupac{adonosina 5'-trifosfato} (ATP)}
+\end{figure}

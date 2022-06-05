@@ -1,0 +1,85 @@
+\chapter{Composti Aromatici}\label{ap:CompAromatici}
+
+\section*{Composti Aromatici Sostituiti}
+\begingroup
+\begin{table}[H]
+	\centering
+	\rowcolors{2}{gray!15}{}
+	\newcommand{\molecola}[5]{\begin{XyMcompd}(#2,#3)(#4,#5){}{}#1{}\end{XyMcompd}}
+	\def\propanIIyl{\rtrigonal{0==CH;1==(yl);2==CH$_{3}$;3==CH$_{3}$}}
+	\begin{tabular}{cc|cc}
+		\toprule
+		\textbf{COMPOSTO}                                         & \textbf{NOME} & \textbf{COMPOSTO}                                                                        & \textbf{NOME}         \\
+
+		\midrule
+		\molecola{\benzenev}{400}{400}{230}{260}                  & Benzene       & \molecola{\benzeneh{4==\rtrigonal{0==C;1==(yl);2==H;3D==O}}}{1000}{450}{100}{200}        & Benzaldeide           \\
+
+		\molecola{\benzenev{2==CH$_{3}$}}{400}{450}{230}{260}     & Toluene       & \molecola{\benzeneh{4==\rtrigonal{0==C;1==(yl);2==CH$_{3}$;3D==O}}}{1000}{450}{100}{200} & Acetofenone           \\
+
+		\molecola{\benzeneh{4==\propanIIyl}}{1000}{450}{100}{200} & Cumene        & \molecola{\benzeneh{4==\rtrigonal{0==C;1==(yl);2==OH;3D==O}}}{1000}{450}{100}{200}       & Acido Benzoico        \\
+		\molecola{\benzenev{2==CH=CH$_{3}$}}{400}{450}{230}{260}  & Stirene       & \molecola{\benzenev{2==NH$_{2}$}}{400}{450}{230}{260}                                    & Anilina               \\
+		\molecola{\benzenev{2==OH}}{400}{450}{230}{260}           & Fenolo        & \molecola{\benzenev{2==CH$_{3}$;3==CH$_{3}$}}{400}{470}{230}{240}                        & \iupac{\ortho-Xilene} \\
+		\molecola{\benzenev{2==O-CH$_{3}$}}{400}{450}{230}{260}   & Anisolo       & \molecola{\benzenev{2==CH$_{3}$;4==CH$_{3}$}}{400}{700}{230}{30}                         & \iupac{\meta-Xilene}  \\
+		                                                          &               & \molecola{\benzenev{2==CH$_{3}$;5==CH$_{3}$}}{400}{470}{230}{240}                        & \iupac{\para-Xilene}  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\endgroup
+
+\section*{Composti Policiclici Condensati}
+\begingroup
+\begin{table}[H]
+	\centering
+	\rowcolors{2}{gray!15}{}
+	\setlength{\tabcolsep}{1cm}
+	\newcommand{\molecola}[5]{\begin{XyMcompd}(#2,#3)(#4,#5){}{}#1{}\end{XyMcompd}}
+	\newcommand{\pyrene}{\decaheterov[cfhk{i\sixfusev[f{b\sixfusev[bdf]{}{}{E}[de]}]{}{}{D}[cd]}]{}{}}
+	\newcommand{\benzoapyrene}{\decaheterov[acei{g\sixfusev[ace]{}{}{B}[b]}{i\sixfusev[f{b\sixfusev[bf]{}{}{E}[de]}]{}{}{D}[cd]}]{}{}}
+	\newcommand{\fluorene}{\indanevi[dfh{b\sixfusev[ace]{}{}{E}}]{}}
+	\begin{tabular}{cc}
+		\toprule
+		\textbf{COMPOSTO}                                & \textbf{NOME}          \\
+		\midrule
+		\molecola{\naphthalenev{}}{1000}{500}{80}{190}   & Naftalene              \\
+		\molecola{\anthracenev{}}{1000}{500}{230}{210}   & Antracene              \\
+		\molecola{\phenanthrenev{}}{1000}{800}{200}{220} & Fenantrene             \\
+		\molecola{\pyrene}{1000}{800}{200}{220}          & Pirene                 \\
+		\molecola{\benzoapyrene}{1000}{800}{0}{220}      & \iupac{Benzo[a]pirene} \\
+		\molecola{\fluorene}{1000}{500}{230}{210}        & Fluorene               \\
+		\molecola{\indanev}{1000}{500}{80}{190}          & Indene                 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\endgroup
+
+\section*{Composti aromatici eterociclici}
+\begingroup
+\begin{table}[H]
+	\centering
+	\rowcolors{2}{gray!15}{}
+	\setlength{\tabcolsep}{.5cm}
+	\newcommand{\molecola}[5]{\begin{XyMcompd}(#2,#3)(#4,#5){}{}#1{}\end{XyMcompd}}
+	\begin{tabular}{cc|cc}
+		\toprule
+		\textbf{COMPOSTO}                              & \textbf{NOME} &
+		\textbf{COMPOSTO}& \textbf{NOME}\\
+		\midrule
+		\molecola{\pyridinev{}}{400}{450}{230}{220}    & Piridina      &
+		\molecola{\pyrimidinevi{}}{400}{450}{230}{220} & Pirimidina    \\
+		\molecola{\pyridazinev{}}{400}{450}{230}{260}  & Piridazina    &
+		\molecola{\pyrazinev{}}{400}{450}{230}{240}    & Pirazina      \\
+		\molecola{\pyrrolev{}}{400}{450}{230}{220}     & Pirrolo       &
+		\molecola{\pyrazolev{}}{400}{450}{230}{220}    & Pirazolo      \\
+		\molecola{\imidazolev{}}{400}{450}{230}{220}   & Imidazolo     &
+		\molecola{\furanv{}}{400}{450}{230}{220}       & Furano        \\
+		\molecola{\thiophenev{}}{400}{450}{230}{220}   & Tiofene       &
+		\molecola{\oxazolev{}}{400}{450}{230}{220}     & Ossazolo      \\
+		\molecola{\quinolinevi{}}{400}{450}{230}{220}  & Chinolina     &
+		\molecola{\indolev{}}{400}{450}{230}{220}      & Indolo        \\
+		\molecola{\benzofuranev{}}{400}{450}{230}{220} & Benzofurano   &
+		\molecola{\nonaheterov[bdfh]{1==S}{}}{400}{450}{230}{220}      & Benzotiofene  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\endgroup
+\newpage

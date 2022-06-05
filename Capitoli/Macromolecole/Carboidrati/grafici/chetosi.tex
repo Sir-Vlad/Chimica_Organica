@@ -1,0 +1,38 @@
+\begin{landscape}
+	\begin{figure}[htb]
+		\centering
+		\setchemfig{
+			atom sep = 1.5em,
+		}
+		\tikzset{
+		>={Latex[width=2mm,length=2mm]}
+		}
+		\begin{tikzpicture}[node distance=5cm,every node/.style={fill=white, align=center},scale=0.5]
+			\node (diidrossichetone) {\chemname{\diidrossichetone}{\iupac{1,3-diidrossichetone}}};
+
+			\node (eritrulosio) [below of=diidrossichetone,yshift=1cm] {\chemname{\eritrulosio}{\iupac{\D-eritrulosio}}};
+
+			\node (xilulosio) [below of=eritrulosio,xshift=-6cm,yshift=.5cm] {\chemname{\xilulosio}{\iupac{\D-xilulosio}}};
+			\node (ribulosio) [below of=eritrulosio,xshift=6cm,yshift=.5cm] {\chemname{\ribulosio}{\iupac{\D-ribulosio}}};
+
+			\node (tagatosio) [below of=xilulosio,xshift=-3cm] {\chemname{\tagatosio}{\iupac{\D-tagatosio}}};
+			\node (sorbosio) [below of=xilulosio,xshift=3cm] {\chemname{\sorbosio}{\iupac{\D-sorbosio}}};
+
+			\node (fruttosio) [below of=ribulosio,xshift=-3cm] {\chemname{\fruttosio}{\iupac{\D-fruttosio}}};
+			\node (psicosio) [below of=ribulosio,xshift=3cm] {\chemname{\psicosio}{\iupac{\D-psicosio}}};
+
+			% - ARROW
+			\draw[->,blue] (diidrossichetone) -- (eritrulosio);
+
+			\draw[->,blue] (eritrulosio.south) -- +(0,-1) -| (ribulosio);
+			\draw[->,blue] (eritrulosio.south) -- +(0,-1) -| (xilulosio);
+
+			\draw[->,blue] (xilulosio.south) -- +(0,-1) -| (tagatosio);
+			\draw[->,blue] (xilulosio.south) -- +(0,-1) -| (sorbosio);
+
+			\draw[->,blue] (ribulosio.south) -- +(0,-1) -| (fruttosio);
+			\draw[->,blue] (ribulosio.south) -- +(0,-1) -| (psicosio);
+		\end{tikzpicture}
+		\caption{Albero genealogico dei \iupac{\D-chetosi}}
+	\end{figure}
+\end{landscape}

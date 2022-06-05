@@ -1,0 +1,64 @@
+\chapter{Gruppi Funzionali}
+\begingroup
+\begin{center}
+	\setchemfig{
+		atom sep = 2em,
+	}
+	\rowcolors{2}{gray!15}{}
+	\renewcommand{\arraystretch}{2}
+	\newcommand{\molecola}[5]{\begin{XyMcompd}(#2,#3)(#4,#5){}{}#1{}\end{XyMcompd}}
+	\begin{longtable}{p{0.25\textwidth} c p{0.35\textwidth}}
+		\hline\rowcolor{white}
+		\textbf{Classe Composto} & \textbf{Formula Generale}                                                          & \textbf{Nome del gruppo funzionale} \\
+		\hline
+		\endfirsthead
+		\multicolumn{3}{c}%
+		{{\bfseries \tablename\ \thetable{} -- Continua alla pagina precedente}}                                                                            \\
+		\hline\rowcolor{white}
+		\textbf{Classe Composto} & \textbf{Formula Generale}                                                          & \textbf{Nome del gruppo funzionale} \\ \hline
+		\endhead
+		\multicolumn{3}{r}{\textit{Continua alla pagina seguente \dots}}                                                                                    \\
+		\endfoot
+		\hline
+		\endlastfoot
+
+		Alcani                   & \chemfig{-C-C-}                                                                    & legame singolo                      \\
+		Alcheni                  & \chemfig{-C=C-}                                                                    & legame doppio                       \\
+		Alchini                  & \chemfig{-C~C-}                                                                    & legame triplo                       \\
+		Idrocarburi aromatici    & \molecola{\benzenev{}}{350}{350}{230}{310}                                         & fenile                              \\
+		Alogenuri alchilici      & \chemfig{R-X}                                                                      & ione alogenuro                      \\
+		Alogenuri acilici        & \molecola{\tetrahedral{0==C;2==\phantom{O};4==X;1D==O}}{350}{350}{230}{310}        & acile                               \\
+		Ammine primarie          & \chemfig{R-NH_2}                                                                   & amminico primario                   \\
+		Ammine secondarie        & \chemfig{R-NHR}                                                                    & amminico secondario                 \\
+		Ammine terziarie         & \chemfig{R-NRR'}                                                                   & amminico terziario                  \\
+		Immine primarie          & \chemfig{R_2-C=NH}                                                                 & imminico primario                   \\
+		Immine secondarie        & \chemfig{R_2-C=NR}                                                                 & immine secondarie                   \\
+		Ammidi primarie          & \molecola{\tetrahedral{0==C;2==\phantom{O};4==NH\(_2\);1D==O}}{350}{350}{230}{310} & ammidico primario                   \\
+		Ammidi secondarie        & \molecola{\tetrahedral{0==C;2==\phantom{O};4==NHR;1D==O}}{350}{350}{230}{310}      & ammidico secondario                 \\
+		Ammidi terziarie         & \molecola{\tetrahedral{0==C;2==\phantom{O};4==NRR\('\);1D==O}}{350}{350}{230}{310} & ammidico terziario                  \\
+		Azocomposti              & \chemfig{-N=N-}                                                                    & azo                                 \\
+		Nitrili                  & \chemfig{-C~N}                                                                     & ciano                               \\
+		Azoturi                  & \chemfig{-N_3}                                                                     & azido                               \\
+		Nitroderivati            & \chemfig{-NO_2}                                                                    & nitro                               \\
+		Nitrosocomposti          & \chemfig{-N=O}                                                                     & nitroso                             \\
+		Cianati                  & \chemfig{-O-C~N}                                                                   & cianato                             \\
+		Isocianati               & \chemfig{-N=C=O}                                                                   & isocianato                          \\
+		Tiocianati               & \chemfig{-S-C~N}                                                                   & tiocianato                           \\
+		Isotiocianati             & \chemfig{-N=C=S}                                                                   & isotiocianato                        \\
+		Uretani          & \molecola{\pentamethylenei{1==\ChemForm{R_1};2==\downnobond{N}{H};4==O;5==\ChemForm{R_2}}{3D==O}}{350}{450}{300}{120} & carbammico                          \\
+		Fulminati                & \chemfig{-C-N=O}                                                                   & fulminati                           \\
+		Carbossile & \molecola{\tetrahedral{0==C;2==\null;1D==O;4==\null}}{200}{200}{110}{380}&Acidi carbossilici, Aldeidi, Chetoni, Esteri\\
+		Acidi carbossilici & \molecola{\Rtrigonal{0==C;3D==O;1==\phantom{O};2==OH}}{200}{450}{110}{120} & carbossile\\
+		Alcoli & \chemfig{-OH}&ossidrile\\
+		Aldeidi & \molecola{\Rtrigonal{0==C;3D==O;1==\phantom{O};2==H}}{200}{450}{110}{120} & formile\\
+		Chetoni & \molecola{\Rtrigonal{0==C;3D==O;1==\phantom{O};2==R}}{200}{450}{110}{120} & acile\\
+		Esteri & \molecola{\Rtrigonal{0==C;3D==O;1==\phantom{O};2==OR}}{200}{450}{110}{120} & alcilossi\\
+		Eteri & \chemfig{-O-R}&alcossi\\
+		Perossidi & \chemfig{-O-O-R}&alcossi\\
+		Mercaptani/tioli & \chemfig{-SH} & solfidrico\\
+		Solfuri & \chemfig{-S-R} & solfidrico\\
+		Solfoni & \chemfig{-SO_2-} & solfonico\\
+		Acidi solfonici & \molecola{\htetrahedralS{0==S;1==R;2==OH;3D==O;4D==O}}{200}{400}{170}{200} & solfonico\\
+	\end{longtable}
+\end{center}
+\endgroup

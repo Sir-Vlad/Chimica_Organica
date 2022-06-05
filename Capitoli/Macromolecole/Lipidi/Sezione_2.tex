@@ -1,0 +1,41 @@
+\section{Fosfolipidi}\label{sec:fosfolipidi}
+I \textbf{fosfolipidi} sono uno dei componenti principali delle membrane cellulari. Hanno struttura simile ai trigliceridi tranne per un gruppo estereo sostituito da una fosfatidiammina.
+\begin{figure}[H]
+	\centering
+	\chemfig{
+	[2]CH_2([0]-O-P(=[2]O)(=[6]O)(-[0]O-CH_2CH_2-\chemabove{N}{\color{red}\scriptstyle\oplus}H_3))%
+	-[,2]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op2}:-30,.6]-[:+30,.6]-[@{cl2}:-30,.6])%
+	-[,2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op3}:-30,.6]-[:+30,.6]-[@{cl3}:-30,.6])}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!n$]{2pt}[8pt]{op2}{cl2}
+	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!n$]{2pt}[8pt]{op3}{cl3}
+	\caption{fosfolipide}
+\end{figure}
+
+I fosfolipidi si dispongono nelle membrane in \textbf{doppi strati}, con le code idrocarburiche rivolte all'interno e le teste polari fosfatidiamminiche disposte all'esterno.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Prostaglandine}\label{sec:prostaglandine}
+Le \textbf{prostaglandine} sono una classe di composti correlati agli acidi insaturi. Hanno effetto sul metabolismo, ritmo cardiaco e pressione del sangue.
+
+Vengono sintetizzate dall'organismo tramite l'ossidazione e la ciclizzazione dell'acido arachidonico.
+	{\footnotesize
+		\begin{reaction}
+			\AddRxnDesc{Sintesi delle prostaglandine}
+			\chemfig{(-[:60]=_-[:-30]-[:30]=_-[:-30]-[:30]-[:-30]-[:30](=[2]O)(-[:-30]OH))(-[:-60]=^-[:30]-[:-30]=^-[:30]-[:-30]-[:30]-[:-30]-[:30])}
+			\arrow(.-10--){->[\scriptsize numerosi][$\substack{\text{passaggi}\\ \text{nella cellula}}$]}[,1.5]
+			\chemfig{[:-35]*5(-(<[:220]H)(>:[:-60]OH)-(<[:-30]=[:30]-[:-30](<[:210]H)(>:[:-30]OH)-[:30]-[:-30]-[:30]-[:-30]-[:30])(>:[:18]H)-(>:[:30]-[:-30]=^[:0]-[:30]-[:-30]-[:30]-[:-30]COOH)(<[:-18]H)-(=O)-)}
+		\end{reaction}
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cere}\label{sec:cere}
+Le \textbf{cere} sono monoesteri con lunghe catene carboniose sature nella porzione acida e alcolica. In natura vengono utilizzate in piante e animali come protezione dagli agenti ambientali esterni.
+
+\begin{figure}[H]
+	\centering
+	\chemfig{C_{25-27}H_{51-55}-[,1.5]C(=[2]O)-OC_{30-32}H_{61-65}}
+	\caption{Componente della cera d'api}
+\end{figure}
+

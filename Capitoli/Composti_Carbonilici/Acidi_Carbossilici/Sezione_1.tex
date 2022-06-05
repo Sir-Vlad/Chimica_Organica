@@ -1,0 +1,69 @@
+\section{Struttura}
+Gli acidi carbossilici sono composti caratterizzati dalla presenza del gruppo carbossilico e hanno formula generale \ch{RCOOH}.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		\chemfig{C(=[2]O)(-[:210]R)(-[:-30]OH)}
+		                   &
+		\chemfig{C(=[2]O)(-[:-30]OH)(-[:210,0.7]((-[:120,0.5,,,wv])-[:-60,0.5,,,wv]))} \\
+		Acido carbossilico & Carbonile                                                 \\
+	\end{tabular}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Proprietà fisiche}
+Gli acidi carbossilici sono composti che hanno caratteristiche in comune sia ai chetoni e sia agli alcoli.
+
+Come gli alcoli, gli acidi carbossilici possono formare legami a idrogeno con se stessi e con altre molecole. Di conseguenza, hanno dei punti di ebollizione molto più elevati di quelli degli alcoli a parità di peso molecolare. Gli acidi carbossilici si associano tra di loro tramite legami a idrogeno formando dimeri.
+\begingroup
+\chemnameinit{}
+\setchemfig{cram rectangle}
+\begin{figure}[H]
+	\begin{center}
+		\chemname{\chemfig{C(=[1]O>:[,2]HO(-[7]C(=[5]O?[a])(-[0]R)))(-[7]OH?[a,{<:}])(-[4]R)}}{Dimero ciclico}
+	\end{center}
+\end{figure}
+\chemnameinit{}
+\endgroup
+
+La formazione di legami a idrogeno da parte degli acidi carbossilici spiega anche perché sono molto solubili in acqua. Però con l'aumentare della catena idrocarburica la solubilità scende.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acidità degli acidi carbossilici}
+Gli acidi carbossilici sono acidi deboli e hanno valori di \pKa che cadono nell'intervallo da \num{e-4} e \num{e-5}.
+
+Se confrontiamo un alcol e un acido carbossilico vediamo che quest'ultimo è \num{e11} volte più acido. Questo è dovuto al fatto che lo ione carbossilato riesce a delocalizzare la sua carica negativa su tutto il carbossile mentre nello ione etossido la carica è localizzata solo su un atomo.
+
+\begingroup
+\chemnameinit{}
+\begin{center}
+	\setcharge{extra sep=.5pt}
+	\schemestart
+	\chemname{\chemleft[\subscheme{
+	\chemfig{C(=[@{Ol1}1]@{O1}\charge{45=\:,135=\:}{O})(-[4]R)(-[7]\charge{45=\:,225=\:,315=\:,0:6pt=\chargeColor{-}}{O})}
+	\arrow{<->}
+	\chemfig{\charge{0:3pt=\chargeColor{+}}{C}(-[1]\charge{45=\:,135=\:,315=\:,0:6pt=\chargeColor{-}}{O})(-[4]R)(-[@{Ol2}7]@{O2}\charge{45=\:,225=\:,315=\:,0:6pt=\chargeColor{-}}{O})}
+	\arrow{<->}
+	\chemfig{C(-[1]\charge{45=\:,135=\:,315=\:,0:6pt=\chargeColor{-}}{O})(-[4]R)(=[7]\charge{225=\:,315=\:}{O})}
+	\arrow{0}[,0.2]
+	}\chemright]}{Risonanza ione carbossilato}
+	\qquad oppure \qquad
+	\charge{0:3pt=\chargeColor{-}}{
+	\chemleft.
+	\subscheme{
+	\chemfig{C(-[1,,,,ddbond={-}]O)(-[4]R)(-[7,,,,ddbond={+}]O)}
+	}\chemright\}}
+	\schemestop
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(-45:.5cm) and +(-45:.5cm) .. (O1);
+		\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(45:.5cm) and +(45:.5cm) .. (Ol2);
+	}
+\end{center}
+\chemnameinit{}
+\endgroup
+
+Un altro fattore che influenza l'acidità del'acidi carbossilici sono i sostituenti della catena alle spalle del carbossile. Come abbiamo visto nella~\autoref{sec:aciditaAlcol}, i sostituenti possono stabilizzare o meno l'anione facendo aumentare o diminuire l'acidità della molecola.

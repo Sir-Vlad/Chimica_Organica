@@ -1,0 +1,93 @@
+\section{Acidità degli alcoli e dei fenoli}\label{sec:aciditaAlcol}
+Gli alcoli e i fenoli sono acidi deboli, come l'acqua. Infatti, il gruppo ossidrilico può cedere un protone e la dissociazione è simile a quella dell'acqua:
+
+\begingroup
+\chemnameinit{}
+\setchemfig{arrow offset=20pt,arrow coeff=1.5}
+\begin{reaction}
+	\AddRxnDesc{Dissociazione generale degli alcoli}
+	\chemname{\chemfig{R\charge{90:2pt=\:,270:2pt=\:}{O}-H}}{\scriptsize alcol} \arrow(.mid east--.mid west){<<->}
+	\chemname{\chemfig{R\charge{90:2pt=\:,270:2pt=\:,0:2pt=\:,35:5pt=\chargeColor{-}}{O}}}{\scriptsize Ione alcossido} \+{1em,1em} \chemfig{\charge{30:4pt=\chargeColor{+}}{H}}
+\end{reaction}
+\chemnameinit{}
+\endgroup
+
+La base coniugata di un alcol è uno \textbf{ione alcossido}. I valori di \pKa di alcoli e fenoli sono molto simili alla \pKa dell'acqua, invece gli alcoli molto ingombrati, come \iupac{alcol \tert-butilico}, sono invece meno acidi perché ingombro rende difficile solvatare i corrispondenti ioni alcossido.
+
+Il fenolo è molto più acido degli alcoli perché il suo acido coniugato, lo \textbf{ione fenossido}, è stabilizzato per risonanza.
+
+\begin{figure}[H]
+	\begin{center}
+		% \setchemfig{debug, scheme debug}
+		% \setcharge{debug}
+		\schemestart
+		\chemleft[\subscheme{
+		\chemfig{*6(=[@{l1}]-[@{l2}]=[@{l3}]-[@{l4}](-[2]\charge{0:1pt=\:,90:1pt=\:,180:1pt=\:,35:4pt=\chargeColor{-}}{O})=[@{l5}]-[@{l6}])}
+		\arrow(.-30--.210){<->}
+		\chemfig{*6(-=-@{C1}=[@{l7}](-[@{Ol1}2]@{O1}\charge{0:1pt=\:,90:1pt=\:,180:1pt=\:,35:4pt=\chargeColor{-}}{O})-=)}
+		\arrow(.-30--.210){<->}
+		\chemfig{*6(-@{C3}=[@{Cl2}]-[@{Cl1}]@{C2}\charge{30:1pt=\:,215:2pt=\chargeColor{-}}{}-(=[2]\charge{45:1pt=\:,135:1pt=\:}{O})-=)}
+		\arrow(.-30--.210){<->}
+		\chemfig{*6(-[@{Cl3}]@{C4}\charge{[circle]270:1pt=\:,70:4pt=\chargeColor{-}}{}-=-(=[2]\charge{45:1pt=\:,135:1pt=\:}{O})-@{C5}=[@{Cl4}])}
+		\arrow(.-30--.210){<->}
+		\chemfig{*6(=-=-(=[2]\charge{45:1pt=\:,135:1pt=\:}{O})-\charge{[circle]150:1pt=\:,340:4pt=\chargeColor{-}}{}-)}
+		}\chemright]
+		\schemestop
+		\chemmove[green!60!black!70]{
+			\draw[shorten <=5pt, shorten >= 1pt] (l1).. controls +(45:.5cm) and +(15:.5cm) .. (l6);
+			\draw[shorten <=5pt, shorten >= 1pt] (l3).. controls +(180:.5cm) and +(150:.5cm) .. (l2);
+			\draw[shorten <=5pt, shorten >= 1pt] (l5).. controls +(300:.5cm) and +(270:.5cm) .. (l4);
+			\draw[shorten <=5pt, shorten >= 1pt] (O1).. controls +(180:.7cm) and +(180:.7cm) .. (Ol1);
+			\draw[shorten <=-3pt, shorten >= 1pt] (l7).. controls +(45:.5cm) and +(45:.5cm) .. (C1);
+			\draw[shorten <=5pt, shorten >= 1pt] (C2).. controls +(15:.5cm) and +(0:.5cm) .. (Cl1);
+			\draw[shorten <=-3pt, shorten >= 1pt] (Cl2).. controls +(-45:.5cm) and +(270:.5cm) .. (C3);
+			\draw[shorten <=5pt, shorten >= 1pt] (C4).. controls +(270:.5cm) and +(235:.5cm) .. (Cl3);
+			\draw[shorten <=-3pt, shorten >= 1pt] (Cl4).. controls +(180:.5cm) and +(180:.5cm) .. (C5);
+		}
+	\end{center}
+	\caption{Forme di risonanza dello ione fenossido}
+\end{figure}
+
+
+Se sull'alcol abbiamo dei gruppi elettron-attrattori (EWG) stabilizzano la base coniugata provocando un aumento di acidità mentre tutti i gruppi elettron-donatori (EDG) destabilizzano la base coniugata provocando una diminuzione di acidità.
+
+\paragraph{Preparazione dello ione alcossido}
+Gli alcossidi si preparano facendo reagire l'alcol con sodio o potassio o con idruri metallici. La reazione è irreversibile e fornisce l'alcossido metallico.
+
+\begin{reaction}
+	\AddRxnDesc{Preparazione alcossido da alcol più metallo alchilico}
+	2 \chemfig{R\charge{90:2pt=\:,270:2pt=\:}{O}-H} \+ 2 \ch{K}
+	\arrow
+	\chemfig{R\charge{90:1pt=\:,270:1pt=\:,0:1pt=\:,35:5pt=\chargeColor{-}}{O}-[,,,,white]\charge{35:5pt=\chargeColor{+}}{K}} \+{1em,1em} \chemfig{H_2}
+\end{reaction}
+\begin{reaction}
+	\AddRxnDesc{Preparazione alcossido da alcol più idruro metallico}
+	2 \chemfig{R\charge{90:2pt=\:,270:2pt=\:}{O}-H} \+ 2 \ch{NaH}
+	\arrow
+	\chemfig{R\charge{90:1pt=\:,270:1pt=\:,0:1pt=\:,35:5pt=\chargeColor{-}}{O}-[,,,,white]\charge{35:5pt=\chargeColor{+}}{Na}} \+{1em,1em} \chemfig{H_2}
+\end{reaction}
+
+Non è possibile trasformare un alcol in alcossido facendolo reagire con idrossido di sodio, perché essendo gli alcossidi sono basi più forti dell'idrossido e la reazione torna in senso inverso. Tuttavia in questo modo è possibile trasformare i fenoli in ioni fenossido.
+% \setchemfig{scheme debug}
+\begin{reaction}
+	\AddRxnDesc{Preparazione fenossido da fenolo più idrossido di sodio}
+	\chemfig{[:-30]*6(-=-(-[0]OH)=-=)} \arrow(.base east--.mid west){0}[,0] \+ \chemfig{\charge{35:5pt=\chargeColor{+}}{Na}-[,,,,white]\charge{35:5pt=\chargeColor{-}}{HO}}
+	\arrow
+	\chemfig{[:-30]*6(-=-(-[0]\charge{90:1pt=\:,270:1pt=\:,0:1pt=\:,35:5pt=\chargeColor{-}}{O}-[,,,,white]\charge{35:5pt=\chargeColor{+}}{Na})=-=)} \arrow(.base east--.mid west){0}[,0]\+ \ch{H2O}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Basicità degli alcoli e fenoli}
+Gli alcoli e i fenoli si possono comportare anche come basi deboli di Lewis avendo un doppietto non condiviso sull'ossigeno. Possono essere protonati dagli acidi forti e il prodotto è uno ione alchilossonio.
+
+\begin{reaction}
+	\AddRxnDesc{Protonazione dell'alcol a dare uno ione alchilossonio}
+	\chemfig{R-\charge{90:2pt=\:,270:2pt=\:}{O}-H} + \chemfig{\charge{30:4pt=\chargeColor{+}}{H}}
+	\arrow(--.mid west)
+	\chemfig{R-\charge{270:2pt=\:,280:7pt=\chargeColor{+}}{O}(-[0]H)(-[2]H)}
+\end{reaction}
+
+La protonazione costituisce il primo passaggio delle reazioni di disidratazione (\autoref{rxn:alcol-disidratazione}) e di trasformazione in alogenuri alchilici (\autoref{rxn:alcol-convHX}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

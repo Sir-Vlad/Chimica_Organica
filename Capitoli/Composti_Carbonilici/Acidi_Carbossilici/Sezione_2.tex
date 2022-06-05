@@ -1,0 +1,89 @@
+\section{Trasformazione degli acidi in sali}
+Tutti gli acidi carbossilici reagiscono con basi forti,come \ch{NaOH} e \ch{KOH}, per dare sali solubili in acqua.
+
+\begingroup
+\chemnameinit{}
+\setchemformula{circled=all,circletype=math}
+\begin{reaction}
+	\AddRxnDesc{Formazione dei sali degli acidi carbossilici}
+	\chemname{\chemfig{C(=[1]O)(-[7]OH)(-[4]R)}}{Acido carbossilico}
+	\+
+	\ch{Na^{+}OH^{-}}
+	\arrow(.mid east--.mid west){->[\ch{H2O}]}
+	\chemname{\chemfig{C(=[1]O)(-[7]\charge{45:2pt=\chargeColor{-}}{O}-[,0.8,,,opacity=0]\charge{45:2pt=\chargeColor{+}}{Na})(-[4]R)}}{Carbossilato sodico}
+	\+ \ch{H2O}
+\end{reaction}
+\chemnameinit{}
+\endgroup
+
+Gli acidi carbossilici formano sali solubili anche con l'ammoniaca e con ammine:
+\begingroup
+\chemnameinit{}
+\setchemformula{circled=all,circletype=math}
+\begin{reaction}
+	\AddRxnDesc{Formazione dei sali degli acidi carbossilici}
+	\chemname{\chemfig{C(=[1]O)(-[7]OH)(-[4]R)}}{Acido carbossilico}
+	\+
+	\ch{NH3}
+	\arrow(.mid east--.mid west){->[\ch{H2O}]}
+	\chemname{\chemfig{C(=[1]O)(-[7]\charge{45:2pt=\chargeColor{-}}{O}-[,,,,opacity=0]\charge{45:2pt=\chargeColor{+}}{NH_4})(-[4]R)}}{Carbossilato ammonico}
+	\+ \ch{H2O}
+\end{reaction}
+\chemnameinit{}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Conversione in alogenuri acilici}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Esterificazione di Fischer}
+L'esterificazione di Fischer serve per formare esteri a partire dagli acidi carbossilici e dagli alcoli, in ambiente acido (di solito \ch{H2SO4} o \ch{HCl}).
+\begin{reaction}
+	\AddRxnDesc{Reazione di esterificazione di Fisher}
+	\chemfig{C(=[1]O)(-[7]OH)(-[4]R)}
+	\+
+	\chemfig{R-OH}
+	\arrow{->[\ch{H2SO4}]}
+	\chemfig{C(=[1]O)(-[7]O-R)(-[4]R)}
+	\+ \ch{H2O}
+\end{reaction}
+
+\paragraph{Meccanismo di reazione}\mbox{}\\
+\begin{reaction}
+	\AddRxnDesc{Meccanismo di reazione dell'esterificazione di Fisher}
+	\chemfig{C(=[1]@{O1}\charge{0:1pt=\:,90:1pt=\:}{O})(-[7]OH)(-[4]R)}
+	\arrow{<=>[\Hpiu[m]{1}][\circleNum{1}]}
+	\chemfig{@{C1}C(=[@{Ol1}1]@{O2}\charge{90:3pt=\chargeColor{+},270:1pt=\:}{O}-H)(-[7]OH)(-[4]R)}
+	\+
+	\chemfig{R-@{O3}\charge{90:1pt=\:,270:1pt=\:}{O}H}
+	\arrow(--.mid west){<=>[][\circleNum{2}]}
+	\chemfig{C(-[2]OH)(-[0]OH)(-[6]\charge{45:2pt=\chargeColor{+}}{O}(-[5]R)(-[7]@{H2}H))(-[4]R)}
+	\arrow{<=>[][*{0}\circleNum{3}]}[-90]
+	\chemfig{C(-[2]OH)(-[0]OH)(-[6]OR)(-[4]R)}
+	\arrow{<=>[][\circleNum{4}]}[-180]
+	\chemfig{C(-[@{Ol2}2]@{O4}\charge{90:1pt=\:,180:1pt=\:}{O}H)(-[@{Ol3}0]@{O5}\charge{90:3pt=\chargeColor{+},0:1pt=\:}{O}(-[1]H)(-[7]H))(-[6]OR)(-[4]R)}
+	\arrow{<=>[][\circleNum{5}]}[-180]
+	\chemfig{C(=[2]\charge{90:2pt=\chargeColor{+}}{O}H)(-[6]OR)(-[4]R)}
+	\arrow{<=>[][\circleNum{6}]}[-180]
+	\chemfig{C(=[1]O)(-[7]OR)(-[4]R)}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O1).. controls +(30:.5cm) and +(90:1cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(270:1cm) and +(0:1cm) .. (C1);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(135:.5cm) and +(145:.5cm) .. (O2);
+		\draw[shorten <=3pt, shorten >= 1pt] (O4).. controls +(180:.5cm) and +(180:.5cm) .. (Ol2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol3).. controls +(270:.5cm) and +(270:.5cm) .. (O5);
+	}
+\end{reaction}
+
+\begin{description}
+	\item[Passaggio 1] Il carbonile dell'acido carbossilico viene protonato dal catalizzatore acido. La protonazione aumenta la reattività del carbonile nei confronti dei nucleofili.
+	\item[Passaggio 2] L'alcol attacca il carbonio carbonile e si forma il nuovo legame \ch{C-O-R}.
+	\item[Passaggio 3 e 4] Sono equilibri in cui gli atomi di ossigeno perdono e acquistano un protone. Nel passaggio 4 è indifferente quale \ch{-OH} viene protonato, essendo equivalenti.
+	\item[Passaggio 5] È il passaggio nel quale si forma l'acqua per eliminazione, uno dei due prodotti finali, e si riforma il doppio legame \ch{C-O}.
+	\item[Passaggio 6] L'ossigeno protonato del gruppo carbonilico viene deprotonato e si ottiene il prodotto finale, l'estere.
+\end{description}
+

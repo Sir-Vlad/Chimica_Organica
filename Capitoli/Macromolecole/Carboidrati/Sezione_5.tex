@@ -1,0 +1,64 @@
+\section{Polisaccaridi}\label{sec:polisaccaridi}
+I \textbf{polisaccaridi} sono molecole che contengono molte unità di monosaccaridi legate tra loro in catene di varia lunghezza e peso molecolare. Le catene di monosaccaridi possono essere continue o ramificate.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Amido}
+L'\textbf{amido} è il carboidrato che costituisce la forma nella quale il glucosio viene conservato per uso futuro. L'amido è formato da unità di glucosio legate tra loro tramite legami 1,4-\a-glicosidici, ma anche tramite legami 1,6-\a-glicosidici, i quali creano le ramificazioni.
+
+L'amido può essere separato in due frazioni:
+\begin{itemize}
+	\item \textbf{amilosio}, che costituisce il 20\% dell'amido ed ha una catena continua con legami 1,4-\a-glicosidici
+	      \begin{figure}[H]
+		      \centering
+		      \chemname{
+		      \chemfig{O?[a]-[7,1.5]\chemnum{sotto}{1}(-[1]H)(%
+		      -[7,1.5]O% - ossigeno glicosidico 1-4'
+		      -[1,1.5]?[b]\chemnum{sotto}{4'}(-[3]H)<[7,1.5](-[2]OH)-[0,1.5,,,line width=4pt,line cap=round](-[6]OH)>[1,1.5](-[7,1.5]O-[@{op,.25}1,2](-[3,0.7,,,wv])(-[7,0.7,,,wv]))-[3,1.5]O-[4,1.5]?[b](-[2]CH_2OH))%
+		      <[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[5,1.5]O-[@{cl,.25}3,2](-[1,0.7,,,wv])(-[5,0.7,,,wv]))-[1,1.5]?[a](-[2]CH_2OH)}
+		      }{\iupac{amilosio}}
+		      \makepolymerdelims{70pt}[50pt]{cl}{op}
+	      \end{figure}
+	\item \textbf{amilopectina} costituire il restante 80\% ed è ha catena altamente ramificata tramite i legami 1,6
+	      \begin{figure}[H]
+		      \centering
+		      \chemname{
+		      \chemfig{O?[a]-[7,1.5]\chemnum{sotto}{1}(-[1]H)(%
+		      -[7,1.5]O% - ossigeno glicosidico 1-4'
+		      % - glucosio 4'
+		      -[1,1.5]?[b]\chemnum{sotto}{4'}(-[3]H)<[7,1.5](-[2]OH)-[0,1.5,,,line width=4pt,line cap=round](-[6]OH)>[1,1.5](-[1]H)(-[7,1.5]O-[1,2](-[3,0.7,,,wv])(-[7,0.7,,,wv]))-[3,1.5]O-[4,1.5]?[b](-[2]\charge{180:5pt=\(\color{blue}\scriptstyle 6\)}{C}H_2%
+			  % - glucosio ramificato 1-6
+			  -[2,1.5]O-[3,1.5]?[c]\chemnum{sotto}{1}(-[1]H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]O)>[3,1.5](-[5]O%
+			  % - glucosio ramificato 1-4
+			  -[3,1.5]?[d](-[1]H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[5,1.5]O-[3,1.5](-[1,0.7,,,wv])(-[5,0.7,,,wv]))-[1,1.5](-[2]CH_2OH)-[0,1.5]O?[d]			  
+			  )-[1,1.5](-[2]CH_2OH)-[0,1.5]O?[c]))%
+		      % - glucosio 1
+		      <[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[3]H)(-[5,1.5]O-[3,2](-[1,0.7,,,wv])(-[5,0.7,,,wv]))-[1,1.5]?[a](-[2]CH_2OH)}
+		      }{\iupac{amilopectina}}
+	      \end{figure}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Glicogeno}
+Il \textbf{glicogeno} è il carboidrato che funge da riserva energetica. È formato come l'amido con legami 1,4 e 1,6 ma molto più ramificato dell'amilopectina. La sua funzione è regolare il glucosio nella circolazione del sangue.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cellulosa}
+La \textbf{cellulosa} è un carboidrato costituito da unità di glucosio legate tra di loro tramite legami 1,4-\b-glicosidici. Queste macromolecole si aggregano in fibrille associate tramite legami a idrogeno tra gli ossidrile delle catene adiacenti. Le fibre di cellulosa sono formate da fibrille che si avvolgono a spirale in direzione opposta intorno a un asse centrale.
+
+L'uomo non riesce a digerire la cellulosa per l'estrema specificità delle reazioni biochimiche dovuta alla stereochimica del legame C-1 delle unità di glucosio.
+
+\begin{figure}[H]
+	\centering
+	\chemname{
+	\chemfig{O?[a]-[7,1.5]\chemnum{sopra}{1}(-[7]H)(%
+	-[1,1.5]O% - ossigeno glicosidico 1-4'
+	-[7,1.5]?[b]\chemnum{sopra}{4'}(-[5]H)<[7,1.5](-[6]CH_2OH)-[0,1.5,,,line width=4pt,shorten >=1.8pt,shorten <=0pt,line cap=rect]O>[1,1.5](-[7,1.5]O-[@{op,.25}1,1.5](-[3,0.7,,,wv])(-[7,0.7,,,wv]))-[3,1.5](-[2]OH)-[4,1.5]?[b](-[6]OH))%
+	<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[5,1.5]O-[@{cl,.25}3,1.5](-[1,0.7,,,wv])(-[5,0.7,,,wv]))-[1,1.5]?[a](-[2]CH_2OH)}
+	}{Cellulosa}
+	\makepolymerdelims{70pt}[40pt]{cl}{op}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

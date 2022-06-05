@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt,oneside,]{book}
+\usepackage[sc]{mathpazo}
+% \linespread{1.05}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+
+
+
+\newlength{\drop}
+\newcommand*{\titleDB}{
+\begingroup% AW, Design of Books
+% \FSfont{5pl} % FontSite URW Palladio (Palatino)
+\drop = 0.14\textheight
+\centering
+\vspace*{\drop}
+{\Huge APPUNTI}\\[\baselineskip]
+{\Huge DI}\\[\baselineskip]
+{\Huge CHIMICA ORGANICA}\\[1.5\baselineskip]
+{\LARGE DI}\\[\baselineskip]
+{\LARGE MATTIA FRIGIOLA}\par
+\vfill
+{CORSO DI BIOINFORMATICA}\\[\baselineskip]
+{ANNO ACCADEMICO 2021/2022}\\[8\baselineskip]
+\vfill
+{\small\sffamily UNIVERSITÀ DEGLI STUDI DI VERONA}\par
+\endgroup
+}
+
+\usepackage{background}
+\definecolor{midnightblue}{rgb}{0.1, 0.2, 0.44}
+\definecolor{powderblue}{rgb}{0.2, 0.4, 0.80}
+\definecolor{gold}{rgb}{1.0, 0.84, 0.0}
+\backgroundsetup{
+	scale=1,
+	angle=0,
+	opacity=1,
+	contents={\begin{tikzpicture}[remember picture,overlay]
+				\path [left color = midnightblue, middle color = midnightblue!50!powderblue, right color = powderblue] (current page.south west)rectangle (current page.north east);   % Adjust the position of the logo.
+			\end{tikzpicture}}
+}
+
+\begin{document}
+\begin{titlepage}
+	\titleDB
+\end{titlepage}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\end{document}

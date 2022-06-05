@@ -1,0 +1,90 @@
+\chapter{Ammine}
+\section{Classificazione delle ammine}
+Le \textbf{ammine} sono derivati dell'ammoniaca (\ch{NH3}) in cui uno o più atomi di idrogeno sono sostituiti da gruppi alchilici o arilici. Le ammine sono classificate a seconda del numero di atomi di idrogeno sostituiti, e quindi abbiamo:
+\begin{itemize}
+	\item ammine primarie \ch{R-NH2}
+	\item ammine secondarie \ch{R2-NH}
+	\item ammine terziarie \ch{R3-N}
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{.5cm}
+	\renewcommand{\arraystretch}{1.4}
+	\begin{tabular}{cccc}
+		\ch{NH3}          & \chemfig{H_3C-NH_2}        & \chemfig{H_3C-NH(-[6]CH_3)}  & \chemfig{H_3C-N(-[6]CH_3)-CH_3} \\
+		\iupac{ammoniaca} & \iupac{metilammina}        & \iupac{dimetilammina}        & \iupac{trimetilammina}          \\
+		                  & (\textit{ammina primaria}) & (\textit{ammina secondaria}) & (\textit{ammina terziaria})     \\
+	\end{tabular}
+\end{figure}
+
+Vengono suddivise, in oltre, in alifatiche e aromatiche. Un'ammina alifatica ha tutti i carboni legati direttamente all'azoto derivano da gruppi alchilici, mentre un'ammina aromatica ha almeno un gruppo arilico legato all'azoto.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{.5cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ccc}
+		\chemfig{NH_2(-[4]*6(-=-=-=))} & \chemfig{\chembelow{N}{H}(-[4]*6(-=-=-=))(-[0]*6(-=-=-=))} & \chemfig{NH(-[4]*6(-=-=-=))(-[2]CH_3)} \\
+		\iupac{Anilina}                & \iupac{Difenilammina}                                      & \iupac{\N-metilanilina}                \\
+	\end{tabular}
+\end{figure}
+
+Un'ammina può essere anche parte di un anello è in questo caso viene classificata come \textbf{ammina eterociclica}. Se fa parte di un anello aromatico è classificata come \textbf{ammina eterociclica aromatica}.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{.5cm}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{cccc}
+		\chemfig{[:-18]*5(-\chembelow{N}{H}----)}                      & \chemfig{*6(-\chembelow{N}{H}-----)}                           & \chemfig{[:-18]*5(-\chembelow{N}{H}-=-=)} & \chemfig{*6(=\chembelow{N}{H}-=-=-)} \\
+		                                                               &                                                                &                                           &                                      \\
+		\iupac{Pirrolidina}                                            & \iupac{Piperidina}                                             & \iupac{Pirrolo}                           & \iupac{Piridina}                     \\
+		\multicolumn{2}{c}{(\textit{ammine eterocicliche alifatiche})} & \multicolumn{2}{c}{(\textit{ammine eterocicliche aromatiche})}                                                                                    \\
+	\end{tabular}
+\end{figure}
+
+\section{Proprietà fisiche delle ammine}
+Le ammine sono composti polari e sia le ammine primarie sia quelle secondarie formano legami a idrogeno intermolecolari. Il legame idrogeno \ch[bond-length=2ex]{N-H\bond{dotted}N} è pi debole del legame idrogeno \ch[bond-length=2ex]{O-H\bond{dotted}O}, per questo motivo le temperature di ebollizione delle ammine sono più basse di quelle degli alcoli. Le ammine a basso peso molecolare sono molto solubili in acqua mentre quelle a peso molecolare più alto sono o moderatamente solubili o insolubili.
+
+\section{Proprietà acido-base delle ammine}
+Tutte le ammine, come l'ammoniaca, sono basi deboli e le loro soluzione acquose sono basiche. Le ammine in acqua si comportano come descritto nella seguente equazione chimica:
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Ammina in acqua}
+	\chemfig{H_3C-@{N}\charge{0=\:}{N}(-[2]H)(-[6]H)} \+ \chemfig{@{H}H-[@{Ol}]@{O}\charge{90=\:,270=\:}{O}-H}
+	\arrow(--.mid west){<=>}
+	\chemname{\chemfig{H_3C-\charge{45:3pt=\chargeColor{+}}{N}(-[2]H)(-[6]H)-H-[,0.7,,,draw=none]\charge{90=\:,180=\:,270=\:,135:3pt=\chargeColor{-}}{O}-H}}{\iupac{Idrossido}\\\iupac{di metilammonio}}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (N).. controls +(-30:.8cm) and +(235:.8cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 3pt] (Ol).. controls +(90:.5cm) and +(90:.5cm) .. (O);
+	}
+\end{reaction}
+\chemnameinit{}
+
+Dall'analisi delle diverse \pKb\ delle ammine si possono fare delle generalizzazioni:
+\begin{enumerate}
+	\item Tutte le ammine alifatiche hanno una \pKb\ compresa tra 3.0 e 4.0.
+	\item Le ammine aromatiche e quelle eterocicliche aromatiche sono basi più deboli rispetto alle ammine alifatiche. Le ammine aromatiche sono più deboli perché il doppietto non condiviso viene delocalizzato sull'anello aromatico per risonanza.
+	\item I gruppi elettron-attrattori riducono la basicità delle ammine aromatiche perché attirano verso di loro gli elettroni.
+\end{enumerate}
+
+La guanidrina (\pKb\ 0.4) è la base più forte perché la carica positiva sull'acido coniugato è delocalizzata uniformemente sui tre atomi di azoto.
+
+\begin{reaction}
+	\AddRxnDesc{risonanza della guanidrina}
+	\arrow{0}[,0]
+	\chemleft[\subscheme{
+	\chemfig{H_2-[,0.5,,,draw=none]@{N}\charge{90=\:}{N}-[@{Nl}]C(=[@{Nl2}2]@{N2}\charge{135:3pt=\chargeColor{+}}{N}H_2)-NH_2}
+	\arrow{<->}
+	\chemfig{H_2-[,0.5,,,draw=none]@{N4}\chemabove{N}{\color{red}\scriptstyle\oplus}=[@{Nl4}]C(-[2]NH_2)-[@{Nl3}]@{N3}\charge{90=\:}{N}H_2}
+	\arrow{<->}
+	\chemfig{H_2N=C(-[2]NH_2)-\chemabove{N}{\color{red}\scriptstyle\oplus}H_2}
+	}\chemright]
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (N).. controls +(90:.5cm) and +(90:.5cm) .. (Nl);
+		\draw[shorten <=3pt, shorten >= 1pt] (Nl2).. controls +(180:.5cm) and +(180:.5cm) .. (N2);
+		\draw[shorten <=3pt, shorten >= 1pt] (N3).. controls +(90:.5cm) and +(90:.5cm) .. (Nl3);
+		\draw[shorten <=3pt, shorten >= 7pt] (Nl4).. controls +(90:.5cm) and +(90:.5cm) .. (N4);
+	}
+\end{reaction}

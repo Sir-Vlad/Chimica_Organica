@@ -1,0 +1,110 @@
+\section{Eteri ed eteri da monosaccaridi}
+Non deve dare meraviglia che gli ossidrile dei monosaccaridi diano reazioni tipiche degli alcoli. Possono essere trasformati in esteri tramite reazioni con gli alogenuri acilici o con le anidridi.
+
+Una tipica reazione è quella del \iupac{\b-\D-glucosio} nel suo pentacetato ad opera dell'anidride acetica.
+
+\begin{reaction}
+	\AddRxnDesc{Acetilazione del \iupac{\b-\D-glucosio}}
+	\arrow{0}[,0]
+	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
+	\arrow{->[\chemfig{CH_3C(=[2,,3]O)-CCH_3(=[2]O)}][piridina, \unit{0\celsius}]}[,2]
+	\chemname{\chemfig{O?-[7,1.5](-[2]OAc)<[5,1.5](-[6]OAc)-[4,1.5,,,line width=4pt,line cap=round](-[2]OAc)>[3,1.5](-[6]O(-[4,0.5,,,opacity=0]Ac))-[1,1.5]?(-[2]CH_2OAc)}}{\iupac{\b-\D-glucopiranosio}\\ \iupac{pentacetato}}
+\end{reaction}
+
+Gli ossidrili alcolici, per reazione con gli alogenuri alchilici in ambiente basico possono essere trasformati in eteri (\hyperref[rcn:sintesiWilliamson]{sintesi di Williamson}). Poiché gli zuccheri sono sensibili alle basi forti si usano basi deboli come ossido di argento.
+
+\begin{reaction}
+	\AddRxnDesc{Sintesi di Williamson con gli zuccheri}
+	\arrow{0}[,0]
+	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
+	\arrow{->[\ch{Ag2O}][\ch{CH3I}]}[,1.5]
+	\chemname{\chemfig{O?-[7,1.5](-[2]OCH_3)<[5,1.5](-[6]OCH_3)-[4,1.5,,,line width=4pt,line cap=round](-[2]OCH_3)>[3,1.5](-[6]O(-[4,0.5,,,opacity=0]CH_3))-[1,1.5]?(-[2]CH_2OCH_3)}}{\iupac{\b-\D-glucopiranosio}\\ \iupac{pentametil etere}}
+\end{reaction}
+
+Gli eteri e gli esteri degli zuccheri sono molto più semplici da utilizzare nelle sintesi organiche e nelle purificazioni rispetto agli zuccheri.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Riduzione dei monosaccaridi}
+Il gruppo carbonilico degli aldosi e dei chetoni può essere ridotto e come prodotti si ottengono i \textbf{polioli} (o \textbf{alditoli}.)
+\begin{reaction}
+	\AddRxnDesc{Riduzione dei monosaccaridi}
+	\arrow{0}[,0]
+	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
+	\arrow
+	\chemname{\glucosio}{\iupac{\D-glucosio}}
+	\arrow{->[1. \ch{NaBH4}][2. \ch{H2O}]}[,1.5]
+	\chemname{\chemfig{CHOH-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}}{\iupac{\D-Sorbitolo}\\o \iupac{\D-Glucitolo}}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ossidazione dei monosaccaridi}
+Gli aldosi possono essere ossidati facilmente ad acidi. I prodotti prendono il nome di \textbf{acidi aldonici}.
+
+\begin{reaction}
+	\AddRxnDesc{Ossidazione blanda dei monosaccaridi}
+	\arrow{0}[,0]
+	\chemname{\glucosio}{\iupac{\D-glucosio}}
+	\arrow{->[\ch{Br2}, \ch{H2O}][oppure \ch[circled=formal]{Ag+} o \ch[circled=formal]{Cu^{2+}}]}[,2.5]
+	\chemname{\chemfig{COOH-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}}{\iupac{Acido \D-gluconico}}
+\end{reaction}
+
+Un carboidrato che reagisce con \ch[circled=formal]{Ag+} o \ch[circled=formal]{Cu^{2+}} si definisce \textbf{zucchero riducente} in quanto l'ossidazione del gruppo aldeidico è accompagnata dalla riduzione del metallo. Questa reazione viene utilizzata per i saggi di riconoscimento del gruppo aldeidico negli zuccheri. Ci sono tre reagenti che si possono utilizzare per il riconoscimento:
+\begin{itemize}
+	\item reagente di Tollens (\ch[circled=formal]{Ag+} in ammoniaca acquosa)
+	\item reagente di Benedict (\ch[circled=formal]{Cu^{2+}} complessato con lo ione citrato)
+	\item reagente di Fehling (\ch[circled=formal]{Cu^{2+}} complessato con lo ione tartrato)
+\end{itemize}
+
+Gli agenti riducenti più forti trasformano il gruppo aldeidico e il gruppo alcolico primario in acidi carbossilici formando gli \textbf{acidi aldarici}.
+
+\begin{reaction}
+	\AddRxnDesc{Ossidazione dei monosaccaridi}
+	\arrow{0}[,0]
+	\chemname{\glucosio}{\iupac{\D-glucosio}}
+	\arrow{->[\ch{HNO3}]}[,1.5]
+	\chemname{\chemfig{COOH-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]COOH}}{\iupac{Acido \D-glucarico}}
+	\chemnameinit{}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formazione dei glicosidi}
+I monosaccaridi esistono come emiacetali quindi possono reagire con un alcol per dare l'acetale dello zucchero corrispondente.
+% \setchemfig{scheme debug}
+{\small
+	\begin{reaction}
+		\AddRxnDesc{Fomazione del glicoside del glucosio}
+		% - 1 reazione
+		\chemname{\chemfig{O?-[7,1.5](-[2]@{O1}\charge{90=\:,180=\:}{O}H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
+		\arrow{<=>[\Hpiu[m]{1}]}
+		% - 2 reazione
+		\chemfig{O?-[7,1.5](-[@{Ol1}2]@{O2}\charge{90:3pt=\chargeColor{+},180=\:}{O}H_2)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}
+		\arrow(--.130){->[\(-\)\ch{H2O}]}
+		% - 3 reazione	
+		\chemleft[\subscheme{
+		\chemfig{O?-[7,1.5]\charge{45:3pt=\chargeColor{+}}{}(-H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}
+		\arrow{<->}[-90]
+		\chemfig{\charge{45:5pt=\chargeColor{+},45=\:}{O}?=[7,1.5]@{C1}(-H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}
+		}\chemright]
+		\arrow(@c5--){0}[145,0.5] \chemfig{CH_3-@{O3}\charge{0=\:,270=\:}{O}-[2]H}
+		\arrow(@c5--){->[\ch{CH_3OH}]}[-180]
+		% - 4 reazione
+		\chemfig{O?-[7,1.5](-[2]@{O4}\charge{135:3pt=\chargeColor{+},180=\:}{O}CH_3-[@{Hl1}2]H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}
+		\arrow{->[\(-\)\!\!\Hpiu{2}]}[-180]
+		% - 5 reazione
+		\chemname{\chemfig{O?-[7,1.5](-[2]OCH_3)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{metil \b-\D-glucopiranoside}}
+		\chemmove[green!60!black!70]{
+			\draw[shorten <=3pt, shorten >= 1pt] (O1).. controls +(90:1cm) and +(90:1.5cm) .. (H1);
+			\draw[shorten <=3pt, shorten >= 1pt] (Ol1).. controls +(0:.5cm) and +(-45:.5cm) .. (O2);
+			\draw[shorten <=3pt, shorten >= 1pt] (O3).. controls +(0:4cm) and +(45:2cm) .. (C1);
+			\draw[shorten <=3pt, shorten >= 1pt] (Hl1).. controls +(0:.5cm) and +(45:.5cm) .. (O4);
+		}
+	\end{reaction}
+}
+
+Il catalizzatore acido potrebbe protonare uno qualsiasi dei sei atomi di ossigeno, tuttavia soltanto la protonazione del C-1 porta a un carbocatione stabilizzato per risonanza. Nell'ultimo passaggio il metanolo può attaccare l'una o l'altra faccia dell'anello formando o il \iupac{\b-glicoside} o l'\iupac{\a-glicoside}.
+
+In un glicoside non è più possibile la mutarotazione perché l'acetale  ciclico non è in equilibrio con il composto carbonilico a catena aperta. Può essere idrolizzato per riottenere l'alcol e il monosaccaride.
+

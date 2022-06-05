@@ -1,0 +1,61 @@
+\section{Denominazione degli stereocentri: il sistema \cip{R,S}}
+Abbiamo visto che i due enantiomeri sono due molecole differenti e ma a livello di nomenclatura sono la stessa molecola. Per risolvere questo problema indichiamo i due enantiomeri con il \textbf{sistema \textit{R,S}}.
+
+\noindent Per assegnare la configurazione \rectus\,e \sinister, per prima cosa si:
+\begin{enumerate}
+	\item Localizza lo stereocentro, identifica i suoi quattro sostituenti e si assegna una priorità da 1 a 4 secondo le regole del \autoref{sec:prioritaConfigurazione}
+	\item Si orienta la molecola in modo che il sostituente con priorità 4 sia diretto dietro la molecola e i 3 sostituenti con priorità più alta si proiettano verso l'osservatore
+	\item Leggere i tre gruppi dalla priorità più alta a quella più bassa
+	      \begin{itemize}
+		      \item Se la lettura avviene in senso orario, la configurazione è \rectus
+		      \item Se la lettura avviene in senso antiorario, la configurazione è \sinister
+	      \end{itemize}
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\setchemfig{
+		atom sep=2.5em,
+		cram width=4pt,
+		cram dash width=0.4pt,
+		cram dash sep=1pt
+	}
+	\begin{tikzpicture}[node distance=1.5cm,every node/.style={font=\sffamily}, align=center]
+		\node (start) {\chemfig{@{C}C(-[2,0.5]H)(<[:30]C@{COOH}OOH)(<[:150]@{OH}HO)(<[6]@{H3C}CH_3)}};
+		\node (conf1) [below of=start,yshift=-5pt] {Configurazione \rectus\\\iupac{Acido\;($-$)-lattico}};
+
+		\node (f1) [right of=start,xshift=3cm] {\chemfig{@{C1}C(-[2,0.5]H)(<[:150]HO@{HOOC}OC)(<[:30]@{HO}OH)(<[6]@{CH3}CH_3)}};
+		\node (conf2) [below of=f1,yshift=-5pt] {Configurazione \sinister\\ \iupac{Acido\;($+$)-lattico}};
+		\draw ($(start.north) !0.5! (f1.north)$) -- ($(start.south) !0.5! (f1.south)$);
+	\end{tikzpicture}
+	\chemmove[-Latex]{
+		% ? Configurazione R
+		% - line di supporto
+		\draw[opacity=0] (C.center) -- +(20:1.4cm) coordinate (a1);
+		\draw[opacity=0] (C.center) -- +(150:1.4cm) coordinate (a2);
+		\draw[opacity=0] (C.center) -- +(270:1.4cm) coordinate (a3);
+		% - arrow
+		\draw[shorten <=3pt, shorten >=3pt,blue] (a1) arc[start angle=20,end angle=-80,radius=1.4cm];
+		\draw[shorten <=3pt, shorten >=3pt,blue] (a2) arc[start angle=150,end angle=30,radius=1.4cm];
+		\draw[shorten <=3pt, shorten >=5pt,blue] (a3)  arc[start angle=270,end angle=160,radius=1.4cm];
+		% - label
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=-4pt,yshift=10pt] at (OH) {\footnotesize \sffamily 1};
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=4pt,yshift=10pt] at (COOH) {\footnotesize \sffamily 2};
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=4pt,yshift=-10pt] at (H3C) {\footnotesize \sffamily 3};
+		% ? Configurazione S
+		% - line di supporto
+		\draw[opacity=0] (C1.center) -- +(30:1.4cm) coordinate (b1);
+		\draw[opacity=0] (C1.center) -- +(160:1.4cm) coordinate (b2);
+		\draw[opacity=0] (C1.center) -- +(280:1.4cm) coordinate (b3);
+		% - arrow
+		\draw[shorten <=3pt, shorten >=3pt,blue] (b1) arc[start angle=30,end angle=150,radius=1.4cm];
+		\draw[shorten <=3pt, shorten >=3pt,blue] (b2) arc[start angle=160,end angle=270,radius=1.4cm];
+		\draw[shorten <=3pt, shorten >=5pt,blue] (b3) arc[start angle=280,delta angle=100,radius=1.4cm];
+		% - label
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=14pt,yshift=10pt] at (HO) {\footnotesize \sffamily 1};
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=-4pt,yshift=10pt] at (HOOC) {\footnotesize \sffamily 2};
+		\node[draw,circle,red,inner sep=0pt,minimum size=5pt,xshift=4pt,yshift=-10pt] at (CH3) {\footnotesize \sffamily 3};
+	}
+	\caption{Configurazione \textit{R, S} dell'acido lattico}
+\end{figure}
+

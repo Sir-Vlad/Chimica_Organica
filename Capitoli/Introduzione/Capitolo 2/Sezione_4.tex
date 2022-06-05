@@ -1,0 +1,60 @@
+\section{Struttura molecolare e acidità}
+Esiste una relazione tra struttura molecolare e acidità nei composti organici. Il fattore principale per determinare l'acidità relativa di un composto organico è studiare la stabilità della sua base coniugata. Più è stabile la base coniugata tanto più forte sarà l'acidità relativa del composto organico.
+
+Per stabilire la stabilità della base coniugata si prendono in considerazione i seguenti fattori:
+\begin{itemize}
+	\item Effetti dell'elemento
+	\item Effetto della risonanza
+	\item Effetto induttivo
+	\item Effetto dell'ibridazione
+\end{itemize}
+
+\paragraph{Effetti dell'elemento}\mbox{}\\
+Lungo il periodo della tavola periodica il fattore dominante che caratterizza l'acidità relativa dei composti organici è l'elettronegatività dell'atomo legato all'\elementsymbol{1}, e di conseguenza la polarità di quel legame e la stabilità della base coniugata. Possiamo dire anche che maggiore è l'elettronegatività dell'atomo, maggiore sarà la stabilità della base coniugata e quindi più forte è l'acido.
+
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{tikzpicture}[every node/.style={single arrow, draw=none}]
+% 		\matrix(m)[matrix of math nodes, row sep=2em, column sep=2em, text height=1.5ex, text depth=0.25ex]
+% 		{
+% 			\ch{H3C-H} & \ch{H2N-H} & \ch{HO-H} & \ch{F-H}\\
+% 		};
+% 		\draw (m-1-1.north) -- ++(2cm);
+% 		\draw[decorate,decoration={markings, mark connection node=freccia,mark=at position 0.4 with{\node [draw,single arrow,transform shape] (freccia){Acidità Crescente};}}](m-1-1) -- (m-1-4) ;
+% 		% \node [fill=blue!50, yshift=2mm] at (m-1-1.north) {Acidità Crescente};
+% 		% \draw[yshift=30pt,-latex] (m-1-1.north) -- node[sloped]{Acidità Crescente} (m-1-4.north);
+% 	\end{tikzpicture}
+% \end{figure}
+
+Se prendiamo gli elementi del secondo periodo, ovvero \elementsymbol{6}, \elementsymbol{7}, \elementsymbol{8} e \elementsymbol{9}. Poiché il \elementsymbol{9} è l'elemento più elettronegativo, il legame \chemfig[atom sep=2em]{H-F} è il più polarizzato. Pertanto \ch{HF} è l'acido più forte, di conseguenza \ch{F-} è la base più stabile, anche perché grazie alla sua elettronegatività riesce a sostenere la carica negativa e questo contribuisce a rendere lo ione \ch{F-} una base debole. Lo ione \ch{CH3-} è lo ione meno stabile di tutti e quindi è la base più forte.
+
+Mentre se scendo lungo il gruppo, l'effetto elettronegativo è trascurabile rispetto alla dimensione dell'atomo legato a \elementsymbol{1}. In questo caso, il fattore dominante sarà la dimensione dell'atomo perché atomo con un raggio atomico più grande riesce a sostenere la carica negativa molto meglio di atomi con raggio atomico più piccolo. Quindi in definitiva, possiamo dire che scendendo lungo il gruppo aumenta l'acidità mentre salendo aumenta l'alcalinità della base coniugata.
+
+\paragraph{Effetto della Risonanza}\mbox{}\\
+Le molecole organiche saranno tanto più acide se la loro base coniugata è stabilizzata dalle forme di risonanza. Questo avviene perché la carica della base coniugata viene delocalizzata lungo tutta la molecola tramite le forme di risonanza. Per questo motivo acidi carbossilici sono molto più acidi rispetto agli alcoli, perché riescono a delocalizzare meglio la carica e quindi ad essere più stabili.
+
+\begingroup
+\setchemformula{circled=all,circletype=math}
+\begin{reaction}
+	\AddRxnDesc{Forme di risonanza dell'acido acetico}
+	\chemname{\chemfig{C(=[1]O)(-[4]\ch{CH3})(-[7]\ch{OH})}}{Acido Acetico} + \ch{H2O} \arrow(.mid east--.mid west){<=>}
+	\chemname{
+		\chemleft{[}
+			\subscheme{
+				\chemfig{C(=[1]O)(-[4]\ch{CH3})(-[7]\charge{45:3pt=\chargeColor{-}}{O})} 
+				\arrow{<->} 
+				\chemfig{C(=[7]O)(-[4]\ch{CH3})(-[1]\charge{45:3pt=\chargeColor{-}}{O})}
+				}
+		\chemright{]}
+	}{Ione Acetato} + \chemname{\ch{H3O^{\color{red}+}}}{Idronio}
+\end{reaction}
+\endgroup
+
+
+\paragraph{Effetto Induttivo}\mbox{}\\
+L'\textbf{effetto induttivo} è la capacità che un atomo o un gruppo funzionale ha di stabilizzare o destabilizzare una molecola, un radicale o uno ione tramite la propria elettronegatività. Questo effetto diventa man mano sempre più debole se l'atomo elettronegativo è lontano dalla carica che deve essere delocalizzata.
+
+Atomi e gruppi sostituenti di una molecola organica possono essere elettron-attrattori (effetto -I) o elettron-repulsori (effetto +I). I primi tendono a stabilizzare i carbanioni aiutando a delocalizzare la carica negativa, i secondi stabilizzano i radicali ed i carbocationi attenuandone rispettivamente la lacuna elettronica e la carica positiva.
+
+\paragraph{Effetto dell'Ibridazione}\mbox{}\\
+Tanto maggiore è la percentuale di carattere \(s\) di un orbitale ibrido contenente una coppia di elettroni, tanto più fortemente tale coppia è attratta al nucleo, cioè \(sp\) è più elettronegativo di un \(sp^2\) che è più elettronegativo di \(sp^3\).

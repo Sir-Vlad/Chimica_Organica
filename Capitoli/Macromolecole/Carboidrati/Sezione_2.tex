@@ -1,0 +1,89 @@
+\section{Monosaccaridi}\label{sec:monosaccardi}
+I monosaccaridi vengono classificati in base al numero di atomi di carbonio (triosi, tetrosi, pentosi e esosi) e in base al tipo di carbonile (aldosi e chetosi).
+
+Esistono solo due triosi soltanto, la \iupac{gliceraldeide} e il \iupac{diidrossichetone}. Tutti gli aldosi e i chetosi derivano dalla \iupac{gliceraldeide} e dal \iupac{diidrossichetone} per graduale aggiunta di atomi di carbonio; negli aldosi a partire dal gruppo aldeidico mentre nei chetosi dal carbonio 2.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{2cm}
+	\renewcommand{\arraystretch}{4}
+	\begin{tabular}{cc}
+		\gliceraldeide        & \diidrossichetone        \\
+		\iupac{Gliceraldeide} & \iupac{Diidrossichetone} \\
+	\end{tabular}
+\end{figure}
+
+\section{Chiralità dei monosaccaridi}\label{sec:chiralitaMonosaccaridi}
+La gliceraldeide, l'aldoso più semplice, ha un solo carbonio stereogeno e perciò esiste sotto forma di due enantiomeri.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		\gliceraldeide                      & \chemfig{CH(=[0]O)(-[6](-[4]HO)(-[0]H)(-[6]CH_2OH))} \\
+		\iupac{\cip{R}-($+$)-gliceraldeide} & \iupac{\cip{S}-($-$)-gliceraldeide}                  \\
+	\end{tabular}
+	\caption{Enantiomeri della gliceraldeide}
+\end{figure}
+
+Fischer studiò la stereochimica dei carboidrati e assegnò la lettera \D\;alla configurazione della \iupac{(+)-gliceraldeide} e la lettera \L\;al suo enantiomero \iupac{($-$)-gliceraldeide}.
+
+Questo sistema venne ampliato anche agli altri carboidrati. Se il carbonio asimmetrico più lontano ha la stessa configurazione della \iupac{\D-gliceraldeide} allora il composto è uno zucchero della serie \D, se invece ha la configurazione della \iupac{\L-gliceraldeide}, il composto sarà della serie \L.
+
+Sappiamo che tutti i carboidrati sono molecole chirali, di conseguenza tutte le molecole con lo stesso numero di atomi di carbonio sono tra di loro diastereoisomeri. I diastereoisomeri che differiscono sono di un centro stereogeno vengono chiamati \textbf{epimeri}.
+
+\subimport*{./grafici/}{aldosi.tex}
+\subimport*{./grafici/}{chetosi.tex}
+
+\section{Strutture emiacetaliche cicliche dei monosaccaridi}
+Come abbiamo visto in precedenza gli alcoli si addizionano al carbonile di aldeidi e chetoni per dare gli emiacetali (\autoref{sec:formazioneEmiacetali}). Se i due gruppi si trovano nella stessa molecola, la reazione procede intramolecolarmente per dare emiacetali ciclici. Questo tipo di reazione è molto favorita nei monosaccaridi.
+
+I monosaccaridi esistono prevalentemente in forma emiacetalica ciclica. Ad esempio, il \iupac{\D-glucosio} esiste prevalentemente in forma ciclizzata nella quale l'ossidrile 5 ha reagito con il carbonio 1 aldeidico.
+\begin{reaction}\label{rct:glucosiociclico}
+	\AddRxnDesc{Emiacetalizzazione del \iupac{\D-glucosio}}
+	\arrow{0}[,0]
+	\chemname{\glucosio}{\iupac{\D-glucosio}}
+	\arrow
+	\chemnameinit{}
+	\chemname{\chemfig[bond join=true]{O?-[7,1.5](-[0,,,,decorate,decoration=snake]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\D-glucopiranosio}}
+	\arrow{0}[,0]\+\arrow{0}[,0]
+	\chemname{\chemfig{O?-[:-30,1.8](-[0,,,,decorate,decoration=snake]OH)<[:240,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[:120,1.5]?(-[2](-[4]HO)(-[2]CH_2OH))}}{\iupac{\D-glucofuranosio}}
+\end{reaction}
+\chemnameinit{}
+In teoria, tutti e cinque gli ossidrile possono sommarsi al carbonile per formare emiacetali ciclici ma in pratica si formano solo gli anelli più stabili, ovvero quelli a cinque e a sei termini. L'anello a cinque termini viene chiamato \textbf{furanosio}, dal furano, mentre quello a sei \textbf{piranosio}, dal pirano.
+
+La rappresentazione utilizzata nella~\autoref{rct:glucosiociclico} è stata introdotta da Haworth ed è un sistema molto utile per rappresentare i carboidrati ciclici. Nelle \textbf{proiezioni di Haworth} l'anello si disegna come se fosse piano e visto dall'alto, con l'ossigeno a destra. Gli atomi di carbonio sono numerati e disposti in senso orario, a partire dal carbonio 1 a destra.
+
+Una caratteristica della forma emiacetalica ciclica è che il carbonio 1 diventa un carbonio stereogeno, di conseguenza le forme emiacetaliche cicliche avranno due configurazioni possibili.
+
+Il nuovo centro stereogeno è detto \textbf{carbonio anomerico} e due monosaccaridi che differiscono solo per il carbonio anomerico vengono chiamato \textbf{anomeri}. Gli anomeri vengono distinti in \a\;e \b\;a seconda della posizione del gruppo ossidrilico.
+
+Nei monosaccaridi della serie \D\;il gruppo \ch{OH} è diretto verso il basso nell'anomero \a\;e verso l'alto nell'anomero \b.
+
+\begin{reaction}
+	\AddRxnDesc{Interconversione tra le forme chiuse e quella aperta del glucosio}
+	\chemname{\chemfig[bond join=true]{(=[0]O)(-[3]H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)-OH}}{\iupac{\D-glucosio}}
+	\arrow(@c1.mid east--.160){<->>}
+	\chemname{\chemfig[bond join=true]{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}\\(64\%)}
+	\arrow(@c1.mid west--.20){<->>}[-180]
+	\chemname{\chemfig[bond join=true]{O?-[7,1.5](-[6]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\a-\D-glucopiranosio}\\(36\%)}
+\end{reaction}
+
+Le forme \a\;e \b\;del \iupac{\D-glucosio} sono diastereoisomeri e, in quando tali, hanno proprietà differenti come la temperatura di fusione e la rotazione ottica specifica.
+
+Se vengono messi da soli in soluzione acquosa i due anomeri, il valore della rotazione ottica specifica cambierà fino ad arrivare ad un valore di equilibrio, che è \unit{+52\degree}. Questo fenomeno prende il nome di \textbf{mutarotazione}. Questo fenomeno può essere spiegato ricordando che la formazione di emiacetali è un processo reversibile, e quindi indifferentemente quale anomero verrà messo in soluzione, l'anello si aprirà per dare l'aldeide acilica per poi ciclizzare nuovamente in un'anomero. Alla fine otteniamo una soluzione contenente il \unit{35,5\%} della forma \a, il \unit{64,5\%} la forma \b\;e solo il \unit{0,003\%} a catena aperta.
+
+Si nota che la percentuale dell'anomero \a\;e \b\;sono diversi perché nell'anomero \b\;ha \ch{-OH} anomerico è in posizione equatoriale e questo riduce le tensioni nell'anello.
+
+\begingroup
+\chemnameinit{}
+\setchemfig{atom sep=3em}
+\begin{center}
+	\schemestart
+		\chemname{\glucose[model=chair,ring,anomer=alpha]}{\iupac{\a-\D-glucosio}}
+		\arrow{0}
+		\chemname{\glucose[model=chair,ring,anomer=beta]}{\iupac{\b-\D-glucosio}}
+	\schemestop
+\end{center}
+\chemnameinit{}
+\endgroup

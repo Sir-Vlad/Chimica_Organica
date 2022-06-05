@@ -1,0 +1,80 @@
+\section{Disaccaridi}\label{sec:disaccaridi}
+I disaccaridi sono formati da due unità di monosaccaride legati assieme tramite un legame glicosidico tra il carbonio anomerico di una unità e un ossidrile dell'altra unità.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Maltosio}
+Il \textbf{maltosio} è un disaccaride formato da due unità di glucosio legate tra loro tramite un legame glicosidico tra il carbonio anomerico \a\;di una unità e il gruppo ossidrilico del C-4' dell'altra unità.
+\newcommand{\chemnum}[2]{
+	\ifthenelse{\equal{#1}{sotto}}{
+		\chembelow[5pt]{}{\color{blue}\scriptstyle #2}
+	}{
+		\ifthenelse{\equal{#1}{sopra}}{
+			\chemabove[5pt]{}{\color{blue}\scriptstyle #2}}
+	}{}
+}
+\begin{figure}[H]
+	\centering
+	\chemname{
+	\chemfig{O?[a]-[7,1.5]\chemnum{sotto}{1}(-[1]H)(%
+	-[7,1.5]O% - ossigeno glicosidico 1-4'
+	-[1,1.5]?[b]\chemnum{sotto}{4'}(-[3]H)<[7,1.5](-[2]OH)-[0,1.5,,,line width=4pt,line cap=round](-[6]OH)>[1,1.5](-[0,,,,decorate,decoration={snake}]OH)-[3,1.5]O-[4,1.5]?[b](-[2]CH_2OH))%
+	<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6,,,2]HO)-[1,1.5]?[a](-[2]CH_2OH)}
+	}{\iupac{Maltosio}\\\iupac{4-\O-(\a-\D-glucopiranosil)-\D-glucopiranosio}}
+\end{figure}
+Nel maltosio il carbonio anomerico dell'unità di glucosio di destra è emiacetalico e quindi, quando sta in soluzione è in equilibrio con la forma aperta e può cambiare configurazione. Può anche risposta positiva a tutti i saggi di riconoscimento come quello di Tollens.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cellobiosio}
+Il \textbf{cellobiosio} è un disaccaride formato da due unità di glucosio come il maltosio. Differisce da quest'ultimo solo per la configurazione del C-1 che è \b. Tutte le altre caratteristica strutturali sono uguali al maltosio.
+\begin{figure}[H]
+	\centering
+	\chemname{
+	\chemfig{O?[a]-[7,1.5]\chemnum{sopra}{1}(-[7]H)(%
+	-[1,1.5]O% - ossigeno glicosidico 1-4'
+	-[1,1.5]?[b]\chemnum{sopra}{4'}(-[3]H)<[7,1.5](-[2]OH)-[0,1.5,,,line width=4pt,line cap=round](-[6]OH)>[1,1.5](-[0,,,,decorate,decoration={snake}]OH)-[3,1.5]O-[4,1.5]?[b](-[2]CH_2OH))%
+	<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6,,,2]HO)-[1,1.5]?[a](-[2]CH_2OH)}
+	}{\iupac{Cellobiosio}\\\iupac{4-\O-(\b-\D-glucopiranosil)-\D-glucopiranosio}}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Lattosio}
+Il \textbf{lattosio} è un disaccaride formato da galattosio e glucosio legati tra loro tramite un legame glicosidico tra il carbonio C-1 anomerico \b\;del galattosio e il carbonio ossidrilico del carbonio C-4 del glucosio.
+\begin{figure}[H]
+	\centering
+	\chemname{
+	\chemfig{O?[a]-[7,1.5]\chemnum{sopra}{1}(-[7]H)(%
+	-[1,1.5]O% - ossigeno glicosidico 1-4'
+	-[1,1.5]?[b]\chemnum{sopra}{4'}(-[3]H)<[7,1.5](-[2]OH)-[0,1.5,,,line width=4pt,line cap=round](-[6]OH)>[1,1.5](-[0,,,,decorate,decoration={snake}]OH)-[3,1.5]O-[4,1.5]?[b](-[2]CH_2OH))%
+	<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[2,,,2]HO)-[1,1.5]?[a](-[2]CH_2OH)}
+	}{\iupac{Lattosio}\\\iupac{4-\O-(\b-\D-galattopiranosil)-\D-glucopiranosio}}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Saccarosio}
+Il \textbf{saccarosio} è un disaccaride formato da glucosio e fruttosio legati tra loro tramite legame glicosidico tra il carbonio anomerico del glucosio e il carbonio anomerico del fruttosio.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{.5cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		\chemfig{O?[a]-[7,1.5]\charge{0:5pt=$\color{blue}\scriptstyle 1$}{}(-[2]H)(%
+		-[6,2.5]O% - ossigeno glicosidico 1-6'
+		-[6,2.5]\charge{0:5pt=$\color{blue}\scriptstyle 2$}{}?[b](-[6]CH_2OH)<[:240,1.5](-[2,,,2]HO)-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5](-[2,,,4,]HOH_2C)-[:30,1.8]O?[b])%
+		<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6,,,2]HO)-[1,1.5]?[a](-[2]CH_2OH)}
+		                                                    &
+		\chemfig{O?-[:-30,1.8]\charge{0:5pt=$\color{blue}\scriptstyle 2$}{}(-[2]CH_2OH)(%
+		-[6,2.5]O% - ossigeno glicosidico 1-6'
+		-[6,2.5]\charge{0:5pt=$\color{blue}\scriptstyle 1$}{}?[b](-[6]H)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6,,,2]HO)-[1,1.5](-[2]CH_2OH)-[0,1.5]O?[b]
+		)<[:240,1.5](-[2,,,2]HO)-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,4]HOH_2C)}     \\
+		\multicolumn{2}{c}{\iupac{Saccarosio}}                                                                    \\
+		\iupac{\a-\D-glucopiranosil-\b-\D-fruttofuranoside} & \iupac{\b-\D-fruttofuranosil-\a-\D-glucopiranoside} \\
+	\end{tabular}
+\end{figure}
+
+Poiché i carboni anomerici dei fruttosio e del glucosio partecipano al legame glicosidico, nessuna delle due unità è in equilibrio con la forma aperta, ne consegue che il saccarosio non è uno zucchero riducente.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

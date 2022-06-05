@@ -1,0 +1,528 @@
+% \setcounter{chapter}{-1} % Far partire i capitoli da 0
+% \setcounter{secnumdepth}{3} % Numerare fino subsubsection
+\setcounter{tocdepth}{3} % Indice fino subsubsection
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COLORI DEGLI ATOMI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{Hydrogen}{rgb}{1.0, 1.0, 1.0} % [255,255,255]
+\definecolor{Carbon}{rgb}{0.56, 0.56, 0.56} % [144,144,144] 
+\definecolor{Nitrogen}{rgb}{0.19, 0.31, 0.97} % [48,80,248]
+\definecolor{Oxygen}{rgb}{1.0, 0.05, 0.05} % [255,13,13]
+\definecolor{Phosphorus}{rgb}{1.0, 0.50, 0.0} % [255,128,0]
+\definecolor{Sulfur}{rgb}{1.0, 1.0, 0.19} % [255,255,48]
+
+\definecolor{Fluorine}{rgb}{0.56, 0.88, 0.31} % [144,224,80]
+\definecolor{Chlorine}{rgb}{0.12, 0.94, 0.12} % [31,240,31]
+\definecolor{Bromine}{rgb}{0.65, 0.16, 0.16} % [166,41,41]
+\definecolor{Iodine}{rgb}{0.58, 0.0, 0.58} % [148,0,148]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHEMFIG COMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+
+\newcommand{\namebond}[5][5pt]{\chemmove{\path(#2)--(#3)node[midway,sloped,yshift=#1,xshift=#5pt]{#4};}}
+
+\newcommand{\arcbetweennodes}[3]{%
+	\pgfmathanglebetweenpoints{\pgfpointanchor{#1}{center}}{\pgfpointanchor{#2}{center}}%
+	\let#3\pgfmathresult}
+
+% #1 = distanza arco, #2 = punto di inizio, #3 = punto di centro, #4 = punto finale, #5 = label, #6 = yshift, #7 = xshift
+\newcommand{\arclabel}[8][stealth-stealth,shorten <=1pt,shorten >=1pt]{%
+	\chemmove{%
+		\arcbetweennodes{#4}{#3}\anglestart \arcbetweennodes{#4}{#5}\angleend
+		\draw[#1]([shift=(\anglestart:#2)]#4)arc(\anglestart:\angleend:#2);
+		\pgfmathparse{(\anglestart+\angleend)/2}\let\anglestart\pgfmathresult
+		\node[shift=(\anglestart:#2+1pt)#4,anchor=\anglestart+180,rotate=\anglestart+90,inner sep=0pt, outer sep=0pt,yshift=#7pt,xshift=#8pt]at(#4){#6};}}
+
+
+% Carica molecola
+\newcommand{\chargeColor}[1]{%
+	\ifthenelse{\equal{#1}{+}}{
+			$\color{red}\scriptstyle\oplus$
+		}{\ifthenelse{\equal{#1}{-}}{
+			$\color{blue}\scriptstyle\ominus$
+		}{}}
+	}
+
+
+\newcommand{\ortoFenolo}{
+	{\scriptsize\setchemfig{double bond sep=3pt}\resetcharge
+		\schemestart
+			\chemfig{*6(-=-(-[1]Cl)(-[0]H)-\charge{280:3pt=\chargeColor{+}}{}(-[@{ol}2]@{o1}\charge{90=\:,180=\:}{O}H)-=)}
+			\arrow{<->}
+			\chemfig{*6(-=-(-[1]Cl)(-[0]H)-(=[@{ol2}2]@{o2}\charge{90=\:,180:1pt=\chargeColor{+}}{O}H)-[@{dl1}]=[@{dl}])}
+			\arrow{<->}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=@{d3}-(-[1]Cl)(-[0]H)-(-[2]\charge{90=\:,180=\:}{O}H)=-)}
+			\arrow{<->}
+			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]Cl)(-[0]H)-(-[2]\charge{90=\:,180=\:}{O}H)=-)}
+	\schemestop}
+			\chemmove[green!60!black!70]{				
+				\draw[shorten <=3pt, shorten >= 3pt] (o1) .. controls +(180:.5cm) and +(180:.5cm) .. (ol);
+				\draw[shorten <=3pt, shorten >= 6pt] (ol2)  .. controls +(180:.7cm) and +(180:.7cm) .. (o2);
+				\draw[shorten <=3pt, shorten >= 3pt] (dl)  .. controls +(0:.5cm) and +(-45:.5cm) .. (dl1);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(135:.5cm) and +(15:.5cm) .. (d2c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
+			}
+}
+
+\newcommand{\paraFenolo}{
+	{\scriptsize\setchemfig{double bond sep=3pt}
+	\schemestart
+		\chemfig{*6(-(-[7]Cl)(-[5]H)-@{dc1}\charge{130:4pt=\chargeColor{+}}{}-=[@{dl1}](-[2]\charge{90=\:,180=\:}{O}H)-=)}
+		\arrow{<->}
+		\chemfig{*6(-(-[7]Cl)(-[5]H)-=-\charge{290:4pt=\chargeColor{+}}{}(-[@{op}2]@{ol}\charge{90=\:,180=\:}{O}H)-=)}
+		\arrow{<->}
+		\chemfig{*6(-(-[7]Cl)(-[5]H)-=-@{dc2}(=[@{op2}2]@{ol2}\charge{90=\:,180:2pt=\chargeColor{+}}{O}H)-=[@{dl2}])}
+		\arrow{<->}
+		\chemfig{*6(@{dc3}\charge{25:6pt=\chargeColor{+}}{}-(-[7]Cl)(-[5]H)-=-(-[2]\charge{90=\:,180=\:}{O}H)=[@{dl3}]-)}
+	\schemestop}
+\chemmove[green!60!black!70]{
+	\draw[shorten <=4pt, shorten >= 10pt] (dl1) .. controls +(-135:.5cm) and +(150:.5cm) .. (dc1);
+	\draw[shorten <=3pt, shorten >= 3pt] (ol) .. controls +(180:.5cm) and +(180:.5cm) .. (op);
+	\draw[shorten <=3pt, shorten >= 10pt] (op2) .. controls +(180:.9cm) and +(180:.9cm) .. (ol2);
+	\draw[shorten <=4pt, shorten >= 3pt] (dl2) .. controls +(0:.5cm) and +(270:.5cm) .. (dc2);
+	\draw[shorten <=4pt, shorten >= 10pt] (dl3) .. controls +(-45:.5cm) and +(30:.5cm) .. (dc3);
+}
+}
+
+\newcommand{\metaFenolo}{
+	{\scriptsize\setchemfig{double bond sep=3pt}
+	\schemestart			
+		\chemfig{*6(=-(-[0]H)(-[7]Cl)-@{sl1}\charge{210:2pt=\chargeColor{+}}{}-(-\charge{90=\:,180=\:}{O}H)=[@{dl1}]-)}
+		\arrow{<->}
+		\chemfig{*6(=-(-[0]H)(-[7]Cl)-=[@{dl2}](-\charge{90=\:,180=\:}{O}H)-@{sl2}\charge{-20:6pt=\chargeColor{+}}{}-)}
+		\arrow{<->}
+		\chemfig{*6(-@{sl3}\charge{80:4pt=\chargeColor{+}}{}-(-[0]H)(-[7]Cl)-=(-\charge{90=\:,180=\:}{O}H)-=[@{dl3}])}
+	\schemestop}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=4pt, shorten >= 10pt] (dl1) .. controls +(-50:.3cm) and +(215:.8cm) .. (sl1);
+		\draw[shorten <=4pt, shorten >= 10pt] (dl2) .. controls +(230:.3cm) and +(-35:.8cm) .. (sl2);
+		\draw[shorten <=4pt, shorten >= 10pt] (dl3) .. controls +(0:.3cm) and +(90:.8cm) .. (sl3);
+	}
+}
+
+
+\newcommand{\ortoNitroBenzene}{
+	{
+		\scriptsize\setchemfig{double bond sep = 2pt}
+		\schemestart
+			\chemfig{*6(-=-(<[:-10]NO_2)(>:[:70]H)-@{sl1}\chembelow{}{\color{red}\scriptstyle\oplus}(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-=[@{dl1}])}
+			\arrow{<->}
+			\chemfig{*6(@{sl2}\charge{30:4pt=\chargeColor{+}}{}-=[@{dl2}]-(<[:-10]NO_2)(>:[:70]H)-(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))=-)}
+			\arrow{<->}
+			\chemfig{*6(=[@{dl3}]-@{sl3}\charge{140:3pt=\chargeColor{+}}{}-(<[:-10]NO_2)(>:[:70]H)-(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))=-)}
+		\schemestop
+	}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 8pt] (dl1).. controls +(0:.5cm) and +(270:.5cm) .. (sl1);
+		\draw[shorten <=3pt, shorten >= 8pt] (dl2).. controls +(120:.4cm) and +(45:.8cm) .. (sl2);
+		\draw[shorten <=3pt, shorten >= 10pt] (dl3).. controls +(60:.4cm) and +(150:.8cm) .. (sl3);
+	}
+}
+
+\newcommand{\paraNitroBenzene}{
+	{
+	\scriptsize\setchemfig{double bond sep = 2pt}
+	\schemestart
+		\chemfig{*6(@{sl2}\charge{30:4pt=\chargeColor{+}}{}-(<[7]NO_2)(>:[5]H)=--(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))=[@{dl2}]-)}
+		\arrow{<->}
+		\chemfig{*6(-(<[7]NO_2)(>:[5]H)-=[@{dl1}]-@{sl1}\chembelow{}{\color{red}\scriptstyle\oplus}(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-=)}
+		\arrow{<->}
+		\chemfig{*6(-(<[7]NO_2)(>:[5]H)-@{sl3}\charge{140:3pt=\chargeColor{+}}{}-=[@{dl3}](-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-=)}
+	\schemestop
+	}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 8pt] (dl2).. controls +(-30:.5cm) and +(45:.5cm) .. (sl2);
+		\draw[shorten <=3pt, shorten >= 8pt] (dl1).. controls +(180:.5cm) and +(270:.5cm) .. (sl1);
+		\draw[shorten <=3pt, shorten >= 10pt] (dl3).. controls +(240:.5cm) and +(150:.5cm) .. (sl3);
+	}
+}
+
+\newcommand{\metaNitroBenzene}{
+{
+	\scriptsize\setchemfig{double bond sep = 2pt}
+	\schemestart
+		\chemfig{*6(=-(<[:-70]NO_2)(>:[:20]H)-@{sl1}\charge{210:3pt=\chargeColor{+}}{}-(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))=[@{dl1}]-)}
+		\arrow{<->}
+		\chemfig{*6(=[@{dl2}]-(<[:-70]NO_2)(>:[:20]H)-=(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-@{sl2}\charge{-30:4pt=\chargeColor{+}}{}-)}
+		\arrow{<->}
+		\chemfig{*6(-@{sl3}\charge{80:4pt=\chargeColor{+}}{}-(<[:-70]NO_2)(>:[:20]H)-=(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-=[@{dl3}])}
+	\schemestop
+	}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 10pt] (dl1).. controls +(-45:.4cm) and +(210:.6cm) .. (sl1);
+		\draw[shorten <=3pt, shorten >= 10pt] (dl2).. controls +(45:.5cm) and +(-30:.5cm) .. (sl2);
+		\draw[shorten <=3pt, shorten >= 10pt] (dl3).. controls +(0:.5cm) and +(90:.5cm) .. (sl3);
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRAFICI FALSI %%%%%%%%%%%%%%%%%
+
+\newcommand{\grafico}[1]{
+	\begin{framed}
+		\begin{center}
+			\Huge\color{red}\textbf{#1}
+		\end{center}
+	\end{framed}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHEMFORMULA COMMAND %%%%%%%%%%%%%%%%%
+
+\newcommand{\Hpiu}[2][]{
+	\ifthenelse{\equal{#1}{m}}{		
+		\chemfig{@{H#2}\charge{35:3pt=\chargeColor{+}}{H}}
+	}{
+		\ch{H^{\color{red}\oplus}}
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% tikz FALSI %%%%%%%%%%%%%%%%%
+
+
+% cosa ondulata al fine del legame
+\pgfdeclaredecoration{complete sines}{initial}{
+    \state{initial}[
+        width=+0pt,
+        next state=sine,
+        persistent precomputation={
+                \pgfmathsetmacro\matchinglength{
+                    \pgfdecoratedinputsegmentlength /
+                    int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)
+                }
+                \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+            }]{}
+    \state{sine}[width=\pgfdecorationsegmentlength]{
+        \pgfpathsine{
+            \pgfpoint
+            {0.25\pgfdecorationsegmentlength}
+            {0.5\pgfdecorationsegmentamplitude}
+        }
+        \pgfpathcosine{
+            \pgfpoint
+            {0.25\pgfdecorationsegmentlength}
+            {-0.5\pgfdecorationsegmentamplitude}
+        }
+        \pgfpathsine{
+            \pgfpoint
+            {0.25\pgfdecorationsegmentlength}
+            {-0.5\pgfdecorationsegmentamplitude}
+        }
+        \pgfpathcosine{
+            \pgfpoint
+            {0.25\pgfdecorationsegmentlength}
+            {0.5\pgfdecorationsegmentamplitude}
+        }
+    }
+    \state{final}{}
+}
+
+\tikzset{wv/.style={decorate,decoration=complete sines}}
+
+
+% legame delocalizzato 
+% ? use -[,,,,ddbond={<argoments>}] 
+% ! argoments = + destra e - sinistra 
+\catcode`\_=11
+\tikzset{
+	ddbond/.style args={#1}{
+		draw=none,
+		decoration={%
+			markings,
+			mark=at position 0 with {
+				\coordinate (CF@startdeloc) at (0,\dimexpr#1\CF_doublesep/2)
+				coordinate (CF@startaxis) at (0,\dimexpr-#1\CF_doublesep/2);
+				},
+			mark=at position 1 with {
+				\coordinate (CF@enddeloc) at (0,\dimexpr#1\CF_doublesep/2)
+					coordinate (CF@endaxis) at (0,\dimexpr-#1\CF_doublesep/2);
+					\draw[dash pattern=on 2pt off 1.5pt] (CF@startdeloc)--(CF@enddeloc);
+					\draw (CF@startaxis)--(CF@endaxis);
+				}
+			},
+		postaction={decorate}
+	}
+}
+\catcode`\_=8
+
+\newcommand{\circleNum}[1]{
+	\tikz{
+		\node[circle,draw,blue,align=center,text centered,minimum size=10pt,font={\scriptsize\bfseries\sffamily}] at (0,0) {#1};
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARBOIDRATI %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ! ALDOSI
+
+\newcommand{\gliceraldeide}{
+	\chemfig{CH(=[0]O)(-[6](-[0]OH)(-[4]H)(-[6]CH_2OH))}
+}
+
+\newcommand{\eritrosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\treosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6]CH_2OH}
+}
+
+\newcommand{\ribosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\arabinosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\xilosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\lixosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\allosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\altrosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\glucosio}[1][]{
+	% \ifthenelse{\equal{#1}{}}{
+		\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH} % - catena aperta
+	% }{
+	% 	\ifthenelse{\equal{#1}{a}}{
+	% 		\chemfig{O?-[7,1.5](-[6]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}% - anomero alpha
+	% 	}{
+	% 		\ifthenelse{\equal{#1}{b}}{
+	% 			\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)} % - anomero beta
+	% 		}{}
+	% 	}
+	% }
+}
+
+\newcommand{\mannosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\gulosio}{
+	\chemfig{CH(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\idosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\galattosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\talosio}{
+	\chemfig{CH(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+% ! CHETOSI
+
+\newcommand{\diidrossichetone}{
+	\chemfig{CH_2OH(-[6]C(=[0]O)(-[6]CH_2OH))}
+}
+
+\newcommand{\eritrulosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\xilulosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\ribulosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\tagatosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\sorbosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\fruttosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[4]HO)(-[0]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+\newcommand{\psicosio}{
+	\chemfig{CH_2OH-[6]C(=[0]O)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6](-[0]OH)(-[4]H)-[6]CH_2OH}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACIDI NUCLEICI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% - UNITA SEMPLICI
+\definesubmol{adenina}{*6(=N-*5(-\chembelow{N}{H}-=N-)=-(-NH_2)=N-)}
+\definesubmol{guanina}{*6((-NH_2)=N-*5(-\chembelow{N}{H}-=N-)=-(=O)=N-)}
+\definesubmol{citosina}{*6((=O)-\chembelow{N}{H}-=-(-NH_2)=N-)}
+\definesubmol{timina}{*6((=O)-\chembelow{N}{H}-=(-CH_3)-(=O)=HN-[,,2])}
+\definesubmol{uracile}{*6((=O)-\chembelow{N}{H}-=-(=O)=HN-[,,2])}
+
+\definesubmol{deossiribosio}{O?-[:-30,1.8](-[2]OH)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)}
+
+\definesubmol{ribosio}{O?-[:-30,1.8](-[2]OH)(-[6]H)<[:240,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)}
+
+
+% - NUCLEOTIDI
+\definesubmol{deossicitosina}{
+		O?-[:-30,1.8](
+			-[2,2]N*6(-=-(-NH_2)=N-(=O)-) % - citosina
+		)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)
+	}
+
+
+\definesubmol{deossiadenina}{
+		O?-[:-30,1.8](
+			-[2,2]N*5([:107]-=N-*6(-(-NH_2)=N-=N--)--)
+		)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)		
+}
+
+
+% - NUCLEOSIDI
+\definesubmol{3CMP}{
+		O?-[:-30,1.8](
+			-[2,2]N*6(-=-(-NH_2)=N-(=O)-) % - citosina
+		)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](
+			-[6]O-[4]P(=[2]O)(-[4]\charge{135:3pt=\chargeColor{-}}{O})(-[6]\charge{45:3pt=\chargeColor{-}}{O}) % - 3-monofosfato
+		)>[:120,1.5]?(-[2,,,3]HOCH_2)
+	}
+\definesubmol{5CMP}{
+		O?-[:-30,1.8](
+			-[2,2]N*6(-=-(-NH_2)=N-(=O)-) % - citosina
+		)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(
+			-[2]CH_2-[4]O-[4]P(=[2]O)(-[4]\charge{135:3pt=\chargeColor{-}}{O})(-[6]\charge{45:3pt=\chargeColor{-}}{O})
+		)
+	}
+
+\definesubmol{ATP}{
+		O?-[:-30,1.8](
+			-[2,2]N*5([:107]-=N-*6(-(-NH_2)=N-=N--)--)
+		)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2]CH_2
+			-[4]O-[4]P(=[2]O)(-[6]\charge{45:3pt=\chargeColor{-}}{O})		
+			-[4]O-[4]P(=[2]O)(-[6]\charge{45:3pt=\chargeColor{-}}{O})		
+			-[4]O-[4]P(=[2]O)(-[6]\charge{45:3pt=\chargeColor{-}}{O})(-[4]HO)
+		)		
+}
+
+
+% - unita base DNA
+\definesubmol\DNA2{
+	-O-[0]CH_2-[6]?[#1](-[6]H)-[:30,1.8]O-[:-30,1.8](-[2]#2)(-[6]H)<[:-120,1.5]-[4,1.5,,,line width=4pt,line cap=round]?[#1,{<}]-[6]O-[6]P(=[6]O)(-[4]\charge{135:3pt=\chargeColor{-}}{O})
+	}
+
+% - unità base RNA
+\definesubmol{UMP}{
+	O?-[:-30,1.8](-[2]O
+	-[2,2]N*6(-=-(=O)-HN-[,,2](=O)-) % - uracile
+	)(-[6]H)<[:240,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2]CH_2
+	-[4]O-[4]P(=[2]O)(-[4]\charge{135:3pt=\chargeColor{-}}{O})(-[6]\charge{45:3pt=\chargeColor{-}}{O})
+	)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AMMINOACIDI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definesubmol{ptr}{
+	-[:-30](<[6]NH_2)-[:30](=[2]O)(-[:-30]OH)
+}
+
+% ------------------------- GRUPPI NON POLARI -------------------------------
+
+\newcommand{\alanina}{
+	\chemfig{!{ptr}}
+}
+
+\newcommand{\glicina}{
+	\chemfig{(-[6]NH_2)-[:30](=[2]O)(-[:-30]OH)}
+}
+
+\newcommand{\isoleucina}{
+	\chemfig{-[:-30]-[:30](<[2])!{ptr}}
+}
+
+\newcommand{\leucina}{
+	\chemfig{-[:-30](-[6])-[:30]!{ptr}}
+}
+
+\newcommand{\metionina}{
+	\chemfig{-[:30]S-[:-30]-[:30]!{ptr}}
+}
+
+\newcommand{\fenilalanina}{
+	\chemfig{([:180]*6(-=-=-=))-[:30]!{ptr}}
+}
+
+\newcommand{\prolina}{
+	\chemfig{[:54]\charge{90:3pt=\chargeColor{+}}{N}*5((-[:-45]H)(-[:225]H)>(-(=[:45]O)(-[:285]OH))-----)}
+}
+
+\newcommand{\triptofano}{
+	\chemfig{*6(=-(-\chembelow{N}{H}-[:30]=^[2]?(-[:30]!{ptr}))=?-=-)}
+}
+
+\newcommand{\valina}{
+	\chemfig{-[:30](-[2])!{ptr}}
+}
+
+% ------------------------- GRUPPI POLARI -------------------------------
+
+\newcommand{\tronina}{
+	\chemfig{-[:30](<:[2]OH)!{ptr}}
+}
+
+\newcommand{\serina}{
+	\chemfig{HO-[:30]!{ptr}}
+}
+
+\newcommand{\asparagina}{
+	\chemfig{H_2N-[:-30](=[6]O)-[:30]!{ptr}}
+}
+
+\newcommand{\glutammina}{
+	\chemfig{H_2N-[:30](=[2]O)-[:-30]-[:30]!{ptr}}
+}
+
+% ------------------------- GRUPPI BASICI -------------------------------
+
+\newcommand{\arginina}{
+	\chemfig{(=[2]NH)(-[:210]H_2N)-[:-30]\chembelow{N}{H}-[:30]-[:-30]-[:30]!{ptr}}
+}
+
+\newcommand{\istidina}{
+	\chemfig{([:197]*5(-N=-\chembelow{N}{H}-=))-[:30]!{ptr}}
+}
+
+\newcommand{\lisina}{
+	\chemfig{H_2N-[:-30]-[:30]-[:-30]-[:30]!{ptr}}
+}
+% ------------------------- GRUPPI ACIDI -------------------------------
+
+\newcommand{\acidoAspartico}{
+	\chemfig{HO-[:-30](=[6]O)-[:30]!{ptr}}
+}
+
+\newcommand{\acidoGlutammico}{
+	\chemfig{HO-[:30](=[2]O)-[:-30]-[:30]!{ptr}}
+}
+
+\newcommand{\cisteina}{
+	\chemfig{HS-[:30]!{ptr}}
+}
+
+\newcommand{\tirosina}{
+	\chemfig{([:180]*6(-=-(-OH)=-=))-[:30]!{ptr}}
+}
+
+
+\definesubmol\DerAc1{R-[:30]@{C}C(=[@{Ol}2]@{O}O)-[:-30]#1}
+\definesubmol\ChargeO{\charge{45:3pt=\chargeColor{-},0=\:,90=\:,180=\:}{O}}
+\definesubmol\ChargeOop{\charge{45:3pt=\chargeColor{-}}{O}}

@@ -1,0 +1,100 @@
+\section{Struttura primaria del DNA}
+\begin{wrapfigure}[10]{l}{0.4\textwidth}
+	\centering
+	\vspace{-20pt}
+	\scalebox{0.5}{
+	\chemfig{-[,,,,dashed]!\DNA{a}{base}!\DNA{b}{base}!\DNA{c}{base}-O--[,,,,dashed]}}
+	\caption{Segmento di DNA}
+	\vspace{-10pt}
+\end{wrapfigure}
+L'\acl{DNA} è costituito da unità alternate di \iupac{2-deossi-\D-ribosio} e di fosfato in cui l'ossidrile 3' di una unità di zucchero è legata all'ossidrile dell'altra unità di zucchero tramite un legame fosfodiesterico. Infine al carbonio anomerico di tutti gli zuccheri della catena è legata una base azotata tramite un legame \iupac{\N-glicosidico}.
+
+La \textbf{struttura primaria} del DNA è l'ordine in cui le basi azotate si trovano. La sequenza di basi vine letta dall'estremità 5' a quella 3'.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Struttura secondaria del DNA}
+Studi sulla struttura del \ac{DNA} hanno portato al modello ufficialmente riconosciuto, che è quello della doppia elica. Questo modello ha delle caratteristiche importanti:
+\begin{enumerate}
+	\item Il \ac{DNA} è costituito da due catene polinucleotidiche a elica avvolte intorno a un asse comune
+	\item Le eliche sono destrorse e si sviluppano in direzioni opposte, con riferimento alle loro estremità 3'e 5'
+	\item Le basi azotate si trovano all'interno dell'elica e i gruppi deossiribosio e fosfato formano la parte esterna dell'elica
+	\item Le due catene sono tenute assieme tramite le basi puriniche-pirimidiniche, legate tra loro tramite legami a idrogeno. L'adenina è sempre accoppiata con la timina mentre la guanina è sempre accoppiata con la citosina
+	\item Il diametro dell'elica è di 20 \angstrom. Le coppie di basi adiacenti distano \unit{3,4 \angstrom} e si succedono a ogni avanzamento dell'elica di \ang{36}.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acidi ribonucleici (RNA)}
+\noindent L'\textbf{\acf{RNA}} differisce dal DNA per tre differenze strutturali:
+\begin{enumerate}
+	\item lo zucchero è il \iupac{\b-\D-ribosio}
+	\item la timina viene sostituita dall'\textbf{uracile}
+	\item è costituito da un solo filamento
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{.8cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{NiceTabular}{ccc}
+		\chemfig{!{ribosio}} & \chemfig{!{uracile}} & \chemfig{!{UMP}}                     \\
+		\iupac{\D-ribosio}   & uracile              & \iupac{uridina-5'-monofosfato (UMP)} \\
+	\end{NiceTabular}
+\end{figure}
+
+Le cellule contengono tre tipi principali di \ac{RNA}. L'\textbf{RNA messaggero (\textit{m}RNA)} trascrive il codice genetico dal DNA e funge da stampo per nella sintesi proteica. Esiste un \textit{m}RNA specifico per ogni proteina.
+La trascrizione avviene da 3' a 5' lungo un filamento di DNA, \textit{m}RNA sintetizzato sarà il complementare del filamento di DNA.
+
+Il suo nome deriva dal fatto che trasporta le informazioni geniche ai ribosomi dove avviene la sintesi delle proteine.
+
+L'\textbf{RNA transfer (\textit{t}RNA)} trasporta sui ribosomi gli amminoacidi in forma attivata e pronti per la formazione dei legami peptidici.
+
+L'\textbf{RNA ribosomiale (\textit{r}RNA)} è il principale componente dei ribosomi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sintesi delle proteine}
+Il \textbf{codice genetico} è la relazione che si instaura tra la sequenza delle basi del DNA e la sequenza di amminoacidi nelle proteine. Una sequenza di tre basi è detta \textbf{codone} e corrisponde a un solo amminoacido.
+
+\begin{table}[H]
+	\centering
+	% \setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{NiceTabular}{Wc{2cm}|cc|cc|cc|cc|Wc{2cm}}
+		\CodeBefore
+		% \rowlistcolors{1}{red!15,blue!15,green!15,yellow!15}
+		\Body
+		\toprule
+		Estremità 5'   & U   &     & C   &     & A   &      & G   &      & Estremità 3'  \\
+		\midrule
+		\Block{4-1}{U} & UUU & Phe & UCU & Ser & UAU & Tyr  & UGU & Cys  & U \\
+		               & UUC & Phe & UCC & Ser & UAC & Tyr  & UGC & Cys  & C \\
+		               & UUA & Leu & UCA & Ser & UAA & Stop & UGA & Stop & A \\
+		               & UUG & Leu & UCG & Ser & UAG & Stop & UGG & Trp  & G \\ \hline
+		\Block{4-1}{C} & CUU & Leu & CCU & Pro & CAU & His  & CGU & Arg  & U \\
+		               & CUC & Leu & CCC & Pro & CAC & His  & CGC & Arg  & C \\
+		               & CUA & Leu & CCA & Pro & CAA & Gln  & CGA & Arg  & A \\
+		               & CUG & Leu & CCG & Pro & CAG & Gln  & CGG & Arg  & G \\
+		\hline
+		\Block{4-1}{A} & AUU & Ile & ACU & Thr & AAU & Asn  & AGU & Ser  & U \\
+		               & AUC & Ile & ACC & Thr & AAC & Asn  & AGC & Ser  & C \\
+		               & AUA & Ile & ACA & Thr & AAA & Lys  & AGA & Arg  & A \\
+		               & AUG & Met & ACG & Thr & AAG & Lys  & AGG & Arg  & G \\
+		\hline
+		\Block{4-1}{G} & GUU & Val & GCU & Ala & GAU & Asp  & GGU & Gly  & U \\
+		               & GUC & Val & GCC & Ala & GAC & Asp  & GGC & Gly  & C \\
+		               & GUA & Val & GCA & Ala & GAA & Glu  & GGA & Gly  & A \\
+		               & GUG & Val & GCG & Ala & GAG & Glu  & GGG & Gly  & G \\
+
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Tabella di codifica delle proteine a partire dal codone}
+\end{table}
+
+Tutte le possibili combinazioni dei codoni sono 64 di queste solo 61 vengono utilizzate per sintetizzare degli amminoacidi, i restanti tre codoni (UAA, UAG e UGA) sono utilizzate per la terminazione della catena.
+
+Alcuni amminoacidi sono codificati da più codini, questo proprietà è chiamata degenerazione. Solo la metionina e il triptofano hanno un solo codone di codifica.
+Il codice genetico è considerato non ambiguo perché ad ogni codone è rappresentato solo e uno solo amminoacido.
+
+Inoltre, bisogna evidenziale che il codice genetico è uguale per tutti gli organismi viventi sul nostro pianeta.

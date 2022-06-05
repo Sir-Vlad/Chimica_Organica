@@ -1,0 +1,154 @@
+\chapter{Notazione di struttura}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Codice SMILES}\label{sec:smiles}
+Il codice \textbf{SMILES}\footnote{Per approfondire clicca qui \href{https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html}{link}} (acronimo di \textit{Simplified Molecular Input Line Entry System}) è un metodo per descrivere la struttura di una molecola usando una breve stringa ASCII.
+
+\subsection{Definizione del codice SMILES}
+\subsection*{Atomi}
+\addcontentsline{toc}{subsubsection}{Atomi}
+Gli atomi vengono rappresentati tramite i loro simboli chimici però tra parentesi quadre, come \verb|[Au]| per l'oro. Le parentesi possono essere omesse per tutti gli atomi nel sottoinsieme organico, \verb|C, N, O, B, P, S, F, Cl, Br, I|, e che non abbiano carica, siano isotopi normali e non devono essere dei centri chirali.
+
+Quando si usano le parentesi, viene aggiunto il simbolo \verb|H| se l'atomo tra parentesi è legato a uno o più idrogeni, seguito dal numero di atomi di idrogeno se maggiore di 1. Poi viene insita la carica con i segni \verb|+| per una carica positiva o da \verb|-| per una carica negativa, seguiti anche loro dal numero di carica se è diversa da 1. Per esempio, \ch{NH4+} viene scritto come \verb|[NH4+]|.
+\subsection*{Legami chimici}
+\addcontentsline{toc}{subsubsection}{Legami chimici}
+
+\noindent I legami chimici vengono rappresentati utilizzando i seguenti simboli:
+\begin{itemize}
+	\item legame singolo (\verb|-|)
+	\item legame doppio (\verb|=|)
+	\item legame triplo (\verb|#|)
+	\item legame quadruplo (\verb|$|)
+	\item non legame (\verb|.|), indica che due parti non sono legate
+\end{itemize}
+
+\subsection*{Ramificazioni}
+\addcontentsline{toc}{subsubsection}{Ramificazioni}
+Le ramificazioni sono descritte tra parentesi tonde. Il primo atomo tra parentesi e il primo atomo dopo il gruppo tra parentesi sono entrambi legati allo stesso atomo del punto di diramazione. Il simbolo del legame deve apparire all'interno delle parentesi. Ad esempio, l'acido acetico è scritto \verb|CC(=O)O|.
+
+L'unica forma di ramo che non richiede parentesi sono i legami ad anello, questo è dato per ridurre il numero di parentesi nella stringa.
+
+\subsection*{Anelli}
+\addcontentsline{toc}{subsubsection}{Anelli}
+Le strutture ad anello vengono scritte rompendo ogni anello in un punto arbitrario per creare una struttura aciclica e aggiungendo etichette numeriche di chiusura dell'anello per mostrare la connettività tra atomi non adiacenti.
+Ad esempio, il cicloesano può essere scritto come \verb|C1CCCCC1|.
+
+Più cifre dopo un singolo atomo indicano più legami di chiusura dell'anello.  Se sono richiesti numeri di anello a due cifre, l'etichetta è preceduta da \verb|%|, quindi \verb|C%12| è un singolo legame di chiusura dell'anello di anello 12.
+
+La scelta di un punto di interruzione dell'anello adiacente ai gruppi collegati può portare a una forma SMILES più semplice evitando le ramificazioni. Ad esempio, \iupac{cicloesan-1,2-diolo} è scritto più semplicemente come \verb|OC1CCCCC1O|; la scelta di una diversa posizione di interruzione dell'anello produce una struttura ramificata che richiede la scrittura tra parentesi.
+
+\subsection*{Anelli aromatici}
+\addcontentsline{toc}{subsubsection}{Anelli atomatici}
+\noindent Gli anelli aromatici come il benzene possono essere scritti in una delle tre forme seguenti:
+\begin{enumerate}
+	\item In forma Kekulé con alternanza di legami singoli e doppi, ad es \verb|C1=CC=CC=C1|.
+	\item Usando il simbolo del legame aromatico \verb|:|, ad esempio \verb|C1:C:C:C:C:C1|, o
+	\item \label{it:smilesArom} Più comunemente, si scrivono gli atomi in forme minuscole \verb|b, c, n, o, p| e \verb|s|.
+\end{enumerate}
+
+Nel~\hyperref[it:smilesArom]{punto 3}, si presume che i legami tra due atomi siano legami aromatici. Quindi, benzene, piridina e furano possono essere rappresentati rispettivamente dagli SMILES \verb|c1ccccc1|, \verb|n1ccccc1| e \verb|o1cccc1|.
+
+L'azoto aromatico legato all'idrogeno, come si trova nel pirrolo, deve essere rappresentato come \verb|[nH]|; quindi l'imidazolo è scritto nella notazione SMILES come \verb|n1c[nH]cc1|.
+
+\subsection*{Stereochimica}
+\addcontentsline{toc}{subsubsection}{Stereochimica}
+SMILE consente, ma non richiede, la specificazione degli stereoisomeri.
+
+La configurazione intorno ai doppi legami viene specificata utilizzando i caratteri \verb|/| e \texttt{\textbackslash}  per indicare la direzione dei legami. Ad esempio, \verb|F/C=C/F| è una rappresentazione del \iupac{\trans-1,2-difluoroetilene}, in cui gli atomi di fluoro sono sui lati opposti del doppio legame, mentre \texttt{F/C=C\textbackslash F} è una possibile rappresentazione di \iupac{\cis-1,2-difluoroetilene}, in cui i fluoro sono dalla stessa parte del doppio legame.
+
+La configurazione al carbonio tetraedrico è specificata da \verb|@| o \verb|@@|. Considera i quattro legami nell'ordine in cui appaiono, da sinistra a destra, nella forma SMILES. Guardando verso il carbonio centrale dalla prospettiva del primo legame, gli altri tre sono in senso orario o antiorario. Questi casi sono indicati rispettivamente con \verb|@@| e \verb|@|.
+
+Ad esempio, si consideri l'aminoacido \iupac{alanina}. Una delle sue forme SMILES è \verb|NC(C)C(=O)O|, più completamente scritta come \verb|N[CH](C)C(=O)O|. \iupac{\L-Alanina}, l'enantiomero più comune, è scritto come \verb|N[C@@H](C)C(=O)O|. Mentre \iupac{\D-Alanina} può essere scritta come \verb|N[C@H](C)C(=O)O|, perché i gruppi appaiono in senso orario.
+
+\subsection*{Isotopi}
+Gli isotopi sono specificati con un numero uguale alla massa isotopica intera che precede il simbolo atomico. Il benzene in cui un atomo è carbonio-14 è scritto come \verb|[14c]1ccccc1e| il \iupac{deuterocloroformio} è \verb|[2H]C(Cl)(Cl)Cl|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{MDL Molfile}
+Un MDL Molfile\footnote{Se volete approfondire, vi lascio il \attachfile[icon=Paperclip]{grafici/ctfile.pdf}file ufficiale} è un formato di file per contenere informazioni su atomi, legami, connettività e coordinate di una molecola.
+
+Il molfile è costituito da alcune informazioni di intestazione, la tabella di connessione (CT) contenente informazioni sugli atomi, quindi sui legami e sulla tipologia di legame, seguita da sezioni che forniscono informazioni più complesse.
+
+Il molfile è sufficientemente comune che la maggior parte, se non tutti, i sistemi/applicazioni software di cheminformatica sono in grado di leggere il formato, anche se non sempre nella stessa misura.
+
+\lstinputlisting[caption=Esempio di file Mol]{grafici/benzene.mol}
+
+\subsection{Descrizione molfile}
+\subsubsection{Blocco intestazione}
+\paragraph{Riga del titolo}\mbox{}\\
+La riga del titolo contiene il nome della molecola. Può essere anche vuota ma deve esistere.
+\lstinputlisting[firstline=1,lastline=1]{grafici/benzene.mol}
+
+\paragraph{Riga timestamp programma / file}\mbox{}\\
+Contiene le informazione del programma che ha generato il file e un timestamp del file.
+\lstinputlisting[firstline=2,lastline=2,firstnumber=last]{grafici/benzene.mol}
+
+\paragraph{Riga di commento}\mbox{}\\
+Riga vuota che deve esistere per forza.
+\lstinputlisting[firstline=3,lastline=3,firstnumber=last]{grafici/benzene.mol}
+
+\subsubsection{Tabella dei collegamenti}
+\noindent La tabella dei collegamenti è formattata nelle seguenti parti:
+\begin{itemize}
+	\item \textbf{Count line}: riferimenti al numero di atomi, legami e lista di atomi, chiralità e la versione Ctab.
+	\lstinputlisting[firstline=4,lastline=4,firstnumber=last]{grafici/benzene.mol}
+	\item \textbf{Atom block}: specifica il simbolo atomico e qualsiasi differenza di massa, carica, stereochimica e idrogeni associati per ciascun atomo.
+	\lstinputlisting[firstline=5,lastline=10,firstnumber=last]{grafici/benzene.mol}
+	\item \textbf{Bond block}: specifica i due atomi connessi dal legame, il tipo di legame, e se è un legame sterochimico e topologia (proprietà della catena o dell'anello) per ciascun legame.
+	\lstinputlisting[firstline=11,lastline=16,firstnumber=last]{grafici/benzene.mol}
+\end{itemize}
+
+\paragraph{Count line}
+Il count line è organizzato nel seguente modo:
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{NiceTabular}{
+		p{2cm}@{}>{\centering}p{1.7cm} >{\centering}p{1.6cm} >{\centering}p{1.6cm} >{\centering}p{2.6cm} >{\centering}p{1.6cm} >{\centering}p{1.7cm} p{1.5cm}}[hvlines]
+		\rowcolor{backcolour} Valore & 6               & 6                & 0                   & 0                                                            & 0                    & 1                                                       & V2000        \\
+		Descrizione                  & numero di atomi & numero di legami & numero di atom list & {\small chiralità \mbox{0 = non chirale} \mbox{1 = chirale}} & numero di voci stext & {\footnotesize numero di righe di proprietà aggiuntiv}e & versione mol \\
+	\end{NiceTabular}
+\end{table}
+
+\paragraph{Specifica del atom block}
+Il atom block è organizzato nel seguente modo:
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{NiceTabular}{p{2cm} *{4}{p{2cm}} @{}>{\cellcolor{backcolour}}p{3cm}}[hvlines]
+		\rowcolor{backcolour}
+		Valore      & x                 & y                 & z                 & atomo           & \Block{2-1}{altre informazioni} \\
+		Descrizione & Coordinate asse x & Coordinate asse y & Coordinate asse z & Simbolo atomico &                                 \\
+	\end{NiceTabular}
+\end{table}
+
+
+\paragraph{Specifica del bond block}
+Il bond block è organizzato nel seguente modo:
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\newcommand*{\tab}[5]{
+		\begin{tabular}{*{1}{l}}
+			#1 \\#2\\#3\\#4\\#5\\
+		\end{tabular}
+	}
+	\NewDocumentCommand{\Blue}{}{\columncolor{blue!15}}
+	\begin{NiceTabular}[colortbl-like]{@{}>{\Blue}ll}[hvlines]
+		\rowcolor{backcolour}
+		Valore              & Descrizione                                                                                                                                                                                \\
+		1 Atomo             & numero dell'atomo                                                                                                                                                                          \\
+		2 Atomo             & numero dell'atomo                                                                                                                                                                          \\
+		Tipo di legame      & \tab{1 = Singolo, 2 = Doppio}{3 = Triplo, 4 = Aromatico}{5 = Singolo o doppio}{6 = Singolo o aromatico}{7 = Doppio o aromatico, 8 = Altro}                                                 \\
+		Lagame stereo       & \tab{\textbf{Legame singolo:}}{0 = non stereo, 1 = sopra, 4 = Entrambi, 6 = Sotto}{\textbf{Legame doppio:}}{0 = usare le coordinate per determinare cis o trans}{3 = cis o trans ( o entrambi) legame doppio } \\
+		Non usato           &                                                                                                                                                                                            \\
+		Tipologia di legame &  0 = Entrambi, 1 = Anello, 2 = Catena                                                                                                                                                                                    \\
+		Stato del reagente  & \textit{vedere sul file allegato}                                                                                                                                                          \\
+	\end{NiceTabular}
+\end{table}
+
+\subsubsection{Fine del file}
+\noindent La fine del file viene indicata come segue:
+\lstinputlisting[firstline=17,firstnumber=last]{grafici/benzene.mol}

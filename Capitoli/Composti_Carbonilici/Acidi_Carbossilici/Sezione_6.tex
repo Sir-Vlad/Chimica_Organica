@@ -1,0 +1,54 @@
+\section{Anidridi}\label{sec:anidridi}
+Le \textbf{anidridi} derivano dall'unione di due acidi carbossilici per perdita di una molecola di acqua. Le anidridi possono essere: \textbf{simmetriche}, due gruppi acilici uguali, o \textbf{miste}, due gruppi aciclici diversi.
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{cc}
+		\chemfig{H_3C-[:30]C(=[2]O)-[:-30]O-[:30]C(=[2]O)-[:-30]CH_3}
+		&
+		\chemfig{C(-[:210]*6(-=-=-=))(=[2]O)-[:-30]O-[:30]C(-[:-30]*6(-=-=-=))(=[2]O)}\\
+		Anidride acetica & Anidride benzoica\\
+	\end{tabular}	
+\end{figure}
+
+
+Le anidridi possono essere preparate dai \hyperref[sec:cloruriAcilici]{cloruri acilici} e dai sali degli acidi carbossilici tramite sostituzione nucleofila acilica. Questo è il metodo per preparare le \textbf{anidridi miste}.
+
+\begin{reaction}
+	\AddRxnDesc{Preparazione anidridi miste}
+	\arrow{0}[,0]
+	\chemfig{!\DerAc Cl} \+{,,.7cm} \chemfig{!\DerAc \ChargeOop-[,0.8,,,draw=none]\charge{45:3pt=\chargeColor{+}}{Na}}
+	\arrow
+	\chemfig{!\DerAc O-[:30]C(=[2]O)-[:-30]R}
+\end{reaction}
+
+\subsection{Reazioni delle anidridi}
+Le reazioni caratteristiche delle anidridi sono le seguenti, e seguono tutte lo stesso meccanismo visto prima:
+
+\tikzset{
+arrow/.style={->,>={Latex[width=2mm,length=2mm]}}
+}
+
+
+{\footnotesize
+\begin{reaction}
+	\AddRxnDesc{Reazioni delle anidridi}
+	\arrow{0}[,0]
+	\chemfig{!\DerAc O-[:30]C(=[2]O)-[:-30]R}
+	\arrow{0}[,2.5,red] % - freccie di costruzione non visibili
+	\chemfig{!\DerAc OH} \+{,,0.8cm} \chemfig{!\DerAc OH}
+	\arrow(@c3--){0}[90] % - freccie di costruzione non visibili
+	\chemfig{!\DerAc OR} \+{,,0.8cm} \chemfig{!\DerAc OH}
+	\arrow(@c3--){0}[-90] % - freccie di costruzione non visibili
+	\subscheme{
+		\chemfig{!\DerAc NH_2} \+{,,0.8cm} \chemfig{!\DerAc OH}
+	}
+	\chemmove[shorten <=3pt, shorten >= 3pt]{
+		\draw[arrow] (c2) -- node[midway,yshift=10pt,xshift=12pt] {\chemfig{H_2O}} (c3);
+		\draw[arrow] (c2) -- +(2.8,0) |- node[near end,yshift=10pt] {\chemfig{ROH}} (c4);
+		\draw[arrow] (c2) -- +(2.8,0) |- node[near end,yshift=10pt] {\chemfig{RNH_2}} (c6);
+	}
+\end{reaction}}
+L'acqua idrolizza le anidridi per fornire l'acido corrispondente. Gli alcoli reagendo formando esteri, mentre con l'ammoniaca o le ammine si ottengono ammidi. In tutte queste reazioni si ottiene anche un equivalente di acido.
+

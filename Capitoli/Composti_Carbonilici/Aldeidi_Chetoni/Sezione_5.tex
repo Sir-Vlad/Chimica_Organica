@@ -1,0 +1,47 @@
+\section{Tautomeria cheto-enolica}
+Aldeidi e chetoni possono esistere all'equilibrio come miscela di due forme: \textbf{chetonica} e \textbf{enolica}. Le due forme differiscono per la posizione di un protone e di un doppio legame:
+
+\begin{reaction}
+	\AddRxnDesc{Tautomeria cheto-enolica}
+	\chemname{\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(=[2]O)(-[0]))}}{Forma chetonica}
+	\arrow{<=>}
+	\chemname{\chemfig{C(-[3])(-[5])(=[0]C(-[1]OH)(-[7]))}}{Forma enolica}
+\end{reaction}
+
+Questo tipo di isomeria di struttura si chiama \textbf{tautomeria} e le due forme si chiamano \textbf{tautomeri}.
+
+Un composto carbonilico, per poter esistere in forma enolica, deve avere in atomo di idrogeno legato all'atomo di carbonio legato al gruppo carbonilico. Questo atomo di idrogeno vien chiamato \textbf{idrogeno in \(\bm{\mathrm{\alpha}}\)}, in quanto è legato all'\textbf{atomo di carbonio \(\bm{\mathrm{\alpha}}\)}.
+
+Le aldeidi e i chetoni più comuni esistono prevalentemente in forma chetonica per la maggior stabilità della forma. Però esistono aldeidi e chetoni che la forma più stabile è la forma enolica come i fenoli. Esistono anche aldeidi e chetoni che non hanno la forma enolica perché non possiedono idrogeni in \(\alpha\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Acidità degli idrogeni in \texorpdfstring{\(\alpha\)}{α}]{Acidità degli idrogeni in \texorpdfstring{\(\bm{\mathrm{\alpha}}\)}{α}}
+L'idrogeno in \(\alpha\) di un composto carbonilico è più acido degli idrogeni legati agli altri atomi di carbonio. L'effetto del carbonile adiacente sui protoni metilici comporta un aumento di acidità di oltre \(10^{30}\).
+
+Questo effetto è dovuto per due motivi, il primo è che il carbonio carbonile attrae a sé gli elettroni di legame per compensare la sua parziale carica positiva allontanandoli dall'idrogeno. Questo fa si che è molto più facile estrarre il carbonio in \(\alpha\) da una base. Il secondo motivo è che l'anione risultante è stabilizzato per risonanza.
+
+\begin{reaction}
+	\AddRxnDesc{Risonanza anione enolato}
+	\chemfig{@{C}C(-[@{Hl}:120]@{H}H)(>:[:200])(<[:-120])(-[0]C(>:[:60]R)(=[:-60]O))}
+	\arrow{0}[150,.3] \chemfig{@{B}\charge{0:1pt=\:,40:3pt=\chargeColor{-}}{B}}
+	\arrow(@c1--.mid west){<=>}
+	\chemname{\chemleft[\subscheme{
+		\chemfig{@{C1}\charge{90:1pt=\:,80:6pt=\chargeColor{-}}{C}(>:[:140])(<[:-120])(-[@{C2}0]C(>:[:60]R)(=[@{Ol}:-60]@{O1}\charge{0:1pt=\:,-90:1pt=\:}{O}))}
+		\arrow{<->}
+		\chemfig{@{C3}C(>:[:140])(<[:-120])(=[@{C4}0]C(>:[:60]R)(<[@{Ol2}:-60]@{O2}\charge{30=\:,-60=\:,-150=\:,-15:6pt=\chargeColor{-}}{O}))}
+		\arrow{0}[,0]
+	}\chemright]}{Strutture di risonanza\\di un anione enolato}
+	\+ \ch{B-A}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (B).. controls +(0:.5cm) and +(90:.8cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (Hl).. controls +(45:.5cm) and +(45:.5cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (C1).. controls +(60:.5cm) and +(90:.5cm) .. (C2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(45:.5cm) and +(45:.5cm) .. (O1);
+		\draw[shorten <=3pt, shorten >= 1pt] (C4).. controls +(90:.5cm) and +(60:.5cm) .. (C3);
+		\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(45:.5cm) and +(45:.5cm) .. (Ol2);
+	}
+\end{reaction}
+L'anione che si ottiene dopo estrazione di un idrogeno \(\alpha\) si chiama \textbf{anione enolato}.
+
+Gli anioni enolato si comportano da nucleofili e danno reazioni di addizione nucleofila al carbonio carbonile di un'altra molecola di aldeide o di chetone.

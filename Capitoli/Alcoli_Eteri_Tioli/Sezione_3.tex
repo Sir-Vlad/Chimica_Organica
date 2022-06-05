@@ -1,0 +1,112 @@
+\section{Preparazione degli alcoli}
+Gli alcoli possono essere preparati dagli alcheni per idroborazione ossidativa o dai composti carbonilici tramite riduzione con \ch{NaBH4} o \ch{LiAlH4} in etanolo con successiva aggiunta di acqua.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Disidratazione catalizzata da alcoli ad alcheni}\label{rxn:alcol-disidratazione}
+Gli alcoli possono essere disidratati per riscaldamento, in presenza di un acido forte (generalmente si utilizza acido solforico \ch{H2SO4}). Questa reazione è una reazione di eliminazione, che può avvenire con meccanismo \mech[e1] o \mech[e2], a seconda della classe del alcol.
+% \setchemfig{scheme debug}
+\begin{reaction}
+	\AddRxnDesc{Meccanismo di reazione di disidratazione degli alcoli in alcheni}
+	\chemname[10pt]{\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]@{O}\charge{180:1pt=\:,270:1pt=\:}{O}H))}}{Alcol}
+	\+ \chemfig{S(-[4]@{OH2}O(-[@{OH}4,.8]@{Hp}H))(=[2]O)(=[6]O)(-[0]OH)}
+	\arrow(.mid east--.mid west){<=>}
+	\chemname[10pt]{\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[@{Ol}6]@{O2}\charge{180:3pt=\chargeColor{+},270:1pt=\:}{O}H_2))}}{Alcol protonato}
+	\arrow{<=>}[-90]
+	\chemname{\chemfig{C(-[6])(-[4])(-[@{Hl}2]@{H}H)(-[@{Cl}0]\charge{290:3pt=\chargeColor{+}}{C}(-[0])(-[2]))}}{Carbocatione}
+	\+ \chemfig{S(-[4]@{Oc}\charge{35:3pt=\chargeColor{+},0=\:,90=\:,270=\:}{O})(=[2]O)(=[6]O)(-[0]OH)}
+	\+ \ch{H2O}
+	\arrow(.mid west--.mid east){->}[-180]
+	\chemname{\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))}}{Alchene}
+	\+ \ch{H2SO4} \+ \ch{H2O}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(270:1cm) and +(270:1cm) .. (Hp);
+		\draw[shorten <=3pt, shorten >= 1pt] (OH).. controls +(270:.5cm) and +(270:.5cm) .. (OH2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Oc).. controls +(90:1cm) and +(15:1cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(135:.5cm) and +(150:.5cm) .. (O2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Hl).. controls +(15:.5cm) and +(90:.5cm) .. (Cl);
+	}
+\end{reaction}
+
+Nel primo stadio c'è la protonazione del gruppo ossidrilico dell'alcol da parte del catalizzatore, questa fase è molto importante perché trasforma \ch{-OH}, che è un cattivo gruppo uscente, in \ch{H2O}, che è un ottimo gruppo uscente. Nel secondo stadio c'è la rimozione dell'acqua e la formazione del carbocatione. Infine nell'ultimo stadio, c'è la perdita di un protone e la formazione del doppio legame.
+
+La reazione complessiva di disidratazione è data dalla somma dei tre stadi:
+\begin{reaction}
+	\AddRxnDesc{Reazione di disidratazione degli alcoli in alcheni}
+	\chemname[10pt]{\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]OH))}}{Alcol}
+	\arrow(.mid east--.mid west){->[\ch{H2SO4}][calore \(\Delta\)]}[,1.5]
+	\chemname{\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))}}{Alchene} \+ \ch{H2O}
+\end{reaction}
+
+Bisogna ricordare che, a volte un alcol può dare più alcheni, perché il protone che fuoriesce può venire da qualsiasi atomo di carbonio adiacente a quello che porta l'ossidrile. In questi casi predomina \textit{l'alchene con il doppio legame più sostituito}, ovvero che ha il maggior numero di sostituenti intorno al doppio legame.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conversione in alogenuri alchilici}\label{rxn:alcol-convHX}
+Gli alcoli possono essere convertiti in alogenuri alchilici per reazione diretta con i rispettivi acidi alogenidrici, in ambiente acido.
+
+La reazione inizia con la protonazione del gruppo \ch{-OH}. L'alcol protonato può reagire in due modi diversi a seconda della classe dell'alcol. Gli alcoli terziari reagiscono con meccanismo \mech[1] mentre gli alcoli primari e secondari con meccanismo \mech[2].
+
+La reazione con alcoli terziari avvenire anche a freddo ed è sempre accompagnata da prodotti di eliminazione \mech[e1]. Mentre gli alcoli primari e secondari reagiscono lentamente con acido bromidrico \ch{HBr} a freddo, invece per reagire con acido cloridrico \ch{HCl} c'è bisogno di un catalizzatore, come \ch{ZnCl2} che è un forte acido di Lewis, a caldo. Il catalizzatore è importante perché aumenta l'acidità dell'acido cloridrico e trasforma l'ossidrile in un gruppo uscente migliore.
+
+\begin{reaction}
+	\AddRxnDesc{Reazione di conversione degli alcoli in alogenuri alchilici}
+	\chemname[10pt]{\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]OH))}}{Alcol} \+ \chemfig{H-X}
+	\arrow(.mid east--.mid west){->}[,0.8]
+	\chemname[10pt]{\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]\charge{180:3pt=\chargeColor{+},270:1pt=\:}{O}H_2))}}{Alcol protonato} \+ \chemfig{\charge{35:3pt=\chargeColor{-}}{X}}
+	\arrow(@c2--){->[][\rotatebox{-90}{\mech[1]}]}[90,1.5]
+	\chemfig{C(-[6])(-[4])(-[2]H)(-[0]\charge{280:3pt=\chargeColor{+}}{C}(-[0])(-[2]))} \+ \chemfig{\charge{35:3pt=\chargeColor{-}}{X}}
+	\arrow{->}
+	\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]X))}
+	\arrow(@c2--){->[\rotatebox{90}{\mech[e1]}]}[-90,1.5]
+	\chemfig{C(-[6])(-[4])(-[2]H)(-[0]\charge{280:3pt=\chargeColor{+}}{C}(-[0])(-[2]))} \+ \chemfig{\charge{35:3pt=\chargeColor{-}}{X}}
+	\arrow(--@c6.mid west){->}
+	\subscheme[90]{
+	\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \arrow{0}[-90,0.2]\+\arrow{0}[-90,0.2] \ch{HX}
+	}
+	\arrow(@c2.mid east--){->[\mech[2]]}
+	\chemfig{C(-[6])(-[4])(-[2]H)(-[0]C(-[0])(-[2])(-[6]X))}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ossidazione degli alcoli}
+Gli alcoli che hanno almeno un atomo di idrogeno legato sul carbonio portante il gruppo ossidrilico possono essere ossidati a composti carbonilici.
+
+Dagli alcoli primari si ottengono le aldeidi, che possono essere ulteriormente ossidati ad acidi carbossilici.
+\begin{reaction}
+	\AddRxnDesc{Ossidazione alcol primari}
+	\chemfig{C(-[0]H)(-[2]OH)(-[4]R)(-[6]H)}
+	\arrow{->[[O]]}
+	\chemfig{C(=[1]O)(-[4]R)(-[7]H)}
+	\arrow{->[[O]]}
+	\chemfig{C(=[1]O)(-[4]R)(-[7]OH)}
+\end{reaction}
+Dagli alcoli secondari si ottengono i chetoni.
+\begin{reaction}
+	\AddRxnDesc{Ossidazione alcol secondari}
+	\chemfig{C(-[0]R)(-[2]OH)(-[4]R)(-[6]H)}
+	\arrow{->[[O]]}
+	\chemfig{C(-[0]R)(=[2]O)(-[4]R)}
+\end{reaction}
+Gli alcoli terziari non avendo atomi di idrogeno sul carbonio che porta il gruppo ossidrilico, non danno una ossidazione di questo tipo.
+\begin{reaction}
+	\AddRxnDesc{Ossidazione alcol terziari}
+	\chemfig{C(-[0]R)(-[2]OH)(-[4]R)(-[6]H)}
+	\arrow{->[[O]]}
+	Non si ossida
+\end{reaction}
+
+L'agente ossidante più utilizzato è il \ch{Cr^{6+}} perché ossida solo il gruppo ossidrilico e lascia inalterati gli altri doppi legami. Se l'alcol è solubile in acqua il reattivo può essere bicromato di sodio, acqua, acido solforico. Invece, se l’alcol è poco solubile in acqua, si usa anidride cromica, acetone, acqua, acido solforico (\textbf{reattivo di Jones}).
+
+Se si vuole fermare la reazione di ossidazione degli alcoli primari alla prima ossidazione, ovvero ottenere un'aldeide, invece di utilizzare il \ch{Cr^{6+}} che porta l'ossidazione ad acido carbossilico, si utilizza il \ac{PCC} in \iupac{diclorometano}. Il \ac*{PCC} si prepara solubilizzando \ch{CrO3} in acido cloridrico acquoso e poi si aggiungendo la piridina:
+\begin{reaction}
+	\AddRxnDesc{Preparazione del PCC}
+	\ch{CrO3} \+ \ch{HCl} \+ \arrow{0}[,0] \chemfig{[:-30]*6(-=-N=-=)}
+	\arrow(--.base west){->}
+	\chemname{\chemfig{[:-30]*6(-=-\charge{35:3pt=\chargeColor{+}}{N}(-[0]H-[,,,,dash pattern=on 2pt off 2pt])=-=)}
+	\charge{40:3pt=\chargeColor{-}}{\chemleft[
+	\subscheme{
+	\chemfig[double bond sep=3pt]{Cr(-[2]Cl)(=[:-30]O)(=[:210]O)(=[6]O)}
+	}\chemright]}}{clorocromato di piridinio}
+\end{reaction}

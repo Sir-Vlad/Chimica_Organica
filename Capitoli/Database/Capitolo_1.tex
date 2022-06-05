@@ -1,0 +1,68 @@
+\chapter{Indicizzazione molecolare}
+
+\section{International Chemical Identifier (InChI)}\label{sec:InChI}
+L'\textbf{IUPAC International Chemical Identifier (InChI)}\footnote{Sito ufficiale: \url{https://www.inchi-trust.org}} è un testo identificativo per le sostanze chimiche, progettato per fornire un modo standard per codificare informazioni molecolari e facilitare la ricerca di tali informazioni in banche dati e sul web.
+
+Inizialmente sviluppato da \href{https://iupac.org}{IUPAC}  (International Union of Pure and Applied Chemistry) e \href{https://www.nist.gov}{NIST} (National Institute of Standards and Technology) dal 2000 al 2005, il formato e gli algoritmi non sono proprietari.
+
+Gli identificatori descrivono le sostanze chimiche in termini di strati di informazioni: gli atomi e la loro connettività di legame, informazioni tautomeriche, informazioni sugli isotopi, stereochimica e informazioni sulla carica elettronica.
+
+Gli InChI differiscono dai numeri di registro \hyperref[sec:CAS]{CAS} ampiamente utilizzati per tre aspetti:
+\begin{itemize}
+	\item sono liberamente utilizzabili e non proprietari;
+	\item possono essere calcolati da informazioni strutturali e non devono essere assegnati da qualche organizzazione;
+	\item la maggior parte delle informazioni in un InChI è leggibile dall'uomo (con la pratica).
+\end{itemize}
+InChI può quindi essere visto come una versione generale ed estremamente formalizzata dei nomi IUPAC. Possono esprimere più informazioni rispetto alla più semplice notazione \hyperref[sec:smiles]{SMILES} e differiscono per il fatto che ogni struttura ha una stringa InChI univoca, che è importante nelle applicazioni di database. Le informazioni sulle coordinate tridimensionali degli atomi non sono rappresentate in InChI; a tale scopo può essere utilizzato un formato come PDB\footnote{Se volete approfondire sui file PDB cliccare sul seguente \href{https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html}{link}}.
+
+\subsection{Generazione del codice}
+Ogni InChI inizia con la stringa \verb|InChI=| seguita dal numero di versione, attualmente 1. Se InChI è standard, questo è seguito dalla lettera \verb|S|. Le informazioni rimanenti sono strutturate come una sequenza di livelli e sottolivelli, con ogni livello che fornisce un tipo specifico di informazioni.
+Gli strati e i sottolivelli sono separati dal delimitatore \verb|/| e iniziano con una caratteristica lettera di prefisso (ad eccezione del sottolivello di formula chimica dello strato principale).
+
+I sei livelli con importanti sottolivelli sono:
+\begin{enumerate}
+	\item \textbf{Livello principale}
+	      \begin{itemize}
+		      \item \textit{Formula chimica} (nessun prefisso). Questo è l'unico sottolivello che deve essere presente in ogni InChI.
+		      \item \textit{Connessioni tra atomi} (prefisso: \verb|c|). Gli atomi nella formula chimica (tranne gli idrogeni) sono numerati in sequenza; questo sottolivello descrive quali atomi sono collegati a chi e con quale tipo di legame.
+		      \item  \textit{Atomi di idrogeno} (prefisso: \verb|h|). Descrive quanti atomi di idrogeno sono collegati a ciascuno degli altri atomi.
+	      \end{itemize}
+	\item \textbf{Livello per carica}
+	      \begin{itemize}
+		      \item \textit{sottolivello di carica} (prefisso: \verb|q| )
+		      \item \textit{sottolivello protonico} (prefisso: \verb|p|)
+	      \end{itemize}
+	\item \textbf{Livello per la stereochimica}
+	      \begin{itemize}
+		      \item legami doppi e legami doppi cumulati (prefisso: \verb|b|)
+		      \item stereochimica degli atomi tetraedrici e alleni (prefissi: \verb|t|, \verb|m|)
+		      \item \textit{tipo di informazione stereochimica} (prefisso: \verb|s|)
+	      \end{itemize}
+	\item \textbf{Livello isotopico} (prefissi: \verb|i|, \verb|h|, così come \verb|b|, \verb|t|, \verb|m|, \verb|s| per la stereochimica isotopica)
+	\item \textbf{Livello fisso degli idrogeni} (prefisso \verb|f|)
+	      \begin{itemize}
+		      \item contiene alcuni o tutti i livelli sopracitati eccetto le connessioni tra atomi; può terminare con il sottolivello \verb|o|, mai incluso nello standard InChI
+	      \end{itemize}
+	\item \textbf{Livello ricollegato} (prefisso \verb|r|)
+	      \begin{itemize}
+		      \item contiene l'intero InChI di una struttura con gli atomi metallici legati; mai incluso nello standard InChI
+	      \end{itemize}
+\end{enumerate}
+
+Il formato del delimitatore-prefisso ha il vantaggio che un utente può facilmente utilizzare una ricerca con caratteri jolly per trovare identificatori che corrispondono solo a determinati livelli.
+
+\subsection{InChIKey}
+\textbf{InChIKey} è una rappresentazione digitale condensata di lunghezza fissa (25 caratteri) del InChI non decodificabile. La specifica InChIKey è stata rilasciata nel settembre 2007 al fine di agevolare le ricerche sul Web per i composti chimici, problematici da identificare con il full-length InChI.
+
+L'InChIKey è attualmente composto da tre parti separate da trattini, rispettivamente di 14, 10 e uno o più caratteri, come \verb|XXXXXXXXXXXXXX-YYYYYYYYFV-P|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Chemical Abstracts Service (CAS)}\label{sec:CAS}
+Il \textbf{numero CAS} è un identificativo numerico che individua in maniera univoca una sostanza chimica. Il Chemical Abstracts Service, una divisione della American Chemical Society, assegna questi identificativi a ogni sostanza chimica descritta in letteratura.
+
+Il numero CAS è costituito da \textit{tre sequenze di numeri} separati da trattini. Il \textit{primo gruppo} è costituito da un numero variabile di cifre, fino a sei, il \textit{secondo gruppo} da due cifre, mentre il \textit{terzo gruppo} è costituito da una singola cifra che serve da codice di controllo. I numeri sono assegnati in ordine progressivo e non hanno quindi nessun significato chimico.
+
+Se una molecola ha più isomeri a ciascun isomero sarà assegnato un numero CAS differente.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

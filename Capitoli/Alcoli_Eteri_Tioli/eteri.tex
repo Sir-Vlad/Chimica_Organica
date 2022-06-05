@@ -1,0 +1,115 @@
+\chapter{Eteri ed epossidi}
+\section{Struttura}
+Gli eteri sono composti con formula generale \ch{R-O-R'}, dove \ch{R} e \ch{R'} possono essere lo stesso gruppo alchilico o diverso. Gli epossidi, invece, sono eteri ciclici con un anello a tre termini.
+
+\section{Proprietà fisiche}
+Gli eteri sono molecole polari con una parziale carica negativa sull'ossigeno e una parziale carica positiva sui carboni legati all'ossigeno. A causa dell'ingombro sterico, le interazioni tra molecole sono molto deboli e per questo motivo, i punti di ebollizione degli eteri sono prossimi a quelli degli idrocarburi di peso molecolare comparabile.
+
+Avendo una carica negativa sull'ossigeno, gli eteri formano legami a idrogeno con acqua e pertanto sono solubili in essa.
+
+La caratteristica principale degli eteri è la loro inerzia chimica, ovvero non reagiscono con acidi, basi, agenti riducenti e ossidanti e sodio metallico. Grazie a questa proprietà vengono utilizzati come solventi nelle reazioni organiche.
+
+Vengono utilizzati anche per estrarre composti organici dalle loro fonti naturali e avendo una bassa temperatura di ebollizione possono essere eliminati per semplice distillazione.
+
+\section{Preparazione degli eteri}
+La preparazione degli eteri si differenzia a seconda se volgiamo ottenere un etere simmetrico o asimmetrico.
+
+Per preparare un etere simmetrico si fanno reagire due alcoli uguali in ambiente acido a caldo.
+\begin{reaction}
+	\AddRxnDesc{Preparazione eteri simmetrici}
+	\ch{2 R-OH ->[ H2SO4 ][\(\Delta\)] R-O-R + H2O}
+\end{reaction}
+
+Mentre, per preparare un etere asimmetrico ci sono due metodi:
+\begin{enumerate}
+	\item reazione tra un alchene terziario con un alcol con catalizzatore
+	      \begin{reaction}
+		      \AddRxnDesc{Preparazione eteri asimmetrici}
+		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \+ \ch{R-OH} \arrow{->[\ch[circled=all,circletype=math]{H^{\color{red}+}}]} \chemfig{C(-[2])(-[4]H)(-[6])(-[0]C(-[0]O-R)(-[2])(-[6]))}
+	      \end{reaction}
+	\item \textbf{Sintesi di Williamson}, nella quale viene prima creato l'alcossido tramite trattamento con sodio metallico e poi si fa reagire con un alogenuro alchilico tramite meccanismo \mech[2]
+	      \begin{reactions}\label{rcn:sintesiWilliamson}
+		      \AddRxnDesc{Sintesi di Williamson per la preparazione di eteri asimmetrici}
+		      2 ROH \+ 2 Na &\arrow 2 \chemfig{\charge{35:3pt=\chargeColor{-}}{RO}-[,.8,,,white]\charge{35:3pt=\chargeColor{+}}{Na}} \+ H\(_2\)\\ \notag
+		      \chemfig{\charge{35:3pt=\chargeColor{-}}{RO}-[,.8,,,white]\charge{35:3pt=\chargeColor{+}}{Na}} \+ \ch{R'-X} &\arrow ROR' + \chemfig{\charge{35:3pt=\chargeColor{-}}{Na}-[,.8,,,white]\charge{35:4pt=\chargeColor{+}}{X}}
+	      \end{reactions}
+	      Il processo funziona bene se \ch{R'} è un alogenuro alchilico primario visto che il secondo stadio è un processo \mech[2].
+\end{enumerate}
+
+\section{Scissione degli eteri}
+Gli eteri sono basi di Lewis, grazie al suo doppietto non condiviso presente sull'ossigeno. Essi reagiscono sia con acidi protonici forti e sia con gli acidi di Lewis.
+
+Nel caso in cui \ch{R} e/o \ch{R'} sono gruppi alchilici primari o secondari, la rottura del legame avviene ad opera di nucleofili forti come \ch{I-} o \ch{Br-} con meccanismo \mech[2].
+
+\begin{reaction}
+	\AddRxnDesc{Scissione degli eteri con acidi alogenidrici}
+	\ch{R-O-R + HX -> R-X + R-OH}
+\end{reaction}
+
+\begin{reaction}
+	\AddRxnDesc{Scissione degli eteri con tribromuro di boro}
+	\ch{R-O-R ->[1.\ BBr3][2.\ H2O] RBr + ROH}
+\end{reaction}
+
+Se invece \ch{R} e/o \ch{R'} è terziario, non è più necessaria la presenza di un nucleofilo forte, perché la reazione decorre con il meccanismo \mech[1] (o \mech[e1]).
+
+\section{Epossidi}
+Gli epossidi (o ossirani) sono eteri ciclici con un anello a tre termini contenente un atomo di ossigeno. Sebbene gli epossidi siano classificati come esteri, la loro reattività è molto più elevata degli eteri.
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ccc}
+		\chemfig{C?(-[3])(-[5])-[7]O-[1]C?(-[1])(-[7])}
+		                  &
+		\chemfig{H_2C?-[7]O-[1]C?H_2}
+		                  &
+		\chemfig{H_3CHC?-[7]O-[1]C?H_2}                             \\
+		Epossido generale & Ossido di etilene & Ossido di propilene \\
+	\end{tabular}
+\end{figure}
+
+\section{Sintesi degli epossidi dagli alcheni}
+A livello industriale, l'epossido più importante è l'ossido di etilene e viene prodotto per ossidazione dell'etilene da parte dell'aria, usando l'argento come catalizzatore.
+
+\begin{reaction}
+	\AddRxnDesc{Sintesi degli epossidi dagli alcheni}
+	\chemfig{CH_2=CH_2} \+ \ch{O2} \arrow(--.mid west){->[Ag][\qty{250}{\celsius}]}[,1.3]  \chemfig{H_2C?-[7]O-[1]C?H_2}
+\end{reaction}
+
+\section{Reazioni degli epossidi}
+A causa della tensione angolare dell'anello a tre termini, gli epossidi sono molto reattivi degli eteri a catena lineare e danno prodotti di apertura.
+
+Si può addizionare acqua all'anello, usando catalizzatore acido, per formare glicoli.
+\begin{reaction}
+	\AddRxnDesc{Addizione di acqua agli epossidi}
+	\chemfig{RC?-[7]O-[1]C?R'} + \ch{H2O}
+	\arrow(.mid east--.mid west){->[\ch[circled=all,circletype=math]{H^{\color{red}+}}]}
+	\chemfig{RC(-[6,,2]OH)(-[0]CR'(-[6]OH))}
+\end{reaction}
+
+Si possono addizionare anche altri nucleofili agli epossidi in modo simile all'addizione di acqua.
+\begin{reaction}
+	\AddRxnDesc{Addizione di acqua agli epossidi}
+	\chemfig{RC?-[7]O-[1]C?R'}
+	\arrow(@c1.30--.180){->[*{0.south east}\chemfig{R''-OH}][*{0.north west}\ch{H^{\color{red}\oplus}}]}[45]
+	\chemfig{RC(-[6,,2]OH)(-[0]CR'(-[6]OR''))}
+	\arrow(@c1.-30--.180){->[*{0.south west}\chemfig{HO-R''-OH}][*{0.north east}\ch{H^{\color{red}\oplus}}]}[-45]
+	\chemfig{RC(-[6,,2]OH)(-[0]CR'-O-R''(-[6]OH))}
+\end{reaction}
+
+\section{Eteri ciclici}
+Esistono eteri ciclici con anelli più grandi di quelli degli epossidi. I più comuni sono a cinque e a sei termini, tra i quali possiamo ricordare:
+
+\begin{figure}[H]
+	\centering
+	\setlength{\tabcolsep}{1cm}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{ccc}
+		\chemfig{[:18]*5(---O--)} & \chemfig{*6(-O-----)}   & \chemfig{*6(-O---O--)} \\
+		\iupac{tetraidrofurano}   & \iupac{tetraidropirano} & \iupac{1,4-diossano}   \\
+	\end{tabular}
+\end{figure}
+
+Il \ac{THF} è utilizzato come solvente sia nelle soluzioni organiche e sia nelle soluzioni acquose. É utilizzato come solvente nelle reazioni di preparazione dei reattivi di Grignard. Anche \iupac{tetraidropirano} e \iupac{1,4-diossano} sono solubili sia nell'acqua sia nei solventi organici.

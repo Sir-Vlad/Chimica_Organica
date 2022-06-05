@@ -1,0 +1,83 @@
+\section{Stereoisomeria}
+Gli \textbf{stereoisomeri} hanno la stessa formula molecolare e lo stesso ordine con cui sono legati gli atomi, ma hanno una differente orientazione degli atomi nello spazio. L'unico esempio che abbiamo già visto è l'isomeria \cis-\trans\;\! nei cicloalcani (\autoref{sec:cicloalcani}).
+
+\begin{figure}[hb]
+	\centering
+	\tikzset{%
+	>={Latex[width=2mm,length=2mm]},
+	% Specifications for style of nodes:
+	base/.style = {rectangle, rounded corners, draw=black,
+			minimum width=3cm, minimum height=1cm,node distance=3.5cm,
+			text centered, font=\sffamily},
+	process/.style = {base, minimum width=2cm, fill=orange!15,
+			font=\ttfamily},
+	}
+	\begin{tikzpicture}[node distance=1.5cm,
+			every node/.style={fill=white, font=\sffamily}, align=center]
+
+		\node (start)[process]{ISOMERI\\Composti differenti con \\ la stessa formula molecolare};
+
+		\node (cost)[process,below of=start,xshift=-5cm,yshift=10pt]{ISOMERI COSTITUZIONALI\\Isomeri i cui atomi\\ sono legati in\\ un differente ordine};
+		\node (stereo)[process,below of=start,xshift=3cm]{STEREOISOMERI\\Isomeri i cui atomi sono\\legati nello stesso ordine\\ma sono orientati in modo\\differente nello spazio};
+
+		\node (enan)[process,below of=stereo,xshift=-5cm]{ENANTIOMERI\\ Stereoisomeri le cui molecole\\sono immagini speculari \\non sovrapponibili};
+		\node (dienan)[process,below of=stereo,xshift=2cm]{DIASTEROISOMERI\\Stereoisomeri le cui\\ molecole non sono \\immagini speculari};
+
+		\draw[->,line width=2pt] (start) -- +(0.0,-1.5) -| (cost);
+		\draw[->,line width=2pt] (start) -- +(0.0,-1.5) -| (stereo);
+
+		\draw[->,line width=2pt] (stereo) -- +(0.0,-2) -| (enan);
+		\draw[->,line width=2pt] (stereo) -- +(0.0,-2) -| (dienan);
+	\end{tikzpicture}
+	\caption{Relazioni tra gli isomeri}
+\end{figure}
+
+\subsection{Enantiomeria}
+Gli \textbf{enantiomeri} sono due molecole che formano una coppia di immagini speculari non sovrapponibili. Per capire meglio il concetto, prendiamo \textit{\iupac{acido lattico}}, come esempio, e disegniamo la sua formula di struttura.
+
+\begin{center}
+	\chemname{\chemfig[atom sep=2em]{C^{\color{red}*}(-[2]H)(-[0]COOH)(-[6]OH)(-[4]H_3C)}}{\sffamily\iupac{Acido lattico}}	
+\end{center}
+
+Dalla formula di struttura notiamo che c'è un carbonio con quattro sostituenti differenti, il quale si indica con un asterisco su carbonio (\ch{C^{\color{red}*}}). 
+Prendendo quel carbonio come rifermento, mettiamo due sostituenti sul piano, uno dietro indicato con \chemfig[atom sep=2em,cram width=6pt,cram dash width=0.4pt,cram dash sep=1pt]{\phantom{C}>:\phantom{C}} e uno avanti al piano indicato con \chemfig[atom sep=2em,cram width=6pt,]{\phantom{C}>\phantom{C}}, come mostrano nella~\autoref{fig:acLattico}.
+
+\begin{figure}[H]
+	\centering
+	\setchemfig{
+		atom sep=2em,
+		cram width=4pt,
+		cram dash width=0.4pt,
+		cram dash sep=1pt
+	}
+	\tikzset{%
+	>={Latex[width=2mm,length=2mm]},
+	% Specifications for style of nodes:
+	base/.style = {rectangle, rounded corners, draw=black,
+			minimum width=3cm, minimum height=1cm,node distance=2cm,
+			text centered, font=\sffamily},
+	process/.style = {base, minimum width=2cm, fill=orange!15,
+			font=\ttfamily},
+	}
+	\begin{tikzpicture}[node distance=1.5cm,
+			every node/.style={fill=white, font=\sffamily}, align=center]
+
+		% Idrocarburi
+		% \node (start)[process]{Idrocarburi};
+		\node (start) {\chemfig{C(-[2]H)(-[:-20]COOH)(>:[:200]HO)(<[:-110]H_3C)}};
+		\node [below of=start] {\iupac{Acido\;($+$)-lattico}};
+		\node (f1) [right of=start,xshift=3cm] {\chemfig{C(-[2]H)(-[:200]HOOC)(>:[:-20]OH)(<[:-70]CH_3)}};
+		\node [below of=f1] {\iupac{Acido\;($-$)-lattico}};
+		\draw ($(start.north) !0.5! (f1.north)$) -- ($(start.south) !0.5! (f1.south)$);
+	\end{tikzpicture}
+	\caption{Acido lattico stereoisomeri}\label{fig:acLattico}
+\end{figure}
+
+Se spostando l'immagine speculare nello spazio, e esiste un modo che essa coincide con l'originale, allora le due molecole sono \textbf{sovrapponibili} mentre se le due molecole non coincidono mai, saranno \textbf{non sovrapponibili}.
+
+In questo caso, abbiamo che l'\iupac{acido lattico} non è sovrapponibile con la sua immagine speculare e quindi sono degli \textit{enantiomeri}. Tutti gli oggetti che non sono sovrapponibili con la propria immagine speculare vengono definiti \textbf{chirali}.
+
+Se un oggetto e la sua immagine speculare sono sovrapponibili, allora possiamo dire che sono identici e si parlerà di molecole \textbf{achirali}. Tutte le molecole achirali hanno almeno un \textbf{piano di simmetria} che le attraversa.
+
+Come abbiamo visto sopra, un carbonio che ha quattro sostituenti differenti prende il nome di \textbf{stereocentro} e viene indicato con \ch{C^{\color{red}*}}.
+

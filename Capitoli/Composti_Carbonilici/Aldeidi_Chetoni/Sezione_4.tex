@@ -1,0 +1,88 @@
+\section{Reagenti di Grignard}
+Gli alogenuri alchilici, arilici e vinilici reagiscono con i metalli dei gruppi I e II per formare i \textbf{composti organometallici}. Tra i più semplici e rapidi da ottenere ci sono i \textbf{reattivi di Grignard} che utilizza come metallo il magnesio (\elementsymbol{12}).
+
+\paragraph{Preparazione dei reattivi di Grignard}\mbox{}\\
+I reattivi di Grignard vengono preparati per lenta addizione di un alogenuro alchilico ad una sospensione di magnesio metallico in solvente etereo, come \ac{THF}.
+
+Il legame tra carbonio e magnesio è covalente ma ha uno spiccato carattere ionico data la notevole differenza di elettronegatività tra i due atomi (\(\Delta \chi = 1.3\)). Per questo motivo i reattivi di Grignard si comportano da nucleofili nelle reazioni.
+
+\paragraph{Accorgimenti durante le reazioni con i reattivi di Grignard}\mbox{}\\
+Le reazioni con i reattivi devono avvenire in assenza di acqua, umidità, solventi contenenti idrogeni anche debolmente acidi, anidride carbonica e ossigeno perché questo dissocerebbe i reattivi di Grignard dalla catena idrocarburica.
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Reazione tra reattivi di Grignard con acidi protici}
+	\ch{CH3\ox{\delm,C}H2-\ox{\delp,Mg}Br} \+ \ch{H-OH} \arrow \ch{CH3CH2-H} \+ \ch{Mg^{2+}} \+ \ch{OH-} \+ \ch{Br-}
+\end{reaction}
+\endgroup
+Per questo motivo i reattivi di Grignard sono estremamente delicati e vengono conservati in etere. Le loro reazioni vengono eseguite in etere sotto corrente di azoto (\ch{N2}).
+
+\subsection{Reazione con i reattivi di Grignard}
+\noindent Dal punto di vista sintetico, le reazioni più importanti con i reattivi di Grignard sono:
+\begin{itemize}
+	\item la formazione di alcoli primari partendo dalla formaldeide (\autoref{rxn:R1OH->H2COH})
+	\item la formazione di alcoli secondari partendo da un'aldeide (\autoref{rxn:R2OH->RCOH})
+	\item la formazione di alcoli terziari partendo dai chetoni (\autoref{rxn:R3OH->RCOR})
+	\item la formazione di acidi carbossilici partendo dalla anidride carbonica (\autoref{rxn:RCOOH->CO2})
+\end{itemize}
+
+\begin{reaction}\label{rxn:R1OH->H2COH}
+	\AddRxnDesc{Formazione di alcoli primari partendo dalla formaldeide}
+	\chemfig{R-[@{RG}]MgX}
+	\+
+	\chemname{\chemfig{@{C}C(=[@{Ol}0]@{O}\charge{45=\:,-45=\:}{O})(-[3]H)(-[5]H)}}{Formaldeide}
+	\arrow(.mid east--){->[etere]}
+	\chemfig{C(-[0]\charge{35:3pt=\chargeColor{-}}{O}-[0,1.2,,,white]\charge{20:3pt=\chargeColor{+}}{MgBr})(-[2]H)(-[4]R)(-[6]H)}
+	\arrow(--.mid west){->[\ch{H2O}][\Hpiu{1}]}
+	\chemname{\chemfig{C(-[0]OH)(-[2]H)(-[6]H)(-[4]R)}}{Alcol primario}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (RG).. controls +(270:1.5cm) and +(180:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(270:.5cm) and +(250:.5cm) .. (O);
+	}
+\end{reaction}
+
+\begin{reaction}\label{rxn:R2OH->RCOH}
+	\AddRxnDesc{Formazione di alcoli secondari partendo da un'aldeide}
+	\chemfig{R-[@{RG}]MgX}
+	\+
+	\chemname{\chemfig{@{C}C(=[@{Ol}0]@{O}\charge{45=\:,-45=\:}{O})(-[3]R')(-[5]H)}}{Aldeide}
+	\arrow(.mid east--){->[etere]}
+	\chemfig{C(-[0]\charge{35:3pt=\chargeColor{-}}{O}-[0,1.2,,,white]\charge{20:3pt=\chargeColor{+}}{MgBr})(-[2]R')(-[4]R)(-[6]H)}
+	\arrow(--.mid west){->[\ch{H2O}][\Hpiu{1}]}
+	\chemname{\chemfig{C(-[0]OH)(-[2]R')(-[6]H)(-[4]R)}}{Alcol secondario}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (RG).. controls +(270:1.5cm) and +(180:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(270:.5cm) and +(250:.5cm) .. (O);
+	}
+\end{reaction}
+
+\begin{reaction}\label{rxn:R3OH->RCOR}
+	\AddRxnDesc{Formazione di alcoli terziari partendo dai chetoni}
+	\chemfig{R-[@{RG}]MgX}
+	\+
+	\chemname{\chemfig{@{C}C(=[@{Ol}0]@{O}\charge{45=\:,-45=\:}{O})(-[3]R')(-[5]R'')}}{Aldeide}
+	\arrow(.mid east--){->[etere]}
+	\chemfig{C(-[0]\charge{35:3pt=\chargeColor{-}}{O}-[0,1.2,,,white]\charge{20:3pt=\chargeColor{+}}{MgBr})(-[2]R')(-[4]R)(-[6]R'')}
+	\arrow(--.mid west){->[\ch{H2O}][\Hpiu{1}]}
+	\chemname{\chemfig{C(-[0]OH)(-[2]R')(-[6]R'')(-[4]R)}}{Alcol terziario}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (RG).. controls +(270:1.5cm) and +(180:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(270:.5cm) and +(250:.5cm) .. (O);
+	}
+\end{reaction}
+
+\begin{reaction}\label{rxn:RCOOH->CO2}
+	\AddRxnDesc{Formazione di acidi carbossilici partendo dalla anidride carbonica}
+	\chemfig{R-[@{RG}]MgX}
+	\+{,1.5em}
+	\chemname{\chemfig{@{C}C(=[2]\charge{45=\:,135=\:}{O})(=[@{Ol}6]@{O}\charge{-135=\:,-45=\:}{O})}}{Anidride\\carbonica}
+	\arrow(.mid east--){->[etere]}
+	\chemfig{C(-[7]\charge{35:3pt=\chargeColor{-}}{O}-[0,1.2,,,white]\charge{20:3pt=\chargeColor{+}}{MgBr})(=[1]O)(-[4]R)}
+	\arrow(--.mid west){->[\ch{H2O}][\Hpiu{1}]}
+	\chemname{\chemfig{C(-[7]OH)(=[1]O)(-[4]R)}}{Acido carbossilico}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (RG).. controls +(270:1.5cm) and +(180:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(0:.5cm) and +(0:.5cm) .. (O);
+	}
+\end{reaction}
+
+Il meccanismo di reazione consiste in un attacco concertato dell'ossigeno del carbonile sul magnesio positivo e del carbonio del composto organometallico sul carbonio del carbonile. Si forma così un sale alcossido nel quale il legame ossigeno-magnesio ha un carattere ionico forte. Il trattamento con acqua in ambiente acido dell'alcossido forma l'alcol con una reazione acido-base.

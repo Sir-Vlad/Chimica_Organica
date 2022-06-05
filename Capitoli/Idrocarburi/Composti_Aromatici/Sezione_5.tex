@@ -1,0 +1,81 @@
+\section{Disostituzione e polisostituzione}
+Nella \ac{SEA} di un benzene monosostituito, il sostituente già presente sull'anello influenza la reazione determinando la posizione dei nuovi sostituenti e la velocità della sostituzione.
+
+Certi sostituenti orientano un secondo gruppo entrante favorendo le posizioni orto e para mentre altri preferiscono la posizione meta. Detto questo possiamo classificare i sostituenti come \textbf{orto - para orientati} e \textbf{meta orientati}.
+
+Possiamo fare lo stesso discorso con la velocità e classificare i sostituenti come \textbf{attivanti}, ovvero quelli che aumentano la velocità di reazione e \textbf{disattivanti}, cioè quelli che diminuiscono la velocità di reazione.
+
+Nella~\autoref{tab:AttEDisatt} sono elencati gli effetti orientanti e attivanti-disattivanti per i gruppi funzionali più comuni.
+
+\begingroup
+\setchemfig{double bond sep=2pt}
+\renewcommand{\arraystretch}{2}
+\scriptsize
+\begin{table}[htb]
+	\centering
+	\begin{NiceTabular}{|c|p{2.9cm}|llllll|}
+		\hline
+		\Block{4-1}<\rotate>{Orto - para orientati} & Fortemente \mbox{attivanti}    & \chemfig{-[,0.5]\charge{90:2pt=\:}{N}H_2}                  & \chemfig{-[,0.5]\charge{90:2pt=\:}{N}HR}                    & \chemfig{-[,0.5]\charge{90:2pt=\:}{N}HR_2}                    & \chemfig{-[,0.5]\charge{90:2pt=\:,270:2pt=\:}{O}H}             & \chemfig{-[,0.5]\charge{90:2pt=\:,270:2pt=\:}{O}R} &                                    \\
+		                                            & Moderatamente \mbox{attivanti} & \chemfig{-[,0.5]\charge{90:2pt=\:}{N}HCR(=[2,,3]O)}        & \chemfig{-[,0.5]\charge{90:2pt=\:}{N}HCAc(=[2,,3]O)}        & \chemfig{-[,0.5]\charge{90:2pt=\:,270:2pt=\:}{O}CR(=[2,,2]O)} & \chemfig{-[,0.5]\charge{90:2pt=\:,270:2pt=\:}{O}CAc(=[2,,2]O)} &                                                    &                                    \\
+		                                            & Debolmente \mbox{attivanti}    & \chemfig{-[,0.5]R}                                         & \chemfig[atom sep=1.5em]{-[,0.5]*6(-=-=-=)}                 &                                                               &                                                                &                                                    &                                    \\
+		                                            & Debolmente \mbox{disattivanti} & \chemfig{-[,0.5]\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{F}} & \chemfig{-[,0.5]\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{Cl}} & \chemfig{-[,0.5]\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{Br}}   & \chemfig{-[,0.5]\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{I}}     &                                                    &                                    \\
+		\hline
+		\Block{2-1}<\rotate>{Meta orientati}        & Moderatamente disattivanti     & \chemfig{-[,0.5]CH(=[2]O)}                                 & \chemfig{-[,0.5]CR(=[2]O)}                                  & \chemfig{-[,0.5]COH(=[2]O)}                                   & \chemfig{-[,0.5]COR(=[2]O)}                                    & \chemfig{-[,0.5]CNH_2(=[2]O)}                      & \chemfig{-[,0.5]SOH(=[2]O)(=[6]O)} \\
+		                                            & Fortemente \mbox{disattivanti} & \chemfig{-[,0.5]NO_2}                                      & \chemfig{-[,0.8]N\charge{45:3pt=\chargeColor{+}}{H}_3}      & \chemfig{-[,0.5]CF_3}                                         & \chemfig{-[,0.5]CCl_3}                                         &                                                    &                                    \\
+		\hline
+	\end{NiceTabular}
+	\caption{Effetto dei sostituenti su un'altra SEA}\label{tab:AttEDisatt}
+\end{table}
+\endgroup
+
+\noindent Se paragoniamo questi gruppi possiamo fare le seguenti generalizzazioni:
+\begin{enumerate}
+	\item\label{en:CAs5.4.1} I gruppi alchilici, i gruppi fenilici e i sostituenti nei quali l'atomo all'anello ha una coppia non condivisa di elettroni sono orto - para orientanti. Tutti gli altri sono meta orientanti
+	\item\label{en:CAs5.4.2} Tutti i gruppi orto - para orientanti sono attivanti, eccetto gli alogeni che sono disattivanti
+	\item\label{en:CAs5.4.3} Tutti i gruppi meta orientanti hanno carica positiva, parziale o intera, sull'atomo legato all'anello
+\end{enumerate}
+
+Per capire perché si possono fare le generalizzazioni precedenti, prendiamo come esempio la clorurazione del fenolo, per spiegare il~\autoref{en:CAs5.4.1}.
+\begin{figure}[H]
+	\centering
+	\tikzset{%
+	>={Latex[width=2mm,length=2mm]}}
+	\begin{tikzpicture}[node distance=3cm,align=center]
+		\node (start)[]{\scriptsize\schemestart\chemfig{*6(-=-=(-OH)-=)} \arrow{0}[,0]\+ \ch{Cl2}\schemestop};
+		\node (para) [right of=start,xshift=5.5cm] {\paraFenolo};
+		\node (orto) [above of=para,xshift=1.4cm] {\ortoFenolo};
+		\node (meta) [below of=para,xshift=-.5cm] {\metaFenolo};
+
+
+		\draw[->] (start) -- node[midway,yshift=10pt,xshift=12pt] {para} (para);
+		\draw[->] (start) -- +(2,0) |- node[near end,yshift=10pt] {orto} (orto);
+		\draw[->] (start) -- +(2,0) |- node[near end,yshift=10pt] {meta} (meta);
+	\end{tikzpicture}
+\end{figure}
+
+Nel caso dell'attacco in orto e para, in una delle forme limite dell'intermedio di reazione, la carica positiva si colloca sul carbonio che porta all'ossidrile. Lo spostamento degli elettroni sull'ossigeno delocalizza ulteriormente la carica, aumentando la stabilità dell'intermedio.
+
+Possiamo concludere che i sostituenti che possiedono elettroni non condivisi sull'atomo direttamente collegato all'anello sono orto, para-orientanti.
+
+Allo stesso modo, per spiegare l'effetto meta-orientante prendiamo come esempio la nitrazione del nitrobenzene.
+
+\begin{figure}[H]
+	\centering
+	\tikzset{%
+	>={Latex[width=2mm,length=2mm]}}
+	\begin{tikzpicture}[node distance=3.5cm,align=center]
+		\node (start)[]{\scriptsize\schemestart\chemfig{*6(-=-=(-\chemabove{N}{\color{red}\scriptstyle\oplus}(-[1]\charge{45:3pt=\chargeColor{-}}{O})(=[3]O))-=)} \arrow{0}[,0]\+ \ch{NO2}\schemestop};
+		\node (para) [right of=start,xshift=5.5cm] {\paraNitroBenzene};
+		\node (orto) [above of=para,xshift=1cm] {\ortoNitroBenzene};
+		\node (meta) [below of=para,xshift=0.5cm] {\metaNitroBenzene};
+
+
+		\draw[->] (start) -- node[midway,yshift=10pt,xshift=12pt] {para} (para);
+		\draw[->] (start) -- +(2,0) |- node[near end,yshift=10pt] {orto} (orto);
+		\draw[->] (start) -- +(2,0) |- node[near end,yshift=10pt] {meta} (meta);
+	\end{tikzpicture}
+\end{figure}
+
+In questo caso, gli attacchi orto e para non si osservano perché in una forma limite dell'ibrido di risonanza ha due cariche adiacenti e questa situazione rende estremamente sfavorevole osservazione mentre nel'attacco meta tutto ciò non si verifica e di conseguenza è quello preferito.
+
+Adesso, per spiegare il~\autoref{en:CAs5.4.2} possiamo dire che i sostituenti meta-orientanti attirano a se gli elettroni dell'anello, perché portano su di loro cariche positive parziali o totali. Questo fa si che attirando gli elettroni dell'anello su di loro, disattivano l'anello stesso. Al contrario, i gruppi orto, para-orientanti possono fornire elettroni all'anello e perciò attivano l'anello. L'unica eccezione tra i sostituenti sono gli alogeni che essendo fortemente elettron-attrattori disattivano l'anello ma avendo doppietti di non legame li rende orto - para orientanti.

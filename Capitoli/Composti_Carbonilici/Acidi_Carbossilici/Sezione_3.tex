@@ -1,0 +1,130 @@
+\chapter{Derivati degli acidi carbossilici}
+I derivati degli acidi carbossilici sono composti nei quali l'ossidrile carbossilico è sostituito da altri gruppi. Tutti i derivati tramite idrolisi danno il corrispondente acido carbossilico.
+
+I derivati degli acidi carbossilici sono:
+
+\begin{minipage}{.4\textwidth}
+	\begin{itemize}
+		\item \hyperref[sec:cloruriAcilici]{Cloruro acilico}
+		      \begin{figure}[H]
+			      \centering
+			      \chemfig{R-[:30]C(=[2]O)-[:-30]Cl}
+		      \end{figure}
+		\item \hyperref[sec:esteri]{Estere}
+		      \begin{figure}[H]
+			      \centering
+			      \chemfig{R-[:30]C(=[2]O)-[:-30]OR}
+		      \end{figure}
+		      \begin{itemize}
+			      \item Lattone
+			            \begin{figure}[H]
+				            \centering
+				            \chemfig{*5(--(=O)-O--)}
+			            \end{figure}
+		      \end{itemize}
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+	\vspace{10pt}
+	\begin{itemize}
+		\item \hyperref[sec:anidridi]{Anidride}
+		      \begin{figure}[H]
+			      \centering
+			      \chemfig{R-[:30]C(=[2]O)-[:-30]O-[:30]C(=[2]O)-[:-30]R}
+		      \end{figure}
+		\item \hyperref[sec:ammidi]{Ammide}
+		      \begin{figure}[H]
+			      \centering
+			      \chemfig{R-[:30]C(=[2]O)-[:-30]NH_2}
+		      \end{figure}
+		      \begin{itemize}
+			      \item Lattame
+			            \begin{figure}[H]
+				            \centering
+				            \chemfig{*5(--(=O)-N--)}
+			            \end{figure}
+		      \end{itemize}
+	\end{itemize}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Reazioni caratteristiche}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Sostituzione nucleofila acilica}
+Gli acidi carbossilici vanno incontro a sostituzione diversamente da aldeidi e chetoni che vanno incontro ad addizione. Questo succede perché gli acidi carbossilici dopo aver formato l'intermedio tetraedrico, possono espellere un buon gruppo uscente e rigenerare il carbonile, cosa che non possono fare le aldeidi e i chetoni. Questo tipo di reazione viene chiamata \textbf{sostituzione nucleofila acilica}.
+
+In questo tipo di reazione, anche molecole neutre possono agire come nucleofili sopratutto se la reazione avviene in ambiente acido.
+\begin{reaction}
+	\AddRxnDesc{Sostituzione nucleofila acilica}
+	\arrow{0}[,0]
+	\chemfig{R-[:30]@{C}C(=[@{Ol}2]@{O}O)-[:-30]Gu} \arrow{0}[,0]\+ \chemfig{@{Nu}\charge{45:3pt=\chargeColor{-},180=\:}{Nu}}
+	\arrow
+	\chemleft[
+	\subscheme{
+	\chemfig{R>:[:30]C(-[@{Ol2}2]@{O2}\charge{45:3pt=\chargeColor{-},0=\:,90=\:,180=\:}{O})(<[@{Gul}:250]@{Gu}Gu)-[:-30]Nu}
+	}
+	\chemright]
+	\arrow
+	\chemfig{R-[:30]C(=[2]O)-[:-30]Nu} \arrow{0}[,0]\+ \chemfig{\charge{45:3pt=\chargeColor{-},180=\:}{Gu}}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (Nu).. controls +(135:1cm) and +(45:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(180:.5cm) and +(180:.5cm) .. (O);
+		\draw[shorten <=3pt, shorten >= 1pt] (O2).. controls +(180:.5cm) and +(180:.5cm) .. (Ol2);
+		\draw[shorten <=3pt, shorten >= 1pt] (Gul).. controls +(30:.5cm) and +(0:.5cm) .. (Gu);
+	}
+\end{reaction}
+
+\paragraph{Reattività dei derivati}\mbox{}\\
+I derivati dei acidi carbossilici hanno reattività molto diverse tra loro. Per questo motivo, gli alogenuri acilici e le anidridi sono molto reattivi mentre gli esteri e le ammidi sono molto stabili e quindi poco reattivi.
+\begin{figure}[H]
+	\centering
+	\vspace{-1cm}
+	\begin{tikzpicture}[node distance=3cm]
+		\matrix (m)[matrix of nodes,inner sep=5mm,nodes={minimum width=1cm,minimum height=1cm,anchor=center}]
+		{
+		\chemfig{R-[:30]C(=[2]O)-[:-30]NH_2} & \chemfig{R-[:30]C(=[2]O)-[:-30]OR} &\chemfig{R-[:30]C(=[2]O)-[:-30]O-[:30]C(=[2]O)-[:-30]R} & \chemfig{R-[:30]C(=[2]O)-[:-30]Cl}\\
+		};
+
+		\draw[draw=none] (m-1-1.south west) -- ++(0,-.5cm) coordinate (a);
+		\draw[draw=none] (m-1-4.south east) -- ++(1cm,-.5cm) coordinate (b);
+		\draw[-{Kite[length=2cm]},magenta!40,line width=15pt] (a) to node[black,sloped,font={\small\ttfamily},xshift=-20pt]{Reattività crescente nella sostituzione nucleofila acilica} (b);
+	\end{tikzpicture}
+\end{figure}
+
+L'andamento della reattività dipende da due effetti. Il primo effetto è la capacità del gruppo uscente di agire come tale. Ovvero il miglior gruppo uscente è la base più debole.
+
+Il secondo effetto è dato dal grado di stabilizzazione per risonanza dei derivati degli acidi carbossilici. Ogni derivato può essere rappresentato come ibrido di risonanza. La seconda struttura di risonanza, dove il carbonio carbonilico porta la carica, spiega l’elettrofilicità del carbonio carbonilico. Mentre le altre spiegano il diverso grado di stabilità dei derivati.
+
+\begin{figure}[H]
+	\centering
+	\vspace{-1cm}
+	\begin{tikzpicture}[node distance=3cm]
+		\matrix (m)[matrix of nodes,inner sep=5mm,nodes={minimum width=3cm,minimum height=3cm,anchor=south}]
+		{
+		\chemfig{R-[:30]\charge{45:3pt=\chargeColor{-}}{N}(-[2,,,,draw=none])-[:-30]R} & \chemfig{R-\charge{45:3pt=\chargeColor{-}}{O}} &\chemfig{R-[:30]C(=[2]O)-[:-30]\charge{45:3pt=\chargeColor{-}}{O}} & \chemfig{\charge{45:3pt=\chargeColor{-}}{X}}\\
+		};
+
+		\draw[draw=none] (m-1-1.south west) -- ++(0,-.5cm) coordinate (a);
+		\draw[draw=none] (m-1-4.south east) -- ++(1cm,-.5cm) coordinate (b);
+		\draw[-{Kite[length=2cm]},magenta!40,line width=15pt] (a) to node[black,sloped,font={\small\ttfamily},xshift=-20pt]{Reattività verso la sostituzione nucleofila acilica} (b);
+
+		\draw[draw=none] (a) -- ++(0,-1cm) coordinate (c);
+		\draw[draw=none] (b) -- ++(0,-1cm) coordinate (d);
+		\draw[-{Kite[length=2cm]},blue!40,line width=15pt] (d) to node[black,sloped,font={\small\ttfamily},xshift=-20pt]{Basicità crescente} (c);
+
+	\end{tikzpicture}
+\end{figure}
+
+\paragraph{Catalisi}\mbox{}\\
+La reattività degli alogenuri e delle anidridi è tale che non c'è bisogno di catalisi. Mentre per esteri e ammidi, essendo molto stabili, è necessario di catalisi acida o basica per aumentare l'elettrofilicità del carbonio carbonilico e facilitare l0uscita del gruppo uscente.
+
+\paragraph{Interconversione dei derivati funzionali}\mbox{}\\
+La interconversione tra i derivati degli acidi carbossilici dipende dai fattori che abbiamo visto sopra. La~\autoref{fig:ConversioneTraDerivati} mostra come ogni singolo derivato viene convertito in un altro.
+\begin{figure}[H]
+	\centering
+	\subimport*{../../../grafici/}{ConvDerAcCarb.tex}
+	\vspace{-1cm}
+	\caption{Interconversione tra derivati degli acidi carbossilici}\label{fig:ConversioneTraDerivati}
+\end{figure}

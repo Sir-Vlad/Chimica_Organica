@@ -1,0 +1,61 @@
+\begin{tikzpicture}[node distance=3cm,align=center,arrow/.style={->,>={Kite[width=.15cm,length=.3cm]}}]
+	\node[fill=magenta!30] (cloruro) {\chemfig{!\DerAc Cl}};
+	\node[fill=red!30] (anidride) [below right of=cloruro,xshift=1cm] {\chemfig{!\DerAc O-[:30]C(=[2]O)-[:-30]R}};
+	\node[fill=cyan!30] (estere) [below right of=anidride,xshift=1cm] {\chemfig{!\DerAc O-[:30]R}};
+	\node[fill=green!30] (ammide) [below right of=estere,xshift=1cm] {\chemfig{!\DerAc NH-[:30]R}};
+	\node[fill=orange!30] (carbossilato) [below right of=ammide,xshift=1.5cm] {\chemfig{!\DerAc \ChargeOop}};
+	\node[fill=yellow!50] (acido) [right of=estere] {\chemfig{!\DerAc OH}};
+	\node (tilde) [right of=estere,xshift=-1.4cm,yshift=-5pt,font={\Large\bfseries}] {\textasciitilde};
+
+
+	% - Arrow
+	\draw[draw=none] (cloruro) -- +(-2,1) coordinate (A);
+	\coordinate (B) at (A|-carbossilato.south west)+(270:1cm);
+	\draw[-{Kite[length=1.2cm,width=20pt,inset=10pt]},blue!40,line width=15pt] (A) to node[black,sloped,font={\small\ttfamily},xshift=-20pt]{Reattività descrescente} ($(A|-carbossilato.south west)+(0cm,-2cm)$);
+	\draw[arrow] (carbossilato) |- (acido) node[near end,black,sloped,yshift=6pt]{\chemfig{\charge{30:4pt=\chargeColor{+}}{H}}};
+	\draw[arrow] (acido) |- (cloruro) node[near end,black,sloped,yshift=6pt]{\ch{SOCl2}};
+
+	\begin{scope}[on background layer={fill=yellow!15}]
+		\fill (A) rectangle ($(carbossilato.south east)+(1cm,-1cm)$);
+	\end{scope}
+
+	% - dashed
+	\draw[dashed,shorten >= 10pt] (anidride.south west) -- (A|-anidride.south west);
+	\draw[dashed,shorten >= 10pt] (estere.south west) -- (A|-estere.south west);
+	\draw[dashed,shorten >= 10pt] (ammide.south west) -- (A|-ammide.south west);
+	\draw[dashed,shorten >= 10pt] (carbossilato.south west) -- (A|-carbossilato.south west);
+
+
+	% - cloruro line
+	\coordinate (ClAn) at ($(cloruro.south)+(.40cm,0cm)$);
+	\draw[arrow] (ClAn) -- (ClAn|-anidride.south west);
+
+	\coordinate (ClEs) at ($(cloruro.south)+(.10cm,0cm)$);
+	\draw[arrow] (ClEs) -- (ClEs|-estere.south west);
+
+	\coordinate (ClAm) at ($(cloruro.south)+(-.20cm,0cm)$);
+	\draw[arrow] (ClAm) -- (ClAm|-ammide.south west);
+
+	\coordinate (ClAc) at ($(cloruro.south)+(-.50cm,0cm)$);
+	\draw[arrow] (ClAc) -- (ClAc|-carbossilato.south west);
+
+	% - anidride line
+	\coordinate (AnEs) at ($(anidride.south)+(.40cm,0cm)$);
+	\draw[arrow] (AnEs) -- (AnEs|-estere.south west);
+
+	\coordinate (AnAm) at ($(anidride.south)$);
+	\draw[arrow] (AnAm) -- (AnAm|-ammide.south west);
+
+	\coordinate (AnAc) at ($(anidride.south)+(-.40cm,0cm)$);
+	\draw[arrow] (AnAc) -- (AnAc|-carbossilato.south west);
+
+	% - estere line
+	\coordinate (EsAm) at ($(estere.south)+(.30cm,0cm)$);
+	\draw[arrow] (EsAm) -- (EsAm|-ammide.south west);
+
+	\coordinate (EsAc) at ($(estere.south)+(-.30cm,0cm)$);
+	\draw[arrow] (EsAc) -- (EsAc|-carbossilato.south west);
+
+	% - Ammide line
+	\draw[arrow] (ammide.south) -- (ammide.south|-carbossilato.south west);
+\end{tikzpicture}

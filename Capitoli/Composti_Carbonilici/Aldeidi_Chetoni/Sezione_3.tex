@@ -1,0 +1,240 @@
+\section{Addizione nucleofila alle aldeidi e ai chetoni}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Addizione di acqua: idratazione delle aldeidi e dei chetoni}
+La reazione di idratazione avviene molto velocemente se condotta in ambiente acido o basico.
+
+In ambiente acido, la reazione sarebbe la seguente:
+\begin{reactions}
+	\label{rxn:idratAldeidi-AmbAc}
+	\AddRxnDesc{Idratazione aldeidi o chetoni in ambiente acido}
+	\chemfig{C(=[0]@{O}\charge{45=\:,-45=\:}{O})(>:[:120])(<[:240])}
+	\arrow{<=>[\Hpiu[m]{1}]}
+	\chemfig{@{C}C(=[@{Ol}0]@{O2}\charge{70:3pt=\chargeColor{+}}{O}H)(>:[:120])(<[:240])}
+	\arrow{<=>[\chemfig{@{OH}\charge{90=\:,180=\:}{O}H_2}]}
+	\chemfig{C(-[:-30]OH)(-[:30]\charge{70:3pt=\chargeColor{+}}{O}H_2)(>:[:120])(<[:240])}
+	\arrow{<=>}
+	\chemfig{C(-[:30]OH)(-[:-30]OH)(>:[:120])(<[:240])}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(45:1cm) and +(100:1cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (OH).. controls +(90:1cm) and +(60:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(-90:.5cm) and +(-120:.5cm) .. (O2);
+	}
+\end{reactions}
+
+Nel primo passaggio, l'ossigeno del carbonile viene protonato aumentando la reattività verso l'acqua, un nucleofilo debole. Nel secondo passaggio, c'è l'attacco dell'acqua e infine negli ultimi c'è eliminazione di un protone e la riformazione del catalizzatore.
+
+In ambiente basico, il carbonile non viene modificato ma il nucleofilo si e diventa più reattivo, infatti invece dell'acqua reagisce \ch{OH-}.
+\begin{reaction}
+	\AddRxnDesc{Idratazione aldeidi o chetoni in ambiente basico}
+	\chemfig{@{C}C(=[@{Ol}0]@{O2}O)(>:[:120])(<[:240])}
+	\arrow{<=>[\chemfig{@{OH}\charge{135:3pt=\chargeColor{-}}{O}H}]}
+	\chemfig{C(-[:30]OH)(-[:-30]@{O}\charge{45:3pt=\chargeColor{-}}{O})(>:[:120])(<[:240])}
+	\arrow{<=>[\chemfig{@{OH2}OH(-[@{Hl}4]@{H}H)}]}[,1.3]
+	\chemfig{C(-[:-30]OH)(-[:30]\charge{70:3pt=\chargeColor{+}}{O}H_2)(>:[:120])(<[:240])} \+ \chemfig{\charge{135:3pt=\chargeColor{-}}{O}H}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (OH).. controls +(90:1cm) and +(60:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(-90:.5cm) and +(-120:.5cm) .. (O2);
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(0:.8cm) and +(180:.8cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (Hl).. controls +(110:.5cm) and +(135:.5cm) .. (OH2);
+	}
+\end{reaction}
+
+Nei due casi la percentuale di prodotto che si ottiene rimane lo stesso. La catalisi influenza solo la velocità di reazione e non l'equilibrio.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Addizione di alcoli: formazione di emiacetali e acetali}\label{sec:formazioneEmiacetali}
+Le aldeidi e i chetoni reagiscono con due molecole di alcol in catalisi acida per dare gli acetali. Quando si addiziona una molecola di acqua si forma l'emiacetale che è troppo instabile e per questo reagisce velocemente con un'altra molecola d'alcol per dare l'acetale, che è la forma più stabile.
+\begin{reaction}
+	\AddRxnDesc{Addizione di alcol agli aldeidi e chetoni}
+	\chemfig{C(=[2]O)(-[0]R'')(-[4]R')}
+	\arrow(.mid east--){<=>[\chemfig{RO-H}][\ch{H^{\color{red}\oplus}}]}[,1.5]
+	\chemfig{C(-[2]OH)(-[0]OR)(-[4]R')(-[6]R'')}
+	\arrow{<=>[\chemfig{RO-H}][\ch{H^{\color{red}\oplus}}]}[,1.5]
+	\chemfig{C(-[2]OR)(-[0]OR)(-[4]R')(-[6]R'')} + \ch{H2O}
+\end{reaction}
+
+In questa reazione le aldeidi reagiscono più facilmente dei chetoni. Il meccanismo della formazione dell'emiacetale è identico all'idratazione delle aldeidi in ambiente acido (\autoref{rxn:idratAldeidi-AmbAc}).
+\begingroup
+\setchemfig{arrow label sep=5pt}
+\begin{reaction}
+	\AddRxnDesc{Formazione dell'emiacetale}
+	\chemname{\chemfig{C(=[0]@{O}\charge{45=\:,-45=\:}{O})(>:[:120])(<[:240])}}{Aldeide o chetone}
+	\arrow(.mid east--.mid west){<=>[\Hpiu[m]{1}]}
+	\chemfig{@{C}C(=[@{Ol}0]@{O2}\charge{70:3pt=\chargeColor{+}}{O}H)(>:[:120])(<[:240])}
+	\arrow{<=>[\chemfig{R-@{OH}\charge{90=\:,270=\:}{O}H}]}
+	\chemfig{C(-[2]OH)(-[0]\charge{80:3pt=\chargeColor{+}}{O}(-[0]R)(-[6]H))(-[4])(-[6])}
+	\arrow(.mid east--.mid west){<=>}
+	\chemname{\chemfig{C(-[2]OH)(-[0]O-R)(-[4])(-[6])}}{Emiacetale}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(45:1cm) and +(100:1cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (OH).. controls +(90:1cm) and +(60:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(-90:.5cm) and +(-120:.5cm) .. (O2);
+	}
+\end{reaction}
+\endgroup
+La reazioni però non si ferma qui e il emiacetale si disidrata attraverso a formazione di un carbocatione stabilizzato per risonanza. A questo punto attacca il secondo l'alcol e si forma acetale.
+
+\begin{reaction}
+	\AddRxnDesc{Formazione dell'acetale}
+	\chemname{\chemfig{C(-[2]@{O}\charge{90=\:}{O}H)(-[0]OR)(-[4])(-[6])}}{Emiacetale}
+	\arrow(.mid east--.mid west){<=>[\Hpiu[m]{1}]}[,0.8]
+	\chemfig{C(-[@{Opl}2]@{Op}\charge{80:3pt=\chargeColor{+}}{O}H_2)(-[@{ORl}0]@{OR}\charge{270=\:}{O}R)(-[4])(-[6])}
+	\arrow{<=>}[,.8]
+	\chemleft[\subscheme{
+	\chemfig{@{C}C(-[2,,,,white])(=[@{Op1}0]@{Ocp}\charge{80:3pt=\chargeColor{+}}{O}-R)(-[4])(-[6])}
+	\arrow{<->}[,0.7]
+	\chemfig{C(-[2,,,,white])(=[0]\charge{80:3pt=\chargeColor{+}}{O}-R)(-[4])(-[6])}
+	}\chemright]
+	\arrow(@c4--){<=>[][*{0}\chemfig{R-@{OR1}\charge{90=\:,270=\:}{O}H}]}[-90]
+	\chemfig{C(-[2]\charge{80:3pt=\chargeColor{+}}{O}(-[1]R)(-[3]H))(-[0]O-R)(-[4])(-[6])}
+	\arrow(.mid west--.mid east){<=>[\(-\)\Hpiu[m]{2}]}[-180]
+	\chemname{\chemfig{C(-[2]O-[1]R)(-[0]O-R)(-[4])(-[6])}}{Acetale}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (O.north).. controls +(60:1cm) and +(120:1cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (OR).. controls +(270:.5cm) and +(270:.5cm) .. (ORl);
+		\draw[shorten <=3pt, shorten >= 1pt] (Opl).. controls +(180:.5cm) and +(180:.5cm) .. (Op);
+		\draw[shorten <=3pt, shorten >= 1pt] (OR1).. controls +(90:1cm) and +(-150:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Op1).. controls +(120:.5cm) and +(120:.5cm) .. (Ocp);
+	}
+\end{reaction}
+
+La reazione in ambiente acido è totalmente reversibile, e quindi con un eccesso di alcol l'aldeide o il chetone può essere trasformato in acetale, mentre l'acetale viene idrolizzato liberando l'aldeide se c'è un eccesso di acqua.
+
+Le aldeidi con gruppo ossidrilico a distanza di quattro o cinque atomi di carbonio all'interno della stessa molecola sono in equilibrio con l'emiacetale ciclico prodotto per addizione nucleofila intramolecolare.
+{\small
+\begin{reaction}
+	\AddRxnDesc{Addizione nucleofila intramolecolare per aldeidi}
+	\arrow{0}[,0]
+	\subscheme{
+	\chemfig[cram width=2pt,bond join=true]{@{O}\charge{90:1pt=\:,270:1pt=\:}{O}H-[:160,1.2,,,line width=2pt]>[:190]-[:50]-[:-20]-[:20]@{C}(=[@{OHl}7]O)(-[2]H)}
+	\arrow{0}[10,0.2] \Hpiu[m]{1}
+	}
+	\arrow{<=>}
+	\chemfig[cram width=2pt,bond join=true]{H-[@{Ol}3]@{O2}\charge{90:3pt=\chargeColor{+},270:1pt=\:}{O}?-[:160,1.2,,,line width=2pt]>[:190]-[:50]-[:-20]-[:20]?(-[:-30]O-[:30]H)(-[2]H)}
+	\arrow{<=>[\(-\)\Hpiu[m]{2}]}
+	\chemfig[cram width=2pt,bond join=true]{O?-[:160,,,,line width=2pt]>[:190]-[:50]-[:-20]-[:20]?(-[:-30]OH)(-[2]H)}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=-1pt, shorten >= 2pt] ([yshift=3pt]O.north east).. controls +(0:.3cm) and +(270:.5cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (OHl).. controls +(45:.8cm) and +(180:.8cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(15:.5cm) and +(0:.5cm) .. (O2);
+	}
+\end{reaction}}
+
+Gli acetali sono stabili alle basi, in quanto assomigliano agli eteri. Questo consente di usare il gruppo acetale come gruppo protettore di un'aldeide (o di un chetone) per eseguire reazioni in ambiente basico, nel quale le aldeidi potrebbero reagire con i nucleofili o dare condensazione aldolica.
+
+\begin{reaction}
+	\AddRxnDesc{Protezione del gruppo aldeidico o chetonico}
+	\chemname{\chemfig{C(=[0]\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]R)}}{Aldeide o chetone}
+	\arrow(.mid east--){0}[,0]\+\arrow{0}[,0]
+	\chemfig{HO-CH_2-[6,1.3]CH_2-[4]HO}
+	\arrow{->[\Hpiu{1}]}
+	\chemfig{C(-[1]O(-C?H_2))(-[7]O-C?H_2)(-[3]R)(-[5]R)}
+\end{reaction}
+
+Una volta eseguita la reazione sul un altro gruppo funzionale della molecola, rimuovo la protezione dell'acetale idrolizzandolo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Formazione di immine ed enammine}
+L'ammoniaca, le ammine e alcuni loro derivati che hanno sull'atomo di azoto un doppietto elettronico si comportano come nucleofili nei confronti del carbonio carbonilico e quindi reagiscono con aldeidi e chetoni con una reazione di sostituzione nucleofila nella quale azoto si lega con un doppio legame al carbonio e viene espulsa acqua.
+
+A seconda della classe dei composti azotati si forma una diversa classe di prodotti:
+\begin{itemize}
+	\item l'ammoniaca e ammine primarie danno come prodotto le immine
+	\item le idrossilammina danno le ossime
+	\item le idrazine danno gli idrazoni
+	\item le fenilidrazine danno i fenilidrazoni
+\end{itemize}
+
+\paragraph{Meccanismo di formazione di un'immina}\mbox{}\\
+La sintesi delle immine avviene in due stadi. Il primo stadio porta alla formazione della carbinolammina (molecola simile all'emiacetale), per poi, nel secondo stadio, perdere una molecola d'acqua e dare l'immina finale.
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Formazione di immine}
+	\chemname{\chemfig{C(=[0]@{O1}\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]H)}}{Aldeide o chetone}
+	\arrow(.mid east--){<=>[\Hpiu[m]{1}]}
+	\chemfig{@{C1}\charge{180:2pt=\chargeColor{+}}{C}(-[0]O-H)(-[3]R)(-[5]H)}
+	\+
+	\chemname{\chemfig{R'-@{N1}\charge{270:1pt=\:}{N}H_2}}{Ammina primaria}
+	\arrow{<=>}
+	\chemfig{\charge{-135:3pt=\chargeColor{+}}{N}(-[2]R')(-[4]H)(-[6]H)(-[0]C(-[2]R)(-[0]OH)(-[6]H))}
+	\arrow{<=>}[-90]
+	\chemname{\chemfig{\charge{270:1pt=\:}{N}(-[2]R')(-[4]H)(-[0]C(-[2]R)(-[0]OH)(-[6]H))}}{Carbinolammina}
+	\arrow{<=>[\Hpiu{2}]}[-180]
+	\chemfig{@{N2}\charge{270:1pt=\:}{N}(-[2]R')(-[4]H)(-[@{NCl}0]C(-[2]R)(-[@{Ol}0]@{O2}\charge{70:3pt=\chargeColor{+}}{O}H_2)(-[6]H))}
+	\arrow{<=>[\Hpiu{2}]}[-180]
+	\chemfig{\charge{-80:3pt=\chargeColor{+}}{N}(-[2]R')(-[4]H)(=[0]C(-[1]R)(-[7]H))} \+ \ch{H2O}
+	\arrow{<=>}[-90]
+	\chemname{\chemfig{N(-[4]R')(=[0]C(-[1]R)(-[7]H))}}{Immina}
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=2pt, shorten >= 1pt] (O1).. controls +(70:.5cm) and +(120:.5cm) .. (H1);
+		\draw[shorten <=3pt, shorten >= 1pt] (N1).. controls +(270:1cm) and +(-45:1cm) .. (C1);
+		\draw[shorten <=2pt, shorten >= 1pt] (N2.south west).. controls +(270:.5cm) and +(270:.5cm) .. (NCl);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(90:.5cm) and +(120:.5cm) .. (O2);
+	}
+\end{reaction}
+\endgroup
+
+\paragraph{Formazione di enammina}
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Formazione di enammina}
+	\chemname{\chemfig{C(=[0]\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]R)}}{Aldeide o chetone}
+	\+{2em,2em}
+	\chemname{\chemfig{HN(-[1]R)(-[7]R)}}{Ammina secondaria}
+	\arrow(-.mid east--.mid west)
+	\chemname{\chemfig{C(-[0]N(-[1]R)(-[7]R))(=[3]R_2C)(-[5]R)}}{Enammina}
+	\+ \ch{H2O}
+\end{reaction}
+\endgroup
+
+\paragraph{Formazione di ossime}
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Formazione di ossime}
+	\chemname{\chemfig{C(=[0]\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]R)}}{Aldeide o chetone}
+	\+{1em,1em}
+	\chemname{\chemfig{H_2N-OH}}{Idrossilammina}
+	\arrow(-.mid east--.mid west)
+	\chemname{\chemfig{C(=[0]N-OH)(-[3]R)(-[5]H)}}{Ossima}
+	\+ \ch{H2O}
+\end{reaction}
+\endgroup
+
+\paragraph{Formazione di idrazoni}
+\begingroup
+\begin{reaction}
+	\AddRxnDesc{Formazione di idrazoni}
+	\chemname{\chemfig{C(=[0]\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]R)}}{Aldeide o chetone}
+	\+
+	\chemname{\chemfig{H_2N-NH_2}}{Idrazina}
+	\arrow(-.mid east--.mid west)
+	\chemname{\chemfig{C(=[0]N-NH_2)(-[3]R)(-[5]H)}}{Idrazone}
+	\+ \ch{H2O}
+\end{reaction}
+\endgroup
+
+\paragraph{Formazione di fenilidrazoni}
+\begingroup
+\chemnameinit{}
+\begin{reaction}
+	\AddRxnDesc{Formazione di fenilidrazoni}
+	\chemname[25pt]{\chemfig{C(=[0]\charge{45=\:,-45=\:}{O})(-[3]R)(-[5]R)}}{Aldeide o chetone}
+	\+{1em,1em}\arrow(.mid east--){0}[,0]
+	\chemname[21pt]{\chemfig{H_2N-NH-[6]*6(-=-=-=)}}{Fenilidrazina}
+	\arrow
+	\chemname{\chemfig{C(=[0]N-NH(-[6]*6(-=-=-=)))(-[3]R)(-[5]H)}}{Fenilidrazone}
+	\arrow{0}[,0]\+ \ch{H2O}
+\end{reaction}
+\chemnameinit{}
+\endgroup
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Riduzione dei composti carbonilici}
+La riduzione di aldeidi e chetoni può avvenire in maniera selettiva tramite l'utilizzo di sodio boro idruro \ch{NaBH4} o litio alluminio idruro \ch{LiAlH4}. L'\ch{NaBH4} è un agente riducente molto blando che riduce solo aldeidi e chetoni senza andare a intaccare altri gruppi con doppi legami, invece \ch{LiAlH4} riesce a ridurre anche i composti carbossilici e i suoi derivati ma non riduce gli alcheni e gli alchini.
+
+Si possono ridurre le aldeidi e i chetoni anche in maniera non selettiva tramite riduzione con idrogeno e catalizzatore, \ch{Ni}, \ch{Pt}, \ch{Pt} o \ch{Ru}. In questo modo tutti i doppi legami della molecola verranno ridotti.
