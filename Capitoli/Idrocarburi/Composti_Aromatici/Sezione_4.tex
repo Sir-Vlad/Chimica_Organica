@@ -15,27 +15,27 @@ Nella \textbf{sostituzione elettrofila aromatica}, un atomo di idrogeno dell'ane
 			\arrow{->[lento]}
 			\chemleft[
 			\subscheme{
-			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]E)(-[0]H)-=-)}
+			\chemfig{*6(=[@{d2}]-@{d1c}\charge{-30:3pt=\chargeColor{+}}{}-(-[1]E)(-[0]H)-=-)}
 			\arrow{<->}
-			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]E)(-[0]H)-@{d3}=-)}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]E)(-[0]H)-=[@{d3}]-)}
 			\arrow{<->}
 			\chemfig{*6(-=-(-[1]E)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
 			}\chemright]
 			\chemmove[green!60!black!70]{
 				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
-				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
-				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(60:.4cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-60:.5cm) and +(15:.5cm) .. (d2c);
 			}
 		\end{reaction*}}
 	\item[Stadio 2:] Trasferimento di un protone ad una base per rigenerare l'anello aromatico:
 		{\scriptsize
 		\begin{reaction*}
-			\chemfig{*6(=-\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-[@{dlc}](-[1]E)(-[@{hl}0]@{h}H)-=-)} \arrow{0}[,0]\+ \chemfig{@{B}\charge{180[circle]=\:}{Base}}
+			\chemfig{*6(=-\charge{-20:2pt=\chargeColor{+}}{}-[@{dlc}](-[1]E)(-[@{hl}0]@{h}H)-=-)} \arrow{0}[,0]\+ \chemfig{@{B}\charge{180[circle]=\:}{Base}}
 			\arrow{->[veloce]}
 			\chemfig{*6(-=-(-E)=-=)} \arrow{0}[,0]\+ \chemfig[atom sep=3em]{Base(-H)}
 			\chemmove[green!60!black!70]{
 				\draw[shorten <=3pt, shorten >= 3pt] ([xshift=-2pt]B.west) .. controls +(90:.5cm) and +(45:.5cm) .. (h);
-				\draw[shorten <=3pt, shorten >= 3pt] (hl) .. controls +(110:.5cm) and +(135:.5cm) .. (dlc);
+				\draw[shorten <=1pt, shorten >= 2pt] (hl) .. controls +(290:.3cm) and +(0:.3cm) .. (dlc);
 			}
 		\end{reaction*}}
 \end{description}
@@ -55,7 +55,7 @@ Generalmente, il primo stadio è quello più lento, che determina la velocità d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Alogenazione}
-Gli alogeni che vengono usati, generalmente, sono il cloro e il bromo. Pendiamo il cloro come riferimento. Il cloro, nella sua forma stabile, non reagisce con il benzene. Per far in modo che il cloro reagisca, si utilizza un acido di Lewis come catalizzatore come il cloruro ferrico (\ch{FeCl3}) o il cloruro di alluminio (\ch{AlCl3}). Una volta che il cloro reagisce con il catalizzatore la reazione può avvenire come descritto nel meccanismo SEA, ovvero in tre stadi.
+Gli alogeni che vengono usati, generalmente, sono il cloro e il bromo. Pendiamo il cloro come riferimento. Il cloro, nella sua forma stabile, non reagisce con il benzene. Per far si che il cloro reagisca, si utilizza un acido di Lewis come catalizzatore come il cloruro ferrico (\ch{FeCl3}) o il cloruro di alluminio (\ch{AlCl3}). Una volta che il cloro reagisce con il catalizzatore la reazione può avvenire come descritto nel meccanismo SEA, ovvero in tre stadi.
 
 \begin{description}
 	\item[Stadio 1:] \textit{Formazione dell'elettrofilo}. La reazione tra il cloro e \ch{FeCl3}, il catalizzatore, forma un complesso molecolare. Quest'ultimo genera uno \textbf{ione cloronio} \ch{Cl+}, un elettrofilo molto forte:
@@ -85,23 +85,23 @@ Gli alogeni che vengono usati, generalmente, sono il cloro e il bromo. Pendiamo 
 			\arrow{->[lento]}
 			\chemleft[
 			\subscheme{
-			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]Cl)(-[0]H)-=-)}
+			\chemfig{*6(=[@{d2}]-@{d1c}\charge{-30:3pt=\chargeColor{+}}{}-(-[1]Cl)(-[0]H)-=-)}
 			\arrow{<->}
-			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]Cl)(-[0]H)-@{d3}=-)}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]Cl)(-[0]H)-=[@{d3}]-)}
 			\arrow{<->}
 			\chemfig{*6(-=-(-[1]Cl)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
 			}\chemright]
 			\chemmove[green!60!black!70]{
 				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
-				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
-				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(60:.5cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-60:.5cm) and +(15:.5cm) .. (d2c);
 			}
 		\end{reaction}}
 	\item[Stadio 3:] \textit{Rimozione di un protone}. Il protone viene strappato dal catione intermedio \ch{FeCl4^{-}} e forma \ch{HCl}, rigenerando il catalizzatore e producendo \iupac{clorobenzene}:
 		{\footnotesize\setchemfig{+ sep left=1em,+ sep right=1em}
 		\begin{reaction}
 			\AddRxnDesc{Alogenazione dei composti aromatici (stadio 3)}
-			\chemfig{*6(=-\charge{140:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]Cl)(-[@{hl}0]@{h}H)-=-)}
+			\chemfig{*6(=-\charge{150:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]Cl)(-[@{hl}0]@{h}H)-=-)}
 			\arrow{0}[,0]\+
 			\chemfig{\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[@{B}4]\charge{180=\:,90=\:,270=\:}{Cl})(-[6]Cl)}
 			\arrow{->[veloce]}
@@ -192,23 +192,23 @@ La reazione di alchilazione procede come le altre reazioni di sostituzione elett
 			\arrow{->[lento]}
 			\chemleft[
 			\subscheme{
-			\chemfig{*6(@{d2}=-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]R)(-[0]H)-=-)}
+			\chemfig{*6(=[@{d2}]-@{d1c}\charge{-20[circle,anchor=180+\chargeangle]=\chargeColor{+}}{}-(-[1]R)(-[0]H)-=-)}
 			\arrow{<->}
-			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]R)(-[0]H)-@{d3}=-)}
+			\chemfig{*6(@{d2c}\charge{200:3pt=\chargeColor{+}}{}-=-(-[1]R)(-[0]H)-=[@{d3}]-)}
 			\arrow{<->}
 			\chemfig{*6(-=-(-[1]R)(-[0]H)-\charge{90:3pt=\chargeColor{+}}{}-=)}
 			}\chemright]
 			\chemmove[green!60!black!70]{
 				\draw[shorten <=1pt, shorten >= 1pt] ([xshift=-5pt]d1) .. controls +(270:.7cm) and +(270:.7cm) .. (el);
-				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(45:.5cm) and +(135:.5cm) .. (d1c);
-				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-90:.5cm) and +(15:.5cm) .. (d2c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d2) .. controls +(60:.5cm) and +(135:.5cm) .. (d1c);
+				\draw[shorten <=3pt, shorten >= 3pt] (d3) .. controls +(-60:.5cm) and +(15:.5cm) .. (d2c);
 			}
 		\end{reaction}}
 	\item[Stadio 3:]  \textit{Rimozione di un protone}.
 		{\footnotesize\setchemfig{+ sep left=1em,+ sep right=1em}
 		\begin{reaction}
 			\AddRxnDesc{Alchilazione dei composti aromatici (stadio 3)}
-			\chemfig{*6(=-\charge{140:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]R)(-[@{hl}0]@{h}H)-=-)}
+			\chemfig{*6(=-\charge{150:3pt=\chargeColor{+}}{}-[@{dlc}](-[1]R)(-[@{hl}0]@{h}H)-=-)}
 			\arrow{0}[,0]\+
 			\chemfig{\charge{45:3pt=\chargeColor{-}}{Fe}(-[0]Cl)(-[2]Cl)(-[@{B}4]\charge{180=\:,90=\:,270=\:}{Cl})(-[6]Cl)}
 			\arrow{->[veloce]}
@@ -245,9 +245,9 @@ L'\textbf{acilazione} è la reazione tra un idrocarburo aromatico con un alogeno
 \paragraph{Formazione dello \iupac{ione acilio}}
 \begin{reaction}
 	\AddRxnDesc{Formazione dello ione acilio}
-	\chemfig{R-C(=[2]O)-Cl} \+ \chemfig{Al(-[2]Cl)(-[6]Cl)-Cl}
+	\chemfig{R-C(=[2]O)-@{cl1}Cl} \+ \chemfig{@{al}Al(-[2]Cl)(-[6]Cl)-Cl}
 	\arrow{<=>}
-	\chemfig{R-C(=[2]O)-[@{cll}]@{cl}\chemabove{Cl}{\color{red}\scriptstyle\oplus}-\charge{45:3pt=\chargeColor{-}}{Al}(-[2]Cl)(-[6]Cl)-Cl}
+	\chemfig{R-C(=[2]O)-[@{cll}]@{cl2}\chemabove{Cl}{\color{red}\scriptstyle\oplus}-\charge{45:3pt=\chargeColor{-}}{Al}(-[2]Cl)(-[6]Cl)-Cl}
 	\arrow[-90]
 	\chemfig{R-\charge{45:4pt=\chargeColor{+}}{C}(=[2]O)}\hspace{.5em}
 	\charge{30:6pt=\chargeColor{-}}{\chemleft[
@@ -256,7 +256,8 @@ L'\textbf{acilazione} è la reazione tra un idrocarburo aromatico con un alogeno
 	}
 	\chemright]}
 	\chemmove[green!60!black!70]{
-		\draw[shorten <=3pt, shorten >= 1pt] (cll).. controls +(-90:.5cm) and +(-90:.5cm) .. (cl);
+		\draw[shorten <=3pt, shorten >= 1pt] (cl1).. controls +(270:1cm) and +(225:1cm) .. (al);
+		\draw[shorten <=3pt, shorten >= 1pt] (cll).. controls +(-90:.5cm) and +(-90:.5cm) .. (cl2);
 	}
 \end{reaction}
 

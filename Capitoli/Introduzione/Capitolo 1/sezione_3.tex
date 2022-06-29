@@ -5,7 +5,7 @@ Molte caratteristiche di molecole organiche come punto di ebollizione e di fusio
 Il modello \textbf{\Ac{VSEPR}} permette di determinare la struttura di una molecola considerando esclusivamente le forze repulsione che agiscono tra le coppie elettroniche del livello di valenza dell'atomo che occupa il centro della molecola stessa.
 
 \subsubsection{Trovare le strutture molecolari con il metodo VSEPR}
-Per determinare la struttura di un composto è opportuno procedere come segue:
+\noindent Per determinare la struttura di un composto è opportuno procedere come segue:
 \begin{enumerate}
 	\item scrivere la struttura di Lewis degli atomi del composto considerato
 	\item contare quante coppie di elettroni sono presenti attorno all'atomo centrale, distinguendo le coppie di legame da quelle libere e contare i legami multipli come unico centro di repulsione
@@ -15,29 +15,23 @@ Per determinare la struttura di un composto è opportuno procedere come segue:
 \begingroup
 \begin{table}[H]
 	\centering
-	% \setlength{\tabcolsep}{15pt} % for the horizontal padding
 	\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
-	% \renewcommand{\arraystretch}{4}% for the vertical padding
-	\setchemfig{
-		atom sep=2em,
-		inner sep=3pt,
-	}
+	\newcommand{\molecola}[1]{\renewcommand{\arraystretch}{.5}\begin{tabular}{c}#1\end{tabular}}
 	\rowcolors{2}{gray!15}{}
-	\newcommand{\molecola}[5]{\begin{XyMcompd}(#2,#3)(#4,#5){}{}#1{}\end{XyMcompd}}
-	\begin{tabular}{lclcccc}
+	\begin{tabular}{lcccccc}
 		\toprule
-		\multirow{2}{*}{\minitab[c]{Distribuzione                                                                                                    \\ elettroni}} & \multirow{2}{*}{\minitab[c]{Struttura\\ molecola}}  & \multirow{2}{*}{\minitab[c]{Formula\\ generale}} & \multicolumn{3}{c}{Coppie elettroniche} \\
-		            &                                                                         &                    & totali & di legame & solitarie \\
+		\multirow{2}{*}{\minitab[c]{Distribuzione                            \\ elettroni}} & \multirow{2}{*}{\minitab[c]{Struttura\\ molecola}}  & \multirow{2}{*}{\minitab[c]{Formula\\ generale}} & \multicolumn{3}{c}{Coppie elettroniche} & \multirow{2}{*}{\minitab[c]{Angoli}} \\
+		            &                   &   & totali & di legame & solitarie \\
 		\midrule
-		Lineare     & \molecola{\tetrahedral{0==A;1==B;3==B}}{500}{500}{50}{70} & \ChemForm{AB_2}    & 2      & 2         & 0         \\
-		Planare     & \molecola{\trimethylene{2==\overpair{A};1==B;3==B}{}}{500}{500}{-20}{50} & \ChemForm{AB_3}    & 3      & 3         & 0         \\
-		Angolata    & \molecola{\trimethylene{2==A;1==B;3==B}{2==B}}{500}{500}{-20}{100} & \ChemForm{AB_2E}   & 3      & 2         & 1         \\
-		Tetraedrica & \molecola{\dtetrahedralS{0==A;1==B;2==B;3A==B;4B==B}}{500}{500}{50}{70}
-		            & \ChemForm{AB_4}                                                         & 4                  & 4      & 0                     \\
-		Piramidale  & \molecola{\dtetrahedralS{0==\overpair{A};2==B;3A==B;4B==B}}{500}{500}{50}{70} & \ChemForm{AB_3E}   & 4      & 3         & 1         \\
-		Angolata    & 
-		 \molecola{\dtetrahedralS{0==A;3A==B;4B==B}}{500}{500}{50}{70} 
-		&		 \ChemForm{AB_2E_2} & 4      & 2         & 2         \\
+		Lineare     & \molecola{                                             \\ \chemfig{B-A-B}\\ \\} & \chemfig{AB_2} & 2      & 2         & 0    & \ang{180}     \\
+		Planare     & \molecola{                                             \\ \chemfig{B-[:30]A(-[2]B)-[:-30]B}\\ \\} & \chemfig{AB_3}  & 3      & 3         & 0    & \ang{120}     \\
+		Angolata    & \molecola{                                             \\ \chemfig{B-[:30]\charge{90:2pt=\:}{A}(-[2,0.4,,,draw=none])-[:-30]B}\\ \\} & \chemfig{AB_2E} & 3      & 2         & 1   & $<$ \ang{120}      \\
+		Tetraedrica & \molecola{                                             \\ \chemfig{B>:[:30]A(-[2]B)(<[:250]B)-[:-30]B}\\ \\}
+		            & \chemfig{AB_4}    & 4 & 4      & 0       & \ang{109.5}              \\
+		Piramidale  & \molecola{                                             \\ \chemfig{B>:[:30]\charge{90:2pt=\:}{A}(-[2,0.4,,,draw=none])(<[:250]B)-[:-30]B}\\ \\}                            & \chemfig{AB_3E} & 4      & 3         & 1    & $<$ \ang{109.5}     \\
+		Angolata    & \molecola{                                             \\ \chemfig{B>:[:30]\charge{90:2pt=\:,0:2pt=\:}{A}(-[2,0.4,,,draw=none])(<[:250]B)-[:-30,,,,draw=none]}\\ \\}
+
+		            & \chemfig{AB_2E_2} & 4 & 2      & 2       & $\ll$ \ang{109.5}              \\
 		\bottomrule
 	\end{tabular}
 	\caption{Strutture molecolari prevedibili con il metodo VSEPR}\label{tab:strutture_molecolari}
@@ -49,7 +43,8 @@ Esistono molecole la cui struttura e il cui comportamento non sono correttamente
 
 Ad esempio, si è notato sperimentalmente che lo ione carbonato \ch{CO3-} ha tutti e tre i legami della stessa lunghezza, in particolare, ogni legame è una via di mezzo tra un legame singolo e un legame doppio come lunghezza. Per spiegare questo fenomeno si ricorre alla teoria della risonanza.
 
-\subsubsection{Teoria della risonanza} Secondo questa teoria, molte molecole e ioni sono meglio descritti mediante due o più strutture di Lewis, considerando la reale molecole o ione l'unione di tutte le strutture. Le singole strutture sono chiamate \textbf{strutture limite di risonanza}. Per mostrare che la reale molecola o ione è \textbf{ibrido di risonanza} delle varie strutture limite di risonanza, queste vengono interconnesse tramite \textbf{frecce a doppia punta} (\(\longleftrightarrow\)).
+\subsubsection{Teoria della risonanza} 
+Secondo questa teoria, molte molecole e ioni sono meglio descritti mediante due o più strutture di Lewis, considerando la reale molecole o ione l'unione di tutte le strutture. Le singole strutture sono chiamate \textbf{strutture limite di risonanza}. Per mostrare che la reale molecola o ione è \textbf{ibrido di risonanza} delle varie strutture limite di risonanza, queste vengono interconnesse tramite \textbf{frecce a doppia punta} (\(\longleftrightarrow\)).
 
 \begin{figure}[H]
 	\centering
@@ -75,7 +70,7 @@ Ad esempio, si è notato sperimentalmente che lo ione carbonato \ch{CO3-} ha tut
 \end{figure}
 
 \subsubsection{Regole per scrivere le forme di risonanza}
-Per scrivere strutture limite di risonanza accettabili, bisogna osservare le seguenti regole:
+\noindent Per scrivere strutture limite di risonanza accettabili, bisogna osservare le seguenti regole:
 \begin{enumerate}
 	\item Tutte le strutture limite devono avere lo stesso numero di elettroni di valenza
 	\item Tutte le strutture limite devono rispettare le regole del legame covalente, quindi nessuna struttura limite deve avere

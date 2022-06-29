@@ -55,7 +55,7 @@ Le basi eterocicliche appartengono a due classi: le \textbf{pirimidine} e le \te
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Nucleosidi}
-Un \textbf{nucleoside} è un \iupac{\N-glicoside}, ovvero lo zucchero è legato tramite il C-1 anomerico a una base azotata. Nelle pirimidine è legato l'N-9 mentre nelle purine l'N-1.
+Un \textbf{nucleoside} è un \iupac{\N-glicoside}, ovvero lo zucchero è legato tramite il C-1 anomerico a una base azotata. Nelle purine è legato l'N-9 mentre nelle pirimidine l'N-1.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[node distance=3cm,align=center,scale=0.6, every node/.style={scale=0.8}]
@@ -64,14 +64,14 @@ Un \textbf{nucleoside} è un \iupac{\N-glicoside}, ovvero lo zucchero è legato 
 		\node (deossiadenina) [right of=zucchero,yshift=-4cm,xshift=7cm] {\chemname{\chemfig{!{deossiadenina}}}{\iupac{2-deossiadenina}}};
 
 		\draw[-latex] (zucchero.east) -- +(1,0) |-  (deossicitosina.200) node[above,near end,yshift=.9cm] {\chemfig[bond style={-}]{!{citosina}}} node[above,near end,yshift=.1] {citosina} node[below,near end,yshift=-.2cm] {$-$ \ch{H2O}} ;
-		\draw[-latex] (zucchero.east) -- +(1,0) |-  (deossiadenina.200) node[above,near end,yshift=.9cm] {\chemfig[bond style={-}]{!{adenina}}} node[above,near end,yshift=.1] {citosina} node[below,near end,yshift=-.2cm] {$-$ \ch{H2O}} ;
+		\draw[-latex] (zucchero.east) -- +(1,0) |-  (deossiadenina.200) node[above,near end,yshift=.9cm] {\chemfig[bond style={-}]{!{adenina}}} node[above,near end,yshift=.1] {adenina} node[below,near end,yshift=-.2cm] {$-$ \ch{H2O}} ;
 	\end{tikzpicture}
 	\caption{Schema di formazione dei nucleosidi}
 \end{figure}
 
 Come gli altri glicosidi, essi possono essere idrolizzati in soluzioni acquose degli acidi o per via enzimatica.
 \begin{reaction}
-	\AddRxnDesc{Idrolisi dei \D-glicosidi}
+	\AddRxnDesc{Idrolisi dei nucleosidi}
 	\chemfig{!{deossiadenina}} \arrow(--.160){->[\ch{H2O}][\Hpiu{1}]} \chemfig{!{deossiribosio}} \arrow(.30--){0}[,0]\+{,,10pt} \chemfig{!{adenina}}
 \end{reaction}
 

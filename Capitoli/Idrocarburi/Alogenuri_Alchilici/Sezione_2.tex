@@ -1,17 +1,24 @@
 \section{Reazione di \texorpdfstring{\(\beta\)}{β}-eliminazione (\texorpdfstring{\mech[e]}{E})}
 Quando il substrato ha almeno un atomo d'idrogeno adiacente al carbonio che lega con il gruppo uscente reagisce con un nucleofilo, sono possibili due percorsi in competizione: la sostituzione o l'eliminazione.
 
+% \setchemfig{scheme debug}
 \begin{reaction}
 	\setchemfig{+ sep left=1em, + sep right=1em,double bond sep=2pt}
 	\AddRxnDesc{Reazione generale \mech[e]}
 	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]L))} \+
-	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{Nu}}
-	\arrow(@c1.15--.180){->[*{0}\mech]}[45]
+	\chemfig{\charge{180:2pt=\:,50:2pt=\chargeColor{-}}{Nu}}
+	\arrow(@c1.15--.180){0}[30,1.5]
+	\subscheme{
 	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]Nu))} \+
-	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
-	\arrow(@c1.-15--.180){->[*{0}E]}[-45]
+	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}}
+	\arrow(@c1.-15--.180){0}[-30,1.5]
+	\subscheme{
 	\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \+
-	\chemfig{Nu(-[0]H)} \+ \chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
+	\chemfig{Nu(-[0]H)} \+ \chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}}	
+	\chemmove[shorten <=5pt, shorten >= 3pt]{
+		\draw[arrow] (c1.mid east) -- +(.7,0) |- node[midway,yshift=8pt,xshift=18pt] {\mech} (c2.mid west);
+		\draw[arrow] (c1.mid east) -- +(.7,0) |- node[midway,yshift=8pt,xshift=18pt] {\mech[e]} (c4.mid west);
+	}
 \end{reaction}
 
 Nella reazione di sostituzione, il nucleofilo si comporta come una base e strappa un protone al substrato sul carbonio \(\beta\), quello adiacente al carbonio che porta il gruppo uscente, e provoca l'eliminazione di \ch{NuH} formando un doppio legame al posto dei legami con i due frammenti espulsi. Per questo motivo è chiamata \(\beta\)-eliminazione. I meccanismi di eliminazione sono due e si indicano con \mech[e1] e \mech[e2].
@@ -32,12 +39,18 @@ La reazione avviene in due stadi, uno lento che determina la velocità della rea
 	\arrow{<=>[lento]}
 	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]\charge{0:4pt=\chargeColor{+}}{C}(-[2])(-[6]))} \+
 	\chemfig{\charge{0:2pt=\:,50:2pt=\chargeColor{-}}{L}}
-	\arrow(@c2.15--.180){->[*{0}\chemfig{\charge{180:2pt=\:}{Nu}}]}[45]
+	\arrow(@c2.15--.180){0}[30,1.5]
+	\subscheme{
 	\chemfig{C(-[2]H)(-[4])(-[6])(-[0]C(-[2])(-[6])(-[0]Nu))} \qquad\quad \color{blue}\mech[1]
-	\arrow(@c2.-15--.180){->[*{0}\chemfig{-[,0.5]\charge{30:4pt=\chargeColor{+}}{H}}]}[-45]
+	}
+	\arrow(@c2.-15--.180){0}[-30,1.5]
+	\subscheme{
 	\chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} \+ \chemfig{\charge{30:4pt=\chargeColor{+}}{H}}	\qquad \color{blue}\mech[e1]
+	}
 	\chemmove[green!60!black!70]{
 		\draw[shorten <=3pt, shorten >= 3pt] (lL) .. controls +(90:.5cm) and +(115:.5cm) .. (L);
+		\draw[arrow,shorten <=7pt,shorten >=4pt,black] (c2.mid east) -- +(1,0) |- node[midway,yshift=4pt,xshift=18pt] {\chemfig{\charge{180:2pt=\:}{Nu}}} (c4.mid west);
+		\draw[arrow,shorten <=7pt,shorten >=4pt,black] (c2.mid east) -- +(1,0) |- node[midway,yshift=4pt,xshift=14pt] {$-$ \chemfig{\charge{30:2pt=\chargeColor{+}}{H}}} (c5.mid west);
 	}
 \end{reaction}
 
@@ -82,7 +95,7 @@ Le \mech[e2] avvengono con alogenuri primari, secondari, terziari, allilici e be
 	\arrow(.mid east--.mid west){->}
 	\chemname{\chemfig{C(-[3]R)(-[5]R')(=[0]C(-[1]R)(-[7]R'))}}{\cis}
 	\+
-	\chemname{\chemfig{C(-[3]R')(-[5]R)(=[0]C(-[1]R')(-[7]R))}}{\trans}
+	\chemname{\chemfig{C(-[3]R)(-[5]R')(=[0]C(-[1]R')(-[7]R))}}{\trans}
 	\+
 	\chemfig{\charge{180:2pt=\:,50:2pt=\chargeColor{-}}{L}}
 	\chemmove[green!60!black!70]{
@@ -122,11 +135,11 @@ Quando le \mech[e2] si effettuano sui cicli, la reazione è molto rallentata, pe
 	\arrow{0}[,0]
 	\chemname{\chemfig[cram width=2pt,bond join=true,atom sep=3em]%
 	{?-[:-10]-[:20](-[2,.5]H)(-[:-20,.5]L)<[:-110]-[:-190,,,,line width=2pt]>[:200]?}}{ciclo equatoriale}
-	\arrow{<<->}
+	\arrow(.10--.170){<<->}
 	\subscheme{
 	\chemname{\chemfig[cram width=2pt,bond join=true,atom sep=3em]%
 	{?<[:-70]-[:10,,,,line width=2pt](-[@{Hl}2,.5]@{H}H)(-[:-70,.5]H)>[@{l}:-20](-[@{Ll}6,.5]@{L}L)(-[:10,.5]H)-[:110]-[:190]?}}{ciclo assiale}
-	\arrow{0}[135,0.4]
+	\arrow{0}[125,0.4]
 	\chemfig{H@{O}\charge{0:2pt=\:,35:4pt=\chargeColor{-}}{O}}
 	}
 	\arrow

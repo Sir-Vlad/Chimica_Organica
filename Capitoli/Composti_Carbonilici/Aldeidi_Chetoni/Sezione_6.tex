@@ -5,6 +5,7 @@ Le aldeidi trattate con un alogeno vengono ossidate ad acidi carbossilici mentre
 La reazione di alogenazione in \(\alpha\) dei chetoni procede in modo diverso a seconda che sia condotta in catalisi acida o basica.
 
 Con la \textbf{catalisi acida}, si ha la monoalogenazione del chetone dalla parte più sostituita, se si usa una sola mole di alogeno.
+
 	{\small
 		\begin{reaction}
 			\AddRxnDesc{Reazione di \(\alpha\)-alogenazione in catalisi acida}
@@ -40,8 +41,7 @@ Con la \textbf{catalisi acida}, si ha la monoalogenazione del chetone dalla part
 		\end{reaction}
 		\chemnameinit{}
 	}
-Nel primo stadio abbiamo la protonazione dell'ossigeno carbonilico, nel secondo stadio c'è l'estrazione dell'idrogeno \(\alpha\) da parte di una base, nel terzo c'è la formazione dell'anione enolato, l'attacco all'alogeno da parte del doppio legame carbonio-carbonio e la riformazione del gruppo carbonilico, nel quarto c'è l'eliminazione del protone sull'ossigeno carbonilico e nel quinto abbiamo il prodotto di reazione.
-
+Nel primo stadio abbiamo la protonazione dell'ossigeno carbonilico, nel secondo stadio c'è l'estrazione dell'idrogeno \(\alpha\) da parte di una base e la formazione dell'anione enolato, nel terzo stadio abbiamo l'attacco del doppio legame all'alogeno e la riformazione del gruppo carbonilico, nel quarto c'è l'eliminazione del protone sull'ossigeno carbonilico e nel quinto abbiamo il prodotto di reazione e l'acido alogenidrico.
 
 Con la \textbf{catalisi basica}, si ha la polisostituzione del chetone dalla parte meno sostituita.
 \begingroup
@@ -114,16 +114,16 @@ Con la \textbf{catalisi basica}, si ha la polisostituzione del chetone dalla par
 		}
 	\end{reaction}}
 \endgroup
-Il chetone trialogenato che si forma può perdere un carbonio per idrolisi basica. Infatti il \ch{CCl3} è diventato un buon gruppo uscente dato che la carica negativa è stabilizzata per effetto induttivo dei tre atomi di alogeno.
+Il chetone trialogenato che si forma può perdere un carbonio per idrolisi basica. Infatti il \ch{CX3} è diventato un buon gruppo uscente dato che la carica negativa è stabilizzata per effetto induttivo dei tre atomi di alogeno.
 
-Nell'ultimo stadio, il \ch{CCl3-} si protona e diventa aloformio mentre l'acido carbossilico, in ambiente basico, diventa ione carbossilato. Questa reazione è tipica dei metilchetoni ed è nota come \textbf{reazione dell'aloformio}.
+Nell'ultimo stadio, il \ch{CX3-} si protona e diventa aloformio mentre l'acido carbossilico, in ambiente basico, diventa ione carbossilato. Questa reazione è tipica dei metilchetoni ed è nota come \textbf{reazione dell'aloformio}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Condensazione aldolica}
-Le aldeidi, se trattate in ambiente basico, danno \textbf{addizione aldolica}, cioè due aldeidi reagiscono tra di loro per dare una \textbf{\iupac{\b-idrossialdeide}}, chiamata comunemente \textbf{aldolo}.
+\section{Condensazione aldolica}\label{sec:condensazioneAldolica}
+Le \textbf{aldeidi}, se trattate in ambiente basico, danno \textbf{addizione aldolica}, cioè due aldeidi reagiscono tra di loro per dare una \textbf{\iupac{\b-idrossialdeide}}, chiamata comunemente \textbf{aldolo}.
 
-Il carbonio in alpha di un'enolo, comportandosi come nucleofilo, si lega al carbonile di una seconda aldeide per formare una molecola con una catena più lunga che è chiamata aldolo, ovvero aldeide e alcol.
+Il carbonio in \a\ di un'enolo, comportandosi come nucleofilo, si lega al carbonile di una seconda aldeide per formare una molecola con una catena più lunga che è chiamata aldolo, ovvero aldeide e alcol.
 
 La reazione di condensazione aldolica avviene in 3 passaggi:
 \begin{enumerate}
@@ -133,7 +133,7 @@ La reazione di condensazione aldolica avviene in 3 passaggi:
 \end{enumerate}
 
 \begin{reaction}
-	\AddRxnDesc{Condensazione aldolica}
+	\AddRxnDesc{Condensazione aldolica per le aldeidi}
 	% ! 1 reazione
 	\chemfig{C(=[1]O)(-[7]H)(-[4]@{C1}C(-[@{Hl1}2]@{H1}H)(-[4]R)(-[6]R))}
 	\arrow{->[\chemfig{@{O1}\charge{180=\:,35:3pt=\chargeColor{-}}{OH}}]}
@@ -170,20 +170,20 @@ Invece, per far avvenire la condensazione aldolica per i chetoni dobbiamo stare 
 \begin{reaction}
 	\AddRxnDesc{Condensazione aldolica per i chetoni}
 	2 \chemfig{C(=[1]O)(-[7]R)(-[4]C(-[2]H)(-[4]R)(-[6]R))}
-	\arrow(--.mid west){<=>[\Hpiu{1}][\ch{H2O}]}
+	\arrow(--.mid west){<=>[\Hpiu{1}, \D][\ch{H2O}]}[,1.3]
 	\chemname{\chemfig{R_2C(-[2,,2]OH)-CR_2-C(=[1]O)(-[7]R)}}{\iupac{\b-idrossichetone}}
 	\arrow(.mid east--.mid west){->[\Hpiu{1}][\ch{H2O}]}
 	\chemname{\chemfig{R_2C=CR_2-C(=[1]O)(-[7]R)}}{\iupac{chetone \a-\b-insaturo}}
 \end{reaction}
 
-Le aldeidi e i chetoni che possiedono idrogeni in \(\alpha\) non sono enolizzabili e quindi non possono dare addizione aldolica.
+Le aldeidi e i chetoni che non possiedono idrogeni in \(\alpha\) non sono enolizzabili e quindi non possono dare addizione aldolica.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Condensazione aldolica mista}
 L'addizione aldolica tra due aldeidi diverse è chiamata \textbf{condensazione aldolica mista o incrociata}. Questa reazione porta a miscele di prodotti a causa del fatto che ogni aldeide può reagire con se stessa o con l'altra aldeide.
 
-Se tuttavia la reazione avviene tra un'aldeide non enolizzabile, ovvero che può solo essere attaccata e un chetone enolizzabile, che può solo attaccare, allora la reazione procede con successo.
+Se tuttavia la reazione avviene tra un'aldeide non enolizzabile, ovvero che può solo essere attaccata e un chetone o una aldeide enolizzabile, che può solo attaccare, allora la reazione procede con successo.
 
 \begin{reaction}
 	\AddRxnDesc{Reazione di condensazione aldolica mista}
@@ -196,11 +196,23 @@ Se tuttavia la reazione avviene tra un'aldeide non enolizzabile, ovvero che può
 	\chemname{\chemfig{*6(-=-(-[:30]CH=[0]CH_2CH(=[2,,3]O))=-=)}}{\iupac{Aldeide cinnamica} o\\ \iupac{\cip{2E}-3-fenilprop-2-enale}}
 \end{reaction}
 
+\textbf{NOTA:} i chetoni possiedono due idrogeni in \a, i quali possono essere stappati entrambi dalla base. Quindi il prodotto finale non sarà simile a quello nella reazione qui sopra, ma la reazione continua strappando anche l'altro idrogeno in \a.
+
+{\scriptsize
+\begin{reaction}
+	\AddRxnDesc{Reazione di condensazione aldolica mista con chetone}
+	\chemfig{[:-30]*6(-=-(-[0]CH(=[2]O))=-=)}
+	\arrow(.mid east--.190){-X>[][][\chemfig{-[:30](=[2]O)-[:-30]}][][\ch{H2O}][][]}[,1.3]
+	\chemfig{(*6(-=-(-[:30]=_[:-30]-[:30](=[2]O)-[:-30])=-=))}
+	\arrow(.-10--.185){-X>[][][\chemfig{-[:30](=[2]O)-[:-30]}][][\ch{H2O}][][]}[,1.3]
+	\chemfig{(*6(-=-(-[:30]=_[:-30]-[:30](=[2]O)-[:-30]=[:30]-[:-30]*6(-=-=-=))=-=))}
+\end{reaction}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Condensazione aldolica intramolecolare}
-Le reazioni aldoliche possono avvenire anche all'interno della stessa molecola basta che quest'ultima abbia due gruppi carbonilici. Il meccanismo di reazione è simile a quello delle reazioni intermolecolari. L'unica differenza sta che l'anione enolato nucleofilo e il carbonile elettrofilo, appartengono alla stessa molecola. Anche se in teoria la reazione dovrebbe portare a una miscela di prodotti, in realtà la reazione preferisce i composti con anelli con minor tensioni d'anello.
+Le reazioni aldoliche possono avvenire anche all'interno della stessa molecola basta che quest'ultima abbia due gruppi carbonilici. Il meccanismo di reazione è simile a quello delle reazioni intermolecolari. L'unica differenza sta che l'anione enolato nucleofilo e il carbonile elettrofilo, appartengono alla stessa molecola. Anche se in teoria la reazione dovrebbe portare a una miscela di prodotti, in realtà la reazione preferisce i composti con anelli con minor tensioni d'anello, come quelli a 5 e a 6 termini.
 
 \begin{reaction}
 	\AddRxnDesc{Reazione di condensazione intramolecolare}

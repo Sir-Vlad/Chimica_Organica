@@ -7,14 +7,14 @@ Una tipica reazione è quella del \iupac{\b-\D-glucosio} nel suo pentacetato ad 
 	\AddRxnDesc{Acetilazione del \iupac{\b-\D-glucosio}}
 	\arrow{0}[,0]
 	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
-	\arrow{->[\chemfig{CH_3C(=[2,,3]O)-CCH_3(=[2]O)}][piridina, \unit{0\celsius}]}[,2]
+	\arrow{->[\chemfig{CH_3C(=[2,,3]O)-O-CCH_3(=[2]O)}][piridina, \unit{0\celsius}]}[,2]
 	\chemname{\chemfig{O?-[7,1.5](-[2]OAc)<[5,1.5](-[6]OAc)-[4,1.5,,,line width=4pt,line cap=round](-[2]OAc)>[3,1.5](-[6]O(-[4,0.5,,,opacity=0]Ac))-[1,1.5]?(-[2]CH_2OAc)}}{\iupac{\b-\D-glucopiranosio}\\ \iupac{pentacetato}}
 \end{reaction}
 
 Gli ossidrili alcolici, per reazione con gli alogenuri alchilici in ambiente basico possono essere trasformati in eteri (\hyperref[rcn:sintesiWilliamson]{sintesi di Williamson}). Poiché gli zuccheri sono sensibili alle basi forti si usano basi deboli come ossido di argento.
 
 \begin{reaction}
-	\AddRxnDesc{Sintesi di Williamson con gli zuccheri}
+	\AddRxnDesc{Sintesi di Williamson del \iupac{\b-\d-glucosio}}
 	\arrow{0}[,0]
 	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
 	\arrow{->[\ch{Ag2O}][\ch{CH3I}]}[,1.5]
@@ -26,9 +26,9 @@ Gli eteri e gli esteri degli zuccheri sono molto più semplici da utilizzare nel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Riduzione dei monosaccaridi}
-Il gruppo carbonilico degli aldosi e dei chetoni può essere ridotto e come prodotti si ottengono i \textbf{polioli} (o \textbf{alditoli}.)
+Il gruppo carbonilico degli aldosi e dei chetoni può essere ridotto e come prodotti si ottengono i \textbf{polioli} (o \textbf{alditoli}).
 \begin{reaction}
-	\AddRxnDesc{Riduzione dei monosaccaridi}
+	\AddRxnDesc{Riduzione del glucosio}
 	\arrow{0}[,0]
 	\chemname{\chemfig{O?-[7,1.5](-[2]OH)<[5,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[2]OH)>[3,1.5](-[6]OH)-[1,1.5]?(-[2]CH_2OH)}}{\iupac{\b-\D-glucopiranosio}}
 	\arrow
@@ -43,7 +43,7 @@ Il gruppo carbonilico degli aldosi e dei chetoni può essere ridotto e come prod
 Gli aldosi possono essere ossidati facilmente ad acidi. I prodotti prendono il nome di \textbf{acidi aldonici}.
 
 \begin{reaction}
-	\AddRxnDesc{Ossidazione blanda dei monosaccaridi}
+	\AddRxnDesc{Ossidazione blanda del glucosio}
 	\arrow{0}[,0]
 	\chemname{\glucosio}{\iupac{\D-glucosio}}
 	\arrow{->[\ch{Br2}, \ch{H2O}][oppure \ch[circled=formal]{Ag+} o \ch[circled=formal]{Cu^{2+}}]}[,2.5]
@@ -60,7 +60,7 @@ Un carboidrato che reagisce con \ch[circled=formal]{Ag+} o \ch[circled=formal]{C
 Gli agenti riducenti più forti trasformano il gruppo aldeidico e il gruppo alcolico primario in acidi carbossilici formando gli \textbf{acidi aldarici}.
 
 \begin{reaction}
-	\AddRxnDesc{Ossidazione dei monosaccaridi}
+	\AddRxnDesc{Ossidazione del glucosio}
 	\arrow{0}[,0]
 	\chemname{\glucosio}{\iupac{\D-glucosio}}
 	\arrow{->[\ch{HNO3}]}[,1.5]
@@ -73,7 +73,7 @@ Gli agenti riducenti più forti trasformano il gruppo aldeidico e il gruppo alco
 \section{Formazione dei glicosidi}
 I monosaccaridi esistono come emiacetali quindi possono reagire con un alcol per dare l'acetale dello zucchero corrispondente.
 % \setchemfig{scheme debug}
-{\small
+{\footnotesize % TODO: controllare la carica nella prima forma di risonanza
 	\begin{reaction}
 		\AddRxnDesc{Fomazione del glicoside del glucosio}
 		% - 1 reazione

@@ -13,9 +13,9 @@ Per rappresentare gli elettroni di valenza di un atomo si utilizza la \textbf{st
 		\toprule
 		1A                        & 2A                        & 3A                              & 4A                                     & 5A                                           & 6A                                           & 7A                                            & 8A                                            \\
 		\midrule
-		\charge{[circle]0=\.}{H}  &                           &                                 &                                        &                                              &                                              &                                               & \charge{[circle]0=\:}{He}                     \\
-		\charge{[circle]0=\.}{Li} & \charge{[circle]0=\:}{Be} & \charge{[circle]0=\:,90=\.}{B}  & \charge{[circle]0=\:,90=\.,180=\.}{C}  & \charge{[circle]0=\:,90=\.,180=\.,270=\.}{N} & \charge{[circle]0=\:,90=\.,180=\:,270=\.}{O} & \charge{[circle]0=\:,90=\.,180=\.,270=\:}{F}  & \charge{[circle]0=\:,90=\:,180=\:,270=\:}{Ne} \\
-		\charge{[circle]0=\.}{Na} & \charge{[circle]0=\:}{Mg} & \charge{[circle]0=\:,90=\.}{Al} & \charge{[circle]0=\:,90=\.,180=\.}{Si} & \charge{[circle]0=\:,90=\.,180=\.,270=\.}{P} & \charge{[circle]0=\:,90=\.,180=\:,270=\.}{S} & \charge{[circle]0=\:,90=\.,180=\.,270=\:}{Cl} & \charge{[circle]0=\:,90=\:,180=\:,270=\:}{Ar} \\
+		\charge{0:2pt=\.}{H}  &                           &                                 &                                        &                                              &                                              &                                               & \charge{0:2pt=\:}{He}                     \\
+		\charge{0:2pt=\.}{Li} & \charge{0:2pt=\:}{Be} & \charge{0:2pt=\:,90:2pt=\.}{B}  & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.}{C}  & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.,270:2pt=\.}{N} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\:,270:2pt=\.}{O} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.,270:2pt=\:}{F}  & \charge{0:2pt=\:,90:2pt=\:,180:2pt=\:,270:2pt=\:}{Ne} \\
+		\charge{0:2pt=\.}{Na} & \charge{0:2pt=\:}{Mg} & \charge{0:2pt=\:,90:2pt=\.}{Al} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.}{Si} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.,270:2pt=\.}{P} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\:,270:2pt=\.}{S} & \charge{0:2pt=\:,90:2pt=\.,180:2pt=\.,270:2pt=\:}{Cl} & \charge{0:2pt=\:,90:2pt=\:,180:2pt=\:,270:2pt=\:}{Ar} \\
 		\bottomrule
 	\end{tabular}
 	\caption{Strutture di Lewis dei primi diciotto elementi della Tavola Periodica}
@@ -24,23 +24,27 @@ Per rappresentare gli elettroni di valenza di un atomo si utilizza la \textbf{st
 \subsection{Legame ionico}
 Un \textbf{legame ionico} si forma tra un metallo e non metallo, mediante il trasferimento di elettroni dall'atomo meno elettronegativo (\textbf{catione}) all'atomo più elettronegativo (\textbf{anione}). Generalmente, la differenza di elettronegatività fra i due atomi è maggiore di 1,9.
 \begin{reactions*}
-	\chlewis{0.}{Na} + \chlewis{180.0,90,270}{Cl} \arrow \charge{45[anchor=180+\chargeangle]=$\scriptstyle\oplus$}{Na} + \charge{45[anchor=180]=$\scriptstyle\ominus$}{\chlewis{180,0,90,270}{Cl}}
+	\charge{0:2pt=\.}{Na} \+ \charge{0:2pt=\:,90:2pt=\:,180:2pt=\.,270:2pt=\:}{Cl} \arrow
+	\charge{30:3pt=\chargeColor{+}}{Na} \+ \charge{0:2pt=\:,90:2pt=\:,180:2pt=\:,270:2pt=\:,35:3pt=\chargeColor{-}}{Cl}
 \end{reactions*}
 
 \subsection{Legame covalente}
-Un legame covalente si forma quando vengono condivise coppie di elettroni tra i due atomi e la differenza di elettronegatività fra i due atomi è minore di 1,9. Di legami covalenti ne esistono due tipi:
+Un legame covalente si forma quando vengono condivise coppie di elettroni tra i due atomi e la differenza di elettronegatività fra i due atomi è minore di 1,9. Di legami covalenti ne esistono tre tipi:
 \begin{description}
 	\item[\qquad Covalente Puro:] Quando il legame si forma tra due atomi della stessa specie chimica.
 		\begin{reactions*}
-			\chlewis{0.90,180,270}{Cl} + \chlewis{180.0,90,270}{Cl} \arrow \chemfig{\chlewis{90,180,270}{Cl}-\chlewis{0,90,270}{C}}
+			\charge{0:2pt=\.,90:2pt=\:,180:2pt=\:,270:2pt=\:}{Cl} \+ \charge{0:2pt=\:,90:2pt=\:,180:2pt=\.,270:2pt=\:}{Cl}
+			\arrow
+			\chemfig{\charge{90:2pt=\:,180:2pt=\:,270:2pt=\:}{Cl}-\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{Cl}}
 		\end{reactions*}
 	\item[\qquad Covalente Omopolare:] Quando il legame si forma tra due atomi con una differenza di elettronegatività minore 0,4.
 		\begin{reactions*}
-			\chlewis{0.90.180.270.}{C} + 4\;\chlewis{180.}{H} \arrow \chemfig{H-C(-[2]H)(-[6]H)-H}
+			\charge{0:2pt=\.,90:2pt=\.,180:2pt=\.,270:2pt=\.}{C} \+ 4\; \charge{180:2pt=\.}{H} \arrow
+			\chemfig{H-C(-[2]H)(-[6]H)-H}
 		\end{reactions*}
 	\item[\qquad Covalente Polare:] Quando il legame si forma tra due atomi con una differenza di elettronegatività tra 0,4 e 1,9.
 		\begin{reactions*}
-			\chlewis{0.}{H} + \chlewis{180.0,90,270}{Cl} \arrow \chemfig{H-\chlewis{0,90,270}{Cl}}
+			\charge{0:2pt=\.}{H} \+ \charge{0:2pt=\:,90:2pt=\:,180:2pt=\.,270:2pt=\:}{Cl} \arrow \chemfig{H-\charge{0:2pt=\:,90:2pt=\:,270:2pt=\:}{Cl}}
 		\end{reactions*}
 \end{description}
 
@@ -67,7 +71,6 @@ Per rappresentare le molecole si utilizzano le strutture di Lewis. Le seguenti r
 	\item Indica una coppia di \textbf{elettroni di legame} con una singola linea mentre una coppia di \textbf{ elettroni di non legame} con dei puntini
 	\item Utilizza legami multipli dove necessario
 \end{enumerate}
-
 Nei composti organici neutri, si possono fare alcune generalizzazioni per alcuni elementi come:
 \begin{itemize}
 	\item \elementsymbol{1} ha un solo legame

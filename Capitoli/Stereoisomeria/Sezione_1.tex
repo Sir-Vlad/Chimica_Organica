@@ -29,7 +29,6 @@ Gli \textbf{stereoisomeri} hanno la stessa formula molecolare e lo stesso ordine
 		\draw[->,line width=2pt] (stereo) -- +(0.0,-2) -| (enan);
 		\draw[->,line width=2pt] (stereo) -- +(0.0,-2) -| (dienan);
 	\end{tikzpicture}
-	\caption{Relazioni tra gli isomeri}
 \end{figure}
 
 \subsection{Enantiomeria}
@@ -40,7 +39,7 @@ Gli \textbf{enantiomeri} sono due molecole che formano una coppia di immagini sp
 \end{center}
 
 Dalla formula di struttura notiamo che c'è un carbonio con quattro sostituenti differenti, il quale si indica con un asterisco su carbonio (\ch{C^{\color{red}*}}). 
-Prendendo quel carbonio come rifermento, mettiamo due sostituenti sul piano, uno dietro indicato con \chemfig[atom sep=2em,cram width=6pt,cram dash width=0.4pt,cram dash sep=1pt]{\phantom{C}>:\phantom{C}} e uno avanti al piano indicato con \chemfig[atom sep=2em,cram width=6pt,]{\phantom{C}>\phantom{C}}, come mostrano nella~\autoref{fig:acLattico}.
+Prendendo quel carbonio come rifermento, mettiamo due sostituenti sul piano, uno dietro indicato con \raisebox{2pt}{\chemfig{>:}} e uno avanti al piano indicato con \raisebox{2pt}{\chemfig{>}}, come mostrano nella~\autoref{fig:acLattico}.
 
 \begin{figure}[H]
 	\centering
@@ -70,12 +69,12 @@ Prendendo quel carbonio come rifermento, mettiamo due sostituenti sul piano, uno
 		\node [below of=f1] {\iupac{Acido\;($-$)-lattico}};
 		\draw ($(start.north) !0.5! (f1.north)$) -- ($(start.south) !0.5! (f1.south)$);
 	\end{tikzpicture}
-	\caption{Acido lattico stereoisomeri}\label{fig:acLattico}
+	\caption{Stereoisomeri dell'acido lattico }\label{fig:acLattico}
 \end{figure}
 
 Se spostando l'immagine speculare nello spazio, e esiste un modo che essa coincide con l'originale, allora le due molecole sono \textbf{sovrapponibili} mentre se le due molecole non coincidono mai, saranno \textbf{non sovrapponibili}.
 
-In questo caso, abbiamo che l'\iupac{acido lattico} non è sovrapponibile con la sua immagine speculare e quindi sono degli \textit{enantiomeri}. Tutti gli oggetti che non sono sovrapponibili con la propria immagine speculare vengono definiti \textbf{chirali}.
+In questo caso, abbiamo che l'\iupac{acido lattico} non è sovrapponibile con la sua immagine speculare e quindi sono \textit{enantiomeri}. Tutti gli oggetti che non sono sovrapponibili con la propria immagine speculare vengono definiti \textbf{chirali}.
 
 Se un oggetto e la sua immagine speculare sono sovrapponibili, allora possiamo dire che sono identici e si parlerà di molecole \textbf{achirali}. Tutte le molecole achirali hanno almeno un \textbf{piano di simmetria} che le attraversa.
 

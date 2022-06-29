@@ -3,29 +3,36 @@ La reazione caratteristica degli alcheni è \textbf{l'addizione al doppio legame
 
 Le principali reazioni sono:
 \begin{itemize}
-	\item Idroalogenazione
+	\item Idroalogenazione (\autoref{ssec:idroalogenazione})
 	      \begin{reactions}
 		      \AddRxnDesc{Reazione generica di Idroalogenazione degli alcheni}
 		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + HX \arrow \chemfig{-C(-[2])(-[6]H)-C(-[2])(-[6]X)-}
 	      \end{reactions}
-	\item Idratazione
+	\item Idratazione (\autoref{ssec:idratazione})
 	      \begin{reactions}
 		      \AddRxnDesc{Reazione generica di Idratazione degli alcheni}
 		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + \ch{H2O} \arrow \chemfig{-C(-[2])(-[6]H)-C(-[2])(-[6]OH)-}
 	      \end{reactions}
-	\item Alogenazione
+	\item Idroborazione (\autoref{ssec:idroborazione})
+	      \begin{reactions}
+		      \AddRxnDesc{Reazione generica di Idroborazione ossidativa degli alcheni}
+		      3\; \chemfig{C(-[3])(-[5])(=[0]C(-[1]H)(-[7]H))} \arrow{->[1. \ch{BH3},THF][2. \ch{H2O2}$\backslash$\ch{NaOH}]}[,2] \chemfig{-C(-[2])(-[6])-C(-[2]H)(-[6]H)-OH}
+	      \end{reactions}
+	\item Alogenazione (\autoref{ssec:alogenazione})
 	      \begin{reactions}
 		      \AddRxnDesc{Reazione generica di Alogenazione degli alcheni}
 		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + \ch{X2} \arrow \chemfig{-C(-[2]X)(-[6])-C(-[2])(-[6]X)-}
 	      \end{reactions}
-	      % \item Idroborazione
-	      %       \begin{reactions}
-	      % 	      \AddRxnDesc{Reazione generica di Idroborazione degli alcheni}
-	      % 	      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + \ch{BH3} \arrow \chemfig{-C(-[2])(-[6]H)-C(-[2])(-[6]BH_2)-}
-	      %       \end{reactions}
-	\item Idrogenazione
+	\item Formazione di aloidrine (\autoref{ssec:aloidrine})
+	      \begin{reaction}
+		      \AddRxnDesc{Reazione generina di formazione di aloidrine}
+		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + \ch{X2}
+		      \arrow{->[\ch{H2O}]}
+		      \chemfig{-C(-[2,,,2]HO)(-[6])=C(-[2])(-[6]X)-}
+	      \end{reaction}
+	\item Riduzione (\autoref{ssec:riduzione})
 	      \begin{reactions}
-		      \AddRxnDesc{Reazione generica di Idrogenazione degli alcheni}
+		      \AddRxnDesc{Reazione generica di Riduzione degli alcheni}
 		      \chemfig{C(-[3])(-[5])(=[0]C(-[1])(-[7]))} + \ch{H2} \arrow \chemfig{-C(-[2])(-[6]H)-C(-[2])(-[6]H)-}
 	      \end{reactions}
 \end{itemize}
@@ -37,7 +44,7 @@ Gli elettroni \(\pi\) del doppio legame sono più esposti rispetto a quelli \(\s
 
 I reagenti polari possono essere \textbf{elettrofili} o \textbf{nucleofili}. Gli \textit{elettrofili} sono reagenti elettron-poveri e nelle reazioni vanno alla ricerca di elettroni. I \textit{nucleofili} sono reagenti elettron-ricchi e nelle reazioni formano legami cedendo elettroni agli elettrofili. In effetti, i nucleofili sono basi di Lewis mentre gli elettrofili sono acidi di Lewis.
 
-Il meccanismo di una addizione elettrofila avviene in due stadi.Nel primo stadio c'è la formazione del \textbf{carbocatione} per annessione di un idrogeno acido al doppio legame. Questo avviene perché il doppio legame si comporta da nucleofilo e attacca l'acido, strappando l'idrogeno.
+Il meccanismo di una addizione elettrofila avviene in due stadi. Nel primo stadio c'è la formazione del \textbf{carbocatione} per annessione di un idrogeno acido al doppio legame. Questo avviene perché il doppio legame si comporta da nucleofilo e attacca l'acido, strappando l'idrogeno.
 \chemnameinit{}
 \begin{reaction*}
 	\chemfig{@{H}\charge{45:2pt=\chargeColor{+}}{H}} + \chemfig{C(>:[3])(<[5])=[@{dl}]C(>:[1])(<[7])} \arrow \chemname{\chemfig{C(-[2]H)(>:[:200])(<[:220])-\charge{90:4pt=\chargeColor{+}}{C}(>:[1])(<[7])}}{carbocatione}
@@ -61,7 +68,7 @@ Poiché il primo stadio di queste reazioni di addizione è l'attacco dell'elettr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Addizione di acidi alogenidrici}
+\subsection{Addizione di acidi alogenidrici}\label{ssec:idroalogenazione}
 Gli acidi alogenidrici \ch{HCl}, \ch{HBr} e \ch{HI} si addizionano agli alcheni per dare alogenuri alchilici. Queste reazioni vengono condotte o con reagenti puri o in presenza di solvente polare.
 
 Questa reazione viene effettuata in due stadi, il primo viene addizionato il protone e si rompe il doppio legame mentre il secondo si addiziona l'alogeno.
@@ -94,9 +101,9 @@ Le \textbf{reazioni regioselettive} sono delle reazioni in cui la direzione di f
 
 Queste tipologie di reazioni sono state sudiate da Markovnikov che formulò la generalizzazione, nota come \textbf{regola di Markovnikov}.
 
-La \textbf{regola di Markovnikov} stabilisce che, nel caso di addizioni di acidi protici \ch{H―Z} ad alcheni asimmetrici, l'idrogeno dell'acido si addiziona all'atomo di carbonio del doppio legame che ha il maggior numero di atomi di idrogeno legati a sé , mentre l'alogeno si addiziona al carbonio meno idrogenato.
+La \textbf{regola di Markovnikov} stabilisce che, nel caso di addizioni di acidi protici \ch{H―Z} ad alcheni asimmetrici, l'idrogeno dell'acido si addiziona all'atomo di carbonio del doppio legame che ha il maggior numero di atomi di idrogeno legati a sé, mentre l'alogeno si addiziona al carbonio meno idrogenato.
 
-Questo fenomeno dipende dal fatto che quando un atomo di idrogeno si lega a uno dei due atomi di carbonio legati tramite doppio legame si forma un \textbf{carbocatione}. Un carbocatione è tanto più stabile quanto più la carica positiva può essere delocalizzata su altri atomi dello ione molecolare. Questa dispersione si realizza con uno spostamento parziale degli elettroni dai legami \(\sigma\) \ch{C-H} e \ch{C-C} verso l'atomo di carbonio positivo. Se quest'ultimo è circondato da altri atomi di carbonio ci sono più legami che contribuiscono a disperdere la carica.
+Questo fenomeno dipende dal fatto che quando un atomo di idrogeno si lega a uno dei due atomi di carbonio legati tramite doppio legame si forma un \textbf{carbocatione}. Un carbocatione è tanto più stabile quanto più la carica positiva può essere delocalizzata su altri atomi dello ione molecolare. Questa dispersione si realizza con uno spostamento parziale degli elettroni dai legami \(\sigma\) di \ch{C-H} e \ch{C-C} verso l'atomo di carbonio positivo. Se quest'ultimo è circondato da altri atomi di carbonio ci saranno più legami che contribuiscono a disperdere la carica.
 \chemnameinit{}
 \begin{reaction*}
 	\chemname{\chemfig{\charge{45:3pt=\chargeColor{+}}{C}(-[2]R)(-[4]R)(-[6]R)}}{terziario}
@@ -110,8 +117,8 @@ Questo fenomeno dipende dal fatto che quando un atomo di idrogeno si lega a uno 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Addizione di acqua - Idratazione catalizzata da acidi}
-L'addizione di acqua è chiamata \textbf{idratazione}. Generalmente, questa reazione avviene in presenza di catalizzatore acido (\ch{H2SO4} concentrato), l'acqua di addiziona al doppio legame di un alchene per formare un alcol.
+\subsection{Addizione di acqua - Idratazione catalizzata da acidi}\label{ssec:idratazione}
+L'addizione di acqua è chiamata \textbf{idratazione}. Generalmente, questa reazione avviene in presenza di catalizzatore acido (\ch{H2SO4} concentrato), l'acqua si addiziona al doppio legame di un alchene per formare un alcol.
 
 \paragraph{Meccanismo di reazione}
 \begin{reaction}
@@ -131,9 +138,38 @@ L'addizione di acqua è chiamata \textbf{idratazione}. Generalmente, questa reaz
 		\draw[shorten <=3pt, shorten >= 1pt] (lho).. controls +(45:.2cm) and +(0:.3cm) .. (oc.east);
 	}
 \end{reaction}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Addizione di Alogeni}
+\subsection{Idroborazione ossidativa}\label{ssec:idroborazione} 
+L'\textbf{idroborazione} è una reazione in cui il borano \ch{BH3} si addiziona al doppio legame di un alchene, in solvente THF. L'idroborazione ha due caratteristiche principali:
+\begin{itemize}
+	\item è una reazione \textbf{anti-Markovnikov}
+	\item è \textbf{stereospecifica}
+\end{itemize}
+Viene definita reazione \textbf{anti-Markovnikov} perché l'atomo di boro si leghi all'atomo di carbonio del doppio legame meno sostituito e l'idrogeno si leghi all'atomo di carbonio più sostituito, mentre è \textbf{stereospecifica} perché porta l'idrogeno e il boro a legarsi dallo stesso lato del piano dell'alchene (\textbf{sin-addizione}). Inoltre, nell'idroborazione non si verificano fenomeni di trasposizione o riarraggiamenti.
+
+\begin{reaction}
+	\AddRxnDesc{Idroborazione ossidativa}
+	\chemfig{-[:30]@{C1}=_[@{dl}:-30]} \+ \chemfig{@{B}B(-[2]H)(-[:-30]H)(-[@{H1}:210]H)}
+	\arrow
+	\chemfig{-[:30]-[:-30]-[:30]BH_2}
+	\arrow{->[\chemfig{-[:30]=_[:-30]}]}[,1.3]
+	\chemfig{-[:30]-[:-30]-[:30]\chemabove{B}{H}-[:-30]-[:30]-[:-30]}
+	\arrow{->[*{0}\chemfig{-[:30]=_[:-30]}]}[-90,1.3]
+	\chemfig{-[:30]-[:-30]-[:30]B(-[2]-[:30]-[2])-[:-30]-[:30]-[:-30]}
+	\arrow(.mid west--){->[\chemfig{H_2O_2}][\chemfig{NaOH}]}[-180,1.3]
+	3 \chemfig{-[:30]-[:-30]-[:30]OH}
+	% - arrow
+	\chemmove[green!60!black!70]{
+		\draw[shorten <=3pt, shorten >= 1pt] (dl).. controls +(225:1cm) and +(270:1cm) .. (B);
+		\draw[shorten <=3pt, shorten >= 1pt] (H1).. controls +(120:0.7cm) and +(90:0.7cm) .. (C1);
+	}
+\end{reaction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Addizione di Alogeni}\label{ssec:alogenazione}
 Il cloro e il bromo reagiscono con gli alcheni a temperatura ambiente addizionando atomi di alogeno ai due carboni del doppio legame.
 \begin{reaction*}
 	\chemfig{CH_3CH=CHCH_3} + \ch{Br2} \arrow(--.193){->[\ch{CH2Cl2}]}[,1.3] \chemfig{CH_3CH(-[2,,3]Br)-CHCH_3(-[2]Br)}
@@ -168,50 +204,44 @@ L'intermedio, che si forma, è molto più stabile di un normale carbocatione per
 \chemnameinit{}
 \begin{reaction}
 	\AddRxnDesc{Addizione di alogeni agli alcheni (stadio 2)}
-	\chemname{\chemfig{[:90]@{ca1}C*3((<[:-55]H)(<:[:-10]CH_3)-[@{lX}]@{X}\charge{90:3pt=\chargeColor{+}}{X}-@{ca2}C(<:[:190]H_3C)(<[:235]H)-)}}{attacco anti} + \chemfig{@{x}\charge{180=\:,45:3pt=\chargeColor{-}}{X}}
+	\chemname[15pt]{\chemfig{[:90]@{ca1}C*3((<[:-55]H)(<:[:-10]CH_3)-[@{lX}]@{X}\charge{90:3pt=\chargeColor{+}}{X}-@{ca2}C(<:[:190]H_3C)(<[:235]H)-)}}{attacco anti} \+ \chemfig{@{x}\charge{180=\:,45:3pt=\chargeColor{-}}{X}}
 	\arrow(--.mid west)
-	\chemname{\chemfig{C(<:[3]H_3C)(-[5]Cl)(<[:165]H)(-C(-[1]Cl)(<[7]H)(<:[:-15]CH_3))}}{a} + \chemname{\chemfig{C(<:[:195]H_3C)(-[3]Cl)(<[5]H)(-C(-[7]Cl)(<[:15]H)(<:[1]CH_3))}}{b}
+	\chemname{\chemfig{C(<:[:195]H_3C)(-[3]X)(<[5]H)(-C(-[7]X)(<[:15]H)(<:[1]CH_3))}}{a}
+	\+ 
+	\chemname{\chemfig{C(<:[3]H_3C)(-[5]X)(<[:165]H)(-C(-[1]X)(<[7]H)(<:[:-15]CH_3))}}{b} 
 	\chemmove[green!60!black!70]{
 		\draw[shorten <=3pt, shorten >= 1pt] (x.mid west).. controls +(-90:1.5cm) and +(-90:1.5cm) .. (ca1) node[xshift=-5pt,yshift=-15pt] {\tiny a};
 		\draw[shorten <=3pt, shorten >= 1pt] (x.south west).. controls +(-90:1.5cm) and +(-90:1.5cm) .. (ca2) node[xshift=5pt,yshift=-15pt] {\tiny b};
-		\draw[shorten <=3pt, shorten >= 1pt] (lX).. controls +(45:.3cm) and +(0:.4cm) .. (X);
+		% \draw[shorten <=3pt, shorten >= 1pt] (lX).. controls +(45:.3cm) and +(0:.4cm) .. (X);
 	}
 \end{reaction}
 \endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Formazione di aloidrine}
+\subsection{Formazione di aloidrine}\label{ssec:aloidrine}
 La formazione di aloidrine avviene quando l'addizione di alogeni avviene in presenza di piccola quantità di acqua. La reazione è uguale alla reazione con alogeni tranne per il secondo stadio dove l'acqua è più veloce ad attaccare lo ione alonio rispetto all'alogeno.
 
 \paragraph{Meccanismo di reazione}\mbox{}\\
 \begingroup
+\chemnameinit{}
 \begin{reaction}
-	\AddRxnDesc{Formazioni di aloidrine}
-	\chemfig{C(-[3]CH_3)(-[5]H)(=[@{dl}]C(-[1]CH_3)(-[7]H))} + \chemfig{@{x1}X-[@{lx}]@{x2}X}
-	\arrow[,0.8]
-	\chemfig{@{c}\charge{45:3pt=\chargeColor{+}}{C}(-[3]CH_3)(-[5]H)(-C(-CH_3)(-[2]@{x}\charge{180=\:}{X})(-[6]H))}
-	\arrow(--.base west)[,0.8]
-	\chemname{\chemfig{[:90]C*3((<[:-55]H)(<:[:-10]CH_3)-[3]\charge{90:3pt=\chargeColor{+}}{X}-C(<:[:190]H_3C)(<[:235]H)-)}}{Intermedio a\\ponte alonio}
-	\arrow{->}[-90]
-	\chemname{\chemfig{[:90]@{ca1}C*3((<[:-55]H)(<:[:-10]CH_3)-@{X}\charge{45:3pt=\chargeColor{+}}{X}-[@{lX}]@{ca2}C(<:[:190]H_3C)(<[:235]H)-)}}{attacco anti}
-	\arrow(--.mid east){->[\chemfig{H_2@{ox}\charge{0=\:}{O}}]}[-180]
-	\chemfig{C(<:[:-120]H_3C)(-[:120]\charge{135=\chargeColor{+}}{O}(-[@{hl}2]@{h}H)(-[4]H))(<[:-165]H)(-C(-[:60]X)(<[:-60]H)(<:[:-15]H))}
-	\arrow(.mid west--){->[\ch{-H2}]}[-180]
-	\chemfig{C(<:[:-120]H_3C)(-[:120]OH)(<[:-165]H)(-C(-[:60]X)(<[:-60]H)(<:[:-15]H))}
+	\AddRxnDesc{Addizione di alogeni agli alcheni (stadio 2)}
+	\chemname[15pt]{\chemfig{[:90]@{ca1}C*3((<[:-55]H)(<:[:-10]CH_3)-[@{lX}]@{X}\charge{90:3pt=\chargeColor{+}}{X}-@{ca2}C(<:[:190]H_3C)(<[:235]H)-)}}{attacco anti} \+ \chemfig{@{x}\charge{90=\:,180=\:,270=\:,135:3pt=\chargeColor{-}}{O}H}
+	\arrow(--.mid west)
+	\chemname{\chemfig{C(<:[:195]H_3C)(-[3]X)(<[5]H)(-C(-[7]OH)(<[:15]H)(<:[1]CH_3))}}{a}
+	\+
+	\chemname{\chemfig{C(<:[3]H_3C)(-[5]OH)(<[:165]H)(-C(-[1]X)(<[7]H)(<:[:-15]CH_3))}}{b}
 	\chemmove[green!60!black!70]{
-		\draw[shorten <=3pt, shorten >= 1pt] (dl).. controls +(90:1.5cm) and +(90:1cm) .. (x1);
-		\draw[shorten <=3pt, shorten >= 1pt] (lx).. controls +(90:.8cm) and +(90:.8cm) .. (x2);
-		\draw[shorten <=3pt, shorten >= 5pt] (x).. controls +(180:.8cm) and +(90:.8cm) .. (c);
-		\draw[shorten <=3pt, shorten >= 1pt] ([xshift=2pt]ox.mid east).. controls +(-90:1.2cm) and +(-90:1.2cm) .. (ca1);
-		\draw[shorten <=3pt, shorten >= 1pt] (lX).. controls +(135:.5cm) and +(180:.2cm) .. (X);
-		\draw[shorten <=3pt, shorten >= 1pt] (hl).. controls +(180:.5cm) and +(180:.5cm) .. (h);
+		\draw[shorten <=3pt, shorten >= 1pt] (x.mid west).. controls +(-90:1.5cm) and +(-90:1.5cm) .. (ca1) node[xshift=-5pt,yshift=-15pt] {\tiny a};
+		\draw[shorten <=3pt, shorten >= 1pt] (x.south west).. controls +(-90:1.5cm) and +(-90:1.5cm) .. (ca2) node[xshift=5pt,yshift=-15pt] {\tiny b};
+		% \draw[shorten <=3pt, shorten >= 1pt] (lX).. controls +(45:.3cm) and +(0:.4cm) .. (X);
 	}
 \end{reaction}
 \endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Riduzione degli alcheni}
+\subsection{Riduzione degli alcheni}\label{ssec:riduzione}
 La riduzione degli alcheni, chiamata più comunemente \textbf{idrogenazione} è un processo chimico dove tramite catalizzatore metallico, generalmente platino disperso in polvere di carbonio indicato con \ch{Pt\textbackslash C}, viene addizionato idrogeno gassoso al doppio legame per dare alcani. L'addizione dell'idrogeno avviene dallo stesso lato del piano dell'alchene.
 
 \begingroup
@@ -222,7 +252,7 @@ La riduzione degli alcheni, chiamata più comunemente \textbf{idrogenazione} è 
 	\AddRxnDesc{Riduzione degli alcheni}
 	\chemname{\chemfig{C(-[:120]H_3C)(-[:-120]Cl)(=C(-[:60]Cl)(-[:-60]CH_3))}}{\iupac{\trans-2,3-dicloro-2-butene}}
 	\arrow(.mid east--.mid west){->[\ch{H2}][\ch{Pt\textbackslash C}]}[,1.3]
-	\chemname{\chemfig{C(-[:120]H)(<:[:200]H_3C)(<[:-120]Cl)(-C(-[:60]H)(<:[:-20]Cl)(<[:-60]CH_3))}}{\iupac{\cip{2R,3R}-2,3-diclorobutano}} 
+	\chemname{\chemfig{C(-[:120]H)(<:[:200]H_3C)(<[:-120]Cl)(-C(-[:60]H)(<:[:-20]Cl)(<[:-60]CH_3))}}{\iupac{\cip{2R,3R}-2,3-diclorobutano}}
 	\+{2em,2em}
 	\chemname{\chemfig{C(-[:-120]H)(<:[:120]H_3C)(<[:160]Cl)(-C(-[:-60]H)(<:[:60]Cl)(<[:20]CH_3))}}{\iupac{\cip{2S,3S}-2,3-diclorobutano}}
 \end{reaction}

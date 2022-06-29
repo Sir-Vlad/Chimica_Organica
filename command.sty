@@ -250,6 +250,10 @@
 	}
 }
 
+\tikzset{
+arrow/.style={->,>={Latex[width=2mm,length=2mm]}}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARBOIDRATI %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ! ALDOSI
@@ -367,7 +371,7 @@
 \definesubmol{guanina}{*6((-NH_2)=N-*5(-\chembelow{N}{H}-=N-)=-(=O)=N-)}
 \definesubmol{citosina}{*6((=O)-\chembelow{N}{H}-=-(-NH_2)=N-)}
 \definesubmol{timina}{*6((=O)-\chembelow{N}{H}-=(-CH_3)-(=O)=HN-[,,2])}
-\definesubmol{uracile}{*6((=O)-\chembelow{N}{H}-=-(=O)=HN-[,,2])}
+\definesubmol{uracile}{*6((=O)-\chembelow{N}{H}-=-(=O)-HN-[,,2])}
 
 \definesubmol{deossiribosio}{O?-[:-30,1.8](-[2]OH)(-[6]H)<[:240,1.5]-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2,,,3]HOCH_2)}
 
@@ -424,7 +428,7 @@
 % - unità base RNA
 \definesubmol{UMP}{
 	O?-[:-30,1.8](-[2]O
-	-[2,2]N*6(-=-(=O)-HN-[,,2](=O)-) % - uracile
+	-[2,1.5]N*6(-=-(=O)-HN-[,,2](=O)-) % - uracile
 	)(-[6]H)<[:240,1.5](-[6]OH)-[4,1.5,,,line width=4pt,line cap=round](-[6]OH)>[:120,1.5]?(-[2]CH_2
 	-[4]O-[4]P(=[2]O)(-[4]\charge{135:3pt=\chargeColor{-}}{O})(-[6]\charge{45:3pt=\chargeColor{-}}{O})
 	)
@@ -526,3 +530,71 @@
 \definesubmol\DerAc1{R-[:30]@{C}C(=[@{Ol}2]@{O}O)-[:-30]#1}
 \definesubmol\ChargeO{\charge{45:3pt=\chargeColor{-},0=\:,90=\:,180=\:}{O}}
 \definesubmol\ChargeOop{\charge{45:3pt=\chargeColor{-}}{O}}
+
+
+\usepackage[version=4,arrows=pgf-filled]{mhchem}
+\usetikzlibrary{
+	arrows.meta
+}
+\catcode`\_=11
+% Initial arguments:
+% #1, #2: Same as for -U> (above arrow)
+% #3: Additional label at midpoint (also above arrow)
+% #4, #5, #6: Like #1, #2, and #3, but below arrow
+% #7: Optional shift, default 0
+% #8: Optional arrow radius
+% #9: Optional arrow angle
+\definearrow9{-X>}{%
+    % handle optional shift
+    \CF_arrowshiftnodes{#7}%
+    % handle optional arrow radius
+    \CF_ifempty{#8}
+        {\def\CF_Xarrowradius{0.333}}
+        {\def\CF_Xarrowradius{abs{#8}}}%
+    % handle optional arrow angle
+    \CF_ifempty{#9}%
+        {\def\CF_Xarrowabsangle{60}}
+        {\pgfmathsetmacro\CF_Xarrowabsangle{abs(#9)}}
+    % draw basic arrow
+    \expandafter\draw\expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode)node[midway](Xarrowarctangent){};%
+    \begingroup
+    \pgfarrowharpoontrue
+    % Draw top arrow (start)
+    \edef\CF_tmpstr{[\CF_ifempty{#1}{draw=none}{\unexpanded\expandafter{\CF_arrowcurrentstyle}},-]}%
+    \expandafter\draw\CF_tmpstr (Xarrowarctangent)%
+    arc[radius=\CF_compoundsep*\CF_currentarrowlength*\CF_Xarrowradius,start angle=\CF_arrowcurrentangle-90,delta angle=-\CF_Xarrowabsangle]node(Xarrow1start){};
+    % Draw bottom arrow (end)
+    \edef\CF_tmpstr{[\CF_ifempty{#2}{draw=none}{\unexpanded\expandafter{\CF_arrowcurrentstyle}},-{Stealth[left,round,scale=1.1,inset'=0pt 0.55]}]}%angle'=40
+    \expandafter\draw\CF_tmpstr (Xarrowarctangent)%
+    arc[radius=\CF_compoundsep*\CF_currentarrowlength*\CF_Xarrowradius,%
+    start angle=\CF_arrowcurrentangle-90,%
+    delta angle=\CF_Xarrowabsangle]%
+    node(Xarrow1end){};
+    % Draw bottom arrow (start)
+    \edef\CF_tmpstr{[\CF_ifempty{#4}{draw=none}{\unexpanded\expandafter{\CF_arrowcurrentstyle}},-]}%
+    \expandafter\draw\CF_tmpstr (Xarrowarctangent)%
+    arc[radius=\CF_compoundsep*\CF_currentarrowlength*\CF_Xarrowradius,start angle=\CF_arrowcurrentangle+90,delta angle=\CF_Xarrowabsangle]node(Xarrow2start){};
+    % Draw bottom arrow (end)
+    \edef\CF_tmpstr{[\CF_ifempty{#5}{draw=none}{\unexpanded\expandafter{\CF_arrowcurrentstyle}},-{Stealth[right,round,scale=1.1,inset'=0pt 0.555]}]}%
+    \expandafter\draw\CF_tmpstr (Xarrowarctangent)%
+    arc[radius=\CF_compoundsep*\CF_currentarrowlength*\CF_Xarrowradius,%
+    start angle=\CF_arrowcurrentangle+90,%
+    delta angle=-\CF_Xarrowabsangle]%
+    node(Xarrow2end){};
+    \endgroup
+    % Insert labels
+    \pgfmathsetmacro\CF_tmpstra{\CF_Xarrowradius*cos(\CF_arrowcurrentangle)<0?"-":"+"}%
+    \pgfmathsetmacro\CF_tmpstrb{\CF_Xarrowradius*cos(\CF_arrowcurrentangle)<0?"+":"-"}%
+    \CF_arrowdisplaylabel{#1}{0}\CF_tmpstra{Xarrow1start}{#2}{1}\CF_tmpstra{Xarrow1end}%
+    \CF_arrowdisplaylabel{#4}{0}\CF_tmpstrb{Xarrow2start}{#5}{1}\CF_tmpstrb{Xarrow2end}%
+    \CF_arrowdisplaylabel{#3}{0.5}\CF_tmpstra\CF_arrowstartnode{}{}{}\CF_arrowendnode%
+    \CF_arrowdisplaylabel{#6}{0.5}\CF_tmpstrb\CF_arrowstartnode{}{}{}\CF_arrowendnode%
+}
+\catcode`\_=8
+
+\usepackage{regexpatch}
+\makeatletter
+% \xpatchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+% the starred variant replaces all occurrences of <search>
+\xpatchcmd*\CF@arrow@display@label@i{node[}{node[align=center,}{}{}
+\makeatother

@@ -26,7 +26,7 @@ Gli acidi grassi naturali, elencati nella~\autoref{tab:acidigrassi}, sono moleco
 		\rectanglecolor{blue!15}{8-1}{8-4}
 		\Body
 		\toprule
-		\Block[l]{1-2}{Struttura (Atomi di C/Doppi legami)} &        & Nome comune        & Punto di fusione \\
+		\Block[l]{1-2}{Struttura (Atomi di C:Doppi legami)} &        & Nome comune        & Punto di fusione \\
 		\midrule
 		\Block{1-*}{ACIDI GRASSI SATURI}                                                                     \\
 		\hline
@@ -48,22 +48,22 @@ Gli acidi grassi naturali, elencati nella~\autoref{tab:acidigrassi}, sono moleco
 	\caption{Acidi grassi comunemente ottenibili dai grassi/oli}\label{tab:acidigrassi}
 \end{table}
 
-I trigliceridi possono essere semplici o misti. I trigliceridi semplici hanno lo stesso acido grasso mentre i trigliceridi misti hanno acidi grassi differenti.
+I trigliceridi possono essere semplici o misti. I trigliceridi semplici hanno lo stesso acido grasso mentre i trigliceridi misti hanno acidi grassi differenti legati con il glicerolo.
 
-In genere, un grasso o un olio sono miscele di trigliceridi differenti. Generalmente, i grassi coso composti prevalentemente da trigliceridi saturi e provengono da fonti animali mentre gli oli sono composti prevalentemente da trigliceridi insaturi e provengono da fonti vegetali.
+In genere, un grasso o un olio sono miscele di trigliceridi differenti. Generalmente, i grassi sono composti prevalentemente da trigliceridi saturi e provengono da fonti animali mentre gli oli sono composti prevalentemente da trigliceridi insaturi e provengono da fonti vegetali.
 
 La differenza di trigliceridi influenza il punto di fusione della miscela. Miscele di trigliceridi saturi hanno punti di fusione molto alti perché i singoli trigliceridi si possono compattare in maniera regolare e quindi aumentare le interazione tra le molecole. Mentre miscele di trigliceridi insaturi non potranno compattarsi in maniera regolare e quindi la temperatura sarà molto più bassa dei trigliceridi saturi. Di conseguenza, tanto maggiore sarà il numero di doppi legami tanto maggiore sarà il disordine della struttura e tanto minore è il punto di fusione.
 
 \subsection{Idrogenazione degli oli}
-È possibile trasformare i trigliceridi insaturi in saturi tramite idrogenazione catalitica di alcuni o tutti doppi legami. Questo procedimento è chiamato \textbf{indurimento}. La margarina viene prodotta per idrogenazione dei alcuni oli vegetali.
+È possibile trasformare i trigliceridi insaturi in saturi tramite idrogenazione catalitica di alcuni o tutti doppi legami. Questo procedimento è chiamato \textbf{indurimento}. La margarina viene prodotta per idrogenazione di alcuni oli vegetali.
 \chemnameinit{}
 \begin{reaction}
-	\AddRxnDesc{Idogenazione della trioleina}
+	\AddRxnDesc{Riduzione della trioleina}
 	\arrow{0}[,0]
 	\chemname{\chemfig{
-	[2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op1}:-30,.6]-[:+30,.6]-[@{cl1}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op2}:+30,.6]-[:-30,.6]-[@{cl2}:+30,.6]-[:-30,.6])%
-	-[,1.5]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op3}:-30,.6]-[:+30,.6]-[@{cl3}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op4}:+30,.6]-[:-30,.6]-[@{cl4}:+30,.6]-[:-30,.6])%
-	-[,1.5]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op5}:-30,.6]-[:+30,.6]-[@{cl5}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op6}:+30,.6]-[:-30,.6]-[@{cl6}:+30,.6]-[:-30,.6])}}{\iupac{trioleato di glicerile}\\(\iupac{trioleina})}
+	[2]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op1}:-30,.6]-[:+30,.6]-[@{cl1}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op2}:+30,.6]-[:-30,.6]-[@{cl2}:+30,.6])%
+	-[,1.5]CH([0]-O-[:30,.6](=[2,.6]O)-[@{op3}:-30,.6]-[:+30,.6]-[@{cl3}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op4}:+30,.6]-[:-30,.6]-[@{cl4}:+30,.6])%
+	-[,1.5]CH_2([0]-O-[:30,.6](=[2,.6]O)-[@{op5}:-30,.6]-[:+30,.6]-[@{cl5}:-30,.6]-[:+30,.6]=_[0,.6]-[:-30,.6]-[@{op6}:+30,.6]-[:-30,.6]-[@{cl6}:+30,.6])}}{\iupac{trioleato di glicerile}\\(\iupac{trioleina})}
 	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op1}{cl1}
 	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op2}{cl2}
 	\makepolymerdelims[delimiters=(),subscript=$\scriptstyle \!3$]{2pt}[8pt]{op3}{cl3}
@@ -84,7 +84,7 @@ La differenza di trigliceridi influenza il punto di fusione della miscela. Misce
 \chemnameinit{}
 
 \subsection{Saponificazione dei trigliceridi}
-I trigliceridi quando vengono riscaldati in presenza di sostanze alcaline (come \ch{NaOH}), l'estere si trasforma in glicerolo e nei sali degli acidi grassi. I sali degli acidi grassi a lunga catena sono i \textbf{saponi}.
+I trigliceridi quando vengono riscaldati in presenza di sostanze alcaline (come \ch{NaOH}), l'estere si trasforma in glicerolo e nei sali degli acidi grassi. I sali degli acidi grassi a lunga catena sono chiamati \textbf{saponi}.
 \chemnameinit{}
 {\small
 \begin{reaction}
@@ -108,7 +108,9 @@ I trigliceridi quando vengono riscaldati in presenza di sostanze alcaline (come 
 \paragraph{Come funzionano i saponi}\mbox{}\\
 I saponi sono costruiti da una lunga catena carboniosa che porta all'estremità un gruppo altamente polare o ionico. La catena carboniosa è \textbf{lipofila}\footnote{Affine ai grassi e agli oli} mentre l'estremità polare è \textbf{idrofila}\footnote{Affine all'acqua}.
 
-I saponi per rimuovere lo sporco circondano ed emulsionano le goccioline di olio e grasso. Le code lipofile si sciolgono del'olio mentre le teste si protendono verso l'esterno in direzione dell'acqua, questa formazione delle molecole di sapone formando le \textbf{micelle}.
+I saponi per rimuovere lo sporco circondano ed emulsionano le goccioline di olio e di grasso. Le code lipofile si sciolgono del'olio mentre le teste si protendono verso l'esterno in direzione dell'acqua, questa formazione delle molecole di sapone formando le \textbf{micelle}.
+
+% TODO: add immage ``micelle''
 
 Un'altra proprietà delle soluzioni saponose è abbassare la tensione superficiale dell'acqua, questo facilità il distacco dello sporco. I saponi con questa proprietà appartengono alla classe dei \textbf{tensioattivi}.
 

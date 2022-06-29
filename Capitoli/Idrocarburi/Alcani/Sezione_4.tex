@@ -12,11 +12,11 @@ Gli alcani con due o più atomi di carbonio possono assumere differenti disposiz
 	\setlength{\tabcolsep}{5em} % for the horizontal padding
 	\renewcommand{\arraystretch}{1.2}
 	% \setchemfig{atom sep=2em}
-	\caption{Conformazione dell'etano}\label{tab:conf_etano}
 	\begin{tabular}{cc}
 		\chemfig{C(-[:110]H)(<:[:200]H)(<[:-110]H)(-[0]C(-[:-70]H)(<:[:20]H)(<[:70]H))} & \chemfig{C(-[:-110]H)(<:[:160]H)(<[:110]H)(-[0]C(-[:-70]H)(<:[:20]H)(<[:70]H))} \\
 		Conformazione sfalsata                                                          & Conformazione eclissata                                                         \\
 	\end{tabular}
+	\caption{Conformazione dell'etano}\label{tab:conf_etano}
 \end{figure}
 \endgroup
 
@@ -28,11 +28,11 @@ Per rappresentare questa queste conformazioni in maniera più comoda si utilizza
 	\setlength{\tabcolsep}{5em} % for the horizontal padding
 	\renewcommand{\arraystretch}{1.2}
 	% \setchemfig{atom sep=2em}
-	\caption{Conformazione dell'etano con le proiezioni di Newman}
 	\begin{tabular}{cc}
 		\newman{H,H,H,H,H,H}   & \newman(160){H,H,H,H,H,H} \\
 		Conformazione sfalsata & Conformazione eclissata   \\
 	\end{tabular}
+	\caption{Conformazione dell'etano con le proiezioni di Newman}
 \end{figure}
 \endgroup
 
@@ -50,49 +50,49 @@ Il ciclopentano può essere disegnato in una conformazione planare con angoli di
 	\setlength{\tabcolsep}{4em} % for the horizontal padding
 	\renewcommand{\arraystretch}{1.2}
 	% \setchemfig{atom sep=2em}
-	\caption{Conformazione del ciclopentano}
 	\begin{tabular}{cc}
 		\chemfig{*5(-----)}  & \chemfig[cram width=2pt]{?<[:-45,0.5]-[:0,,,,line width=2pt]>[:60]-[:210]?} \\
 		Ciclopentano planare & Ciclopentano ripiegato a busta                                              \\
 	\end{tabular}
+	\caption{Conformazione del ciclopentano}
 \end{figure}
 \endgroup
 
 \paragraph{Cicloesano}\mbox{}\\
-Il cicloesano può adottare diverse conformazioni ma solo due sono quelle principali: quella a sedia e quella a barca.
+Il cicloesano può adottare due conformazioni: quella a sedia e quella a barca.
 
 La \textbf{conformazione a sedia} ha tutti gli angoli di legami \ch{C-C} di \ang{109.5}, minimizzando la tensione angolare, e gli \elementsymbol{1} su carboni adiacenti sono sfalsati, minimizzando la tensione torsionale; in questo modo nella conformazione a sedia c'è pochissima tensione.
 
 I legami \ch{C-H} si dividono in: \textbf{legami assiali}, sono quelli paralleli all'asse della molecola mentre \textbf{legami equatoriali}, sono quelli perpendicolari all'asse della molecola.
 
 \begingroup
-\begin{figure}[btp]
+\begin{figure}[H]
 	\centering
 	\setlength{\tabcolsep}{5em} % for the horizontal padding
 	\renewcommand{\arraystretch}{1.2}
-	\setchemfig{atom sep=2.5em}
-	\caption{Conformazione del cicloesano}
+	\setchemfig{atom sep=3em}
 	\begin{tabular}{cc}
-		\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:10,,,,line width=2pt]>[:-20]-[:130]-[:190]?} & \chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:0,,,,line width=2pt]>[:50]-[:215,0.9]-[:180,0.8,,,]?} \\
+		\chemfig[cram width=2pt]{?(-[2,0.5])(-[:190,0.5])<[:-60](-[6,0.5])(-[:160,0.5])-[:10,,,,line width=2pt,line cap=round](-[2,0.5])(-[:-60,0.5])>[:-20](-[6,0.5])(-[:10,0.5])-[:120](-[2,0.5])(-[:-20,0.5])-[:190]?(-[6,0.5])(-[:120,0.5])} & \chemfig[cram width=2pt]{?<[:-50]-[:0,,,,line width=2pt,line cap=round]>[:50]-[:215,0.9]-[:180,0.8,,,]?} \\
 		Cicloesano a sedia                                                                              & Cicloesano ripiegato a barca                                                                             \\
 	\end{tabular}
+	\caption{Conformazione del cicloesano}
 \end{figure}
 \endgroup
 
 La \textbf{conformazione a barca} è meno stabile di quella a sedia, perché si crea una tensione torsionale a causa di quattro set di interazioni tra idrogeni eclissati e tensione sterica a causa dell'interazione tra atomi di idrogeno. La \textbf{tensione sterica} si genera quando atomi non legati tra loro sono costretti a stare ad una distanza inferiore rispetto a quando permesso dai loro raggi atomici.
 
-Per il cicloesano, le due conformazioni a sedia possono interconvertirsi tra trasformando prima in una barca e quindi nell'altra sedia, come possiamo vedere~\autoref{rct:cicloesano_conf}.
+Le due conformazioni a sedia possono interconvertirsi trasformandosi prima nella conformazione a barca e poi nell'altra conformazione a sedia, come possiamo vedere~\autoref{rct:cicloesano_conf}.
 
 \begingroup
 \setchemfig{atom sep=2.5em}
 \begin{reaction}
 	\AddRxnDesc{Interconversione tra le due conformazioni a sedia}
 	\arrow{0}[,0]
-	\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:10,,,,line width=2pt]>[:-20]-[:130]-[:190]?}
+	\chemfig[cram width=2pt]{?<[:-50]-[:10,,,,line width=2pt,line cap=round]>[:-20]-[:130]-[:190]?}
 	\arrow{<->}
-	\chemfig[cram width=2pt,bond join=true]{?<[:-50]-[:0,,,,line width=2pt]>[:50]-[:215,0.9]-[:180,0.8,,,]?}
+	\chemfig[cram width=2pt]{?<[:-50]-[:0,,,,line width=2pt,line cap=round]>[:50]-[:215,0.9]-[:180,0.8,,,]?}
 	\arrow{<->}
-	\chemfig[cram width=2pt,bond join=true]{?-[:-10]-[:20]<[:-130]-[:-190,,,,line width=2pt]>[:200]?}
+	\chemfig[cram width=2pt]{?-[:-10]-[:20]<[:-130]-[:-190,,,,line width=2pt,line cap=round]>[:200]?}
 \end{reaction}
 \label{rct:cicloesano_conf}
 \endgroup

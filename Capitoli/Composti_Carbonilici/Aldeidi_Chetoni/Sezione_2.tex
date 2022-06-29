@@ -7,11 +7,11 @@ La reazione può essere sintetizzata dalla seguente equazioni chimica:
 	\chemfig{@{Nu}\charge{0:2pt=\:,40:3pt=\chargeColor{-}}{Nu}} \+ \chemfig{@{C}C(=[@{Ol}0]@{O}O)(>:[:120])(<[:240])}
 	\arrow{<=>}
 	\chemfig{C(-[0]\charge{0:1pt=\:,90:1pt=\:,270:1pt=\:,35:5pt=\chargeColor{-}}{O})(-[:120]Nu)(>:[:200])(<[:240])}
-	\arrow{<=>[\scriptsize \ch{H2O}]}
+	\arrow{<=>[\ch{H2O}]}[,1.3]
 	\chemfig{C(-[0]OH)(-[:120]Nu)(>:[:200])(<[:240])}
 	\chemmove[green!60!black!70]{
-		\draw[shorten <=1pt, shorten >= 1pt] ([xshift=3pt]Nu.north east).. controls +(90:1cm) and +(90:1cm) .. (C);
-		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(90:.5cm) and +(90:.5cm) .. (O);
+		\draw[shorten <=0pt, shorten >= 1pt] ([xshift=4pt]Nu.north east).. controls +(70:1cm) and +(90:1cm) .. (C);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(-90:.5cm) and +(-90:.5cm) .. (O);
 	}
 \end{reaction}
 
@@ -20,11 +20,11 @@ Il carbonio carbonile \(sp^2\) durante la reazioni diventa ibridato \(sp^3\) nel
 Gli acidi catalizzano l'addizione di nucleofili deboli ai composti carbonilici per protonazione dell'ossigeno carbonilico.
 \begin{reaction}
 	\AddRxnDesc{Addizione di nucleofi deboli ai composti carbonilici}
-	\chemfig{@{C}C(=[@{Ol}0]@{O}O)(>:[:120])(<[:240])} \+ \chemfig{\charge{40:3pt=\chargeColor{+}}{H}}
+	\chemfig{@{C}C(=[@{Ol}0]@{O}\charge{45=\:,-45=\:}{O})(>:[:120])(<[:240])} \+ \chemfig{@{H}\charge{40:3pt=\chargeColor{+}}{H}}
 	\arrow{<=>}[,0.8]
 	\chemleft[
 	\subscheme{
-	\chemfig{C(=[@{Ol}0]@{O}\charge{80:3pt=\chargeColor{+}}{O}H)(>:[:120])(<[:240])}
+	\chemfig{C(=[@{Ol}0]@{O1}\charge{80:3pt=\chargeColor{+}}{O}H)(>:[:120])(<[:240])}
 	\arrow{<->}[,0.8]
 	\chemfig{@{C}\charge{40:3pt=\chargeColor{+}}{C}(-[0]OH)(>:[:120])(<[:240])}
 	}
@@ -32,7 +32,8 @@ Gli acidi catalizzano l'addizione di nucleofili deboli ai composti carbonilici p
 	\arrow{->[\small\chemfig{@{Nu}\charge{0:2pt=\:,40:3pt=\chargeColor{-}}{Nu}}]}
 	\chemfig{C(-[0]OH)(-[:120]Nu)(>:[:200])(<[:240])}
 	\chemmove[green!60!black!70]{
-		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(110:.5cm) and +(135:.5cm) .. (O);
+		\draw[shorten <=3pt, shorten >= 1pt] (O).. controls +(45:.7cm) and +(135:.7cm) .. (H);
+		\draw[shorten <=3pt, shorten >= 1pt] (Ol).. controls +(110:.5cm) and +(135:.5cm) .. (O1);
 		\draw[shorten <=3pt, shorten >= 1pt] (Nu).. controls +(90:1cm) and +(90:1cm) .. (C);
 	}
 \end{reaction}

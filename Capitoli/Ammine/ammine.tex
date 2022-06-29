@@ -18,7 +18,7 @@ Le \textbf{ammine} sono derivati dell'ammoniaca (\ch{NH3}) in cui uno o più ato
 	\end{tabular}
 \end{figure}
 
-Vengono suddivise, in oltre, in alifatiche e aromatiche. Un'ammina alifatica ha tutti i carboni legati direttamente all'azoto derivano da gruppi alchilici, mentre un'ammina aromatica ha almeno un gruppo arilico legato all'azoto.
+Vengono suddivise, in oltre, in alifatiche e aromatiche. Un'\textbf{ammina alifatica} ha tutti i carboni legati direttamente all'azoto derivano da gruppi alchilici, mentre un'\textbf{ammina aromatica} ha almeno un gruppo arilico legato all'azoto.
 
 \begin{figure}[H]
 	\centering
@@ -48,9 +48,9 @@ Un'ammina può essere anche parte di un anello è in questo caso viene classific
 Le ammine sono composti polari e sia le ammine primarie sia quelle secondarie formano legami a idrogeno intermolecolari. Il legame idrogeno \ch[bond-length=2ex]{N-H\bond{dotted}N} è pi debole del legame idrogeno \ch[bond-length=2ex]{O-H\bond{dotted}O}, per questo motivo le temperature di ebollizione delle ammine sono più basse di quelle degli alcoli. Le ammine a basso peso molecolare sono molto solubili in acqua mentre quelle a peso molecolare più alto sono o moderatamente solubili o insolubili.
 
 \section{Proprietà acido-base delle ammine}
-Tutte le ammine, come l'ammoniaca, sono basi deboli e le loro soluzione acquose sono basiche. Le ammine in acqua si comportano come descritto nella seguente equazione chimica:
+Tutte le ammine, come l'ammoniaca, sono basi deboli e le loro soluzione acquose sono basiche. Le ammine in acqua si comportano come descritto nella~\autoref{rct:amminaInAcqua}:
 \chemnameinit{}
-\begin{reaction}
+\begin{reaction}\label{rct:amminaInAcqua}
 	\AddRxnDesc{Ammina in acqua}
 	\chemfig{H_3C-@{N}\charge{0=\:}{N}(-[2]H)(-[6]H)} \+ \chemfig{@{H}H-[@{Ol}]@{O}\charge{90=\:,270=\:}{O}-H}
 	\arrow(--.mid west){<=>}
@@ -71,8 +71,9 @@ Dall'analisi delle diverse \pKb\ delle ammine si possono fare delle generalizzaz
 
 La guanidrina (\pKb\ 0.4) è la base più forte perché la carica positiva sull'acido coniugato è delocalizzata uniformemente sui tre atomi di azoto.
 
-\begin{reaction}
-	\AddRxnDesc{risonanza della guanidrina}
+\begin{figure}[H]
+\centering
+	\begin{reaction*}
 	\arrow{0}[,0]
 	\chemleft[\subscheme{
 	\chemfig{H_2-[,0.5,,,draw=none]@{N}\charge{90=\:}{N}-[@{Nl}]C(=[@{Nl2}2]@{N2}\charge{135:3pt=\chargeColor{+}}{N}H_2)-NH_2}
@@ -87,4 +88,6 @@ La guanidrina (\pKb\ 0.4) è la base più forte perché la carica positiva sull'
 		\draw[shorten <=3pt, shorten >= 1pt] (N3).. controls +(90:.5cm) and +(90:.5cm) .. (Nl3);
 		\draw[shorten <=3pt, shorten >= 7pt] (Nl4).. controls +(90:.5cm) and +(90:.5cm) .. (N4);
 	}
-\end{reaction}
+\end{reaction*}
+\caption{Risonanza della guanidrina}
+\end{figure}
